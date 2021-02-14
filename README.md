@@ -1,4 +1,13 @@
+George Lychock
 Salem State University Frontend Software Developer Certificate
-jQuery/API/DOM Module
+Javascript/jQuery/API/DOM Module
+MS2 Project
+Project Management Dashboard
 
-Recreating the Data and the DOM CI exercise to call a local JSON file and parse data to a table. Intent is to use this is a base object for my MS2 project which I would like to be some sort of instructional design/learning object.
+A configurable user dashboard that is used to display and organize key metrics and data from third-party datastreams such as a project schedule, to do list, project metrics aggregator. The third-party datastream can come from a sister API to the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget objects that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on and off the main dashboard viewport.
+A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
+
+
+Technical Requirements/Contraints
+Use JSON objects to simulate/fill widget data streams.
+
