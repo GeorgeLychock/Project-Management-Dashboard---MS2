@@ -16,7 +16,7 @@ Use JSON objects to simulate/fill widget data streams.
 
 -   ### Wireframes
 
-    -   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/wireframes/pm-dashboard-desktop-01.png)
+    -   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/main/_documentation/wireframes/pm-dashboard-desktop-01.png)
 
 
     
