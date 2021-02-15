@@ -35,7 +35,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
 
-/* Base Element */
+/* Base Elements */
 body {
     background-color: #fff;
     font-family: 'Raleway', sans-serif;
@@ -47,12 +47,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. All :hover text colors are defined at the specific selector style further below */
-/*background colors*/
-.bcolor-1 {background-color:#fff;}
-.bcolor-2 {background-color:whitesmoke;}
-.bcolor-3 {background-color:#999;}
-.bcolor-4 {background-color:#666;}
-.bcolor-5 {background-color:#000;}
 /*header colors*/
 .hcolor-1 {color:#fff;}
 .hcolor-2 {color:whitesmoke;}
@@ -69,15 +63,24 @@ h1, h2, h3, h4, h5, h6 {
 .acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
 .acolor-3 {color:#4dd2ff;}
 
+/*Common Background Colors*/
+.bcolor-1 {background-color:#fff;}
+.bcolor-2 {background-color:whitesmoke;}
+.bcolor-3 {background-color:#999;}
+.bcolor-4 {background-color:#666;}
+.bcolor-5 {background-color:#000;}
+.bcolor-nav {background-color:#fcc;}
+.bcolor-foot {background-color:#fda;}
+.bcolor-head {background-color:#acc;}
 
-/* Common */
+
 /* Placeholders */
-.height-500 {
-    height: 500px;
+.height-400 {
+    height: 400px;
 }
 
-.height-1000 {
-    height: 1000px;
+.height-800 {
+    height: 800px;
 }
 
 /* Font Styles */
@@ -95,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .75rem;
 }
 
+/* Common Positioning */
 .text-center {
     text-align: center;
 }
@@ -103,6 +107,8 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
 }
 
+/* Common Other */
 .no-txt-dec {
     text-decoration: none;
 }
+
