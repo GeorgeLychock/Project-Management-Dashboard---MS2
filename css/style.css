@@ -47,6 +47,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. All :hover text colors are defined at the specific selector style further below */
+/*background colors*/
+.bcolor-1 {background-color:#fff;}
+.bcolor-2 {background-color:whitesmoke;}
+.bcolor-3 {background-color:#999;}
+.bcolor-4 {background-color:#666;}
+.bcolor-5 {background-color:#000;}
 /*header colors*/
 .hcolor-1 {color:#fff;}
 .hcolor-2 {color:whitesmoke;}
@@ -65,6 +71,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Common */
+/* Placeholders */
+.height-500 {
+    height: 500px;
+}
+
+.height-1000 {
+    height: 1000px;
+}
+
 /* Font Styles */
 .uppercase {
     text-transform: uppercase;
