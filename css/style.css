@@ -1,17 +1,93 @@
-.container {
-    display: flex;
-    flex-flow: row-wrap;
-    box-sizing: border-box;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1050px;
+/* george lychock MS2 stylesheet */
+/* NOTES: */
+
+
+/* ######## CSS TOC - In Order of Appearance: */
+/* @imports */
+/* Base Element */
+/* Common */
+
+
+
+
+/* Navbar */
+/* Banner */
+/* Hero */
+/* Nav Icon Home */
+/* Nav Icon - Secondary Page */
+/* Content Area - Secondary Page */
+/* Work History */
+/* Skills */
+/* Profile */
+/* Portfolio */
+/* Education */
+/* Social Link */
+/* Home Profile Section */
+/* Home Credentials Section */
+/* Home Site Links Section */
+/* Home Social Links Section */
+/* Home Home Footer Section */
+/* @media */
+/*########## /CSS TOC */
+
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+
+/* Base Element */
+body {
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
 }
 
-.box {
-    flex: 1;
-    display: flex;
-    max-width: 240px;
-    margin: 10px;
-    padding: 20px;
-    background-color: #000;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Montserrat', 'FreeSans', sans-serif;
+}
+
+/* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. All :hover text colors are defined at the specific selector style further below */
+/*header colors*/
+.hcolor-1 {color:#fff;}
+.hcolor-2 {color:whitesmoke;}
+/*nav colors */
+.ncolor-1 {color:#4dd2ff;}
+.ncolor-2 {color:#fff;}
+.ncolor-3 {color:#fa0;}
+/* main text colors */
+.pcolor-1 {color:whitesmoke;}
+.pcolor-2 {}
+/* link colors */
+.acolor-1 {color:whitesmoke;}
+.acolor-2 {color:#fa0;}
+.acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
+.acolor-3 {color:#4dd2ff;}
+
+
+/* Common */
+/* Font Styles */
+.uppercase {
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'FreeSans', sans-serif;
+}
+
+.lowercase {
+    text-transform: lowercase;
+    font-family: 'Montserrat', 'FreeSans', sans-serif;
+}
+
+.font75 {
+    font-size: .75rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.float-right {
+    float: right;
+}
+
+.no-txt-dec {
+    text-decoration: none;
 }
