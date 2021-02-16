@@ -2,7 +2,8 @@ $(document).ready(function() {
 /* Generate a Library button from JSON  */
 var myJSON = '{"name":"George Lychock Career Website", "due-date":"2021-06-09T13:50:51.644000Z", "description":"This project updates my old website with a new Bootstrap4 latout.", "percent-complete":".8", "live-site":"http://www.georgelychock-career.com/pages/test/jquery-module/index.html", "milestones": [["Project Launch", "2020-12-09T13:50:51.644000Z"], "Wireframes", "2021-01-31T13:50:51.644000Z"]}';
 var myObj = JSON.parse(myJSON);
-$("#library-btn-1").html(`Project Name: ${myObj.name}`);
+$("#widgets-library").html(`<div class="hcolor-2 btncolor-1">Project: ${myObj.name} <button onclick="turnWidgetOn()">ON BTN</button>
+<button onclick="turnWidgetOff()">OFF BTN</button></div>`);
 })
 
 /*Widget Library ON/OFF Buttons */

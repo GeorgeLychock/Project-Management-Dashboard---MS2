@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 .bcolor-foot {background-color:#fda;}
 .bcolor-head {background-color:#acc;}
 
+/*Common Button Colors*/
+.btncolor-1 {background-color:green;}
+.btncolor-2 {background-color:red;}
 
 /* Placeholders */
 .height-400 {
