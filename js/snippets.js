@@ -13,9 +13,7 @@ $("button").mouseleave(function() {
 $(document).ready(function() {
     $(".box").click(function() {
         var classNames = $(this).attr("class").split(" ");
-        $("." + classNames[1]).css("background-
-        
-        color", "red");
+        $("." + classNames[1]).css("background-color", "red");
     })
 
 })

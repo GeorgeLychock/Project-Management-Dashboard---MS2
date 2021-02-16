@@ -11,7 +11,9 @@ A limited number of widget view settings will be available from the widget windo
 Technical Requirements/Contraints
 Use JSON objects to simulate/fill widget data streams.
 
-## (Jasmine) Test Sequences:
+### (Jasmine) Test Sequences:
+-   Create a library button that turns a div ON in the active widet viewport
+-   Create a library button that turns a div ON in the active widet viewport
 -   display a library widget item as an object in a side menu structure
 
 
