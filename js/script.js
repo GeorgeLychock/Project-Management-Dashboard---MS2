@@ -1,10 +1,28 @@
 $(document).ready(function() {
-/* Generate a Library button from JSON  */
-var myJSON = '{"name":"George Lychock Career Website", "pID":"pm002", "due-date":"2021-06-09T13:50:51.644000Z", "description":"This project updates my old website with a new Bootstrap4 latout.", "percent-complete":".8", "livesite":"http://www.georgelychock-career.com/pages/test/jquery-module/index.html", "milestones": [["Project Launch", "2020-12-09T13:50:51.644000Z"], ["wireframes", "2021-01-31T13:50:51.644000Z"]]}';
-var myObj = JSON.parse(myJSON);
-$("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${myObj.name} <button onclick="turnWidgetOn('${myObj.pID}')">ON BTN</button>
-<button onclick="turnWidgetOff('${myObj.pID}')">OFF BTN</button></div>`);
+    
+createLibraryButtons();
+
 })
+
+function createLibraryButtons() {
+
+    var title;
+    var description;
+    var livesite;
+    var pID;
+    var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
+
+    getData(url, function(data) {
+        description = data.description;
+        title = data.name;
+        livesite = data.livesite;
+        pID = data.pID;
+
+    return $("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
+    <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
+    });
+
+}
 
 /* Get data from JSON file  */
     function getData(url, cb) {
