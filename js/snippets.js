@@ -97,3 +97,8 @@ function writeToDocument(url) {
     });
 }
 
+
+
+this.title = "Project One";
+this.progress = "80";
+this.blockers = "2";
