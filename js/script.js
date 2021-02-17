@@ -1,27 +1,16 @@
 $(document).ready(function() {
-    
+
 createLibraryButtons();
 
 })
 
 function createLibraryButtons() {
-
-    var title;
-    var description;
-    var livesite;
-    var pID;
     var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
 
     getData(url, function(data) {
-        description = data.description;
-        title = data.name;
-        livesite = data.livesite;
-        pID = data.pID;
-
-    return $("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
-    <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
+        return $("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
+        <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
     });
-
 }
 
 /* Get data from JSON file  */

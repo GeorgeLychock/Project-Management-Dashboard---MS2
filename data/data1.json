@@ -2,7 +2,7 @@
 	"name": "George Lychock Career Website",
 	"startdate": "2020-12-09T13:50:51.644000Z",
 	"duedate": "2021-06-09T13:50:51.644000Z",
-	"description": "This project updates my old website with a new Bootstrap4 latout.",
+	"description": "This project updates my old website with a new Bootstrap4 layout.",
 	"percentcomplete": ".8",
 	"livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
 	"milestones": [
