@@ -27,7 +27,7 @@ function createLibraryButtons() {
        xhr.send();
     }
 
-/*Widget Library ON/OFF Buttons */
+/* Widget Library ON/OFF Buttons */
 function turnWidgetOn(widgetID) {
     var elementID = widgetID;
     var title;
@@ -35,13 +35,20 @@ function turnWidgetOn(widgetID) {
     var livesite;
     var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
 
-    getData(url, function(data) {
-        description = data.description;
-        title = data.name;
-        livesite = data.livesite;
-    
-        return $("#active-widgets-data").append(`<div id="${elementID}"><h3>${title}</h3><p>${description}</p><p>Wireframes: ${livesite}</p>`);
-    });
+    // checking to see if the project panel has been activated yet
+    if ($("#" + elementID).length)  {
+        // No: do nothing but alert user
+        return alert("Project already active.");
+    } else {
+        //yes: get data and display panel (widget) in the dashboard viewport
+        getData(url, function(data) {
+            description = data.description;
+            title = data.name;
+            livesite = data.livesite;
+        
+            return $("#active-widgets-data").append(`<div id="${elementID}"><h3>${title}</h3><p>${description}</p><p>Wireframes: ${livesite}</p>`);
+        });
+    }
 }
 
 function turnWidgetOff(widgetID) {

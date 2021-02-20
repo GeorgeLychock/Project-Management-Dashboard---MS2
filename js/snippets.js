@@ -102,3 +102,46 @@ function writeToDocument(url) {
 this.title = "Project One";
 this.progress = "80";
 this.blockers = "2";
+
+
+/* Widget Library ON/OFF Buttons */
+function turnWidgetOn(widgetID) {
+    var elementID = widgetID;
+    var title;
+    var description;
+    var livesite;
+    var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
+
+    getData(url, function(data) {
+        description = data.description;
+        title = data.name;
+        livesite = data.livesite;
+    
+        return $("#active-widgets-data").append(`<div id="${elementID}"><h3>${title}</h3><p>${description}</p><p>Wireframes: ${livesite}</p>`);
+    });
+}
+
+
+
+function turnWidgetOn(widgetID) {
+    var elementID = widgetID;
+    var title;
+    var description;
+    var livesite;
+    var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
+
+    // checking to see if the project panel has been activated yet
+    if ($("#" + elementID)) {
+        // No: do nothing but alert user
+        return alert("Project already active.");
+    } else {
+        //yes: get data and display panel (widget) in the dashboard viewport
+        getData(url, function(data) {
+            description = data.description;
+            title = data.name;
+            livesite = data.livesite;
+        
+            return $("#active-widgets-data").append(`<div id="${elementID}"><h3>${title}</h3><p>${description}</p><p>Wireframes: ${livesite}</p>`);
+        });
+    }
+}
