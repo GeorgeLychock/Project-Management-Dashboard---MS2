@@ -3,7 +3,7 @@
 #### JavaScript/jQuery/API/DOM Module
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/test/jquery-module/index.html)
 ### Use Case:
-A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to do list, or a project metrics aggregator. The third-party datastream can come from a sister API to the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget objects that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
+A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to do list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget objects that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
@@ -50,4 +50,44 @@ As a logged in project manager, I want to Add or Remove project detail windows f
     ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widet viewport
 -   Create a library button that turns a div OFF in the active widet viewport
--   Correctly render data from an external JSON file
+-   Correctly render data from an external JSON files
+
+
+
+## Credits
+
+### Resources Used
+-   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
+
+### Code
+
+
+
+-   The download button code came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
+    Find code use indicated by "CODE REUSE - Download Button User Centric Module, Code Institute"
+        `<div class="d-none d-md-block">`
+            `<p class="navbar-text my-auto mr-2"><i>Download Most Recent Published Resume</i></p>`
+            `<a href="/login" class="btn btn--cta-nav btn--red">Download Resume</a>`
+        `</div>`
+
+-   The skills progress bar code on the Skill Page came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
+    Find code use indicated by "CODE REUSE - Skills Progress Bar User Centric Module, Code Institute"
+        `<div class="row progress-section">`
+           `<div class="col">`
+                `<div class="progress">`
+                   ` <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">`
+                       ` <span class="sr-only">90% complete</span>.......`
+                   
+-   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+
+-   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
+
+### Content
+
+-   All content was written by the developer.
+
+### Media
+
+-   All Images were created by the developer.
+
+### Acknowledgements
