@@ -58,17 +58,12 @@ As a logged in project manager, I want to Add or Remove project detail windows f
 
 ### Resources Used
 -   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
+-   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
 
 ### Code
-
-
-
--   The download button code came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
-    Find code use indicated by "CODE REUSE - Download Button User Centric Module, Code Institute"
-        `<div class="d-none d-md-block">`
-            `<p class="navbar-text my-auto mr-2"><i>Download Most Recent Published Resume</i></p>`
-            `<a href="/login" class="btn btn--cta-nav btn--red">Download Resume</a>`
-        `</div>`
+-   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
+    Find code use indicated by "CODE REUSE - Code Institute, jQuery/API Module"
+        `gd(JSON.parse(this.responseText));`
 
 -   The skills progress bar code on the Skill Page came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
     Find code use indicated by "CODE REUSE - Skills Progress Bar User Centric Module, Code Institute"
@@ -80,7 +75,7 @@ As a logged in project manager, I want to Add or Remove project detail windows f
                    
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
--   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
+
 
 ### Content
 
