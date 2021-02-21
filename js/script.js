@@ -5,27 +5,34 @@ createLibraryButtons();
 })
 
 function createLibraryButtons() {
-    var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
 
-    getData(url, function(data) {
-        return $("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
-        <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
-    });
+    var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+
+    for (let i in widgetIDs) {
+        var url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + widgetIDs[i] + ".json";
+
+        getData(url, function(data) {
+            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
+            <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
+        });
+    }    
 }
 
 /* Get data from JSON file  */
-    function getData(url, cb) {
+/* CODE REUSE - Code Institute, jQuery/API Module  */
+    function getData(url, gd) {
 
        var xhr = new XMLHttpRequest();
 
        xhr.onreadystatechange = function() {
            if (this.readyState == 4 && this.status == 200) {
-               cb(JSON.parse(this.responseText));
+               gd(JSON.parse(this.responseText));
            }
        };
        xhr.open("GET", url);
        xhr.send();
     }
+/* /CODE REUSE - Code Institute, jQuery/API Module  */
 
 /* Widget Library ON/OFF Buttons */
 function turnWidgetOn(widgetID) {
@@ -33,9 +40,9 @@ function turnWidgetOn(widgetID) {
     var title;
     var description;
     var livesite;
-    var url = "http://www.georgelychock-career.com/pages/test/jquery-module/data/data1.json";
+    var url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + elementID + ".json";
 
-    // checking to see if the project panel has been activated yet
+    // checking to see if the widget panel has been activated yet
     if ($("#" + elementID).length)  {
         // No: do nothing but alert user
         return alert("Project already active.");

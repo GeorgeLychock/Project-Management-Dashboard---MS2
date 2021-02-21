@@ -145,3 +145,13 @@ function turnWidgetOn(widgetID) {
         });
     }
 }
+
+
+function createLibraryButtons() {
+    var url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/data1.json";
+
+    getData(url, function(data) {
+        return $("#widgets-library").html(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
+        <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
+    });
+}
