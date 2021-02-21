@@ -24,8 +24,33 @@ As a logged in project manager, I want to Add or Remove project detail windows f
 ### Wireframes
 -   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/main/_documentation/wireframes/pm-dashboard-desktop-01.png)
 
+### Data Structure and Flow
+-   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since most APIs will supply data in that way:
+    ```{
+        "name": "George Lychock Career Website",
+        "pID": "proj0001",
+        "startdate": "2020-12-09T13:50:51.644000Z",
+        "duedate": "2021-06-09T13:50:51.644000Z",
+        "description": "This project updates my old website with a new Bootstrap4 layout.",
+        "percentcomplete": ".8",
+        "livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
+        "milestones": [
+            ["2020-12-09T13:50:51.644000Z", "Project Launch"],
+            ["2021-01-09T13:50:51.644000Z", "Content Writing"],
+            ["2021-01-31T13:50:51.644000Z", "Wireframes"],
+            ["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
+        ]
+    }```
+
+The pID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
+
+-   I used a visual to help figure out how to create and retain the pID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the pIDs so that the Dashboard can be built again upoin the app being relaunched.
+[pID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/main/_documentation/data-structure/MS-2-data-flow-01.png)
+
+
+
 ### Technical Contraints
--   Use JSON objects to simulate/fill widget data streams.
+-   The site will not have access to a database so all project data will come from JSON files to simulate widget data streams.
 
 ### Requirements
 -   Widgets Library Viewport
@@ -52,6 +77,9 @@ As a logged in project manager, I want to Add or Remove project detail windows f
 -   Create a library button that turns a div OFF in the active widet viewport
 -   Correctly render data from an external JSON files
 
+### Future Features
+-   A Calendar widget
+-   A To-Do List widget
 
 
 ## Credits
