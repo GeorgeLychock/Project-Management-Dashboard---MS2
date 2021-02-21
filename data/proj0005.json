@@ -1,0 +1,15 @@
+{
+	"name": "Project Management Website",
+	"pID": "proj0005",
+	"startdate": "2020-12-09T13:50:51.644000Z",
+	"duedate": "2021-06-09T13:50:51.644000Z",
+	"description": "This project is for creating this dashboard.",
+	"percentcomplete": ".2",
+	"livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
+	"milestones": [
+		["2020-12-09T13:50:51.644000Z", "Project Launch"],
+		["2021-01-09T13:50:51.644000Z", "Content Writing"],
+		["2021-01-31T13:50:51.644000Z", "Wireframes"],
+		["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
+	]
+}
