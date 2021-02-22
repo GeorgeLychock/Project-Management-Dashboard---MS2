@@ -3,7 +3,7 @@
 #### JavaScript/jQuery/API/DOM Module
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/test/jquery-module/index.html)
 ### Use Case:
-A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to do list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget objects that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
+A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to do list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
@@ -22,7 +22,7 @@ As a logged in project manager, I want to Add or Remove project detail windows f
     -   I can Add or Remove project detail windows from the dashboard
 
 ### Wireframes
--   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/main/_documentation/wireframes/pm-dashboard-desktop-01.png)
+-   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
 
 ### Data Structure and Flow
 -   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since most APIs will supply data in that way:
@@ -45,8 +45,7 @@ As a logged in project manager, I want to Add or Remove project detail windows f
 The pID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
 
 -   I used a visual to help figure out how to create and retain the pID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the pIDs so that the Dashboard can be built again upoin the app being relaunched.
-[pID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/main/_documentation/data-structure/MS-2-data-flow-01.png)
-
+[pID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 
 
 ### Technical Contraints
