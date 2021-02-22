@@ -5,10 +5,13 @@
 /* ######## CSS TOC - In Order of Appearance: */
 /* @imports */
 /* Base Element */
-/* Common */
-
-
-
+/* Common Text Colors */
+/*Common Background Colors*/
+/*Common Button Colors*/
+/* Placeholders */
+/* Font Styles */
+/* Common Positioning */
+/* Common Other*/
 
 /* Navbar */
 /* Banner */
@@ -37,7 +40,7 @@
 
 /* Base Elements */
 body {
-    background-color: #fff;
+    background-color: #789dbf;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -46,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', 'FreeSans', sans-serif;
 }
 
-/* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. All :hover text colors are defined at the specific selector style further below */
+/* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. NOTE! All :hover colors are defined at the specific selector style further below */
 /*header colors*/
 .hcolor-1 {color:#fff;}
 .hcolor-2 {color:whitesmoke;}
@@ -79,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Placeholders */
 .height-400 {
-    height: 400px;
+    max-height: 400px;
 }
 
 .height-800 {
@@ -115,3 +118,14 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+
+
+/* Nav */
+/* Header */
+/* Widget Library */
+
+/* Dashboard */
+.active-widget-3 {
+margin: 10px;
+padding: 5px;
+}
