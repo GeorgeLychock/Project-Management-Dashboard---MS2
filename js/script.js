@@ -6,10 +6,10 @@ createLibraryButtons();
 
 function createLibraryButtons() {
 
-    var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+    let widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
 
     for (let i in widgetIDs) {
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + widgetIDs[i] + ".json";
+        let url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + widgetIDs[i] + ".json";
 
         getData(url, function(data) {
             return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
@@ -36,11 +36,11 @@ function createLibraryButtons() {
 
 /* Widget Library ON/OFF Buttons */
 function turnWidgetOn(widgetID) {
-    var elementID = widgetID;
-    var title;
-    var description;
-    var livesite;
-    var url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + elementID + ".json";
+    let elementID = widgetID;
+    let title;
+    let description;
+    let livesite;
+    let url = "http://www.georgelychock-career.com/pages/_sandbox/jquery-module/data/" + elementID + ".json";
 
     // checking to see if the widget panel has been activated yet
     if ($("#" + elementID).length)  {
@@ -59,6 +59,6 @@ function turnWidgetOn(widgetID) {
 }
 
 function turnWidgetOff(widgetID) {
-    var elementID = widgetID;
+    let elementID = widgetID;
     return $("#" + elementID).remove();
 }
