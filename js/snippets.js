@@ -155,3 +155,60 @@ function createLibraryButtons() {
         <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
     });
 }
+
+
+
+/* CODE REUSE - MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
+/* Checks to make sure localStorage is usuable in the browser */
+function storageAvailable(type) {
+    var storage;
+    try {
+        storage = window[type];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
+    }
+}
+/* /CODE REUSE - MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
+
+
+
+            // Check if localStorage is usable
+            if (storageAvailable('localStorage')) {
+                // YES: We can use localStorage, Add widget ID to the localStorage array and store
+                if (typeof (Storage) !== "undefined") {
+                    if (localWidgetStorage.localWidgets) {
+                        var activeWidgets = localWidgetStorage.getItem('localWidgets');
+                        console.log(activeWidgets);
+                    } else {
+                        var activeWidgets = [];
+                    }
+                } else {
+                    var localWidgetStorage = window.localStorage;
+                    var activeWidgets = [];
+                    activeWidgets.push(elementID);
+                    console.log(activeWidgets);
+                    localWidgetStorage.setItem('localWidgets', activeWidgets);
+                    let acheck = localWidgetStorage.getItem('localWidgets');
+                    console.log(acheck)
+                }
+              }
+              else {
+                // NO: no localStorage
+                return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+              }
