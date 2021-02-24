@@ -71,6 +71,15 @@ The pID drives everything, it is the unique ID for any widget added to the Dashb
 -   Persistent Settings
     -   Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
+### Technical Requirements for this project:
+-   Use template literals
+-   Use ternary operator, if possible/needed
+-   Access and parse JSON data
+-   Store data in localStorage
+-   Limit duplication of code, use functions effectively
+-   Write Jasmine tests when possible, time permitted
+
+
     ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widet viewport
 -   Create a library button that turns a div OFF in the active widet viewport
@@ -91,6 +100,8 @@ The pID drives everything, it is the unique ID for any widget added to the Dashb
 -   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
     Find code use indicated by "CODE REUSE - Code Institute, jQuery/API Module"
         `gd(JSON.parse(this.responseText));`
+
+-   The localStorage check code in script.js is from MDN: [CODE REUSE - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and/or has it turned on.
 
 -   The skills progress bar code on the Skill Page came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
     Find code use indicated by "CODE REUSE - Skills Progress Bar User Centric Module, Code Institute"
