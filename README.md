@@ -80,14 +80,27 @@ The pID drives everything, it is the unique ID for any widget added to the Dashb
 -   Write Jasmine tests when possible, time permitted
 
 
-    ### (Jasmine) Test Sequences:
--   Create a library button that turns a div ON in the active widet viewport
--   Create a library button that turns a div OFF in the active widet viewport
--   Correctly render data from an external JSON files
 
 ### Future Features
 -   A Calendar widget
 -   A To-Do List widget
+-   Ability to shuffle (re-position) the dashboard panels
+
+### Release Strategy
+-   Sprint 1
+    -   Make the ON/OFF buttons only open or close once
+    -   Create multiple library buttons
+    -   Create code to remove a button after the panel is activated to the dashboard
+    -   Create code to add a button to the library after the panel is removed from the dashboard
+    -   Figure out how to do local storage
+-   Sprint 2
+    -   
+
+
+### (Jasmine) Test Sequences:
+-   Create a library button that turns a div ON in the active widet viewport
+-   Create a library button that turns a div OFF in the active widet viewport
+-   Correctly render data from an external JSON files
 
 
 ## Credits
