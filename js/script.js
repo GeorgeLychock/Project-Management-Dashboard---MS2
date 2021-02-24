@@ -1,9 +1,33 @@
 $(document).ready(function() {
 
 createLibraryButtons();
-
+createActiveWidgets();
 
 })
+
+function createActiveWidgets() {
+    if (localStorage.localWidgets) {
+
+        let activeWidgetsSaved = localStorage.getItem('localWidgets');
+        let activeWidgets = activeWidgetsSaved.split(',');
+        let elementID;
+        let title;
+        let description;
+        let livesite;
+
+        for (let i in activeWidgets) {
+
+            var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
+            getData(url, function (data) {
+                elementID = data.pID;
+                description = data.description;
+                title = data.name;
+                livesite = data.livesite;
+                return $("#active-widgets-data").append(`<div id="${elementID}" class="col-3 max-height-400"><div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div></div>`);
+            });
+        }
+    }
+}
 
 function createLibraryButtons() {
 
@@ -65,6 +89,7 @@ function storageAvailable(type) {
 
 /* Widget Library ON/OFF Buttons */
 function turnWidgetOn(widgetID) {
+    
     let elementID = widgetID;
     let title;
     let description;
@@ -76,45 +101,28 @@ function turnWidgetOn(widgetID) {
         // No: do nothing but alert user
         return alert("Project already active.");
     } else {
-        //yes: get data and display panel (widget) in the dashboard viewport
+        //yes: get widget JSON data and display panel (widget) in the dashboard viewport
         getData(url, function(data) {
+
             description = data.description;
             title = data.name;
             livesite = data.livesite;
-
 
             // Check if localStorage is usable
             if (storageAvailable('localStorage')) {
                 // YES: We can use localStorage, Add widget ID to the localStorage array and store
                 if (localStorage.localWidgets) {
 
-                    //---
-                    // localStorage.setItem('localWidgets', "proj0001, proj0002");
-                    //!---
-
-
                     let activeWidgetsSaved = localStorage.getItem('localWidgets');
-                    console.log("localWidgets was present" + activeWidgetsSaved + typeof(activeWidgetsSaved));
-
                     let activeWidgets = activeWidgetsSaved.split(',');
-                    console.log(activeWidgets + typeof(activeWidgets));
-
                     activeWidgets.push(elementID);
                     localStorage.setItem('localWidgets', activeWidgets);
 
-                    //---
-                    activeWidgetsSaved = localStorage.getItem('localWidgets');
-                    console.log("After PUSH" + activeWidgetsSaved + typeof(activeWidgetsSaved));
-
-                    activeWidgets = activeWidgetsSaved.split(',');
-                    console.log(activeWidgets + typeof(activeWidgets));
-                    //!---
-
                 } else {
+
                     let activeWidgets = [];
                     activeWidgets.push(elementID);
                     localStorage.setItem('localWidgets', activeWidgets);
-                    console.log("localWidgets was NOT present" + activeWidgets);
                 }
             }
             else {
@@ -130,13 +138,9 @@ function turnWidgetOn(widgetID) {
 function turnWidgetOff(widgetID) {
     var elementID = widgetID;
     let activeWidgetsSaved = localStorage.getItem('localWidgets');
-    console.log("localWidgets was present" + activeWidgetsSaved + typeof(activeWidgetsSaved));
     let activeWidgets = activeWidgetsSaved.split(',');
     activeWidgets.pop(elementID);
     localStorage.setItem('localWidgets', activeWidgets);
-    //---
-    activeWidgetsSaved = localStorage.getItem('localWidgets');
-    console.log("After POP" + activeWidgetsSaved + typeof(activeWidgetsSaved));
-    //!---
+
     return $("#" + elementID).remove();
 }
