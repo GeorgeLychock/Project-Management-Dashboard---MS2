@@ -89,7 +89,7 @@ function storageAvailable(type) {
 
 /* Widget Library ON/OFF Buttons */
 function turnWidgetOn(widgetID) {
-    
+
     let elementID = widgetID;
     let title;
     let description;
@@ -98,25 +98,25 @@ function turnWidgetOn(widgetID) {
 
     // checking to see if the widget panel has been activated yet
     if ($("#" + elementID).length)  {
-        // No: do nothing but alert user
+        // NO: do nothing but alert user
         return alert("Project already active.");
     } else {
-        //yes: get widget JSON data and display panel (widget) in the dashboard viewport
+        //YES: get widget JSON data; display panel (widget) in the dashboard viewport; update localStorage var
         getData(url, function(data) {
 
             description = data.description;
             title = data.name;
             livesite = data.livesite;
 
-            // Check if localStorage is usable
+            // Check if localStorage is enabled
             if (storageAvailable('localStorage')) {
-                // YES: We can use localStorage, Add widget ID to the localStorage array and store
+                // YES: We can use localStorage, check if localStorage var has been initiated
                 if (localStorage.localWidgets) {
-
-                    let activeWidgetsSaved = localStorage.getItem('localWidgets');
+                    // YES: Add widget ID to the localStorage string and store
+                    let activeWidgetsSaved = localStorage.getItem('localWidgets'); //returns a string, comma delimited
                     let activeWidgets = activeWidgetsSaved.split(',');
                     activeWidgets.push(elementID);
-                    localStorage.setItem('localWidgets', activeWidgets);
+                    localStorage.setItem('localWidgets', activeWidgets); //stored as a string, comma delimited
 
                 } else {
 
@@ -124,8 +124,7 @@ function turnWidgetOn(widgetID) {
                     activeWidgets.push(elementID);
                     localStorage.setItem('localWidgets', activeWidgets);
                 }
-            }
-            else {
+            } else {
                 // NO: no localStorage
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
             }
