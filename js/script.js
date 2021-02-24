@@ -30,15 +30,15 @@ function createActiveWidgets() {
 }
 
 function createLibraryButtons() {
-
+    // The below variable is the entry point/manifest of all data avaiable for the widgets; its possible these values would be created with a Create Project app and stored in a database. They are hard coded here since db calls are out of scope.
     let widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
 
     for (let i in widgetIDs) {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetIDs[i] + ".json";
 
         getData(url, function(data) {
-            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="btn-1">Project: ${data.name} <button onclick="turnWidgetOn('${data.pID}')">ON BTN</button>
-            <button onclick="turnWidgetOff('${data.pID}')">OFF BTN</button></div>`);
+            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.pID}"><button onclick="turnWidgetOn('${data.pID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button>
+            <button onclick="turnWidgetOff('${data.pID}')">OFF</button> ${data.name}</div>`);
         });
     }    
 }
@@ -128,8 +128,8 @@ function turnWidgetOn(widgetID) {
                 // NO: no localStorage
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
             }
-
-            return $("#active-widgets-data").append(`<div id="${elementID}" class="col-3 max-height-400"><div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div></div>`);
+            // This chaining of jQuery calls seems to work, although I haven't found any documnetation to date to support it's correct
+            return $("#active-widgets-data").append(`<div id="${elementID}" class="col-3 max-height-400"><div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div></div>`), $("#widget-btn-" + elementID).remove();
         });
     }
 }
