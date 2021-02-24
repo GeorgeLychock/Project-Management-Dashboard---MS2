@@ -128,18 +128,32 @@ function turnWidgetOn(widgetID) {
                 // NO: no localStorage
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
             }
-            // This chaining of jQuery calls seems to work, although I haven't found any documnetation to date to support it's correct
-            return $("#active-widgets-data").append(`<div id="${elementID}" class="col-3 max-height-400"><div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div></div>`), $("#widget-btn-" + elementID).remove();
+            // This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
+            return $("#active-widgets-data").append(`
+                <div id="${elementID}" class="col-3 max-height-400">
+                    <button onclick="turnWidgetOff('${data.pID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                    <div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div>
+                </div>
+            `), $("#widget-btn-" + elementID).remove();
         });
     }
 }
 
 function turnWidgetOff(widgetID) {
     var elementID = widgetID;
+    // remove widget from localStorage
     let activeWidgetsSaved = localStorage.getItem('localWidgets');
     let activeWidgets = activeWidgetsSaved.split(',');
     activeWidgets.pop(elementID);
     localStorage.setItem('localWidgets', activeWidgets);
 
+    // **** This should be replaced by a function, see duplication in buildLibraryButtons(), Build Button and add to Library
+    var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+    getData(url, function(data) {
+        return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.pID}"><button onclick="turnWidgetOn('${data.pID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button>
+        <button onclick="turnWidgetOff('${data.pID}')">OFF</button> ${data.name}</div>`);
+    });
+
+    // Remove panel from dashboard
     return $("#" + elementID).remove();
 }
