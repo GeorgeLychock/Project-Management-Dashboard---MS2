@@ -13,32 +13,52 @@ function createActiveWidgets() {
         let elementID;
         let title;
         let description;
-        let livesite;
+        let liveSite;
 
         for (let i in activeWidgets) {
 
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
             getData(url, function (data) {
-                elementID = data.pID;
+                elementID = data.widgetID;
                 description = data.description;
                 title = data.name;
-                livesite = data.livesite;
-                return $("#active-widgets-data").append(`<div id="${elementID}" class="col-3 max-height-400"><div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div></div>`);
+                dueDate = data.duedate;
+                liveSite = data.livesite;
+                /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
+                return $("#active-widgets-data").append(`
+                    <div id="${elementID}" class="col-3 max-height-400">
+                        <button onclick="turnWidgetOff('${data.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                        <div class="active-widget-3col bcolor-2">
+                            <h3>${title}</h3>
+                            <div>Project Due Date:${dueDate}</div>
+                            <div>Project Owner:${data.owner}</div>
+                            <div>${description}</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${data.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${data.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${data.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+                            </div>
+                            <div><a href="${liveSite}" target="_blank">Development Site Link</a></div>
+                        </div>
+                    </div>`);
             });
         }
     }
 }
 
 function createLibraryButtons() {
-    // The below variable is the entry point/manifest of all data avaiable for the widgets; its possible these values would be created with a Create Project app and stored in a database. They are hard coded here since db calls are out of scope.
+    // The below variable contains the unique IDs for the data stream avaiable for each widget; its possible these values would be created with a Create Project or Add Third Party Widget app and stored in a database. They are hard coded here since db calls are out of scope.
     let widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
 
     for (let i in widgetIDs) {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetIDs[i] + ".json";
 
         getData(url, function(data) {
-            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.pID}"><button onclick="turnWidgetOn('${data.pID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button>
-            <button onclick="turnWidgetOff('${data.pID}')">OFF</button> ${data.name}</div>`);
+            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
         });
     }    
 }
@@ -106,7 +126,7 @@ function turnWidgetOn(widgetID) {
 
             description = data.description;
             title = data.name;
-            livesite = data.livesite;
+            liveSite = data.livesite;
 
             // Check if localStorage is enabled
             if (storageAvailable('localStorage')) {
@@ -131,8 +151,8 @@ function turnWidgetOn(widgetID) {
             // This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
             return $("#active-widgets-data").append(`
                 <div id="${elementID}" class="col-3 max-height-400">
-                    <button onclick="turnWidgetOff('${data.pID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
-                    <div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${livesite}</p></div>
+                    <button onclick="turnWidgetOff('${data.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                    <div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${liveSite}</p></div>
                 </div>
             `), $("#widget-btn-" + elementID).remove();
         });
@@ -150,8 +170,7 @@ function turnWidgetOff(widgetID) {
     // **** This should be replaced by a function, see duplication in buildLibraryButtons(), Build Button and add to Library
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     getData(url, function(data) {
-        return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.pID}"><button onclick="turnWidgetOn('${data.pID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button>
-        <button onclick="turnWidgetOff('${data.pID}')">OFF</button> ${data.name}</div>`);
+        return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
     });
 
     // Remove panel from dashboard
