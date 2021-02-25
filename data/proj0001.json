@@ -1,10 +1,13 @@
 {
 	"name": "George Lychock Career Website",
-	"pID": "proj0001",
+	"widgetID": "proj0001",
 	"startdate": "2020-12-09T13:50:51.644000Z",
 	"duedate": "2021-06-09T13:50:51.644000Z",
 	"description": "This project updates my old website with a new Bootstrap4 layout.",
-	"percentcomplete": ".8",
+	"owner": "George Lychock",
+	"percentcomplete": "80",
+	"cpi": "1.06",
+	"sv": ".99",
 	"livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
 	"milestones": [
 		["2020-12-09T13:50:51.644000Z", "Project Launch"],

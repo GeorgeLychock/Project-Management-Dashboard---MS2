@@ -1,10 +1,13 @@
 {
 	"name": "George's To-Do List",
-	"pID": "proj0004",
+	"widgetID": "proj0004",
 	"startdate": "2020-12-09T13:50:51.644000Z",
 	"duedate": "2021-06-09T13:50:51.644000Z",
 	"description": "So much to do, so little time.",
-	"percentcomplete": ".8",
+	"owner": "George Lychock",
+	"percentcomplete": "70",
+	"cpi": ".06",
+	"sv": ".59",
 	"livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
 	"milestones": [
 		["2020-12-09T13:50:51.644000Z", "Project Launch"],

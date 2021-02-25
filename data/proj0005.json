@@ -1,10 +1,13 @@
 {
 	"name": "Project Management Website",
-	"pID": "proj0005",
+	"widgetID": "proj0005",
 	"startdate": "2020-12-09T13:50:51.644000Z",
 	"duedate": "2021-06-09T13:50:51.644000Z",
 	"description": "This project is for creating this dashboard.",
-	"percentcomplete": ".2",
+	"owner": "George Lychock",
+	"percentcomplete": "20",
+	"cpi": ".06",
+	"sv": ".59",
 	"livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
 	"milestones": [
 		["2020-12-09T13:50:51.644000Z", "Project Launch"],
