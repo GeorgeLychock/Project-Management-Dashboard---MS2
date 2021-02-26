@@ -3,7 +3,7 @@
 #### JavaScript/jQuery/API/DOM Module
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/jquery-module/index.html)
 ### Use Case:
-A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to do list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
+A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to-do-list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
@@ -49,10 +49,11 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 [widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 
 
-### Technical Contraints
--   The site will not have access to a database so all project data will come from JSON files to simulate widget data streams.
-
--   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget; its possible these values would be created with a Create Project or Add Third Party Widget app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js
+### Technical and Scope Contraints
+-   The site will not have access to a database. All project data will come from JSON files to simulate widget data streams.
+-   The project will consist of just a landing page/dashboard; no secondary pages will be active. The focus of the project's first release is to address how the user can configure their primary viewport: a summary of all their projects, displayed in a dashboard.
+-   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget available to the dashboard; its possible these values would be created with a Create Project module or Third Party app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js file:
+`        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];`
 
 ### Requirements
 -   Widgets Library Viewport
