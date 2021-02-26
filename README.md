@@ -22,13 +22,14 @@ As a logged in project manager, I want to Add or Remove project detail windows f
     -   I can Add or Remove project detail windows from the dashboard
 
 ### Wireframes
--   Desktop and Tablet Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
+-   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
+-   Active Widget Panel Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/active-panel-desktop-01.png)
 
 ### Data Structure and Flow
--   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since most APIs will supply data in that way:
+-   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
     ```{
         "name": "George Lychock Career Website",
-        "pID": "proj0001",
+        "widgetID": "proj0001",
         "startdate": "2020-12-09T13:50:51.644000Z",
         "duedate": "2021-06-09T13:50:51.644000Z",
         "description": "This project updates my old website with a new Bootstrap4 layout.",
@@ -42,14 +43,16 @@ As a logged in project manager, I want to Add or Remove project detail windows f
         ]
     }```
 
-The pID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
+The widgetID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
 
--   I used a visual to help figure out how to create and retain the pID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the pIDs so that the Dashboard can be built again upoin the app being relaunched.
-[pID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
+-   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the pIDs so that the Dashboard can be built again upoin the app being relaunched.
+[widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 
 
 ### Technical Contraints
 -   The site will not have access to a database so all project data will come from JSON files to simulate widget data streams.
+
+-   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget; its possible these values would be created with a Create Project or Add Third Party Widget app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js
 
 ### Requirements
 -   Widgets Library Viewport
