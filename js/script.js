@@ -51,16 +51,36 @@ function createActiveWidgets() {
 }
 
 function createLibraryButtons() {
-    // The below variable contains the unique IDs for the data stream avaiable for each widget; its possible these values would be created with a Create Project or Add Third Party Widget app and stored in a database. They are hard coded here since db calls are out of scope.
-    let widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
 
-    for (let i in widgetIDs) {
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetIDs[i] + ".json";
+    // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
+
+    if (localStorage.localWidgets) {
+
+        //*1 Search " *Foot Note 1 " in Technical Constraints section of README.md
+
+        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+        let activeWidgetsSaved = localStorage.getItem('localWidgets');
+        var widgetIDsSaved = activeWidgetsSaved.split(',');
+        var widgetBuildIDs = [];
+
+        //Search the locally stored active widget IDs and make an array of available widgets that are not already active
+
+        for (let i in widgetIDs) {
+            if (widgetIDsSaved.includes(widgetIDs[i]) == false) {
+                widgetBuildIDs.push(widgetIDs[i]);
+            }
+        }
+    } else {
+        var widgetBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all widgets are available in the library
+    }
+
+    for (let i in widgetBuildIDs) {
+        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
 
         getData(url, function(data) {
             return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
         });
-    }    
+    }
 }
 
 /* Get data from JSON file  */
@@ -108,9 +128,9 @@ function storageAvailable(type) {
 /* /CODE REUSE - MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
 
 /* Widget Library ON/OFF Buttons */
-function turnWidgetOn(widgetID) {
+function turnWidgetOn(widgetIdOn) {
 
-    let elementID = widgetID;
+    let elementID = widgetIdOn;
     let title;
     let description;
     let livesite;
@@ -148,7 +168,7 @@ function turnWidgetOn(widgetID) {
                 // NO: no localStorage
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
             }
-            // This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
+            // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
             return $("#active-widgets-data").append(`
                 <div id="${elementID}" class="col-3 max-height-400">
                     <button onclick="turnWidgetOff('${data.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
@@ -159,8 +179,8 @@ function turnWidgetOn(widgetID) {
     }
 }
 
-function turnWidgetOff(widgetID) {
-    var elementID = widgetID;
+function turnWidgetOff(widgetIdOff) {
+    var elementID = widgetIdOff;
     // remove widget from localStorage
     let activeWidgetsSaved = localStorage.getItem('localWidgets');
     let activeWidgets = activeWidgetsSaved.split(',');

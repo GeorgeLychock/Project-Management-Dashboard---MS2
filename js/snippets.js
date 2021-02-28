@@ -212,3 +212,65 @@ function storageAvailable(type) {
                 // NO: no localStorage
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
               }
+
+
+
+              function createLibraryButtons() {
+                // The below variable contains the unique IDs for the data stream avaiable for each widget; its possible these values would be created with a Create Project or Add Third Party Widget app and stored in a database. They are hard coded here since db calls are out of scope.
+                let widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+            
+                for (let i in widgetIDs) {
+                    var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetIDs[i] + ".json";
+            
+                    getData(url, function(data) {
+                        return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
+                    });
+                }    
+            }
+
+
+  //Search the locally stored active widget IDs and make an array the thos available widgets that are not already active so to display only buttons for widegts that have not been activated to the dashbaord
+  for (let i in widgetIDsSaved) {
+    if (widgetIDs.includes(widgetIDsSaved[i])) {
+        //find the index of this value and add value to the array that will build the library buttons
+        let idValue = widgetIDsSaved[i];
+        console.log(idValue);
+        let widgetIdIndex = widgetIDsSaved.indexOf(idValue);
+        console.log(widgetIdIndex);
+        widgetBuildIDs.splice(widgetIdIndex, 1, idValue);
+        console.log("I'm almost there");
+    } else {
+        console.log("I craped out");
+    }
+}
+
+
+
+    // retrieve widget IDs that have already been activated to the dashboard, if available
+    if (localStorage.localWidgets) {
+        //*1 Search " *Foot Note 1 " in Technical Constraints section of README.md
+        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+        let activeWidgetsSaved = localStorage.getItem('localWidgets');
+        var widgetIDsSaved = activeWidgetsSaved.split(',');
+        var widgetBuildIDs = [];
+
+        console.log(widgetIDsSaved, typeof(widgetIDsSaved));
+        console.log(widgetBuildIDs, typeof(widgetBuildIDs));
+
+
+        //Search the locally stored active widget IDs and make an array the thos available widgets that are not already active so to display only buttons for widegts that have not been activated to the dashbaord
+            for (let i in widgetIDs) {
+                if (widgetIDsSaved.includes(widgetIDs[i]) == false) {
+                    console.log(widgetIDs[i]);
+                    widgetBuildIDs.push(widgetIDs[i]);
+                    console.log(widgetBuildIDs);
+                } else {
+                    console.log("I craped out");
+                }
+            }
+
+        console.log(widgetBuildIDs, typeof(widgetBuildIDs));
+
+    } else {
+        var widgetBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+    }
