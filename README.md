@@ -1,7 +1,7 @@
 ## George Lychock - MS2 Project: Project Management Dashboard
 ### Salem State University Frontend Software Developer Certificate
 #### JavaScript/jQuery/API/DOM Module
--   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/jquery-module/index.html)
+-   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/ms2/index.html)
 ### Use Case:
 A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to-do-list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility click various widgets on, and off, the main dashboard viewport.
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
@@ -45,7 +45,7 @@ As a logged in project manager, I want to Add or Remove project detail windows f
 
 The widgetID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
 
--   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the pIDs so that the Dashboard can be built again upoin the app being relaunched.
+-   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the widgetIDs so that the Dashboard can be built again upon the app being relaunched.
 [widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 
 
@@ -74,6 +74,7 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
     -    cog should activate a modal window
 -   Persistent Settings
     -   Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
+    -   Ability to 'clear' the dashboard (clear localStorage)
 
 ### Technical Requirements for this project:
 -   Use template literals
@@ -82,8 +83,6 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   Store data in localStorage
 -   Limit duplication of code, use functions effectively
 -   Write Jasmine tests when possible, time permitted
-
-
 
 ### Future Features
 -   A Calendar widget
