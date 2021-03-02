@@ -23,7 +23,7 @@ function createActiveWidgets() {
                 /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
                 return $("#active-widgets-data").append(`
                     <div id="${elementID}" class="col-3 pmd-max-height-400">
-                        <button onclick="turnWidgetOff('${widgetData.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                        <button class="pmd-btn-01 onclick="turnWidgetOff('${widgetData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
                         <div class="pmd-active-widget-3col pmd-bcolor-2">
                             <h3>${widgetData.name}</h3>
                             <div>Project Due Date:${widgetData.duedate}</div>
@@ -74,7 +74,7 @@ function createLibraryButtons() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
         //Build buttons
         getData(url, function(data) {
-            return $("#widgets-library").append(`<div class="pmd-hcolor-2 pmd-btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left pmd-acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
+            return $("#widgets-library").append(`<div class="pmd-hcolor-2 pmd-btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="bi bi-arrow-left-square pmd-acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
         });
     }
 }
@@ -163,7 +163,7 @@ function turnWidgetOn(widgetIdOn) {
             // Add widget to the dashboard
             return $("#active-widgets-data").append(`
                     <div id="${elementID}" class="col-3 pmd-max-height-400">
-                        <button onclick="turnWidgetOff('${elementID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                        <button onclick="turnWidgetOff('${elementID}')"><i class="bi bi-arrow-right-square pmd-acolor-2" aria-hidden="true"></i></button>
                         <div class="pmd-active-widget-3col pmd-bcolor-2">
                             <h3>${widgetData.name}</h3>
                             <div>Project Due Date:${widgetData.duedate}</div>

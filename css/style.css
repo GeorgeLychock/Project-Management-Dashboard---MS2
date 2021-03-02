@@ -5,33 +5,26 @@
 
 /* ######## CSS TOC - In Order of Appearance: */
 /* @imports */
-/* Base Element */
+/* Base Elements */
 /* Common Text Colors */
-/*Common Background Colors*/
-/*Common Button Colors*/
-/* Placeholders */
+/* Common Background Colors*/
+/* Common Button Colors*/
+/* Spacers */
 /* Font Styles */
 /* Common Positioning */
 /* Common Other*/
+/* Buttons */
+/* Nav */
+/* Header */
+/* Widget Library */
 
-/* Navbar */
+/* Dashboard */
+
+
 /* Banner */
-/* Hero */
-/* Nav Icon Home */
-/* Nav Icon - Secondary Page */
-/* Content Area - Secondary Page */
-/* Work History */
-/* Skills */
-/* Profile */
-/* Portfolio */
-/* Education */
-/* Social Link */
-/* Home Profile Section */
-/* Home Credentials Section */
-/* Home Site Links Section */
-/* Home Social Links Section */
-/* Home Home Footer Section */
+/* Social Links */
 /* @media */
+
 /*########## /CSS TOC */
 
 
@@ -62,7 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-pcolor-1 {color:whitesmoke;}
 .pmd-pcolor-2 {}
 /* link colors */
-.pmd-acolor-1 {color:whitesmoke;}
+.pmd-acolor-1 {color:#707070;}
+
 .pmd-acolor-2 {color:#fa0;}
 .pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
@@ -83,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-btncolor-1 {background-color:green;}
 .pmd-btncolor-2 {background-color:red;}
 
-/* Placeholders */
+/* Spacers */
 .pmd-max-height-400 {
     max-height: 400px;
 }
@@ -121,10 +115,32 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+/* Buttons and Icons*/
+.pmd-icon-01 {
+    border: none;
 
+}
+
+.pmd-btn-01 {
+    border: none;
+    
+}
+
+/* Banner */
 
 /* Nav */
+.pmd-nav-main {
+    margin: 10px 0 20px 0px;
+    padding: 10px 10px 10px 20px;
+    border: solid 1px #707070;
+    border-radius: 20px;
+}
 /* Header */
+.pmd-header {
+    padding: 10px 10px 10px 20px;
+    border: solid 1px #707070;
+    border-radius: 50px;
+}
 /* Widget Library */
 
 /* Dashboard */
@@ -132,3 +148,9 @@ h1, h2, h3, h4, h5, h6 {
 margin: 10px;
 padding: 5px;
 }
+
+
+/* Social Links */
+
+
+/* @media */
