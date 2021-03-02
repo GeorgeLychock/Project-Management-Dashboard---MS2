@@ -8,18 +8,47 @@ A limited number of widget view settings will be available from the widget windo
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
 ### User Stories:
-
-“As a [persona], I [want to], [so that].”
 #### Story 1
 As a logged in project manager, I want to see key project status metrics on my current projects, so that I have a clear, one-stop view of all my projects' status.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
-    -   I can see further detail of a given project in a larger, more prominent Project Dashboard.
+    -   I can see further detail of a given project in a larger, more prominent Dashboard.
     
 #### Story 2
-As a logged in project manager, I want to Add or Remove project detail windows from the Project Dashboard
-    -   I can Add or Remove project detail windows from the dashboard
+As a logged in project manager, I want to Add or Remove project detail panels from the Dashboard
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   I can Add a project detail panel from the dashboard
+    -   I can Remove a project detail panel
+
+#### Story 3
+As a logged in project manager, I want to see project details of the projects I make active on the Dashboard
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   I can view project Title/Name
+    -   I can view project Due Date
+    -   I can view the project Owner
+    -   I can view the project Description
+
+#### Story 4
+As a logged in project manager, I want to see project KPIs of the projects I make active on the Dashboard
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   I can view project percent complete to date
+    -   I can view project Cost Performanace Index (CPI) to date
+    -   I can view the project Schedule Variance (SV) to date
+
+#### Story 5
+As a logged in project manager, when I return to the site, all widgets I made active are still active on the Dashboard
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   Active widegts are present when I return to the site
+
+#### Story 6
+As a logged in project manager, I want the ability to change the color scheme of the Dashboard from light to dark
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   The color scheme is light when I first log in, view Dashboard
+    -   I can change the color Scheme using a button to a dark scheme
+    -   I can change the scheme back to light
+    -   The color scheme I used last will be present when I come back to the site
+
 
 ### Wireframes
 -   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
@@ -96,6 +125,7 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   A Calendar widget
 -   A To-Do List widget
 -   Ability to shuffle (re-position) the dashboard panels
+-   Add a status indicator to the project panels.
 
 ### Release Strategy
 -   Sprint 1
