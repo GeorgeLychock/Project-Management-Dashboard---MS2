@@ -74,7 +74,7 @@ function createLibraryButtons() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
         //Build buttons
         getData(url, function(data) {
-            return $("#widgets-library").append(`<div class="pmd-hcolor-2 pmd-btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="bi bi-arrow-left-square pmd-acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
+            return $("#widgets-library").append(`<div class="pmd-hcolor-2 pmd-btncolor-1" id="widget-btn-${data.widgetID}"><button class="pmd-btn-01 onclick="turnWidgetOn('${data.widgetID}')"><i class="bi bi-arrow-left-square pmd-acolor-1" aria-hidden="true"></i></button> ${data.name}</div>`);
         });
     }
 }

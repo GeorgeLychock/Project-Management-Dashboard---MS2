@@ -45,8 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links.pmd- NOTE! All :hover colors are defined at the specific selector style further below */
 /*header colors*/
-.pmd-hcolor-1 {color:#fff;}
-.pmd-hcolor-2 {color:whitesmoke;}
+.pmd-hcolor-1 {color:#1792bb;}
+.pmd-hcolor-2 {color:#000;}
 /*nav colors */
 .pmd-ncolor-1 {color:#4dd2ff;}
 .pmd-ncolor-2 {color:#fff;}
@@ -71,10 +71,11 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-5 {background-color:#000;}
 .pmd-bcolor-nav {background-color:#fcc;}
 .pmd-bcolor-foot {background-color:#fda;}
+.pmd-bcolor-banner {background-color:rgba(0, 128, 64, .25);}
 
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color:green;}
+.pmd-btncolor-1 {background-color: #80dfff;}
 .pmd-btncolor-2 {background-color:red;}
 
 /* Spacers */
@@ -82,8 +83,8 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 400px;
 }
 
-.pmd-height-800 {
-    height: 800px;
+.pmd-height-600 {
+    height: 600px;
 }
 
 /* Font Styles */
@@ -98,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-font75 {
-    font-size: .pmd-75rem;
+    font-size: .75rem;
 }
 
 /* Common Positioning */
@@ -115,6 +116,12 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+
+/* Main Structure */
+.pmd-row-main {
+    margin: 0;
+}
+
 /* Buttons and Icons*/
 .pmd-icon-01 {
     border: none;
@@ -127,10 +134,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Banner */
+.pmd-banner {
+    margin: 10px;
+    padding: 2px 5px;
+    border: solid 1px #707070;
+    border-radius: 20px;
+}
 
 /* Nav */
 .pmd-nav-main {
-    margin: 10px 0 20px 0px;
+    margin: 10px 0 10px 0px;
     padding: 10px 10px 10px 20px;
     border: solid 1px #707070;
     border-radius: 20px;
@@ -139,14 +152,19 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-header {
     padding: 10px 10px 10px 20px;
     border: solid 1px #707070;
-    border-radius: 50px;
+    border-radius: 25px;
 }
 /* Widget Library */
+.pmd-w-library {
+    padding: 20px 10px 10px 10px;
+    border: solid 1px #707070;
+    border-radius: 25px;
+}
 
 /* Dashboard */
 .pmd-active-widget-3col {
-margin: 10px;
-padding: 5px;
+    margin: 10px;
+    padding: 5px;
 }
 
 
