@@ -128,15 +128,28 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   Add a status indicator to the project panels.
 
 ### Release Strategy
--   Sprint 1
+-   Sprint 1 2/21 - 2/27
     -   Make the ON/OFF buttons only open or close once
     -   Create multiple library buttons
     -   Create code to remove a button after the panel is activated to the dashboard
     -   Create code to add a button to the library after the panel is removed from the dashboard
     -   Figure out how to do local storage
--   Sprint 2
-    -   
+    -   Code the Rebuild Library Buttons function from the localStorage
+    -   Add Progress Bar to project panels
+    -   Wireframe active project panels
 
+-   Sprint 2 2/28 -3/6
+    -   Create Look and Feel
+    -   Create a light and dark shade color scheme for overall appearance
+    -   Add dashboard settings button
+    -   Add clear dashboard button (in dashboard settings?)
+    -   wireframe mobile home page
+
+-   Sprint 3 3/7 -3/13
+    -   Add a third-party widget to the library
+    -   Style widget panels
+    -   Style Progress Bar to project panels
+    -   Make a function for the widget panel build return w .append
 
 ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widet viewport
