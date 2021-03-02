@@ -150,15 +150,16 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
 
-### Code
+### Code Credits
 -   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
-    Find code use indicated by "CODE REUSE - Code Institute, jQuery/API Module"
+    Find code use indicated by "CODE REUSE - XMLHttpRequest Callback"
         `gd(JSON.parse(this.responseText));`
 
--   The localStorage check code in script.js is from MDN: [CODE REUSE - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and/or has it turned on.
+-   The localStorage check code in script.js is from MDN: [CODE REUSE - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on.
+    Find code use indicated by "CODE REUSE - localStorage Check "
 
--   The skills progress bar code on the Skill Page came from Code Institute, User Centric Module, Full Stack Software Deveveloper Program:
-    Find code use indicated by "CODE REUSE - Skills Progress Bar User Centric Module, Code Institute"
+-   The skills progress bar code on the Skill Page came from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/:
+    Find code use indicated by "CODE REUSE - Progress Bar"
         `<div class="row progress-section">`
            `<div class="col">`
                 `<div class="progress">`

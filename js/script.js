@@ -95,7 +95,7 @@ function createLibraryButtons() {
 }
 
 /* Get data from JSON file  */
-/* CODE REUSE - Code Institute, jQuery/API Module  */
+/* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
     function getData(url, gd) {
 
        var xhr = new XMLHttpRequest();
@@ -108,9 +108,9 @@ function createLibraryButtons() {
        xhr.open("GET", url);
        xhr.send();
     }
-/* /CODE REUSE - Code Institute, jQuery/API Module  */
+/* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
 
-/* CODE REUSE - MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
+/* CODE REUSE - localStorage Check MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
 /* Checks to make sure localStorage is usuable in the browser */
 function storageAvailable(type) {
     var storage;
