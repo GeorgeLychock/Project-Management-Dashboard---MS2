@@ -41,6 +41,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'Montserrat', 'FreeSans', sans-serif;
+    font-weight: 400;
 }
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links.pmd- NOTE! All :hover colors are defined at the specific selector style further below */
@@ -53,11 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-ncolor-3 {color:#fa0;}
 /* main text colors */
 .pmd-pcolor-1 {color:whitesmoke;}
-.pmd-pcolor-2 {}
+.pmd-pcolor-2 {color:#000;}
 /* link colors */
 .pmd-acolor-1 {color:#707070;}
+.pmd-acolor-2 {color:#000;}
 
-.pmd-acolor-2 {color:#fa0;}
 .pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
 
@@ -75,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color: #80dfff;}
-.pmd-btncolor-2 {background-color:red;}
+.pmd-btncolor-1 {background-color: rgba(0, 191, 255, .25);}
+.pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
 .pmd-max-height-400 {
@@ -111,6 +112,10 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
 }
 
+.pmd-dinline {
+    display: inline;
+}
+
 /* Common Other */
 .pmd-no-txt-dec {
     text-decoration: none;
@@ -125,18 +130,26 @@ h1, h2, h3, h4, h5, h6 {
 /* Buttons and Icons*/
 .pmd-icon-01 {
     border: none;
-
+    background-color: transparent;
 }
 
-.pmd-btn-01 {
+.pmd-icon-02 {
     border: none;
-    
+    display: inline;
+    float: right;
+    background-color: transparent;
+}
+
+.pmd-btn-library {
+    margin: 5px;
+    padding: 2px 5px;
+    border-radius: 20px;
 }
 
 /* Banner */
 .pmd-banner {
     margin: 10px;
-    padding: 2px 5px;
+    padding: 2px 15px;
     border: solid 1px #707070;
     border-radius: 20px;
 }
@@ -167,6 +180,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px;
 }
 
+/* Footer */
+.pmd-footer {
+    margin: 10px 0 10px 0px;
+    padding: 10px 10px 10px 20px;
+    border: solid 1px #707070;
+    border-radius: 20px;
+}
 
 /* Social Links */
 
