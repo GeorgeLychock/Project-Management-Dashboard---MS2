@@ -1,5 +1,6 @@
 /* george lychock MS2 stylesheet */
-/* NOTES: */
+/* NOTES:
+    - Except for base html elements and colors, all other custom selectors names begin with "pmd" to make it easier to see in the markup */
 
 
 /* ######## CSS TOC - In Order of Appearance: */
@@ -40,7 +41,7 @@
 
 /* Base Elements */
 body {
-    background-color: #789dbf;
+    background-color: #fff;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -49,72 +50,74 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', 'FreeSans', sans-serif;
 }
 
-/* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links. NOTE! All :hover colors are defined at the specific selector style further below */
+/* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links.pmd- NOTE! All :hover colors are defined at the specific selector style further below */
 /*header colors*/
-.hcolor-1 {color:#fff;}
-.hcolor-2 {color:whitesmoke;}
+.pmd-hcolor-1 {color:#fff;}
+.pmd-hcolor-2 {color:whitesmoke;}
 /*nav colors */
-.ncolor-1 {color:#4dd2ff;}
-.ncolor-2 {color:#fff;}
-.ncolor-3 {color:#fa0;}
+.pmd-ncolor-1 {color:#4dd2ff;}
+.pmd-ncolor-2 {color:#fff;}
+.pmd-ncolor-3 {color:#fa0;}
 /* main text colors */
-.pcolor-1 {color:whitesmoke;}
-.pcolor-2 {}
+.pmd-pcolor-1 {color:whitesmoke;}
+.pmd-pcolor-2 {}
 /* link colors */
-.acolor-1 {color:whitesmoke;}
-.acolor-2 {color:#fa0;}
-.acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
-.acolor-3 {color:#4dd2ff;}
+.pmd-acolor-1 {color:whitesmoke;}
+.pmd-acolor-2 {color:#fa0;}
+.pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
+.pmd-acolor-3 {color:#4dd2ff;}
 
 /*Common Background Colors*/
-.bcolor-1 {background-color:#fff;}
-.bcolor-2 {background-color:whitesmoke;}
-.bcolor-3 {background-color:#999;}
-.bcolor-4 {background-color:#666;}
-.bcolor-5 {background-color:#000;}
-.bcolor-nav {background-color:#fcc;}
-.bcolor-foot {background-color:#fda;}
-.bcolor-head {background-color:#acc;}
+.pmd-bcolor-1 {background-color:#fff;}
+.pmd-bcolor-head {background-color: rgba(50, 50, 50, .05);}
+
+.pmd-bcolor-2 {background-color:whitesmoke;}
+.pmd-bcolor-3 {background-color:#999;}
+.pmd-bcolor-4 {background-color:#666;}
+.pmd-bcolor-5 {background-color:#000;}
+.pmd-bcolor-nav {background-color:#fcc;}
+.pmd-bcolor-foot {background-color:#fda;}
+
 
 /*Common Button Colors*/
-.btncolor-1 {background-color:green;}
-.btncolor-2 {background-color:red;}
+.pmd-btncolor-1 {background-color:green;}
+.pmd-btncolor-2 {background-color:red;}
 
 /* Placeholders */
-.max-height-400 {
+.pmd-max-height-400 {
     max-height: 400px;
 }
 
-.height-800 {
+.pmd-height-800 {
     height: 800px;
 }
 
 /* Font Styles */
-.uppercase {
+.pmd-uppercase {
     text-transform: uppercase;
     font-family: 'Montserrat', 'FreeSans', sans-serif;
 }
 
-.lowercase {
+.pmd-lowercase {
     text-transform: lowercase;
     font-family: 'Montserrat', 'FreeSans', sans-serif;
 }
 
-.font75 {
-    font-size: .75rem;
+.pmd-font75 {
+    font-size: .pmd-75rem;
 }
 
 /* Common Positioning */
-.text-center {
+.pmd-text-center {
     text-align: center;
 }
 
-.float-right {
+.pmd-float-right {
     float: right;
 }
 
 /* Common Other */
-.no-txt-dec {
+.pmd-no-txt-dec {
     text-decoration: none;
 }
 
@@ -125,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Widget Library */
 
 /* Dashboard */
-.active-widget-3col {
+.pmd-active-widget-3col {
 margin: 10px;
 padding: 5px;
 }

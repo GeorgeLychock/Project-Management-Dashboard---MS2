@@ -11,38 +11,34 @@ function createActiveWidgets() {
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
         let activeWidgets = activeWidgetsSaved.split(',');
         let elementID;
-        let title;
-        let description;
-        let liveSite;
 
         for (let i in activeWidgets) {
 
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
             getData(url, function (data) {
-                elementID = data.widgetID;
-                description = data.description;
-                title = data.name;
-                dueDate = data.duedate;
-                liveSite = data.livesite;
+
+                var widgetData = data;
+                elementID = widgetData.widgetID;
+                
                 /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
                 return $("#active-widgets-data").append(`
-                    <div id="${elementID}" class="col-3 max-height-400">
-                        <button onclick="turnWidgetOff('${data.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
-                        <div class="active-widget-3col bcolor-2">
-                            <h3>${title}</h3>
-                            <div>Project Due Date:${dueDate}</div>
-                            <div>Project Owner:${data.owner}</div>
-                            <div>${description}</div>
+                    <div id="${elementID}" class="col-3 pmd-max-height-400">
+                        <button onclick="turnWidgetOff('${widgetData.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                        <div class="pmd-active-widget-3col pmd-bcolor-2">
+                            <h3>${widgetData.name}</h3>
+                            <div>Project Due Date:${widgetData.duedate}</div>
+                            <div>Project Owner:${widgetData.owner}</div>
+                            <div>${widgetData.description}</div>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="${data.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${widgetData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${data.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${widgetData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${data.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${widgetData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
                             </div>
-                            <div><a href="${liveSite}" target="_blank">Development Site Link</a></div>
+                            <div><a href="${widgetData.liveSite}" target="_blank">Development Site Link</a></div>
                         </div>
                     </div>`);
             });
@@ -76,9 +72,9 @@ function createLibraryButtons() {
 
     for (let i in widgetBuildIDs) {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
-
+        //Build buttons
         getData(url, function(data) {
-            return $("#widgets-library").append(`<div class="hcolor-2 btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
+            return $("#widgets-library").append(`<div class="pmd-hcolor-2 pmd-btncolor-1" id="widget-btn-${data.widgetID}"><button onclick="turnWidgetOn('${data.widgetID}')"><i class="fas fa-angle-left pmd-acolor-2" aria-hidden="true"></i></button> ${data.name}</div>`);
         });
     }
 }
@@ -131,9 +127,6 @@ function storageAvailable(type) {
 function turnWidgetOn(widgetIdOn) {
 
     let elementID = widgetIdOn;
-    let title;
-    let description;
-    let livesite;
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
 
     // checking to see if the widget panel has been activated yet
@@ -144,9 +137,7 @@ function turnWidgetOn(widgetIdOn) {
         //YES: get widget JSON data; display panel (widget) in the dashboard viewport; update localStorage var
         getData(url, function(data) {
 
-            description = data.description;
-            title = data.name;
-            liveSite = data.livesite;
+            let widgetData = data;
 
             // Check if localStorage is enabled
             if (storageAvailable('localStorage')) {
@@ -169,12 +160,28 @@ function turnWidgetOn(widgetIdOn) {
                 return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
             }
             // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
+            // Add widget to the dashboard
             return $("#active-widgets-data").append(`
-                <div id="${elementID}" class="col-3 max-height-400">
-                    <button onclick="turnWidgetOff('${data.widgetID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
-                    <div class="active-widget-3 bcolor-2"><h3>${title}</h3><p>${description}</p><p>Live Site Links: ${liveSite}</p></div>
-                </div>
-            `), $("#widget-btn-" + elementID).remove();
+                    <div id="${elementID}" class="col-3 pmd-max-height-400">
+                        <button onclick="turnWidgetOff('${elementID}')"><i class="fas fa-angle-right acolor-2" aria-hidden="true"></i></button>
+                        <div class="pmd-active-widget-3col pmd-bcolor-2">
+                            <h3>${widgetData.name}</h3>
+                            <div>Project Due Date:${widgetData.duedate}</div>
+                            <div>Project Owner:${widgetData.owner}</div>
+                            <div>${widgetData.description}</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${widgetData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${widgetData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${widgetData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+                            </div>
+                            <div><a href="${widgetData.livesite}" target="_blank">Development Site Link</a></div>
+                        </div>
+                    </div>
+                    `), $("#widget-btn-" + elementID).remove();
         });
     }
 }
