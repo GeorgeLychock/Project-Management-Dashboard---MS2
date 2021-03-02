@@ -274,3 +274,25 @@ function storageAvailable(type) {
     } else {
         var widgetBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
     }
+
+
+    return $("#active-widgets-data").append(`
+    <div id="${elementID}" class="col-3 pmd-max-height-400">
+        <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
+        <div class="pmd-active-widget-3col pmd-bcolor-2">
+            <h3>${widgetData.name}</h3>
+            <div>Project Due Date:${widgetData.duedate}</div>
+            <div>Project Owner:${widgetData.owner}</div>
+            <div>${widgetData.description}</div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="${widgetData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${widgetData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${widgetData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+            </div>
+            <div><a href="${widgetData.liveSite}" target="_blank">Development Site Link</a></div>
+        </div>
+    </div>`);
