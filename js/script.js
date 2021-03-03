@@ -89,7 +89,7 @@ function createLibraryButtons() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
         //Build buttons
         getData(url, function(data) {
-            return $("#widgets-library").append(buildLibraryButtonMarkup(data));
+            return $("#projects-library").append(buildLibraryButtonMarkup(data));
         });
     }
 }
@@ -185,9 +185,17 @@ function turnWidgetOff(widgetIdOff) {
     // **** This should be replaced by a function, see duplication in buildLibraryButtons(), Build Button and add to Library
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     getData(url, function(data) {
-        return $("#widgets-library").append(buildLibraryButtonMarkup(data));
+        return $("#projects-library").append(buildLibraryButtonMarkup(data));
     });
 
     // Remove panel from dashboard
     return $("#" + elementID).remove();
+}
+
+function makeDark() {
+    $("body").addClass('make-dark');
+}
+
+function makeLight() {
+    $("body").removeClass('make-dark');
 }

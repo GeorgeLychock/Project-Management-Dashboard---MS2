@@ -57,6 +57,10 @@
                         </div>
                         <div class="col-3 pmd-w-library pmd-bcolor-1 pmd-height-600">
                             <div>
+                                <h2 class="pmd-dinline pmd-hcolor-1">My Projects</h2><button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                            </div>
+                            <div id="projects-library"></div>
+                            <div>
                                 <h2 class="pmd-dinline pmd-hcolor-1">My Widgets</h2><button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
                             </div>
                             <div id="widgets-library"></div>
@@ -90,7 +94,15 @@
           </button>
         </div>
         <div class="modal-body">
-          ...
+            <div>
+                <button class="pmd-icon-01" onclick="makeDark()">
+                    <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
+                </button>
+                <button class="pmd-icon-01" onclick="makeLight()">
+                    <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
+                </button>
+            </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
