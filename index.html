@@ -8,6 +8,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/reused-style.css" rel="stylesheet" type="text/css">
 
 
     <title>MS2 - Sandbox</title>
@@ -19,7 +20,7 @@
         <div class="container-fluid">
             <div class="row no-gutters pmd-nav-main pmd-bcolor-nav">
                 <nav>
-                    Furure Nav Element
+                    Future Nav Element
                 </nav>
             </div>
         </div>
@@ -29,6 +30,9 @@
             <div class="container-fluid">
                 <div class="row no-gutters pmd-header pmd-bcolor-head">
                     <div class="col pmd-hcolor-1">
+                        <button type="button" class="pmd-icon-02" data-toggle="modal" data-target="#dashboardSettings">
+                            <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
+                          </button>
                         <h1>My PM Dashboard</h1>
                         <giv>User: George Lychock</div>
                     </div>
@@ -75,6 +79,26 @@
         </footer>
         <!-- /Footer -->
     </main>
+    <!-- Bootstrap Modal - Dashboard Settings -->
+<div class="modal fade" id="dashboardSettings" tabindex="-1" aria-labelledby="dashboardSettingsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dashboardSettingsLabel">Main Dashboard Settings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Load Bootstrap js and its dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

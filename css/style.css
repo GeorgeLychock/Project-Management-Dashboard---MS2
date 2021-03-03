@@ -140,6 +140,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
 }
 
+.pmd-icon-02:hover {
+    border: none;
+    display: inline;
+    float: right;
+    background-color: transparent;
+}
+
 .pmd-btn-library {
     margin: 5px;
     padding: 2px 5px;
