@@ -183,8 +183,30 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Dashboard */
 .pmd-active-widget-3col {
-    margin: 10px;
-    padding: 5px;
+    border: solid 1px #707070;
+    padding: 0px 10px;
+    margin: 0px 10px 0px 0px;
+}
+
+.pmd-panel-head {
+    border: solid 1px #707070;
+    border-radius: 20px 20px 0px 0px;
+    margin: 0px 10px 5px 0px;
+    padding: 0px 10px;
+}
+
+.pmd-panel-main {
+    border: solid 1px #707070;
+    padding: 0px 10px;
+    margin: 0px 10px 5px 0px;
+}
+
+.pmd-prg-row {
+    height: .5rem;
+}
+
+.pmd-prg-bar {
+    height: 5px;
 }
 
 /* Footer */
@@ -202,5 +224,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Color Schemes */
 .make-dark {
-    background-color: rgba(115, 68, 68, .25);
+    /*background-color: rgba(115, 68, 68, .25); */
+    background-color: rgba(0, 0, 0, 1);
 }

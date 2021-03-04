@@ -10,20 +10,22 @@ function buildWidgetPanelMarkup(data) {
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetData.widgetID}" class="col-3 pmd-max-height-400">
+        <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
+        </div>
         <div class="pmd-active-widget-3col pmd-bcolor-2">
-            <h3>${widgetData.name}</h3>
+            <h5>${widgetData.name}</h5>
             <div>Project Due Date:${widgetData.duedate}</div>
             <div>Project Owner:${widgetData.owner}</div>
             <div>${widgetData.description}</div>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="${widgetData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress pmd-prg-row">
+                <div class="progress-bar pmd-prg-bar" role="progressbar" aria-valuenow="${widgetData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="${widgetData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 25%" aria-valuenow="${widgetData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="${widgetData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 50%" aria-valuenow="${widgetData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div><a href="${widgetData.liveSite}" target="_blank">Development Site Link</a></div>
         </div>
