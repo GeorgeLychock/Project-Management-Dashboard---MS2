@@ -26,7 +26,7 @@ function createActiveWidgets() {
 
     let zipcode = "02169";
     var cityName = "Adam's Shore";
-    let pmdApiKey = "63ed49c03194e49fddfc71fab3eb60d4";
+    let pmdApiKey = "";
 
     var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${pmdApiKey}`;
     getData(url, function (data) {
@@ -51,9 +51,13 @@ function buildWidgetPanelMarkup(data, cn) {
         <div class="pmd-active-widget-3col pmd-bcolor-2">
             <h5>${widgetData.name}</h5>
             <div>Current Temperature: ${widgetData.main["temp"]}</div>
-            <div>Currently main: ${widgetData.weather[0]["main"]}</div><div class="pmd-weather-icon-bg"><img src="http://openweathermap.org/img/wn/${widgetData.weather[0]["icon"]}@2x.png"></div>
-            <div>Currently des: ${widgetData.weather[0]["description"]}</div>
-            <div>Currently icon: ${widgetData.weather[0]["icon"]}</div>
+            <div class="pmd-weather-icon-bg">
+                <div><img src="http://openweathermap.org/img/wn/${widgetData.weather[0]["icon"]}@2x.png"></div>
+                <div>
+                    <div class="pmd-pcolor-1">Currently: ${widgetData.weather[0]["main"]}</div>
+                    <div class="pmd-pcolor-1">with ${widgetData.weather[0]["description"]}</div>
+                </div>
+            </div>
         </div>
     </div>`;
 }
