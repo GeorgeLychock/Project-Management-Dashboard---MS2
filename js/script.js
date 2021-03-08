@@ -57,7 +57,7 @@ function createActiveWidgets() {
             getData(url, function (data) {
                 var widgetData = data;
                 elementID = widgetData.widgetID;
-                return $("#active-widgets-data").append(buildWidgetPanelMarkup(data));
+                return $("#active-projects-data").append(buildWidgetPanelMarkup(data));
             });
         }
     }
@@ -172,7 +172,7 @@ function turnWidgetOn(widgetIdOn) {
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
         // Add widget to the dashboard
-        return $("#active-widgets-data").append(buildWidgetPanelMarkup(data)), $("#widget-btn-" + elementID).remove();
+        return $("#active-projects-data").append(buildWidgetPanelMarkup(data)), $("#widget-btn-" + elementID).remove();
     });
 }
 
