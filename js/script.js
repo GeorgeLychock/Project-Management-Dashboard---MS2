@@ -1,10 +1,13 @@
+/* George Lychock - MS2 Main Javascript File */
+
+
 $(document).ready(function() {
 
 createLibraryButtons();
-createActiveWidgets();
+createActiveProjects();
 
 })
-function buildWidgetPanelMarkup(data) {
+function buildProjectPanelMarkup(data) {
 
     var widgetData = data;
 
@@ -44,7 +47,7 @@ function buildLibraryButtonMarkup(data) {
     </div>`;
 }
 
-function createActiveWidgets() {
+function createActiveProjects() {
     if (localStorage.localWidgets) {
 
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
@@ -57,7 +60,7 @@ function createActiveWidgets() {
             getData(url, function (data) {
                 var widgetData = data;
                 elementID = widgetData.widgetID;
-                return $("#active-projects-data").append(buildWidgetPanelMarkup(data));
+                return $("#active-projects-data").append(buildProjectPanelMarkup(data));
             });
         }
     }
@@ -172,7 +175,7 @@ function turnWidgetOn(widgetIdOn) {
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
         // Add widget to the dashboard
-        return $("#active-projects-data").append(buildWidgetPanelMarkup(data)), $("#widget-btn-" + elementID).remove();
+        return $("#active-projects-data").append(buildProjectPanelMarkup(data)), $("#widget-btn-" + elementID).remove();
     });
 }
 

@@ -187,6 +187,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
 }
 
+.pmd-active-projects {
+    padding-left: 10px;
+}
+
 /* Active Widgets Dashboard */
 .pmd-active-widgets-head {
     margin: 10px;
