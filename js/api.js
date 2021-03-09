@@ -22,16 +22,37 @@ function getData(url, gd) {
  }
 /* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
 
+function getOpenWeatherKey(kurl, gd) {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            gd(JSON.parse(this.responseText));
+        }
+    };
+    xhr.open("GET", kurl);
+    xhr.send();
+}
+
 function createActiveWidgets() {
 
     let zipcode = "02169";
     var cityName = "Adam's Shore";
-    let pmdApiKey = "";
+    var pmdApiKey = "me";
 
-    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${pmdApiKey}`;
-    getData(url, function (data) {
+    let keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/keydata.json";
+    
+    getOpenWeatherKey(keyURL, function (data) {
         var widgetData = data;
-        return $("#active-widgets-data").append(buildWidgetPanelMarkup(data, cityName));
+        console.log(widgetData);
+        pmdApiKey = widgetData.key;
+        console.log(pmdApiKey, typeof(pmdApiKey));
+        url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${pmdApiKey}`;
+
+        getData(url, function (data) {
+            return $("#active-widgets-data").append(buildWidgetPanelMarkup(data, cityName));
+        });
     });
 }
 
