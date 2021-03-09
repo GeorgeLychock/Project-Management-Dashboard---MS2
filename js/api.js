@@ -6,22 +6,6 @@ $(document).ready(function() {
     
     })
 
-/* Get data from JSON file  */
-/* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
-function getData(url, gd) {
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            gd(JSON.parse(this.responseText));
-        }
-    };
-    xhr.open("GET", url);
-    xhr.send();
- }
-/* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
-
 function getOpenWeatherKey(kurl, gd) {
 
     var xhr = new XMLHttpRequest();
@@ -71,7 +55,7 @@ function buildWidgetPanelMarkup(data, cn) {
         </div>
         <div class="pmd-active-widget-3col pmd-bcolor-2">
             <h5>${widgetData.name}</h5>
-            <div>Current Temperature: ${widgetData.main["temp"]}</div>
+            <div>Current Temperature: ${widgetData.main["temp"]} &#176;</div>
             <div class="pmd-weather-icon-bg">
                 <div><img src="http://openweathermap.org/img/wn/${widgetData.weather[0]["icon"]}@2x.png"></div>
                 <div>
