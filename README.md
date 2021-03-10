@@ -49,18 +49,27 @@ As a logged in project manager, I want the ability to change the color scheme of
     -   I can change the scheme back to light
     -   The color scheme I used last will be present when I come back to the site
 
-
 ### Wireframes
 -   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
 -   Active Widget Panel Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/active-panel-desktop-01.png)
 
 ### Design - Look and Feel
 -   Emphasis is on an uncluttered, business tool design that has light colors and a lot of white space.
+-   Although a fully functioning rendering of the site will be accessible from any device, the app is optimized for desktop use.
 -   A light and dark version have been mocked up to show how the app can change based on a user selection in a settings panel.
 -   Mockups:
     -   Desktop Look and Feel - Light - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-light.png)
     -   Desktop Look and Feel - Dark - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-dark.png)
 
+### Dashboard Structure
+-   Nav, Header, and Banner sections span the top of the desktop viewport
+-   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop viewport
+-   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop viewport
+-   A footer section spans the bottom of the desktop viewport
+
+### Project Folder Structure
+-   The css/, js/ folders are located directly off the root folder
+-   All JSON files are located in folder data/
 
 ### Data Structure and Flow
 -   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
@@ -164,6 +173,7 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
 
 ### Code Credits
+-   All Reused styles are in reused-styles.css
 -   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
     Find code use indicated by "CODE REUSE - XMLHttpRequest Callback"
         `gd(JSON.parse(this.responseText));`
