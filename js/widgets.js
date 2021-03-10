@@ -4,7 +4,8 @@ $(document).ready(function() {
 
     createActiveWidgets();
     
-    })
+})
+
 
 function getOpenWeatherKey(kurl, gd) {
 

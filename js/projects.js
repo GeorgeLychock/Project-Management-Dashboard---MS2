@@ -1,51 +1,11 @@
 /* George Lychock - MS2 Main Javascript File */
 
-
 $(document).ready(function() {
 
 createLibraryButtons();
 createActiveProjects();
 
 })
-function buildProjectPanelMarkup(data) {
-
-    var projectData = data;
-
-    /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col-3 pmd-max-height-400">
-        <div class="pmd-panel-head">
-        <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
-        </div>
-        <div class="pmd-active-widget-3col pmd-bcolor-2">
-            <h5>${projectData.name}</h5>
-            <div>Project Due Date:${projectData.duedate}</div>
-            <div>Project Owner:${projectData.owner}</div>
-            <div>${projectData.description}</div>
-            <div class="progress pmd-prg-row">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 25%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 50%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
-            </div>
-            <div><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
-        </div>
-    </div>`;
-}
-
-function buildLibraryButtonMarkup(data) {
-
-    var projectData = data;
-
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
-    <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}')">
-    <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
-    </button>
-    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
-    </div>`;
-}
 
 function createActiveProjects() {
     if (localStorage.localProjects) {
@@ -195,6 +155,46 @@ function turnProjectOff(widgetIdOff) {
 
     // Remove panel from dashboard
     return $("#" + elementID).remove();
+}
+
+function buildProjectPanelMarkup(data) {
+
+    var projectData = data;
+
+    /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
+    return `<div id="${projectData.widgetID}" class="col-3 pmd-max-height-400">
+        <div class="pmd-panel-head">
+        <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
+        </div>
+        <div class="pmd-active-widget-3col pmd-bcolor-2">
+            <h5>${projectData.name}</h5>
+            <div>Project Due Date:${projectData.duedate}</div>
+            <div>Project Owner:${projectData.owner}</div>
+            <div>${projectData.description}</div>
+            <div class="progress pmd-prg-row">
+                <div class="progress-bar pmd-prg-bar" role="progressbar" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 25%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 50%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+            </div>
+            <div><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
+        </div>
+    </div>`;
+}
+
+function buildLibraryButtonMarkup(data) {
+
+    var projectData = data;
+
+    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
+    <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}')">
+    <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+    </button>
+    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </div>`;
 }
 
 function makeDark() {
