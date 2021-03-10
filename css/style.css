@@ -87,10 +87,6 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 400px;
 }
 
-.pmd-height-600 {
-    height: 600px;
-}
-
 /* Font Styles */
 .pmd-uppercase {
     text-transform: uppercase;
@@ -206,11 +202,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 25px;
 }
 
+.pmd-project-lib {
+    min-height: 300px;
+}
+
 /* Dashboard */
 .pmd-active-widget-3col {
     border: solid 1px #707070;
     padding: 0px 10px;
     margin: 0px 10px 0px 0px;
+    height: 250px;
 }
 
 .pmd-panel-head {
