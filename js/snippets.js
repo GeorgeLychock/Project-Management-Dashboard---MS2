@@ -296,3 +296,47 @@ function storageAvailable(type) {
             <div><a href="${widgetData.liveSite}" target="_blank">Development Site Link</a></div>
         </div>
     </div>`);
+
+
+    function createActiveProjects() {
+
+        if (localStorage.localProjects) {
+    
+            let activeProjectsSaved = localStorage.getItem('localProjects');
+            let activeProjects = activeProjectsSaved.split(',');
+            let elementID;
+    
+            for (let i in activeProjects) {
+    
+                var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeProjects[i] + ".json";
+                getData(url, function (data) {
+                    var projectData = data;
+                    elementID = projectData.widgetID;
+                    return $("#active-projects-data").append(buildProjectPanelMarkup(data));
+                });
+            }
+        }
+    }
+
+
+function createPanels(varName) {
+
+    localName = varName;
+
+    if (localStorage.localName) {
+
+        let activePanelsSaved = localStorage.getItem(localName);
+        let activePanels = activePanelsSaved.split(',');
+        let elementID;
+
+        for (let i in activePanels) {
+
+            var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activePanels[i] + ".json";
+            getData(url, function (data) {
+                var panelData = data;
+                elementID = panelData.widgetID;
+                return $("#active-projects-data").append(buildProjectPanelMarkup(data));
+            });
+        }
+    }
+}
