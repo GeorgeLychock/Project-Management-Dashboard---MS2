@@ -20,12 +20,6 @@
 /* Active Projects Dashboard /*
 /* Active Widgets Dashboard */
 /* Widget Library */
-
-/* Dashboard */
-
-
-/* Banner */
-/* Social Links */
 /* @media */
 
 /*########## /CSS TOC */
@@ -83,8 +77,8 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
-.pmd-max-height-400 {
-    max-height: 400px;
+.pmd-height-295 {
+    height: 295px;
 }
 
 /* Font Styles */
@@ -121,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Main Structure */
+/* Main Structure */ 
 .pmd-row-main {
     margin: 0;
 }
@@ -168,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Banner */
 .pmd-banner {
-    margin: 10px 20px;
+    margin: 10px 15px;
     padding: 2px 15px;
     border: solid 1px #707070;
     border-radius: 20px;
@@ -177,8 +171,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Active Projects Dashboard */
 
 .pmd-active-projects-head {
-    margin: 10px;
-    padding: 2px 15px;
+    margin-bottom: 10px;
+    padding: 2px 0 0 15px;
     border: solid 1px #707070;
     border-radius: 20px;
 }
@@ -189,10 +183,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Active Widgets Dashboard */
 .pmd-active-widgets-head {
-    margin: 10px;
-    padding: 2px 15px;
+    margin-bottom: 10px;
+    padding: 2px 0 0 15px;
     border: solid 1px #707070;
     border-radius: 20px;
+}
+
+.pmd-active-widgets {
+    padding-left: 10px;
 }
 
 /* Widget Library */

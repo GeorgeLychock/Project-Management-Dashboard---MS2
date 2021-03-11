@@ -3,7 +3,7 @@
 
 $(document).ready(function() {
 
-createLibraryButtons();
+createProjectLibBtns();
 createActiveProjects();
 
 })
@@ -20,13 +20,13 @@ function createActiveProjects() {
 
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeProjects[i] + ".json";
             getData(url, function (data) {
-                return $("#active-projects-data").append(buildProjectPanelMarkup(data));
+                return $("#active-projects-data").append(buildProjectPanelMU(data));
             });
         }
     }
 }
 
-function createLibraryButtons() {
+function createProjectLibBtns() {
 
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
 
@@ -54,7 +54,7 @@ function createLibraryButtons() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + projectBuildIDs[i] + ".json";
         //Build buttons
         getData(url, function(data) {
-            return $("#projects-library").append(buildLibraryButtonMarkup(data));
+            return $("#projects-library").append(buildProjectLibBtnMU(data));
         });
     }
 }
@@ -91,7 +91,7 @@ function turnProjectOn(widgetIdOn) {
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
         // Add widget to the dashboard
-        return $("#active-projects-data").append(buildProjectPanelMarkup(data)), $("#widget-btn-" + elementID).remove();
+        return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove();
     });
 }
 
@@ -103,22 +103,21 @@ function turnProjectOff(widgetIdOff) {
     activeProjects.pop(elementID);
     localStorage.setItem('localProjects', activeProjects);
 
-    // **** This should be replaced by a function, see duplication in buildLibraryButtons(), Build Button and add to Library
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     getData(url, function(data) {
-        return $("#projects-library").append(buildLibraryButtonMarkup(data));
+        return $("#projects-library").append(buildWidgetLibBtnMU(data));
     });
 
     // Remove panel from dashboard
     return $("#" + elementID).remove();
 }
 
-function buildProjectPanelMarkup(data) {
+function buildProjectPanelMU(data) {
 
     var projectData = data;
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col-3 pmd-max-height-400">
+    return `<div id="${projectData.widgetID}" class="col-3">
         <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
@@ -141,7 +140,7 @@ function buildProjectPanelMarkup(data) {
     </div>`;
 }
 
-function buildLibraryButtonMarkup(data) {
+function buildProjectLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}')">

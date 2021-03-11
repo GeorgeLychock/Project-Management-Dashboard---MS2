@@ -5,7 +5,7 @@
 $(document).ready(function() {
 
     createActiveWidgets();
-    createWidgetLibraryButtons();
+    createWidgetLibBtns();
 
 })
 
@@ -27,14 +27,14 @@ function createActiveWidgets() {
 
                 // Grab the Open Weather data from the api
                 getData(APIurl, function (owdata) {
-                    return $("#active-widgets-data").append(buildWidgetPanelMarkup(owdata, keydata.widgetID));
+                    return $("#active-widgets-data").append(buildWidgetPanelMU(owdata, keydata.widgetID));
                 });
             });
         }
     }
 }
 
-function buildWidgetPanelMarkup(owdata, widgetID) {
+function buildWidgetPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
 
@@ -59,7 +59,7 @@ function buildWidgetPanelMarkup(owdata, widgetID) {
     </div>`;
 }
 
-function createWidgetLibraryButtons() {
+function createWidgetLibBtns() {
 
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
 
@@ -139,7 +139,7 @@ function turnWidgetOn(widgetIdOn) {
         // Grab the Open Weather data from the api
         getData(APIurl, function (owdata) {
             // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
-            return $("#active-widgets-data").append(buildWidgetPanelMarkup(owdata, elementID)), $("#widget-btn-" + elementID).remove();
+            return $("#active-widgets-data").append(buildWidgetPanelMU(owdata, elementID)), $("#widget-btn-" + elementID).remove();
         });
     });
 }
@@ -152,7 +152,6 @@ function turnWidgetOff(widgetIdOff) {
     activeWidgets.pop(elementID);
     localStorage.setItem('localWidgets', activeWidgets);
 
-    // **** This should be replaced by a function, see duplication in buildLibraryButtons(), Build Button and add to Library
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     getData(url, function(data) {
         return $("#widgets-library").append(buildWidgetLibBtnMU(data));
