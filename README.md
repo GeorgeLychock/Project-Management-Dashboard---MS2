@@ -63,16 +63,21 @@ As a logged in project manager, I want the ability to change the color scheme of
 
 ### Dashboard Structure
 -   Nav, Header, and Banner sections span the top of the desktop viewport
--   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop viewport
+-   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop viewport;  these will be stacked in mobile vp.
 -   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop viewport
--   A footer section spans the bottom of the desktop viewport
+-   A footer section spans the bottom of all viewports
+-   A significant amount of structure and js is needed to move the Library Panel from a column in desktop/mobile view to a Bootstrap Dropdown in mobile view, please see comments for more information
 
 ### Project Folder Structure
 -   The css/, js/ folders are located directly off the root folder
 -   All JSON files are located in folder data/
 
 ### Data Structure and Flow
--   I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
+-   The widgetID (for projects and widgets/tools) drives everything; it is the unique ID for any content added to the Dashboard and allows the app to target and track what data is being displayed.
+-   The Library buttons are duplicated for both desktop and mobile viewports since each displays the Libraries in completely different ways. There is an extra function and markup to support having the Library as a 3col panel in desktop, but featured as a dropdown in mobile.
+-   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the widgetIDs so that the Dashboard can be built again upon the app being relaunched.
+[widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
+-   For Projects data, I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
     ```{
         "name": "George Lychock Career Website",
         "widgetID": "proj0001",
@@ -89,10 +94,7 @@ As a logged in project manager, I want the ability to change the color scheme of
         ]
     }```
 
-The widgetID drives everything, it is the unique ID for any widget added to the Dashboard and allows the app to target and track what data is being displayed.
 
--   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the widgetIDs so that the Dashboard can be built again upon the app being relaunched.
-[widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 
 
 ### Technical and Scope Contraints
@@ -128,6 +130,13 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
 -   Access and parse JSON data
 -   Store data in localStorage
 -   Limit duplication of code, use functions effectively
+    -   Known code that is duplicated:
+        -   These next four (4) functions can be made common if we pass the onClick function name from the calling function: buildWidgetLibBtnMU(data), buildWidgetLibBtnMUMobile(data), buildProjectLibBtnMU, buildProjectLibBtnMUMobile(data)
+        -   The localStorage check code in script.js is from MDN. Currently a solution cannot be found to var in the .localName (localWidgets in the code below):
+            ``` // Check if localStorage is enabled
+                if (storageAvailable('localStorage')) {
+                // YES: We can use localStorage, check if localStorage var has been initiated
+                 if (localStorage.localWidgets) ```
 -   Write Jasmine tests when possible, time permitted
 
 ### Future Features
@@ -160,11 +169,122 @@ The widgetID drives everything, it is the unique ID for any widget added to the 
     -   Style Progress Bar to project panels
     -   Make a function for the widget panel build return w .append
 
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://www.javascript.com/)
+-   [jQuery](https://jquery.com/)
+
+### Frameworks, Libraries & Programs Used
+
+1. [Bootstrap 4.6:](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+2. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Montserrat' and 'Raleway' fonts into the style.css file which is used on all pages throughout the project.
+3. [Bootstrap Icons:](https://icons.getbootstrap.com/)
+    - Bootstrap Icons was used for all app icons
+4. [jQuery:](https://jquery.com/)
+    - jQuery came with Bootstrap and is used in custom JS.
+5. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing Visual Studio on my Linux laptop to commit to Git and Push to GitHub.
+6. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+
+## Testing
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
+
+-   [W3C Markup Validator (Nu)](https://validator.w3.org/nu/)
+    - [Results-index.html](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/w3c-nu-html-index-screenshotfrom2021-01-05.png) NO ERRORS
+-   [W3C CSS Validator (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options) - [Results](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/jigsaw-css-screenshotfrom2021-01-04.png)
+-   [Lighthouse](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
+    - [Results: Desktop Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-desktop-index.jpg)
+    - [Results: Mobile Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-mobile-index.jpg)
+
+-   ### Testing User Stories from User Experience (UX) Section
+    -   #### General User Experience
+        -   **Story 1** As a Site Visitor, I want to have a persistent navigation element/method allowing me to jump to any site content quickly.
+            -  ##### Acceptance Criteria -- Duplicated in Testing below
+                1.  The most detailed Content is never more than **two clicks** away from home.
+                2.  Home is always **one click** away from anywhere on the site.
+                3.  Nav dropdown (collapse) is *prohibited*
+                4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any viewport.
+            -   ##### Results
+                -   (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.
+                -   (3) PASS No nav icon nor dropdown exists'
+                -   (4) PASS Every sub page has at least the Home icon visible at all times, all ports. [Screenshot](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/testing/screenshots/userst-1_4-screenshotfrom2020-11-23.png)
+
 ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widet viewport
 -   Create a library button that turns a div OFF in the active widet viewport
 -   Correctly render data from an external JSON files
 
+### Further Testing
+
+-   The Website was tested on Google Chrome, Firefox and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone6, iPad8.
+-   Testing was done to ensure that all pages were linking correctly.
+-   A design professional friend of mine spent 30 minutes with me reviewing the overall design after all pages were constructed and styled.
+-   All pages were given at least one cold read.
+-   Used Lighthouse to identify areas on improvement which are documented below in Fixed Bugs after Testing.
+
+### Fixed Bugs after Testing
+-   Issue: On tablet viewports the My Profile Section overflows on the Credentials Section on Home page.
+    -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape. Also adjusted the My Profile links to take up less width.
+
+### Known Bugs
+-   No known errors as of 1/5/21
+
+## Deployment
+### Hosting
+
+The project was deployed to GitHub Pages hosting service:
+
+[URL to GitHub Pages Site](https://georgelychock.github.io/georgelychock-career/)
+
+GitHub Pages
+The project was deployed to GitHub Pages using the following steps...
+   1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
+   2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+       ◦ Alternatively Click Here for a GIF demonstrating the process starting from Step 2.
+   3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+   4. Under "Source", click the dropdown called "None" and select "Master Branch".
+   5. The page will automatically refresh.
+   6. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+
+## *CLOANING INFORMATION from CODE INSTITUTE README.md template from User Centric Module*
+### Forking the GitHub Repository
+
+1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
 
