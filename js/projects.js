@@ -59,11 +59,10 @@ function createProjectLibBtns() {
 }
 
 /* Project Library ON/OFF Buttons */
-function turnProjectOn(widgetIdOn, vpcodeOff) {
+function turnProjectOn(widgetIdOn, vpcodepass) {
 
     let elementID = widgetIdOn;
-    console.log(elementID);
-    let vpcode = vpcodeOff;
+    let vpcode = vpcodepass;
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
 
     getData(url, function(data) {
@@ -90,7 +89,7 @@ function turnProjectOn(widgetIdOn, vpcodeOff) {
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
         // Add widget to the dashboard
-        return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+        return $("#active-projects-data").append(buildProjectPanelMU(data, vpcode)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
     });
 }
 
@@ -111,12 +110,14 @@ function turnProjectOff(widgetIdOff) {
     return $("#" + elementID).remove();
 }
 
-function buildProjectPanelMU(data) {
+function buildProjectPanelMU(data, vpcodepass) {
 
     let projectData = data;
+    let vpcode = vpcodepass;
+    console.log(vpcode);
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col-3">
+    return `<div id="${projectData.widgetID}" class="col">
         <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>

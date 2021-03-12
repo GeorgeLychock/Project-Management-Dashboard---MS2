@@ -38,8 +38,6 @@ function buildWidgetPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
 
-    console.log(apiData);
-
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col-3 pmd-max-height-400">
         <div class="pmd-panel-head">

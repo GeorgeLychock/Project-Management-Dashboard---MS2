@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Spacers */
 .pmd-height-295 {
-    height: 295px;
+    min-height: 295px;
 }
 
 /* Font Styles */
@@ -144,6 +144,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5px;
     padding: 2px 5px;
     border-radius: 20px;
+    display: block;
 }
 
 /* Nav */
@@ -245,6 +246,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* @media */
+@media only screen and (min-width: 767px) {
+
+    }
 
 /* Color Schemes */
 .make-dark {
