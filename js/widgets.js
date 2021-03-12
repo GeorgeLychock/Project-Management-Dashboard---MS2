@@ -43,7 +43,7 @@ function buildWidgetPanelMU(owdata, widgetID) {
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col-3 pmd-max-height-400">
         <div class="pmd-panel-head">
-        <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
+        <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
         <div class="pmd-active-widget-3col pmd-bcolor-2">
             <h5>${apiData.name}</h5>
@@ -95,7 +95,7 @@ function buildWidgetLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-01" onclick="turnWidgetOn('${data.widgetID}')">
-    <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
     </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
     </div>`;

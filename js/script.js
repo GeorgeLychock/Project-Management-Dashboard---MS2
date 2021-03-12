@@ -1,6 +1,11 @@
 /* George Lychock - MS2 Main Javascript File */
 /* This file is for common js functions called by other custom functions */
 
+$(document).ready(function() {
+
+
+})
+
 
 /* ******* Reused js ********** */
 
@@ -52,7 +57,16 @@ function storageAvailable(type) {
 /* ******* END Reused js ********** */
 
 /* ******* Custom Common js ********** */
-
+function convertViewportWidth() {
+    let bodyWidth = $("body").width();
+    if (bodyWidth < 768) {
+        viewportID = "sm";
+        return viewportID;
+    } else {
+        viewportID = "";
+        return viewportID;
+    }
+}
 
 /* ******* END Custom Common js ********** */
 

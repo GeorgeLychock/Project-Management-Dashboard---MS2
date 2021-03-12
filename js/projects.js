@@ -14,7 +14,6 @@ function createActiveProjects() {
 
         let activeProjectsSaved = localStorage.getItem('localProjects');
         let activeProjects = activeProjectsSaved.split(',');
-        let elementID;
 
         for (let i in activeProjects) {
 
@@ -54,20 +53,20 @@ function createProjectLibBtns() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + projectBuildIDs[i] + ".json";
         //Build buttons
         getData(url, function(data) {
-            return $("#projects-library").append(buildProjectLibBtnMU(data));
+            return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
         });
     }
 }
 
-/* Widget Library ON/OFF Buttons */
-function turnProjectOn(widgetIdOn) {
+/* Project Library ON/OFF Buttons */
+function turnProjectOn(widgetIdOn, vpcodeOff) {
 
     let elementID = widgetIdOn;
+    console.log(elementID);
+    let vpcode = vpcodeOff;
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
 
     getData(url, function(data) {
-
-        let projectData = data;
 
         // Check if localStorage is enabled
         if (storageAvailable('localStorage')) {
@@ -91,12 +90,12 @@ function turnProjectOn(widgetIdOn) {
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
         // Add widget to the dashboard
-        return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove();
+        return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
     });
 }
 
 function turnProjectOff(widgetIdOff) {
-    var elementID = widgetIdOff;
+    let elementID = widgetIdOff;
     // remove widget from localStorage
     let activeProjectsSaved = localStorage.getItem('localProjects');
     let activeProjects = activeProjectsSaved.split(',');
@@ -105,7 +104,7 @@ function turnProjectOff(widgetIdOff) {
 
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     getData(url, function(data) {
-        return $("#projects-library").append(buildWidgetLibBtnMU(data));
+        return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
     });
 
     // Remove panel from dashboard
@@ -114,12 +113,12 @@ function turnProjectOff(widgetIdOff) {
 
 function buildProjectPanelMU(data) {
 
-    var projectData = data;
+    let projectData = data;
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col-3">
         <div class="pmd-panel-head">
-        <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-arrow-right-square pmd-acolor-1" aria-hidden="true"></i></button>
+        <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
         <div class="pmd-active-widget-3col pmd-bcolor-2">
             <h5>${projectData.name}</h5>
@@ -144,9 +143,23 @@ function buildProjectLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}')">
-    <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
     </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
     </div>`;
 }
+
+function buildProjectLibBtnMUMobile(data) {
+
+    let vpcode = convertViewportWidth();
+    let elementID = vpcode + "-" + data.widgetID;
+
+    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
+    <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
+    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
+    </button>
+    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </div>`;
+}
+
 
