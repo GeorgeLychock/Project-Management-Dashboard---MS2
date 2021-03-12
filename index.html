@@ -20,9 +20,11 @@
         <!-- Desktop Nav -->
         <div class="container-fluid">
             <div class="row no-gutters pmd-nav-main pmd-bcolor-nav">
-                <nav>
-                    Future Nav Element
-                </nav>
+                <div class="col">
+                    <nav>
+                        Future Nav Element
+                    </nav>
+                </div>
             </div>
         </div>
         <!-- /Desktop Nav -->
@@ -35,11 +37,37 @@
                             <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
                           </button>
                         <h1>My PM Dashboard</h1>
-                        <giv>User: George Lychock</div>
+                        <div>User: George Lychock</div>
                     </div>
                 </div>
-                <div class="pmd-banner pmd-bcolor-banner">Future Banner Element</div>
             </div>
+            <div class="container-fluid d-none d-md-block">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <div class="pmd-banner pmd-bcolor-banner">Future Banner Element</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Library Dropdown -->
+            <div class="container-fluid d-md-none">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Libraries
+                            </button>
+                            <div class="dropdown-menu"" aria-labelledby="dropdownMenuButton">
+                                <div>
+                                    <h4 class="pmd-dinline pmd-hcolor-1">My Projects Library</h4>
+                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                                </div>
+                                <div id="mobile-projects-library"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //Mobile Library Dropdown -->
         </header>
         <!-- /Header -->
         <!-- Dashboard -->
@@ -47,6 +75,22 @@
             <section>
                 <div class="container-fluid">
                     <div class="row pmd-row-main">
+                        <!-- Display Libraries Panel for desktop and tablet-->
+                        <div class="col-3 d-none d-md-block pmd-w-library pmd-bcolor-1">
+                            <div class="pmd-project-lib">
+                                <div>
+                                    <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
+                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                                </div>
+                                <div id="projects-library"></div>
+                            </div>
+                            <div>
+                                <h2 class="pmd-dinline pmd-hcolor-1">My Tools Library</h2><button class="pmd-icon-02"><i
+                                        class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                            </div>
+                            <div id="widgets-library"></div>
+                        </div>
+                        <!-- //Display Libraries Panel for Desktop and Tablet-->
                         <div class="col-9">
                             <div class="row no-gutters">
                                 <div class="col">
@@ -59,20 +103,7 @@
                                     <div class="pmd-active-widgets-head pmd-bcolor-4 pmd-pcolor-1">My Tools</div>
                                 </div>
                             </div>
-                            <div class="row no-gutters" id="active-widgets-data"></div>
-                        </div>
-                        <div class="col-3 pmd-w-library pmd-bcolor-1">
-                            <div class="pmd-project-lib">
-                                <div>
-                                    <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
-                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
-                                </div>
-                                <div id="projects-library"></div>
-                            </div>
-                            <div>
-                                <h2 class="pmd-dinline pmd-hcolor-1">My Tools Library</h2><button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
-                            </div>
-                            <div id="widgets-library"></div>
+                            <div class="row no-gutters pmd-active-widgets pmd-height-295" id="active-widgets-data"></div>
                         </div>
                     </div>
                 </div>
