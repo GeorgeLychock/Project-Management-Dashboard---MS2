@@ -7,6 +7,13 @@ A configurable user dashboard that displays and organizes key metrics and data f
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
+#### Note
+    -   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
+    -   The site consists of one page, a dashboard.
+    -   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
+    -   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized but while keeping main functionality and components/content intact.
+
+
 ### User Stories:
 #### Story 1
 As a logged in project manager, I want to see key project status metrics on my current projects, so that I have a clear, one-stop view of all my projects' status.
