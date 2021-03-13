@@ -18,6 +18,7 @@ function createActiveProjects() {
         for (let i in activeProjects) {
 
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeProjects[i] + ".json";
+
             getData(url, function (data) {
                 return $("#active-projects-data").append(buildProjectPanelMU(data));
             });
@@ -31,15 +32,13 @@ function createProjectLibBtns() {
 
     if (localStorage.localProjects) {
 
-        //*1 Search " *Foot Note 1 " in Technical Constraints section of README.md
-
+        //Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
         var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
         let activeProjectsSaved = localStorage.getItem('localProjects');
         var projectIDsSaved = activeProjectsSaved.split(',');
         var projectBuildIDs = [];
 
         //Search the locally stored active widget IDs and make an array of available widgets that are not already active
-
         for (let i in widgetIDs) {
             if (projectIDsSaved.includes(widgetIDs[i]) == false) {
                 projectBuildIDs.push(widgetIDs[i]);
@@ -51,7 +50,8 @@ function createProjectLibBtns() {
 
     for (let i in projectBuildIDs) {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + projectBuildIDs[i] + ".json";
-        //Build buttons
+
+        //Build Library buttons for Desktop and Mobile
         getData(url, function(data) {
             return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
         });
@@ -72,13 +72,13 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
             // YES: We can use localStorage, check if localStorage var has been initiated
             if (localStorage.localProjects) {
                 // YES: Add widget ID to the localStorage string and store
-                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited
+                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited, convert to array
                 let activeProjects = activeProjectsSaved.split(',');
                 activeProjects.push(elementID);
                 localStorage.setItem('localProjects', activeProjects); //stored as a string, comma delimited
 
             } else {
-
+                // Initiate localStorage and add project ID
                 let activeProjects = [];
                 activeProjects.push(elementID);
                 localStorage.setItem('localProjects', activeProjects);
@@ -88,8 +88,8 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
         }
         // QUERY: This chaining of jQuery calls seems to work, although I haven't found any documentation to date to support it's correct
-        // Add widget to the dashboard
-        return $("#active-projects-data").append(buildProjectPanelMU(data, vpcode)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+        // Add project to the dashboard and remove the library buttons from both Desktop and Mobile views
+        return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
     });
 }
 
@@ -110,11 +110,9 @@ function turnProjectOff(widgetIdOff) {
     return $("#" + elementID).remove();
 }
 
-function buildProjectPanelMU(data, vpcodepass) {
+function buildProjectPanelMU(data) {
 
     let projectData = data;
-    let vpcode = vpcodepass;
-    console.log(vpcode);
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col">
@@ -140,6 +138,7 @@ function buildProjectPanelMU(data, vpcodepass) {
     </div>`;
 }
 
+// These next two (2) functions can be made common if we pass the onClick function name from the calling function
 function buildProjectLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
@@ -153,6 +152,7 @@ function buildProjectLibBtnMU(data) {
 function buildProjectLibBtnMUMobile(data) {
 
     let vpcode = convertViewportWidth();
+    // Add the viewport code to the ID to make unique ID for mobile library button
     let elementID = vpcode + "-" + data.widgetID;
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">

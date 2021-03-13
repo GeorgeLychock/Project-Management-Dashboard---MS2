@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
-.pmd-height-295 {
+.pmd-min-height-295 {
     min-height: 295px;
 }
 
