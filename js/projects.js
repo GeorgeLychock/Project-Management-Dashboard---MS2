@@ -3,8 +3,8 @@
 
 $(document).ready(function() {
 
-createProjectLibBtns();
-createActiveProjects();
+    createProjectLibBtns();
+    createActiveProjects();
 
 })
 
@@ -115,11 +115,11 @@ function buildProjectPanelMU(data) {
     let projectData = data;
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col">
+    return `<div id="${projectData.widgetID}" class="col col-md-3 pmd-max-width-250">
         <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
-        <div class="pmd-active-widget-3col pmd-bcolor-2">
+        <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
             <div>Project Due Date:${projectData.duedate}</div>
             <div>Project Owner:${projectData.owner}</div>

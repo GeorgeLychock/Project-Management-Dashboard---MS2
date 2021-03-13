@@ -81,6 +81,10 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 295px;
 }
 
+.pmd-max-width-250 {
+    /*max-width: 250px;*/
+}
+
 /* Font Styles */
 .pmd-uppercase {
     text-transform: uppercase;
@@ -147,6 +151,12 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
+.pmd-mobile-lib-btn {
+    font-size: small;
+    padding: 2px 4px;
+    margin: 10px;
+}
+
 /* Nav */
 .pmd-nav-main {
     margin: 10px 0 10px 0px;
@@ -167,6 +177,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2px 15px;
     border: solid 1px #707070;
     border-radius: 20px;
+}
+
+/* Mobile Library Dropdown */
+.pmd-mobile-lib-drop {
+    background-color: #e6e6e6;
+
+}
+.pmd-mobile-lib-box {
+    padding-left: 10px;
+    min-height: 40px;
+    margin-bottom: 15px;
 }
 
 /* Active Projects Dashboard */
@@ -205,8 +226,12 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 300px;
 }
 
+.pmd-lib-directions {
+    margin-top: 40px;
+}
+
 /* Dashboard */
-.pmd-active-widget-3col {
+.pmd-active-widget {
     border: solid 1px #707070;
     padding: 0px 10px;
     margin: 0px 10px 0px 0px;

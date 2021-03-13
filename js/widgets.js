@@ -130,11 +130,11 @@ function buildWidgetPanelMU(owdata, widgetID) {
     var apiData = owdata;
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${widgetID}" class="col">
+    return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
         <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
-        <div class="pmd-active-widget-3col pmd-bcolor-2">
+        <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${apiData.name}</h5>
             <div>Current Temperature: ${apiData.main["temp"]} &#176;</div>
             <div class="pmd-weather-icon-bg">
