@@ -113,27 +113,29 @@ function turnProjectOff(widgetIdOff) {
 function buildProjectPanelMU(data) {
 
     let projectData = data;
+    let cpi = projectData.cpi/2 * 100;
+    let sv = projectData.sv/2 * 100;
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col col-md-3 pmd-max-width-250">
+    return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
         <div class="pmd-panel-head">
         <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
         </div>
         <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
-            <div>Project Due Date:${projectData.duedate}</div>
-            <div>Project Owner:${projectData.owner}</div>
-            <div>${projectData.description}</div>
+            <div>Project Due Date: ${projectData.duedate}</div>
+            <div class="pmd-project-data1">Project Owner: ${projectData.owner}</div>
+            <div class="pmd-project-data1">${projectData.description}</div>
             <div class="progress pmd-prg-row">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100">% Complete: ${projectData.percentcomplete}%</div>
             </div>
-            <div class="progress">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 25%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+            <div class="progress pmd-prg-row">
+                <div class="progress-bar bg-info pmd-prg-bar" role="progressbar" style="width: ${cpi}%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2">CPI: ${projectData.cpi}</div>
             </div>
-            <div class="progress">
-                <div class="progress-bar pmd-prg-bar" role="progressbar" style="width: 50%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+            <div class="progress pmd-prg-row">
+                <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2">SV: ${projectData.sv}</div>
             </div>
-            <div><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
+            <div class="pmd-project-data1"><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
         </div>
     </div>`;
 }

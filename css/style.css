@@ -17,10 +17,16 @@
 /* Nav */
 /* Header */
 /* Banner */
+/* Mobile Library Dropdown */
+/* Dashboard Panels */
+/* Progress Bar */
 /* Active Projects Dashboard /*
 /* Active Widgets Dashboard */
 /* Widget Library */
+/* Footer */
+/* Social Links */
 /* @media */
+/* Color Schemes */
 
 /*########## /CSS TOC */
 
@@ -190,8 +196,39 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
-/* Active Projects Dashboard */
+/* Dashboard Panels */
+.pmd-active-widget {
+    border: solid 1px #707070;
+    padding: 0px 10px;
+    margin: 0px 10px 10px 0px;
+    height: 250px;
+}
 
+.pmd-panel-head {
+    border: solid 1px #707070;
+    border-radius: 20px 20px 0px 0px;
+    margin: 0px 10px 5px 0px;
+    padding: 0px 10px;
+}
+
+.pmd-panel-main {
+    border: solid 1px #707070;
+    padding: 0px 10px;
+    margin: 0px 10px 5px 0px;
+}
+
+/* Progress Bar */
+.pmd-prg-row {
+    margin: 5px;
+    padding: 3px;
+    height: 1rem;
+}
+
+.pmd-prg-bar {
+    font-size: .5rem;
+}
+
+/* Active Projects Dashboard */
 .pmd-active-projects-head {
     margin-bottom: 10px;
     padding: 2px 0 0 15px;
@@ -201,6 +238,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-active-projects {
     padding-left: 10px;
+}
+
+.pmd-project-data1 {
+    font-size: .75rem;
+    padding: 3px 0px;
 }
 
 /* Active Widgets Dashboard */
@@ -228,35 +270,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-lib-directions {
     margin-top: 40px;
-}
-
-/* Dashboard */
-.pmd-active-widget {
-    border: solid 1px #707070;
-    padding: 0px 10px;
-    margin: 0px 10px 0px 0px;
-    height: 250px;
-}
-
-.pmd-panel-head {
-    border: solid 1px #707070;
-    border-radius: 20px 20px 0px 0px;
-    margin: 0px 10px 5px 0px;
-    padding: 0px 10px;
-}
-
-.pmd-panel-main {
-    border: solid 1px #707070;
-    padding: 0px 10px;
-    margin: 0px 10px 5px 0px;
-}
-
-.pmd-prg-row {
-    height: .5rem;
-}
-
-.pmd-prg-bar {
-    height: 5px;
 }
 
 /* Footer */
