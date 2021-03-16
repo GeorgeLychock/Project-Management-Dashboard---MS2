@@ -1,3 +1,16 @@
 .pmd-weather-icon-bg {
     background-color: #00264d;
 }
+
+.pmd-weather-desc {
+    background-color: #333;
+    padding: 20px 0 15px 10px;
+}
+
+.pmd-weather-temp {
+    font-size: 3rem;
+    color: whitesmoke;
+    float: right;
+    padding-right: 20px;
+    padding-top: 10px;
+}

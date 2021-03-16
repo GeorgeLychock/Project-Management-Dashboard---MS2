@@ -128,24 +128,29 @@ function turnWidgetOff(widgetIdOff) {
 function buildWidgetPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
+    let bigTemp = apiData.main["temp"];
+    console.log(bigTemp, typeof(bigTemp));
+    bigTemp = Number(bigTemp);
+    console.log(bigTemp, typeof(bigTemp));
+    bigTemp = bigTemp.toFixed(0);
+    console.log(bigTemp, typeof(bigTemp));
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
     <div class="pmd-panel-head">
-    <div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
             <div class="pmd-panel-head-text"></div>
             <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
         </div>
     </div>
-</div>
         <div class="pmd-active-widget pmd-bcolor-2">
             <div class="float-right">My Weather</div>
             <h5>${apiData.name}</h5>
             <div>Current Temperature: ${apiData.main["temp"]} &#176;</div>
             <div class="pmd-weather-icon-bg">
-                <div><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
-                <div>
+                <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
+                <div class="pmd-weather-temp">${bigTemp} &#176;</div>
+                <div class="pmd-weather-desc">
                     <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
                     <div class="pmd-pcolor-1">with ${apiData.weather[0]["description"]}</div>
                 </div>

@@ -119,11 +119,9 @@ function buildProjectPanelMU(data) {
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
         <div class="pmd-panel-head">
-            <div>
-                <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
-                    <div class="pmd-panel-head-text"></div>
-                    <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
-                </div>
+            <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
+                <div class="pmd-panel-head-text"></div>
+                <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
             </div>
         </div>
         <div class="pmd-active-widget pmd-bcolor-2">
