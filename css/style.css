@@ -131,11 +131,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Buttons and Icons*/
-.pmd-icon-01 {
-    border: none;
-    background-color: transparent;
-}
-
 .pmd-icon-02 {
     border: none;
     display: inline;
@@ -143,11 +138,18 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
 }
 
-.pmd-icon-02:hover {
+.pmd-icon-02 i:hover {
+    color: turquoise;
+}
+
+.pmd-icon-03 {
     border: none;
     display: inline;
-    float: right;
     background-color: transparent;
+}
+
+.pmd-icon-03 i:hover {
+    color: turquoise;
 }
 
 .pmd-btn-library {
@@ -209,6 +211,29 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px 20px 0px 0px;
     margin: 0px 10px 5px 0px;
     padding: 0px 10px;
+}
+
+.pmd-icon-wrapper01 {
+    border: none;
+    background-color: transparent;
+    padding-top: 2px;
+}
+
+.pmd-panel-head-text {
+    font-size: .75rem;
+    margin-right: 2px;
+    padding-top: 3px;
+    display: inline;
+}
+
+.pmd-panel-head-text:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.pmd-icon-01:hover {
+    color: red;
+    cursor: pointer;
 }
 
 .pmd-panel-main {

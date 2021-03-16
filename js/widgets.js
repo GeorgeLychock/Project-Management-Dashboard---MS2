@@ -131,10 +131,16 @@ function buildWidgetPanelMU(owdata, widgetID) {
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
-        <div class="pmd-panel-head">
-        <button class="pmd-icon-01" onclick="turnWidgetOff('${widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
+    <div class="pmd-panel-head">
+    <div>
+        <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
+            <div class="pmd-panel-head-text"></div>
+            <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
         </div>
+    </div>
+</div>
         <div class="pmd-active-widget pmd-bcolor-2">
+            <div class="float-right">My Weather</div>
             <h5>${apiData.name}</h5>
             <div>Current Temperature: ${apiData.main["temp"]} &#176;</div>
             <div class="pmd-weather-icon-bg">
@@ -152,10 +158,10 @@ function buildWidgetPanelMU(owdata, widgetID) {
 function buildWidgetLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
-    <button class="pmd-icon-01" onclick="turnWidgetOn('${data.widgetID}')">
+    <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </button>
     </div>`;
 }
 
@@ -166,9 +172,9 @@ function buildWidgetLibBtnMUMobile(data) {
     let elementID = vpcode + "-" + data.widgetID;
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
-    <button class="pmd-icon-01" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
+    <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </button>
     </div>`;
 }

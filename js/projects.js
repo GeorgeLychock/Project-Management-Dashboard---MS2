@@ -119,7 +119,12 @@ function buildProjectPanelMU(data) {
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
         <div class="pmd-panel-head">
-        <button class="pmd-icon-01" onclick="turnProjectOff('${projectData.widgetID}')"><i class="bi bi-x-circle pmd-acolor-1" aria-hidden="true"></i></button>
+            <div>
+                <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
+                    <div class="pmd-panel-head-text"></div>
+                    <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
+                </div>
+            </div>
         </div>
         <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
@@ -144,10 +149,10 @@ function buildProjectPanelMU(data) {
 function buildProjectLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
-    <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}')">
+    <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </button>
     </div>`;
 }
 
@@ -158,10 +163,10 @@ function buildProjectLibBtnMUMobile(data) {
     let elementID = vpcode + "-" + data.widgetID;
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
-    <button class="pmd-icon-01" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
+    <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    </button>
     <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    </button>
     </div>`;
 }
 
