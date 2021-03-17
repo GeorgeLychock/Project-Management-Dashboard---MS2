@@ -318,3 +318,11 @@ h1, h2, h3, h4, h5, h6 {
     /*background-color: rgba(115, 68, 68, .25); */
     background-color: rgba(0, 0, 0, 1);
 }
+.make-dark-01 {
+    color: whitesmoke;
+}
+
+.make-dark-02 {
+    background-color: rgba(0, 0, 0, 1);
+    color: whitesmoke;
+}

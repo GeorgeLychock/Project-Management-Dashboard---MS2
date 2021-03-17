@@ -129,11 +129,7 @@ function buildWidgetPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
     let bigTemp = apiData.main["temp"];
-    console.log(bigTemp, typeof(bigTemp));
-    bigTemp = Number(bigTemp);
-    console.log(bigTemp, typeof(bigTemp));
     bigTemp = bigTemp.toFixed(0);
-    console.log(bigTemp, typeof(bigTemp));
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">

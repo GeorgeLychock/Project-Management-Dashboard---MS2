@@ -75,6 +75,8 @@ function convertViewportWidth() {
 
 function makeDark() {
     $("body").addClass('make-dark');
+    $(".pmd-panel-head-text").addClass('make-dark-01');
+    $(".pmd-w-library").addClass('make-dark-02');
 }
 
 function makeLight() {
