@@ -87,19 +87,22 @@ As a logged in project manager, I want the ability to change the color scheme of
 [widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 -   For Projects data, I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
     ```{
-        "name": "George Lychock Career Website",
-        "widgetID": "proj0001",
-        "startdate": "2020-12-09T13:50:51.644000Z",
-        "duedate": "2021-06-09T13:50:51.644000Z",
-        "description": "This project updates my old website with a new Bootstrap4 layout.",
-        "percentcomplete": ".8",
-        "livesite": "http://www.georgelychock-career.com/pages/test/jquery-module/index.html",
-        "milestones": [
-            ["2020-12-09T13:50:51.644000Z", "Project Launch"],
-            ["2021-01-09T13:50:51.644000Z", "Content Writing"],
-            ["2021-01-31T13:50:51.644000Z", "Wireframes"],
-            ["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
-        ]
+	"name": "George Lychock Career Website 1",
+	"widgetID": "proj0001",
+	"startdate": "2020-12-09",
+	"duedate": "2021-06-09",
+	"description": "This project updates my old website with a new Bootstrap4 layout.",
+	"owner": "George Lychock",
+	"percentcomplete": 20.0,
+	"cpi": 1.06,
+	"sv": 0.99,
+	"livesite": "http://www.georgelychock-career.com/index.html",
+	"milestones": [
+		["2020-12-09T13:50:51.644000Z", "Project Launch"],
+		["2021-01-09T13:50:51.644000Z", "Content Writing"],
+		["2021-01-31T13:50:51.644000Z", "Wireframes"],
+		["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
+	]
     }```
 
 -   There are 3 JS files: script.js contains most reused and custom scripts called by custom functions in projects.js and widget.js. Both project.js and widget.js are very similar and control how panels are added to the main dashboard sections. These are separated because 1) each dashboard section stores active widget data locally in different localStorage variables; 2) the markup and data retrieval for the API data is different enough to warrant separate functions from the functions that add the project panels to the dashboard. Otherwise every effort was taken to keep duplication of code to a minimum.
@@ -114,12 +117,11 @@ As a logged in project manager, I want the ability to change the color scheme of
 ### Requirements
 -   Widgets Library Viewport
     -   A settings cog should be present to give users access to the following changeable settings:
-        -   Change background color
         -   Change Library right/left position
     -   The cog should activate a modal window
 -   Widget Library Buttons
-    -   Each button panel needs to display the project name and a Add and Remove button
-    -   Determine a method for making sure that only one instance each widget is added or removed when clicking the ON/OFF buttons
+    -   Each button panel needs to display the project name and an Add button
+    -   Determine a method for making sure that only one instance of each widget is added or removed when clicking the Add/Close buttons
 -   Active Widgets Viewport
     -   A settings cog should be present to give users access to the following changeable settings:
         -   Change background color
@@ -127,9 +129,9 @@ As a logged in project manager, I want the ability to change the color scheme of
 -   Activated Widgets in Viewport
     -   A settings cog icon should be present in each active widget to allow for the following settings changes:
         -   Change background color
-    -    cog should activate a modal window
+        -   The cog should activate a modal window
 -   Persistent Settings
-    -   Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
+    -   Activated widgets should be persistent when a user returns to the app.
     -   Ability to 'clear' the dashboard (clear localStorage)
 
 ### Technical Requirements for this project:
@@ -152,8 +154,9 @@ As a logged in project manager, I want the ability to change the color scheme of
 -   A To-Do List widget
 -   Ability to shuffle (re-position) the dashboard panels
 -   Add a status indicator to the project panels.
+-   Save and recall dashboard settings (eg color scheme choice) in localStorage
 
-### Release Strategy
+### Sprints and Release Strategy
 -   Sprint 1 2/21 - 2/27
     -   Make the ON/OFF buttons only open or close once
     -   Create multiple library buttons
@@ -163,6 +166,7 @@ As a logged in project manager, I want the ability to change the color scheme of
     -   Code the Rebuild Library Buttons function from the localStorage
     -   Add Progress Bar to project panels
     -   Wireframe active project panels
+    -   Have first mentor session
 
 -   Sprint 2 2/28 -3/6
     -   Create Look and Feel
@@ -175,7 +179,22 @@ As a logged in project manager, I want the ability to change the color scheme of
     -   Add a third-party widget to the library
     -   Style widget panels
     -   Style Progress Bar to project panels
-    -   Make a function for the widget panel build return w .append
+    -   Make a function for .append to pass the widget panel MU
+
+-   Sprint 4 3/14 -3/20
+    -   Update Dark view styles
+    -   Style dashboard settings modal
+    -   Add clear dashboard button (in dashboard settings?)
+    -   wireframe mobile home page
+    -   Create a Library settings modal to change R/L position of Library
+    -   Have second mentor session
+
+-   Sprint 5 3/21 -3/27
+    -   Validate CSS/HTML/JS
+    -   Create Test data based on User Stories
+    -   Test and validate
+    -   Finalize README.md
+    -   Have Final mentor session
 
 ### Languages Used
 
@@ -184,7 +203,7 @@ As a logged in project manager, I want the ability to change the color scheme of
 -   [JavaScript](https://www.javascript.com/)
 -   [jQuery](https://jquery.com/)
 
-### Frameworks, Libraries & Programs Used
+### Frameworks, Libraries, & Programs Used
 
 1. [Bootstrap 4.6:](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
@@ -203,6 +222,7 @@ As a logged in project manager, I want the ability to change the color scheme of
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
 
+Below are placeholders:
 -   [W3C Markup Validator (Nu)](https://validator.w3.org/nu/)
     - [Results-index.html](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/w3c-nu-html-index-screenshotfrom2021-01-05.png) NO ERRORS
 -   [W3C CSS Validator (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options) - [Results](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/jigsaw-css-screenshotfrom2021-01-04.png)
@@ -242,7 +262,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape. Also adjusted the My Profile links to take up less width.
 
 ### Known Bugs
--   No known errors as of 1/5/21
+-   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly. The app currently does not track what the current Scheme is. It is future release requirement to store settings data in the localStorage object. This will provide a method for the app to determine what the color scheme is currently and appropriately apply the styles to the MU when a widget is added to the dashboard while in Dark Dashboard Scheme.
 
 ## Deployment
 ### Hosting
