@@ -149,7 +149,7 @@ function buildProjectLibBtnMU(data) {
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-acolor-1 wName">${data.name}</div>
     </button>
     </div>`;
 }
@@ -163,7 +163,7 @@ function buildProjectLibBtnMUMobile(data) {
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-acolor-1 wName">${data.name}</div>
     </button>
     </div>`;
 }

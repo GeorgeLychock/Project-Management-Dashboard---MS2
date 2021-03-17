@@ -77,10 +77,18 @@ function makeDark() {
     $("body").addClass('make-dark');
     $(".pmd-panel-head-text").addClass('make-dark-01');
     $(".pmd-w-library").addClass('make-dark-02');
+    $(".pmd-banner").addClass('make-dark-03');
+    $(".pmd-btn-library").addClass('make-dark-04');
+    $(".wName").addClass('make-dark-01');
 }
 
 function makeLight() {
     $("body").removeClass('make-dark');
+    $(".pmd-panel-head-text").removeClass('make-dark-01');
+    $(".pmd-w-library").removeClass('make-dark-02');
+    $(".pmd-banner").removeClass('make-dark-03');
+    $(".pmd-btn-library").removeClass('make-dark-04');
+    $(".wName").removeClass('make-dark-01');
 }
 
 /* ******* END Custom Style js ********** */

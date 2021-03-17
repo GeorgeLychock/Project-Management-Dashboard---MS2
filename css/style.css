@@ -19,9 +19,9 @@
 /* Banner */
 /* Mobile Library Dropdown */
 /* Dashboard Panels */
-/* Progress Bar */
 /* Active Projects Dashboard /*
 /* Active Widgets Dashboard */
+/* Progress Bar */
 /* Widget Library */
 /* Footer */
 /* Social Links */
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Dashboard Panels */
 .pmd-active-widget {
     border: solid 1px #707070;
-    padding: 0px 10px;
+    padding: 10px 10px 0 10px;
     margin: 0px 10px 10px 0px;
     height: 250px;
 }
@@ -242,17 +242,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0px 10px 5px 0px;
 }
 
-/* Progress Bar */
-.pmd-prg-row {
-    margin: 5px;
-    padding: 3px;
-    height: 1rem;
-}
-
-.pmd-prg-bar {
-    font-size: .5rem;
-}
-
 /* Active Projects Dashboard */
 .pmd-active-projects-head {
     margin-bottom: 10px;
@@ -280,6 +269,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-active-widgets {
     padding-left: 10px;
+}
+
+/* Progress Bar */
+.pmd-prg-row {
+    margin: 5px;
+    padding: 3px;
+    height: 1rem;
+}
+
+.pmd-prg-bar {
+    font-size: .5rem;
 }
 
 /* Widget Library */
@@ -325,4 +325,13 @@ h1, h2, h3, h4, h5, h6 {
 .make-dark-02 {
     background-color: rgba(0, 0, 0, 1);
     color: whitesmoke;
+}
+
+.make-dark-03 {
+    background-color: rgba(0, 128, 64, .75);
+    color: whitesmoke;
+}
+
+.make-dark-04 {
+    background-color: rgba(0, 191, 255, .75);
 }
