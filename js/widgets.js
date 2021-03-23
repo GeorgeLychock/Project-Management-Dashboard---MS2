@@ -131,6 +131,20 @@ function buildWidgetPanelMU(owdata, widgetID) {
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
 
+    console.log(apiData);
+
+    //currentTime = Unix_timestamp(apiData.dt);
+    timeInfo = Unix_timestamp(apiData.dt);
+    var currentTime = timeInfo.fulltime;
+    var dayTimeHours = timeInfo.hours;
+    if(dayTimeHours >= 6 && dayTimeHours <= 18) {
+        console.log("Its Daytime!");
+        weatherBGClass = "pmd-weather-icon-bg-day";
+    } else {
+        console.log("Its Nighttime!");
+        weatherBGClass = "pmd-weather-icon-bg-night";
+    };
+
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
     <div class="pmd-panel-head">
@@ -142,8 +156,8 @@ function buildWidgetPanelMU(owdata, widgetID) {
         <div class="pmd-active-widget pmd-bcolor-2">
             <div class="float-right">My Weather</div>
             <h5>${apiData.name}</h5>
-            <div>Current Temperature: ${apiData.main["temp"]} &#176;</div>
-            <div class="pmd-weather-icon-bg">
+            <div>Current Time: ${currentTime}</div>
+            <div class="${weatherBGClass}">
                 <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
                 <div class="pmd-weather-temp">${bigTemp} &#176;</div>
                 <div class="pmd-weather-desc">

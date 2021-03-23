@@ -51,7 +51,29 @@ function storageAvailable(type) {
             (storage && storage.length !== 0);
     }
 }
-/* /CODE REUSE - MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
+/* /CODE REUSE - localStorage Check MDN*/
+
+/* CODE REUSE - Covert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php */
+function Unix_timestamp(t) {
+    var timeMer = "";
+    var dt = new Date(t * 1000);
+    var hr = dt.getHours() - 12;
+    var dhr = dt.getHours();
+    if (dt.getHours <= 12) {
+        timeMer = "AM";
+    } else {
+        timeMer = "PM";
+    };
+    var m = "0" + dt.getMinutes();
+    let currentTimeObj = {
+        fulltime: hr + ':' + m.substr(-2) + ' ' + timeMer,
+        hours: dhr
+    }
+    console.log(currentTimeObj);
+    return currentTimeObj;
+}
+/* CODE REUSE - Covert UNIX Timestamp */
+
 
 
 /* ******* END Reused js ********** */

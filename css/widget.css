@@ -1,5 +1,9 @@
-.pmd-weather-icon-bg {
+.pmd-weather-icon-bg-night {
     background-color: #00264d;
+}
+
+.pmd-weather-icon-bg-day {
+    background-color: lightblue;
 }
 
 .pmd-weather-desc {
