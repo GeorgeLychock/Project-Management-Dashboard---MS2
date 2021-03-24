@@ -58,11 +58,11 @@ function createProjectLibBtns() {
     }
 }
 
-/* Project Library ON/OFF Buttons */
+/* Project Library Buttons */
 function turnProjectOn(widgetIdOn, vpcodepass) {
 
     let elementID = widgetIdOn;
-    let vpcode = vpcodepass;
+    let vpcode = vpcodepass; //for mobile styling
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
 
     getData(url, function(data) {
@@ -190,57 +190,27 @@ function saveProjectDataModal() {
     passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
     //Add a unique-ish widget ID to the data
     passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
-    console.log(passFormData);
 
     // Save widgetID to localStorage
-        // Check if localStorage is enabled
-        if (storageAvailable('localStorage')) {
-            // YES: We can use localStorage, check if localStorage var has been initiated
-            if (localStorage.localProjects) {
-                // YES: Add widget ID to the localStorage string and store
-                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited, convert to array
-                let activeProjects = activeProjectsSaved.split(',');
-                activeProjects.push(passFormData.widgetID);
-                localStorage.setItem('localProjects', activeProjects); //stored as a string, comma delimited
+    var localStoreName = "localProjects";
+    setLocalStorageIDs(localStoreName, passFormData.widgetID);
 
-                activeProjectsSaved = localStorage.getItem('localProjects');
-                console.log(activeProjectsSaved);
-
-            } else {
-                // Initiate localStorage and add project ID
-                let activeProjects = [];
-                activeProjects.push(passFormData.widgetID);
-                localStorage.setItem('localProjects', activeProjects);
-            }
-        } else {
-            // NO: no localStorage
-            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
-        }
-/*
-        // Save project data to localStorage
-        // Check if localStorage is enabled
-        if (storageAvailable('localStorage')) {
-            // YES: We can use localStorage, check if localStorage var has been initiated
-            if (localStorage.localProjects) {
-                // YES: Add widget ID to the localStorage string and store
-                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited, convert to array
-                let activeProjects = activeProjectsSaved.split(',');
-                activeProjects.push(passFormData.widgetID);
-                localStorage.setItem('localProjects', activeProjects); //stored as a string, comma delimited
-
-            } else {
-                // Initiate localStorage and add project ID
-                let activeProjects = [];
-                activeProjects.push(passFormData.widgetID);
-                localStorage.setItem('localProjects', activeProjects);
-            }
-        } else {
-            // NO: no localStorage
-            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
-        }
-*/
+    // Save project data to localStorage
+    var localStoreDataName = passFormData.widgetID;
+    setLocalStorageData(localStoreDataName, passFormData);
 
     // Build and display the new project library button
+
+    /*    var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + projectBuildIDs[i] + ".json";
+
+        //Build Library buttons for Desktop and Mobile
+        getData(url, function(data) {
+            return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
+        });
+    }
+
+*/
+
 
     //Show user that the data was saved
     return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";

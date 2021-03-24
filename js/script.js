@@ -59,12 +59,13 @@ function Unix_timestamp(t) {
     var dt = new Date(t * 1000);
     var hr = dt.getHours() - 12;
     var dhr = dt.getHours();
-    if (dt.getHours <= 12) {
+    if (dt.getHours <= 12) { //custom js added by developer
         timeMer = "AM";
     } else {
         timeMer = "PM";
     };
     var m = "0" + dt.getMinutes();
+    //custom js added by developer; create and return timestamp object
     let currentTimeObj = {
         fulltime: hr + ':' + m.substr(-2) + ' ' + timeMer,
         hours: dhr
@@ -88,6 +89,67 @@ function convertViewportWidth() {
         return viewportID;
     }
 }
+
+function setLocalStorageIDs(localName, wID) {
+    var localStoreName = localName;
+    let widgetID = wID;
+
+        // Check if localStorage is enabled
+        if (storageAvailable('localStorage')) {
+            // YES: We can use localStorage, check if localStorage var has been initiated
+            if(localStorage.getItem(localStoreName)) {
+                // YES: Add widget ID to the localStorage string and store
+                let activeProjects = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
+                activeProjects.push(widgetID);
+                localStorage.setItem(localStoreName, activeProjects); //stored as a string, comma delimited
+
+                activeProjectsSaved = localStorage.getItem(localStoreName);
+                console.log(activeProjectsSaved);
+
+            } else {
+                // Initiate localStorage and add project ID
+                let activeProjects = [];
+                activeProjects.push(widgetID);
+                localStorage.setItem('${localStoreName}', activeProjects);
+            }
+        } else {
+            // NO: no localStorage
+            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+        }
+    }
+
+function setLocalStorageData(wID, pFD) {
+
+    var localStoreDataName = wID; //using the unique widget ID to create a localStorage object
+    var passFormData = pFD;
+
+    // Check if localStorage is enabled
+    if (storageAvailable('localStorage')) {
+        // YES: We can use localStorage, check if localStorage var has been initiated
+        if(localStorage.getItem(localStoreDataName)) {
+            // YES: Add widget ID to the localStorage string and store
+            var activeProjects = localStorage.getItem(localStoreDataName).split(','); //returns a string, comma delimited, convert to array
+            activeProjects.push(passFormData);
+            localStorage.setItem(localStoreDataName, activeProjects); //stored as a string, comma delimited
+
+        } else {
+            // Initiate localStorage and add project ID
+            activeProjectsStr = JSON.stringify(passFormData);
+            localStorage.setItem(localStoreDataName, activeProjectsStr);
+
+            //TEST Recall check
+            let activeProjectsSaved = localStorage.getItem(localStoreDataName);
+            var activeProjects = JSON.parse(activeProjectsSaved);
+            console.log("this is the localStorage recall" + activeProjects, typeof(activeProjects));
+            console.log("this is the localStorage key/value recall" + activeProjects.projectname, typeof(activeProjects.projectname));
+            //END TEST Recall check
+        }
+    } else {
+        // NO: no localStorage
+        return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+    }
+}
+
 
 /* ******* END Custom Common js ********** */
 
