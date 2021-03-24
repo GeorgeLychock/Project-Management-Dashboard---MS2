@@ -69,7 +69,6 @@ function Unix_timestamp(t) {
         fulltime: hr + ':' + m.substr(-2) + ' ' + timeMer,
         hours: dhr
     }
-    console.log(currentTimeObj);
     return currentTimeObj;
 }
 /* CODE REUSE - Covert UNIX Timestamp */

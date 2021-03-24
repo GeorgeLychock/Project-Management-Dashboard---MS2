@@ -130,18 +130,14 @@ function buildWidgetPanelMU(owdata, widgetID) {
     var apiData = owdata;
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
+    var weatherBGClass = "";
 
-    console.log(apiData);
-
-    //currentTime = Unix_timestamp(apiData.dt);
     timeInfo = Unix_timestamp(apiData.dt);
     var currentTime = timeInfo.fulltime;
     var dayTimeHours = timeInfo.hours;
     if(dayTimeHours >= 6 && dayTimeHours <= 18) {
-        console.log("Its Daytime!");
         weatherBGClass = "pmd-weather-icon-bg-day";
     } else {
-        console.log("Its Nighttime!");
         weatherBGClass = "pmd-weather-icon-bg-night";
     };
 
