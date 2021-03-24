@@ -151,25 +151,6 @@
             </section>
         </article>
         <!-- /Dashboard -->
-
-        <div class="test-form">
-            <form id="projectForm" name="projectForm">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="projectname">Project Name</label>
-                        <input type="text" id="projectname" name="projectname" class="form-control">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="projectowner">Project Owner</label>
-                        <input type="text" id="projectowner" name="projectowner" class="form-control">
-                    </div>
-                </div>
-            </form>
-            <button type="button" class="btn btn-primary" onclick="collectFormData()">Save Project Data</button>
-        </div>
-
-        <p id="saveConfirmation"></p>
-
         <!-- Footer -->
         <footer>
             <div class="container-fluid">
@@ -224,22 +205,38 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="test-form">
+                    <div class="pmdform">
                         <form id="projectFormModal" name="projectFormModal">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="projectnameModal">Project Name</label>
-                                    <input type="text" id="projectnameModal" name="projectnameModal" class="form-control">
+                                    <label for="projectNameModal">Project Name</label>
+                                    <input type="text" id="projectNameModal" name="projectNameModal" class="form-control">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="projectownerModal">Project Owner</label>
-                                    <input type="text" id="projectownerModal" name="projectownerModal" class="form-control">
+                                    <label for="projectOwnerModal">Project Owner</label>
+                                    <input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="projectDesModal">Project Description</label>
+                                    <input type="text" id="projectDesModal" name="projectDesModal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="startDateModal">Start Date</label>
+                                    <input type="date" id="startDateModal" name="startDateModal" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="dueDateModal">Due Date</label>
+                                    <input type="date" id="dueDateModal" name="dueDateModal" class="form-control">
                                 </div>
                             </div>
                         </form>
-                        <button type="button" class="btn btn-primary" onclick="collectFormDataModal()">Save Project Data</button>
+                        <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
                     </div>
-                    <p id="saveConfirmationModal"></p>
+                    <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
                 </div>
                 <div class="modal-footer">
                     Nothing yet

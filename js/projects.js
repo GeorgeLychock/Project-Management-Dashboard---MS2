@@ -168,4 +168,80 @@ function buildProjectLibBtnMUMobile(data) {
     </div>`;
 }
 
+function saveProjectDataModal() {
 
+    //should probably use a constructor here
+    var passFormData = {
+        projectname: "",
+        widgetID: "",
+        duedate: "",
+        description: "",
+        projectowner: "",
+        percentcomplete: "",
+        cpi: "",
+        sv: "",
+        livesite: ""
+    };
+
+    passFormData.projectname = document.getElementById("projectFormModal").elements.namedItem("projectNameModal").value;
+    passFormData.projectowner = document.getElementById("projectFormModal").elements.namedItem("projectOwnerModal").value;
+    passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
+    passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
+    passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
+    //Add a unique-ish widget ID to the data
+    passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
+    console.log(passFormData);
+
+    // Save widgetID to localStorage
+        // Check if localStorage is enabled
+        if (storageAvailable('localStorage')) {
+            // YES: We can use localStorage, check if localStorage var has been initiated
+            if (localStorage.localProjects) {
+                // YES: Add widget ID to the localStorage string and store
+                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited, convert to array
+                let activeProjects = activeProjectsSaved.split(',');
+                activeProjects.push(passFormData.widgetID);
+                localStorage.setItem('localProjects', activeProjects); //stored as a string, comma delimited
+
+                activeProjectsSaved = localStorage.getItem('localProjects');
+                console.log(activeProjectsSaved);
+
+            } else {
+                // Initiate localStorage and add project ID
+                let activeProjects = [];
+                activeProjects.push(passFormData.widgetID);
+                localStorage.setItem('localProjects', activeProjects);
+            }
+        } else {
+            // NO: no localStorage
+            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+        }
+/*
+        // Save project data to localStorage
+        // Check if localStorage is enabled
+        if (storageAvailable('localStorage')) {
+            // YES: We can use localStorage, check if localStorage var has been initiated
+            if (localStorage.localProjects) {
+                // YES: Add widget ID to the localStorage string and store
+                let activeProjectsSaved = localStorage.getItem('localProjects'); //returns a string, comma delimited, convert to array
+                let activeProjects = activeProjectsSaved.split(',');
+                activeProjects.push(passFormData.widgetID);
+                localStorage.setItem('localProjects', activeProjects); //stored as a string, comma delimited
+
+            } else {
+                // Initiate localStorage and add project ID
+                let activeProjects = [];
+                activeProjects.push(passFormData.widgetID);
+                localStorage.setItem('localProjects', activeProjects);
+            }
+        } else {
+            // NO: no localStorage
+            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+        }
+*/
+
+    // Build and display the new project library button
+
+    //Show user that the data was saved
+    return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";
+}
