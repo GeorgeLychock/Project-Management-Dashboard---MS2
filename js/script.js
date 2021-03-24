@@ -90,7 +90,7 @@ function convertViewportWidth() {
     }
 }
 
-function setLocalStorageIDs(localName, wID) {
+function setActiveProjectIDs(localName, wID) {
     var localStoreName = localName;
     let widgetID = wID;
 
@@ -110,7 +110,7 @@ function setLocalStorageIDs(localName, wID) {
                 // Initiate localStorage and add project ID
                 let activeProjects = [];
                 activeProjects.push(widgetID);
-                localStorage.setItem('${localStoreName}', activeProjects);
+                localStorage.setItem(localStoreName, activeProjects);
             }
         } else {
             // NO: no localStorage
@@ -120,28 +120,27 @@ function setLocalStorageIDs(localName, wID) {
 
 function setLocalStorageData(wID, pFD) {
 
-    var localStoreDataName = wID; //using the unique widget ID to create a localStorage object
+    var localStoreDataID = wID; //using the unique widget ID to create a localStorage object
     var passFormData = pFD;
 
     // Check if localStorage is enabled
     if (storageAvailable('localStorage')) {
         // YES: We can use localStorage, check if localStorage var has been initiated
-        if(localStorage.getItem(localStoreDataName)) {
-            // YES: Add widget ID to the localStorage string and store
-            var activeProjects = localStorage.getItem(localStoreDataName).split(','); //returns a string, comma delimited, convert to array
-            activeProjects.push(passFormData);
-            localStorage.setItem(localStoreDataName, activeProjects); //stored as a string, comma delimited
-
+        if(localStorage.getItem(localStoreDataID)) {
+            // YES: Update project data
+            projectDataStr = JSON.stringify(passFormData);
+            localStorage.setItem(localStoreDataID, projectDataStr);
+            alert("This only gets fired if the project data needs to be updated; functionality TK");
         } else {
-            // Initiate localStorage and add project ID
-            activeProjectsStr = JSON.stringify(passFormData);
-            localStorage.setItem(localStoreDataName, activeProjectsStr);
+            // Initiate localStorage using the widgetID for the localStorage object name and add project data
+            projectDataStr = JSON.stringify(passFormData);
+            localStorage.setItem(localStoreDataID, projectDataStr);
 
             //TEST Recall check
-            let activeProjectsSaved = localStorage.getItem(localStoreDataName);
-            var activeProjects = JSON.parse(activeProjectsSaved);
-            console.log("this is the localStorage recall" + activeProjects, typeof(activeProjects));
-            console.log("this is the localStorage key/value recall" + activeProjects.projectname, typeof(activeProjects.projectname));
+            var projectDataStrSaved = localStorage.getItem(localStoreDataID);
+            var projectDataObj = JSON.parse(projectDataStrSaved);
+            console.log("this is the localStorage recall" + projectDataObj, typeof(projectDataObj));
+            console.log("this is the localStorage key/value recall" + projectDataObj.name, typeof(projectDataObj.name));
             //END TEST Recall check
         }
     } else {
