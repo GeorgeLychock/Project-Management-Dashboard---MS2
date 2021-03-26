@@ -12,18 +12,21 @@ function createActiveProjects() {
 
     if (localStorage.activeProjects) {
 
-        let projectBuildIDs = localStorage.getItem('activeProjects').split(',');
+        var projectBuildIDs = localStorage.getItem('activeProjects').split(',');
+
+        console.log("These are my active projects to reload" + projectBuildIDs);
 
         // Build Library buttons based on widgetIDs
         for (let i in projectBuildIDs) {
-            elementID = projectBuildIDs[i];
 
+            var elementID = projectBuildIDs[i];
+            console.log(elementID);
             // If the widget data is stored locally...
             if (localStorage.getItem(elementID)) {
                 // YES: Retrieve data and build he panel
-                var projectDataStrSaved = localStorage.getItem(elementID);
-                var projectDataObj = JSON.parse(projectDataStrSaved);
-                return $("#active-projects-data").append(buildProjectPanelMU(projectDataObj));
+                getLocalData(elementID, function(localData) {
+                    return $("#active-projects-data").append(buildProjectPanelMU(localData));
+                });
             } else {
                 //NO: then the data is default JSON data, retrieve and build panel
                 var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
@@ -44,10 +47,11 @@ function createProjectLibBtns() {
 
         console.log("These are all the widget IDs: " + widgetIDs, typeof(widgetIDs));
 
+        //Retrieve all activated project IDs
         var projectIDsSaved = localStorage.getItem('activeProjects').split(',');
         var projectBuildIDs = [];
 
-        console.log("This is my saved ID: " + projectIDsSaved, typeof(projectIDsSaved));
+        console.log("These are my saved ID: " + projectIDsSaved, typeof(projectIDsSaved));
 
         //Search the locally stored active widget IDs and make an array of available widgets that are NOT already active
         for (let i in widgetIDs) {
@@ -55,26 +59,36 @@ function createProjectLibBtns() {
                 projectBuildIDs.push(widgetIDs[i]);
             }
         }
+
         console.log(projectBuildIDs);
+
+    } else if (localStorage.allProjectIDs) {
+        //No panels have been activated yet so retrieve all available project IDs
+        var projectBuildIDs = localStorage.getItem('allProjectIDs').split(',');
     } else {
         //Default projects. Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
-        var projectBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all default widgets are available in the library
+        var projectBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all default widgets are available in the library, no custom ones have been added yet
         localStorage.setItem('allProjectIDs', projectBuildIDs);
+
         console.log("Default values set");
+
     }
 
     console.log(projectBuildIDs);
+
+    var elementID;
     
     // Build Library buttons based on widgetIDs
     for (let i in projectBuildIDs) {
         elementID = projectBuildIDs[i];
+        console.log("this is the ID being acted on" + elementID);
 
         // If the widget data is stored locally...
         if(localStorage.getItem(elementID)) {
             // YES: Retrieve data and rebuild the library button, and remove project panel from dashboard
-            var projectDataStrSaved = localStorage.getItem(elementID);
-            var projectDataObj = JSON.parse(projectDataStrSaved);
-            return $("#projects-library").append(buildProjectLibBtnMU(projectDataObj)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(projectDataObj));
+            getLocalData(elementID, function(localData) {
+                return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(localData));
+            });
         } else {
             //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and remove project panel from dashboard
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
@@ -220,12 +234,19 @@ function saveProjectDataModal() {
     passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
     passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
     passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
-
     //Add a unique-ish widget ID to the data
     passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
 
+        //Clear form
+        var x = document.getElementById("projectFormModal");
+        var i;
+        for (i = 0; i < x.length ;i++) {
+          x.elements[i].value = "";
+        }
+
     // Save widgetID to localStorage
     var localStorageName = "allProjectIDs";
+
     setProjectIDs(localStorageName, passFormData.widgetID);
 
     // Save project data to localStorage
