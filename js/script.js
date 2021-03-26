@@ -90,7 +90,7 @@ function convertViewportWidth() {
     }
 }
 
-function setActiveProjectIDs(localName, wID) {
+function setProjectIDs(localName, wID) {
     var localStoreName = localName;
     let widgetID = wID;
 
@@ -99,18 +99,14 @@ function setActiveProjectIDs(localName, wID) {
             // YES: We can use localStorage, check if localStorage var has been initiated
             if(localStorage.getItem(localStoreName)) {
                 // YES: Add widget ID to the localStorage string and store
-                let activeProjects = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
-                activeProjects.push(widgetID);
-                localStorage.setItem(localStoreName, activeProjects); //stored as a string, comma delimited
-
-                activeProjectsSaved = localStorage.getItem(localStoreName);
-                console.log(activeProjectsSaved);
-
+                let projectIDsToSave = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
+                projectIDsToSave.push(widgetID);
+                localStorage.setItem(localStoreName, projectIDsToSave); //stored as a string, comma delimited
             } else {
                 // Initiate localStorage and add project ID
-                let activeProjects = [];
-                activeProjects.push(widgetID);
-                localStorage.setItem(localStoreName, activeProjects);
+                let projectIDsToSave = [];
+                projectIDsToSave.push(widgetID);
+                localStorage.setItem(localStoreName, projectIDsToSave);
             }
         } else {
             // NO: no localStorage
@@ -135,13 +131,6 @@ function setLocalStorageData(wID, pFD) {
             // Initiate localStorage using the widgetID for the localStorage object name and add project data
             projectDataStr = JSON.stringify(passFormData);
             localStorage.setItem(localStoreDataID, projectDataStr);
-
-            //TEST Recall check
-            var projectDataStrSaved = localStorage.getItem(localStoreDataID);
-            var projectDataObj = JSON.parse(projectDataStrSaved);
-            console.log("this is the localStorage recall" + projectDataObj, typeof(projectDataObj));
-            console.log("this is the localStorage key/value recall" + projectDataObj.name, typeof(projectDataObj.name));
-            //END TEST Recall check
         }
     } else {
         // NO: no localStorage

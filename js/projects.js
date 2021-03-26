@@ -10,52 +10,78 @@ $(document).ready(function() {
 
 function createActiveProjects() {
 
-    if (localStorage.localProjects) {
+    if (localStorage.activeProjects) {
 
-        let activeProjectsSaved = localStorage.getItem('localProjects');
-        let activeProjects = activeProjectsSaved.split(',');
+        let projectBuildIDs = localStorage.getItem('activeProjects').split(',');
 
-        for (let i in activeProjects) {
+        // Build Library buttons based on widgetIDs
+        for (let i in projectBuildIDs) {
+            elementID = projectBuildIDs[i];
 
-            var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeProjects[i] + ".json";
-
-            getData(url, function (data) {
-                return $("#active-projects-data").append(buildProjectPanelMU(data));
-            });
+            // If the widget data is stored locally...
+            if (localStorage.getItem(elementID)) {
+                // YES: Retrieve data and build he panel
+                var projectDataStrSaved = localStorage.getItem(elementID);
+                var projectDataObj = JSON.parse(projectDataStrSaved);
+                return $("#active-projects-data").append(buildProjectPanelMU(projectDataObj));
+            } else {
+                //NO: then the data is default JSON data, retrieve and build panel
+                var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+                getData(url, function (data) {
+                    return $("#active-projects-data").append(buildProjectPanelMU(data));
+                });
+            }
         }
     }
 }
 
 function createProjectLibBtns() {
-
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
 
-    if (localStorage.localProjects) {
+    if (localStorage.activeProjects) {
+        //Retrieve all available project IDs
+        var widgetIDs = localStorage.getItem('allProjectIDs').split(',');
 
-        //Default projects. Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
-        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];
+        console.log("These are all the widget IDs: " + widgetIDs, typeof(widgetIDs));
 
-        let activeProjectsSaved = localStorage.getItem('localProjects');
-        var projectIDsSaved = activeProjectsSaved.split(',');
+        var projectIDsSaved = localStorage.getItem('activeProjects').split(',');
         var projectBuildIDs = [];
 
-        //Search the locally stored active widget IDs and make an array of available widgets that are not already active
+        console.log("This is my saved ID: " + projectIDsSaved, typeof(projectIDsSaved));
+
+        //Search the locally stored active widget IDs and make an array of available widgets that are NOT already active
         for (let i in widgetIDs) {
             if (projectIDsSaved.includes(widgetIDs[i]) == false) {
                 projectBuildIDs.push(widgetIDs[i]);
             }
         }
+        console.log(projectBuildIDs);
     } else {
+        //Default projects. Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
         var projectBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all default widgets are available in the library
+        localStorage.setItem('allProjectIDs', projectBuildIDs);
+        console.log("Default values set");
     }
 
+    console.log(projectBuildIDs);
+    
+    // Build Library buttons based on widgetIDs
     for (let i in projectBuildIDs) {
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + projectBuildIDs[i] + ".json";
+        elementID = projectBuildIDs[i];
 
-        //Build Library buttons for Desktop and Mobile
-        getData(url, function(data) {
-            return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
-        });
+        // If the widget data is stored locally...
+        if(localStorage.getItem(elementID)) {
+            // YES: Retrieve data and rebuild the library button, and remove project panel from dashboard
+            var projectDataStrSaved = localStorage.getItem(elementID);
+            var projectDataObj = JSON.parse(projectDataStrSaved);
+            return $("#projects-library").append(buildProjectLibBtnMU(projectDataObj)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(projectDataObj));
+        } else {
+            //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and remove project panel from dashboard
+            var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+            getData(url, function(data) {
+                return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
+            });
+        }
     }
 }
 
@@ -68,11 +94,14 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
     //is the widgetID is a locally stored object...
     if(localStorage.getItem(elementID)) {
         // YES: Save widgetID to localStorage and get local project data
-        var localStoreName = "localProjects";
-        setActiveProjectIDs(localStoreName, elementID);
+        var localStoreName = "activeProjects";
+        setProjectIDs(localStoreName, elementID);
         var projectDataStrSaved = localStorage.getItem(elementID);
         var projectDataObj = JSON.parse(projectDataStrSaved);
+
+        // Add project to the dashboard and remove the library button from both Desktop and Mobile views
         return $("#active-projects-data").append(buildProjectPanelMU(projectDataObj)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+
     } else {
         //NO: if not a locally stored data, get data from JSON
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
@@ -80,10 +109,10 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
         getData(url, function(data) {
     
             // Save widgetID to localStorage
-            var localStoreName = "localProjects";
-            setActiveProjectIDs(localStoreName, data.widgetID);
+            var localStoreName = "activeProjects";
+            setProjectIDs(localStoreName, data.widgetID);
 
-            // Add project to the dashboard and remove the library buttons from both Desktop and Mobile views
+            // Add project to the dashboard and remove the library button from both Desktop and Mobile views
             return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
         });
     }
@@ -92,10 +121,10 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
 function turnProjectOff(widgetIdOff) {
     let elementID = widgetIdOff;
     // remove widgetID from localStorage
-    let activeProjectsSaved = localStorage.getItem('localProjects');
+    let activeProjectsSaved = localStorage.getItem('activeProjects');
     let activeProjects = activeProjectsSaved.split(',');
     activeProjects.pop(elementID);
-    localStorage.setItem('localProjects', activeProjects);
+    localStorage.setItem('activeProjects', activeProjects);
 
     // If the widget data is stored locally...
     if(localStorage.getItem(elementID)) {
@@ -109,13 +138,13 @@ function turnProjectOff(widgetIdOff) {
         getData(url, function(data) {
             return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data)), $("#" + elementID).remove();
         });
-
     }
 }
 
 function buildProjectPanelMU(data) {
 
     let projectData = data;
+    //convert metrics data to % scales for progress bar settings
     let cpi = projectData.cpi/2 * 100;
     let sv = projectData.sv/2 * 100;
 
@@ -185,25 +214,26 @@ function saveProjectDataModal() {
         sv: "",
         livesite: ""
     };
-
+    //grab input form data from modal
     passFormData.name = document.getElementById("projectFormModal").elements.namedItem("projectNameModal").value;
     passFormData.owner = document.getElementById("projectFormModal").elements.namedItem("projectOwnerModal").value;
     passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
     passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
     passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
+
     //Add a unique-ish widget ID to the data
     passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
 
     // Save widgetID to localStorage
-    var localStoreName = "localProjects";
-    setActiveProjectIDs(localStoreName, passFormData.widgetID);
+    var localStorageName = "allProjectIDs";
+    setProjectIDs(localStorageName, passFormData.widgetID);
 
     // Save project data to localStorage
     var localStoreDataName = passFormData.widgetID;
     setLocalStorageData(localStoreDataName, passFormData);
 
     // Build and display the new project library button
-            return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData));
+    return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData));
     //Show user that the data was saved
     // return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";
 }
