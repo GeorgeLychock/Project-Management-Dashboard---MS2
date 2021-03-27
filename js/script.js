@@ -92,7 +92,6 @@ function convertViewportWidth() {
 
 function getLocalData(eID, cb) {
     elementID = eID;
-    // YES: Retrieve data and rebuild the library button, and remove project panel from dashboard
     var projectDataStrSaved = localStorage.getItem(elementID);
     cb(JSON.parse(projectDataStrSaved));
 }
@@ -106,18 +105,9 @@ function setProjectIDs(localName, wID) {
             // YES: We can use localStorage, check if localStorage var has been initiated
             if (localStorage.getItem(localStoreName)) {
                 // YES: Add widget ID to the localStorage string and store
-                console.log("Am I getting in here?");
-                console.log(widgetID);
                 let projectIDsToSave = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
-                console.log(projectIDsToSave);
                 projectIDsToSave.push(widgetID);
-                console.log(projectIDsToSave);
                 localStorage.setItem(localStoreName, projectIDsToSave); //stored as a string, comma delimited
-
-                var pmdcheck = localStorage.getItem(localStoreName);
-                console.log(pmdcheck);
-
-
             } else {
                 // Initiate localStorage and add project ID
                 let projectIDsToSave = [];
