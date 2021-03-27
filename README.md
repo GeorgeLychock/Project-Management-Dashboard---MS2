@@ -3,54 +3,58 @@
 #### JavaScript/jQuery/API/DOM Module
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/ms2/index.html)
 ### Use Case:
-A configurable user dashboard that displays and organizes key metrics and data from third-party datastreams such as a project schedule, a to-do-list, or a project metrics aggregator. The third-party datastream can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a side menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
+A configurable user dashboard that displays and organizes key metrics and other data from native or third-party datastreams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party datastreams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
 A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
 Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
 #### Notes
-
 -   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
 -   The site consists of one page, a dashboard.
 -   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
--   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized but while keeping main functionality and components/content intact.
+-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized while keeping main functionality and components/content intact.
+-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dahsboard configurations for styling and panel/button visiiblity.
+-   The user stories below indicate a "logged-in user" since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 
 ### User Stories:
-#### Story 1
-As a logged in project manager, I want to see key project status metrics on my current projects, so that I have a clear, one-stop view of all my projects' status.
+#### Story 1 done
+As a logged-in project manager, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
     -   I can see further detail of a given project in a larger, more prominent Dashboard.
+    -   It is clear what elements on the dashboard are projects, and which are tools.
     
-#### Story 2
+#### Story 2 done
 As a logged in project manager, I want to Add or Remove project detail panels from the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
+    -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
+    -   The buttons clearly indicate what they are for
     -   I can Add a project detail panel from the dashboard
     -   I can Remove a project detail panel
+    -   I can Add a tool panel from the dashboard
+    -   I can Remove a tool panel from the dashboard
 
-#### Story 3
-As a logged in project manager, I want to see project details of the projects I make active on the Dashboard
+#### Story 3 done
+As a logged in project manager, I want to see project details of the projects after making the project panel active on the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   I can view project Title/Name
     -   I can view project Due Date
     -   I can view the project Owner
     -   I can view the project Description
-
-#### Story 4
-As a logged in project manager, I want to see project KPIs of the projects I make active on the Dashboard
--   Acceptance Criteria -- Duplicated in Testing section below
     -   I can view project percent complete to date
     -   I can view project Cost Performanace Index (CPI) to date
     -   I can view the project Schedule Variance (SV) to date
+    -   I can view a link to the live development site, if one exists
 
-#### Story 5
-As a logged in project manager, when I return to the site, all widgets I made active are still active on the Dashboard
+#### Story 4 done
+As a logged in project manager, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   Active widegts are present when I return to the site
+    -   Buttons for any available widgets not already activated to the dashboard are present in the Library
 
-#### Story 6
-As a logged in project manager, I want the ability to change the color scheme of the Dashboard from light to dark
+#### Story 5
+As a logged in project manager, I want the ability to change certain dashboard visual settings, to make the app have a more customized experience
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   The color scheme is light when I first log in, view Dashboard
     -   I can change the color Scheme using a button to a dark scheme
@@ -339,7 +343,13 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
                    
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-
+  //Clear form
+        /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
+        var x = document.getElementById("projectFormModal");
+        var i;
+        for (i = 0; i < x.length ;i++) {
+          x.elements[i].value = "";
+        }
 
 ### Content
 
