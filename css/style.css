@@ -166,17 +166,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav */
-.pmd-nav-main {
-    margin: 10px 0 10px 0px;
-    padding: 10px 10px 10px 20px;
-    border: solid 1px #707070;
-    border-radius: 20px;
+
+.pmd-nav-container {
+    margin: 0;
+    padding: 0;
 }
+
+.pmd-nav-main {
+    margin: 0px 0 10px 0px;
+}
+
 /* Header */
 .pmd-header {
     padding: 10px 10px 10px 20px;
-    border: solid 1px #707070;
-    border-radius: 25px;
+    margin: 0;
 }
 
 /* Banner */

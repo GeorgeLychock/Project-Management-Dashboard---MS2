@@ -168,10 +168,19 @@ function buildWidgetPanelMU(owdata, widgetID) {
 // These next two (2) functions can be made common if we pass the onClick function name from the calling function
 function buildWidgetLibBtnMU(data) {
 
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
+    var colorSchemeFinal01 = "";
+    var colorSchemeFinal02 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+    colorSchemeFinal01 = " " + colorScheme + "-04";
+    colorSchemeFinal02 = " " + colorScheme + "-01";
+    console.log("this is what is returned to uildProjectLibBtnMU" + colorSchemeFinal01);
+    }
+
+    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
