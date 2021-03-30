@@ -131,6 +131,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Buttons and Icons*/
+.pmd-nav-item {
+    border: none;
+    background: transparent;
+}
+.pmd-nav-item:hover {
+    color: rgba(0, 191, 255, .75);
+}
+
 .pmd-icon-02 {
     border: none;
     display: inline;
