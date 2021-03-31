@@ -209,6 +209,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
+/* Project Form */
+.valAlert01 {
+    color: red;
+    font-weight: 700;
+}
+
+.valIndicator01 {
+    color: red;
+    font-weight: 700;
+    float: left;
+    margin-right: 2px;
+}
+
 /* Dashboard Panels */
 .pmd-active-widget {
     border: solid 1px #707070;

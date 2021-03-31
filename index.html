@@ -189,8 +189,8 @@
                         <form id="projectFormModal" name="projectFormModal">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="projectNameModal">Project Name</label>
-                                    <input type="text" id="projectNameModal" name="projectNameModal" class="form-control">
+                                    <div class="valIndicator01">*</div><label for="projectNameModal">Project Name</label>
+                                    <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valAlert01"></div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="projectOwnerModal">Project Owner</label>
@@ -219,7 +219,9 @@
                     <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
                 </div>
                 <div class="modal-footer">
-                    Nothing yet
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectSaveConfirm()">
+                        <span aria-hidden="true">Close</span>
+                    </button>
                 </div>
             </div>
         </div>

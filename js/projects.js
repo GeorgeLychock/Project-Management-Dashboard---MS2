@@ -183,7 +183,7 @@ function buildProjectLibBtnMU(data) {
     if (colorScheme != "") {
     colorSchemeFinal01 = " " + colorScheme + "-04";
     colorSchemeFinal02 = " " + colorScheme + "-01";
-    console.log("this is what is returned to uildProjectLibBtnMU" + colorSchemeFinal01);
+    console.log("this is what is returned to buildProjectLibBtnMU" + colorSchemeFinal01);
     }
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
@@ -222,33 +222,44 @@ function saveProjectDataModal() {
         sv: "",
         livesite: ""
     };
-    //grab input form data from modal
-    passFormData.name = document.getElementById("projectFormModal").elements.namedItem("projectNameModal").value;
-    passFormData.owner = document.getElementById("projectFormModal").elements.namedItem("projectOwnerModal").value;
-    passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
-    passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
-    passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
-    //Add a unique-ish widget ID to the data
-    passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
+       //grab input form data from modal
+       passFormData.name = document.getElementById("projectFormModal").elements.namedItem("projectNameModal").value;
+       passFormData.owner = document.getElementById("projectFormModal").elements.namedItem("projectOwnerModal").value;
+       passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
+       passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
+       passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
+    
+       // Validate data, and if OK, assign widgetID and save data, build button
+       let validateInputReply = validateInput(passFormData.name, "Name");
+       if (validateInputReply == false) {
+           return $("#valAlert01").html("* Required Field");
+       } else {
+        //Add a unique-ish widget ID to the data
+        passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
 
-        //Clear form
-        /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
-        var x = document.getElementById("projectFormModal");
-        var i;
-        for (i = 0; i < x.length ;i++) {
-          x.elements[i].value = "";
-        }
+            //Clear form
+            /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
+            var x = document.getElementById("projectFormModal");
+            var i;
+            for (i = 0; i < x.length ;i++) {
+            x.elements[i].value = "";
+            }
 
-    // Save widgetID to localStorage
-    var localStorageName = "allProjectIDs";
-    setProjectIDs(localStorageName, passFormData.widgetID);
+        // Save widgetID to localStorage
+        var localStorageName = "allProjectIDs";
+        setProjectIDs(localStorageName, passFormData.widgetID);
 
-    // Save project data to localStorage
-    var localStoreDataName = passFormData.widgetID;
-    setLocalStorageData(localStoreDataName, passFormData);
+        // Save project data to localStorage
+        var localStoreDataName = passFormData.widgetID;
+        setLocalStorageData(localStoreDataName, passFormData);
 
-    // Build and display the new project library button
-    return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData));
-    //Show user that the data was saved
-    // return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";
+        // Build and display the new project library button
+        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard unless you clear browser cache.");
+        //Show user that the data was saved
+        // return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";
+    }
+}
+
+function clearProjectSaveConfirm() {
+    return $("#saveConfirmationModal").html(""), $(".valAlert01").html("");
 }

@@ -73,6 +73,7 @@ $(document).ready(function() {
     }
     /* /CODE REUSE - Covert UNIX Timestamp */
 
+
 /* ******* END REUSED JAVASCRIPT ********** */
 
 
@@ -163,6 +164,20 @@ $(document).ready(function() {
             }
         } else {
             return "";
+        }
+    }
+
+    /* Validates project form data */
+    
+    function validateInput(value, iField) {
+        let checkValue = value;
+        let targetName = iField;
+        if (checkValue == "") {
+          alert(targetName + " must be filled out");
+          return false;
+        } else if (checkValue == "badword") {
+            alert(targetName + " should be nicer.");
+          return false;
         }
     }
 
