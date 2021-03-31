@@ -18,10 +18,10 @@
 <body>
     <main>
         <!-- Desktop Nav -->
-        <div class="container-fluid pmd-nav-container">
-            <div class="row no-gutters pmd-nav-main pmd-bcolor-nav">
+        <div class="container-fluid pmd-nav-cntnr">
+            <div class="row no-gutters pmd-bcolor-nav">
                 <div class="col">
-                    <nav class="navbar navbar-expand-lg navbar-light">
+                    <nav class="navbar navbar-expand-lg navbar-light pmd-nar-bar">
                         <a class="navbar-brand" href="#">pmDashboard</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -35,6 +35,11 @@
                                         <div>Add Project</div>
                                     </div>
                                 </li>
+                                <li class="nav-item">
+                                    <div type="button" class="pmd-nav-item" data-toggle="modal" onclick="createDeleteProjectList()" data-target="#delProject">
+                                        <div>Delete Project</div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -44,7 +49,7 @@
         <!-- /Desktop Nav -->
         <!-- Header -->
         <header>
-            <div class="container-fluid">
+            <div class="container-fluid pmd-header-cntnr">
                 <div class="row no-gutters pmd-header pmd-bcolor-head">
                     <div class="col pmd-hcolor-1">
                         <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#dashboardSettings">
@@ -219,7 +224,32 @@
                     <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectSaveConfirm()">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
+                        <span aria-hidden="true">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Bootstrap Modal - Add Project -->
+     <!-- Bootstrap Modal - Delete Project -->
+     <div class="modal fade" id="delProject" tabindex="-1" aria-labelledby="addProjectLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delProjectLabel">Delete Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>My Saved Projects : Delete Project</div>
+                    <div class="pmddelmodal" id="delProjectListModal">
+                    </div>
+                    <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
                         <span aria-hidden="true">Close</span>
                     </button>
                 </div>

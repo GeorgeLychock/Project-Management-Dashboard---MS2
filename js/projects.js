@@ -174,16 +174,16 @@ function buildProjectPanelMU(data) {
     </div>`;
 }
 
-// These next two (2) functions can be made common if we pass the onClick function name from the calling function
+/* Build Library button markup
+These next two (2) functions build the Library buttons, mobile version needs to add a code so the button ids are unique. */
 function buildProjectLibBtnMU(data) {
 
     var colorSchemeFinal01 = "";
     var colorSchemeFinal02 = "";
     var colorScheme = whatColorScheme();
     if (colorScheme != "") {
-    colorSchemeFinal01 = " " + colorScheme + "-04";
-    colorSchemeFinal02 = " " + colorScheme + "-01";
-    console.log("this is what is returned to buildProjectLibBtnMU" + colorSchemeFinal01);
+        colorSchemeFinal01 = " " + colorScheme + "-04";
+        colorSchemeFinal02 = " " + colorScheme + "-01";
     }
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
@@ -249,17 +249,52 @@ function saveProjectDataModal() {
         var localStorageName = "allProjectIDs";
         setProjectIDs(localStorageName, passFormData.widgetID);
 
+        // Save widgetID to localStorage to capture all user input IDs
+        var localStorageName = "userProjectIDs";
+        setProjectIDs(localStorageName, passFormData.widgetID);
+
         // Save project data to localStorage
         var localStoreDataName = passFormData.widgetID;
         setLocalStorageData(localStoreDataName, passFormData);
 
-        // Build and display the new project library button
+        // Build and display the new project library button; show user that the data was saved
         return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard unless you clear browser cache.");
-        //Show user that the data was saved
-        // return document.getElementById("saveConfirmationModal").innerText = "Your Data has been saved!";
     }
 }
 
-function clearProjectSaveConfirm() {
-    return $("#saveConfirmationModal").html(""), $(".valAlert01").html("");
+function clearProjectFormAlerts() {
+    return $("#saveConfirmationModal").html(""), $("#valAlert01").html("");
+}
+
+/* Delete Project Functions */
+function createDeleteProjectList() {
+    var localStorageName = "userProjectIDs";
+    console.log("I am firing createDeleteProjectList");
+    if (localStorage.getItem(localStorageName)) {
+        let delWidgetIDList = localStorage.getItem(localStorageName).split(',');
+        console.log(delWidgetIDList);
+        for (i in delWidgetIDList) {
+            var elementID = delWidgetIDList[i];
+            getLocalData(elementID, function(localData) {
+                // Add project to the dashboard and remove the library button from both Desktop and Mobile views
+                    return $("#delProjectListModal").append(buildProjectDelBtnMU(localData));
+                });
+        }
+    } else {
+        alert("There are no user projects entered yet. Please go to Create Project to add one");
+    }
+}
+
+function delProject() {
+
+}
+
+function buildProjectDelBtnMU(data) {
+
+    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
+    <button class="pmd-icon-03" onclick="delProject('${data.widgetID}')">
+    <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
+    <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-1 wName">${data.name}</div>
+    </button>
+    </div>`;
 }

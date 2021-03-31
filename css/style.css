@@ -131,14 +131,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Buttons and Icons*/
-.pmd-nav-item {
-    border: none;
-    background: transparent;
-}
-.pmd-nav-item:hover {
-    color: rgba(0, 191, 255, .75);
-}
-
 .pmd-icon-02 {
     border: none;
     display: inline;
@@ -174,17 +166,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav */
+.pmd-nav-item {
+    border: none;
+    background: transparent;
+    padding-top: 4px;
+    margin: 0 4px 0 8px;
+}
+.pmd-nav-item:hover {
+    color: rgba(0, 191, 255, .75);
+}
 
-.pmd-nav-container {
+.pmd-nav-cntnr {
     margin: 0;
     padding: 0;
 }
 
-.pmd-nav-main {
-    margin: 0px 0 10px 0px;
+.pmd-nar-bar {
+    padding: 5px 10px;
 }
 
 /* Header */
+.pmd-header-cntnr {
+    padding: 0;
+}
+
 .pmd-header {
     padding: 10px 10px 10px 20px;
     margin: 0;

@@ -173,7 +173,6 @@ $(document).ready(function() {
         let checkValue = value;
         let targetName = iField;
         if (checkValue == "") {
-          alert(targetName + " must be filled out");
           return false;
         } else if (checkValue == "badword") {
             alert(targetName + " should be nicer.");
