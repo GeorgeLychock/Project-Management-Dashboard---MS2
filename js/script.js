@@ -186,6 +186,7 @@ $(document).ready(function() {
 
     function makeDark() {
         var md;
+        $("body").addClass('make-dark');
         $("main").addClass('make-dark');
         $(".pmd-panel-head-text").addClass('make-dark-01');
         $(".pmd-w-library").addClass('make-dark-02');
@@ -196,6 +197,7 @@ $(document).ready(function() {
 
     function makeLight() {
         var md;
+        $("body").removeClass('make-dark');
         $("main").removeClass('make-dark');
         $(".pmd-panel-head-text").removeClass('make-dark-01');
         $(".pmd-w-library").removeClass('make-dark-02');

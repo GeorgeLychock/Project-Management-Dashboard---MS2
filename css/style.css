@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links.pmd- NOTE! All :hover colors are defined at the specific selector style further below */
 /*header colors*/
-.pmd-hcolor-1 {color:#1792bb;}
+.pmd-hcolor-1 {color:#619aea;}
 .pmd-hcolor-2 {color:#000;}
 /*nav colors */
 .pmd-ncolor-1 {color:#4dd2ff;}
@@ -66,20 +66,16 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-acolor-3 {color:#4dd2ff;}
 
 /*Common Background Colors*/
-.pmd-bcolor-1 {background-color:#fff;}
-.pmd-bcolor-head {background-color: rgba(50, 50, 50, .05);}
+.pmd-bcolor-1 {background-color:rgba(0, 0, 0, .04);}
 .pmd-bcolor-4 {background-color:#666;}
-
 .pmd-bcolor-2 {background-color:whitesmoke;}
 .pmd-bcolor-3 {background-color:#999;}
 .pmd-bcolor-5 {background-color:#000;}
-.pmd-bcolor-nav {background-color:#fcc;}
+.pmd-bcolor-nav {background-color:#83b0ef;}
 .pmd-bcolor-foot {background-color:#fda;}
-.pmd-bcolor-banner {background-color:rgba(0, 128, 64, .25);}
-
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color: rgba(0, 191, 255, .25);}
+.pmd-btncolor-1 {background-color: rgba(255, 153, 0, .25);}
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
@@ -178,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-nar-bar {
-    padding: 5px 10px;
+    padding: 0 0 0 5px;
 }
 
 /* Header */
@@ -188,16 +184,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-header {
     padding: 10px 10px 10px 20px;
-    margin: 0;
+    margin: 0 0 0 50px;
 }
 
 /* Banner */
-.pmd-banner {
-    margin: 10px 15px;
-    padding: 2px 15px;
-    border: solid 1px #707070;
-    border-radius: 20px;
-}
 
 /* Mobile Library Dropdown */
 .pmd-mobile-lib-drop {
@@ -310,7 +300,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Widget Library */
 .pmd-w-library {
     padding: 20px 10px 10px 10px;
-    border: solid 1px #707070;
     border-radius: 25px;
 }
 
@@ -348,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .make-dark-02 {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, .08);
     color: whitesmoke;
 }
 
@@ -358,5 +347,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .make-dark-04 {
-    background-color: rgba(0, 191, 255, .75);
+    background-color: rgba(255, 221, 170, .5);
 }
