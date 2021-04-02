@@ -168,7 +168,6 @@ $(document).ready(function() {
     }
 
     /* Validates project form data */
-    
     function validateInput(value, iField) {
         let checkValue = value;
         let targetName = iField;

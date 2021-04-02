@@ -269,30 +269,79 @@ function clearProjectFormAlerts() {
 /* Delete Project Functions */
 function createDeleteProjectList() {
     var localStorageName = "userProjectIDs";
-    console.log("I am firing createDeleteProjectList");
     if (localStorage.getItem(localStorageName)) {
         let delWidgetIDList = localStorage.getItem(localStorageName).split(',');
         console.log(delWidgetIDList);
         for (i in delWidgetIDList) {
-            var elementID = delWidgetIDList[i];
-            getLocalData(elementID, function(localData) {
-                // Add project to the dashboard and remove the library button from both Desktop and Mobile views
+            if (!$("#widget-btn-del-" + delWidgetIDList[i]).length) {
+            console.log("The if length statement returned true" + delWidgetIDList[i]);
+                var elementID = delWidgetIDList[i];
+                getLocalData(elementID, function(localData) {
+                    // Add project to the dashboard and remove the library button from both Desktop and Mobile views
                     return $("#delProjectListModal").append(buildProjectDelBtnMU(localData));
                 });
+            }
         }
     } else {
         alert("There are no user projects entered yet. Please go to Create Project to add one");
     }
 }
 
-function delProject() {
+function delProject(wID, pName) {
 
+    var elementID = wID;
+    var pn = pName;
+    let vpcode = convertViewportWidth();
+
+    //Confirm deletion
+    var txt = "Are you sure you want to delete " + pn;
+    if (confirm(txt) == true) {
+
+        //delete project data
+        localStorage.removeItem(elementID);
+
+        // delete active widgetID from localStorage
+        let activeProjSaved = localStorage.getItem('activeProjects');
+        let activeProj = activeProjSaved.split(',');
+        activeProj.pop(elementID);
+        localStorage.setItem('activeProjects', activeProj);
+
+        // delete widgetID from main list in localStorage
+        activeProjSaved = localStorage.getItem('allProjectIDs');
+        activeProj = activeProjSaved.split(',');
+        activeProj.pop(elementID);
+        localStorage.setItem('allProjectIDs', activeProj);
+
+        // delete widgetID from user list in localStorage
+        activeProjSaved = localStorage.getItem('userProjectIDs');
+        console.log(activeProjSaved);
+        console.log(elementID);
+        activeProj = activeProjSaved.split(',');
+        activeProj.pop(elementID);
+        console.log(activeProj);
+        //if that was the last/only project saved locally, delete the item entirely
+        if (activeProj == "") {
+            localStorage.removeItem('userProjectIDs');
+        } else {
+            localStorage.setItem('userProjectIDs', activeProj);
+        }
+
+        //remove panel
+        $("#" + elementID).remove();
+        //remove library button
+        $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove()
+        //remove del button
+        $("#widget-btn-del-" + elementID).remove();
+
+
+        alert("Your project " + pn + " has been deleted");
+    }
 }
 
 function buildProjectDelBtnMU(data) {
 
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${data.widgetID}">
-    <button class="pmd-icon-03" onclick="delProject('${data.widgetID}')">
+    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-del-${data.widgetID}">
+    <button class="pmd-icon-03" onclick="delProject('${data.widgetID}', '${data.name}')">
     <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
     <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-1 wName">${data.name}</div>
     </button>
