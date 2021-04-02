@@ -4,8 +4,7 @@
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/ms2/index.html)
 ### Use Case:
 A configurable user dashboard that displays and organizes key metrics and other data from native or third-party datastreams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party datastreams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
-A limited number of widget view settings will be available from the widget window once the widget is added to the main dahsboard viewport.
-Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
+A limited number of dashboard settings will be available from a settings cog that will enhance the user experience. Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
 #### Notes
 -   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
@@ -69,12 +68,12 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   Emphasis is on an uncluttered, business tool design that has light colors and a lot of white space.
 -   Although a fully functioning rendering of the site will be accessible from any device, the app is optimized for desktop use.
 -   A light and dark version have been mocked up to show how the app can change based on a user selection in a settings panel.
--   Mockups:
-    -   Desktop Look and Feel - Light - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-light.png)
-    -   Desktop Look and Feel - Dark - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-dark.png)
+        Mockups:
+        -   Desktop Look and Feel - Light - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-light.png)
+        -   Desktop Look and Feel - Dark - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-dark.png)
 
 ### Dashboard Structure
--   Nav, Header, and Banner sections span the top of the desktop viewport
+-   Nav, Header, and Banner sections span the top of the desktop viewport (vp)
 -   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop viewport;  these will be stacked in mobile vp.
 -   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop viewport
 -   A footer section spans the bottom of all viewports
@@ -137,6 +136,12 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   Persistent Settings
     -   Activated widgets should be persistent when a user returns to the app.
     -   Ability to 'clear' the dashboard (clear localStorage)
+-   OpenWeather Widget
+    -   The background styling should be an indicator it is daytime(light blue) or nighttime (dark blue)
+-   Adding/Removing User Projects
+    -   App should demontrate what adding a project to the dashboard and library is like.
+    -   The projects should be persistent when the user relaunches the browser
+    -   The user should be able to delete a project
 
 ### Technical Requirements for this project:
 -   Use template literals
@@ -159,6 +164,8 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   Ability to shuffle (re-position) the dashboard panels
 -   Add a status indicator to the project panels.
 -   Save and recall dashboard settings (eg color scheme choice) in localStorage
+-   OpenWeather Widget
+    -   Add wind speed, wind chill, and time zone data to panel view
 
 ### Sprints and Release Strategy
 -   Sprint 1 2/21 - 2/27
