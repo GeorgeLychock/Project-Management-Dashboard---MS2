@@ -271,10 +271,8 @@ function createDeleteProjectList() {
     var localStorageName = "userProjectIDs";
     if (localStorage.getItem(localStorageName)) {
         let delWidgetIDList = localStorage.getItem(localStorageName).split(',');
-        console.log(delWidgetIDList);
         for (i in delWidgetIDList) {
             if (!$("#widget-btn-del-" + delWidgetIDList[i]).length) {
-            console.log("The if length statement returned true" + delWidgetIDList[i]);
                 var elementID = delWidgetIDList[i];
                 getLocalData(elementID, function(localData) {
                     // Add project to the dashboard and remove the library button from both Desktop and Mobile views
@@ -314,11 +312,8 @@ function delProject(wID, pName) {
 
         // delete widgetID from user list in localStorage
         activeProjSaved = localStorage.getItem('userProjectIDs');
-        console.log(activeProjSaved);
-        console.log(elementID);
         activeProj = activeProjSaved.split(',');
         activeProj.pop(elementID);
-        console.log(activeProj);
         //if that was the last/only project saved locally, delete the item entirely
         if (activeProj == "") {
             localStorage.removeItem('userProjectIDs');

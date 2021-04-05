@@ -174,7 +174,6 @@ function buildWidgetLibBtnMU(data) {
     if (colorScheme != "") {
     colorSchemeFinal01 = " " + colorScheme + "-04";
     colorSchemeFinal02 = " " + colorScheme + "-01";
-    console.log("this is what is returned to uildProjectLibBtnMU" + colorSchemeFinal01);
     }
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
