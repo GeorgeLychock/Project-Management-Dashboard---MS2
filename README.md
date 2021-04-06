@@ -273,7 +273,14 @@ Below are placeholders:
     -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape. Also adjusted the My Profile links to take up less width.
 
 ### Known Bugs
--   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly. The app currently does not track what the current Scheme is. It is future release requirement to store settings data in the localStorage object. This will provide a method for the app to determine what the color scheme is currently and appropriately apply the styles to the MU when a widget is added to the dashboard while in Dark Dashboard Scheme.
+#### OPEN 
+    -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
+
+#### FIXED 
+    -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
+        FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels and buttons
+
+
 
 ## Deployment
 ### Hosting
