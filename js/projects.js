@@ -229,6 +229,9 @@ function saveProjectDataModal() {
        passFormData.description = document.getElementById("projectFormModal").elements.namedItem("projectDesModal").value;
        passFormData.startdate = document.getElementById("projectFormModal").elements.namedItem("startDateModal").value;
        passFormData.duedate = document.getElementById("projectFormModal").elements.namedItem("dueDateModal").value;
+       passFormData.percentcomplete = document.getElementById("projectFormModal").elements.namedItem("percentCompleteModal").value;
+       passFormData.cpi = document.getElementById("projectFormModal").elements.namedItem("CPIModal").value;
+       passFormData.sv = document.getElementById("projectFormModal").elements.namedItem("SVModal").value;
     
        // Validate data, and if OK, assign widgetID and save data, build button
        let validateInputReply = validateInput(passFormData.name, "Name");
@@ -259,7 +262,7 @@ function saveProjectDataModal() {
         setLocalStorageData(localStoreDataName, passFormData);
 
         // Build and display the new project library button; show user that the data was saved
-        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard unless you clear browser cache.");
+        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard when you return unless you clear browser cache.");
     }
 }
 

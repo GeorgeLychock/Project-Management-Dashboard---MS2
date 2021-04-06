@@ -211,6 +211,20 @@
                                     <input type="date" id="dueDateModal" name="dueDateModal" class="form-control">
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="percentCompleteModal">Percent Complete</label>
+                                    <input type="number" id="percentCompleteModal" name="percentCompleteModal" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="CPIModal">Cost Performance Index</label>
+                                    <input type="number" id="CPIModal" name="CPIModal" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="SVModal">Schedule Variance</label>
+                                    <input type="number" id="SVModal" name="SVModal" class="form-control">
+                                </div>
+                            </div>
                         </form>
                         <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
                     </div>
@@ -239,7 +253,7 @@
                     <div>My Saved Projects : Delete Project</div>
                     <div class="pmddelmodal" id="delProjectListModal">
                     </div>
-                    <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
+                    <p id="delConfirmationModal" name="delConfirmationModal"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
