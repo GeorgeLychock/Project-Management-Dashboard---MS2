@@ -8,7 +8,8 @@ A limited number of dashboard settings will be available from a settings cog tha
 
 #### Notes
 -   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
--   The site consists of one page, a dashboard.
+-   This is a front-end website that gives the user methods to add content and change appearance.
+-   The project consists of one page, a dashboard.
 -   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
 -   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized while keeping main functionality and components/content intact.
 -   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dahsboard configurations for styling and panel/button visiiblity.
@@ -142,6 +143,8 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   App should demontrate what adding a project to the dashboard and library is like.
     -   The projects should be persistent when the user relaunches the browser
     -   The user should be able to delete a project
+-   Save and recall dashboard settings (eg color scheme choice) in localStorage
+
 
 ### Technical Requirements for this project:
 -   Use template literals
@@ -163,9 +166,9 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   A To-Do List widget
 -   Ability to shuffle (re-position) the dashboard panels
 -   Add a status indicator to the project panels.
--   Save and recall dashboard settings (eg color scheme choice) in localStorage
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
+    -   Ability for user to input zip code to access weather data (currently set to Quincy, MA, USA locale)
 
 ### Sprints and Release Strategy
 -   Sprint 1 2/21 - 2/27
@@ -274,11 +277,11 @@ Below are placeholders:
 
 ### Known Bugs
 #### OPEN 
-    -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
+-   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
 
 #### FIXED 
-    -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
-        FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels and buttons
+-   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
+    -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels and buttons
 
 
 
