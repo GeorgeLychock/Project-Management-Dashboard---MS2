@@ -141,12 +141,19 @@ function buildWidgetPanelMU(owdata, widgetID) {
         weatherBGClass = "pmd-weather-icon-bg-night";
     };
 
+    // Create color scheme selector variables
+    var colorSchemeFinal01 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-01";
+    }
+
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
     <div class="pmd-panel-head">
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
-            <div class="pmd-panel-head-text"></div>
-            <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
+            <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
+            <div class="float-right"><div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
         </div>
     </div>
         <div class="pmd-active-widget pmd-bcolor-2">

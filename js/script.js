@@ -63,13 +63,13 @@ $(document).ready(function() {
             timeMer = "AM";
         } else {
             timeMer = "PM";
-        };
+        }
         var m = "0" + dt.getMinutes();
         //custom js added by developer; create and return timestamp object
         let currentTimeObj = {
             fulltime: hr + ':' + m.substr(-2) + ' ' + timeMer,
             hours: dhr
-        }
+        };
         return currentTimeObj;
     }
     /* /CODE REUSE - Covert UNIX Timestamp */

@@ -201,6 +201,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Project Form */
+.pmd-form-input-1 {
+    font-size: .75rem;
+}
+
 .valAlert01 {
     color: red;
     font-weight: 700;
@@ -211,6 +215,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     float: left;
     margin-right: 2px;
+}
+
+#saveConfirmationModal {
+    margin-top: 5px;
+    color: green;
 }
 
 /* Dashboard Panels */
