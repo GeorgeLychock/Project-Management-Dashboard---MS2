@@ -5,6 +5,7 @@
 $(document).ready(function() {
     createProjectLibBtns();
     createActiveProjects();
+    loadUserSettings();
 })
 
 function createActiveProjects() {
@@ -149,12 +150,12 @@ function buildProjectPanelMU(data) {
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
-        <div class="pmd-panel-head">
-            <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
-                <div class="pmd-panel-head-text"></div>
-                <div class="float-right"><div class="pmd-panel-head-text">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
-            </div>
+    <div class="pmd-panel-head">
+        <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
+            <div class="pmd-panel-headtext"></div>
+            <div class="float-right"><div class="pmd-panel-headtext">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
         </div>
+    </div>
         <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
             <div>Project Due Date: ${projectData.duedate}</div>
@@ -281,7 +282,7 @@ function createDeleteProjectList() {
             }
         }
     } else {
-        alert("There are no user projects entered yet. Please go to Create Project to add one");
+        alert("There are no user projects entered yet. Please go to Add Project to add one");
     }
 }
 

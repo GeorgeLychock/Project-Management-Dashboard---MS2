@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-pcolor-1 {color:whitesmoke;}
 .pmd-pcolor-2 {color:#000;}
 /* link colors */
-.pmd-acolor-1 {color:#707070;}
+.pmd-acolor-1 {color:#666;}
 .pmd-acolor-2 {color:#000;}
 
 .pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-foot {background-color:#fda;}
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color: rgba(255, 153, 0, .25);}
+.pmd-btncolor-1 {background-color: #ffc266}
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 4px 0 8px;
 }
 .pmd-nav-item:hover {
-    color: rgba(0, 191, 255, .75);
+    color: whitesmoke;
 }
 
 .pmd-nav-cntnr {
@@ -234,14 +234,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 2px;
 }
 
-.pmd-panel-head-text {
+.pmd-panel-headtext {
     font-size: .75rem;
     margin-right: 4px;
     padding-top: 3px;
     display: inline;
 }
 
-.pmd-panel-head-text:hover {
+.pmd-panel-headtext:hover {
     color: red;
     cursor: pointer;
 }
@@ -315,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-footer {
     margin: 10px 0 10px 0px;
     padding: 10px 10px 10px 20px;
-    border: solid 1px #707070;
+    border: solid 1px #fda;
     border-radius: 20px;
 }
 

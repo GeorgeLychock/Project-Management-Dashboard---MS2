@@ -2,7 +2,7 @@
 /* This file is for common js functions called by other custom functions */
 
 $(document).ready(function() {
-    loadUserSettings();
+
 })
 
 
@@ -182,10 +182,10 @@ $(document).ready(function() {
 /* ******* CUSTOM STYLE JAVASCRIPT ********** */
 
     function makeDark() {
-        var md;
+        console.log("Am I firing?");
         $("body").addClass('make-dark');
         $("main").addClass('make-dark');
-        $(".pmd-panel-head-text").addClass('make-dark-01');
+        $(".pmd-panel-headtext").addClass('make-dark-01');
         $(".pmd-w-library").addClass('make-dark-02');
         $(".pmd-banner").addClass('make-dark-03');
         $(".pmd-btn-library").addClass('make-dark-04');
@@ -195,84 +195,16 @@ $(document).ready(function() {
     }
 
     function makeLight() {
-        var md;
         $("body").removeClass('make-dark');
         $("main").removeClass('make-dark');
-        $(".pmd-panel-head-text").removeClass('make-dark-01');
+        $(".pmd-panel-headtext").removeClass('make-dark-01');
         $(".pmd-w-library").removeClass('make-dark-02');
         $(".pmd-banner").removeClass('make-dark-03');
         $(".pmd-btn-library").removeClass('make-dark-04');
         $(".wName").removeClass('make-dark-01');
         $(".pmd-hcolor-1").removeClass('make-dark-01');
+        updateUserSettings("scenario", "light");
     }
 
 /* ******* END CUSTOM STYLE JAVASCRIPT ********** */
 
-/* ******* USER SETTINGS FUNCTIONS JAVASCRIPT ********** */
-
-    function updateUserSettings(key, value) {
-
-        var setKey = key;
-        var setValue = value;
-        var localStoreName = "userSettings";
-
-        // Check if localStorage is enabled
-        if (storageAvailable('localStorage')) {
-            // YES: We can use localStorage, check if localStorage var has been initiated
-            if (!localStorage.getItem(localStoreName)) {
-                console.log("why am I here the second time?");
-                // The user setting object will contain all user preferences for the predefined customization features
-                var userSettingsOBJ = {
-                    scenario: "",
-                    librarypos: ""
-                };
-
-                var userSettingsStr = JSON.stringify(userSettingsOBJ);
-                localStorage.setItem(localStoreName, userSettingsStr);
-
-            } else {
-                var userSettingsJSON = localStorage.getItem(localStoreName).split(',');
-                var userSettingsOBJ = JSON.parse(userSettingsJSON);
-            }
-
-            // Find the key in the user settings object and change value
-            switch (setKey) {
-                case 'scenario': userSettingsOBJ.scenario = setValue;
-                break;
-                case 'librarypos': userSettingsOBJ.librarypos = setValue;
-                break;
-            }
-
-        var userSettingsStr = JSON.stringify(userSettingsOBJ);
-        localStorage.setItem(localStoreName, userSettingsStr);
-
-        }
-
-    }
-
-function loadUserSettings() {
-
-    //see if there is a user setting local obj saved
-    var localStoreName = "userSettings";
-    if (localStorage.getItem(localStoreName)) {
-        // if so, grab data
-    let checkSet = localStorage.getItem(localStoreName).split(',');
-    var checkSetJSON = JSON.parse(checkSet);
-
-        // set scenario
-        let setScenario = checkSetJSON.scenario;
-        switch (setScenario) {
-            case 'dark': makeDark();
-            break;
-            case 'light': makeLight();
-            break;
-        }
-        // set library position
-
-    } else {
-        console.log("localStore Does Not exist");
-    }
-
-}
-
-/* ******* END USER SETTINGS FUNCTIONS JAVASCRIPT ********** */
