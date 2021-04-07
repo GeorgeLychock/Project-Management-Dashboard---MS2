@@ -169,6 +169,7 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
     -   Ability for user to input zip code to access weather data (currently set to Quincy, MA, USA locale)
+-   Finish the project form validation function to check against a list of 'bad' words or other offending input
 
 ### Sprints and Release Strategy
 -   Sprint 1 2/21 - 2/27
@@ -243,6 +244,9 @@ Below are placeholders:
 -   [Lighthouse](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
     - [Results: Desktop Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-desktop-index.jpg)
     - [Results: Mobile Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-mobile-index.jpg)
+    - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
+        -   Tested all script.js functions in JSHint 4/7/21
+        -   Tested all usersettings.js functions in JSHint 4/7/21
 
 -   ### Testing User Stories from User Experience (UX) Section
     -   #### General User Experience
@@ -277,13 +281,13 @@ Below are placeholders:
 
 ### Known Bugs
 #### OPEN 
--   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
+
 
 #### FIXED 
 -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
-    -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels and buttons
-
-
+    -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added buttons
+-   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
+    -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels
 
 ## Deployment
 ### Hosting
