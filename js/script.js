@@ -83,7 +83,7 @@ $(document).ready(function() {
     function convertViewportWidth() {
         let bodyWidth = $("body").width();
         if (bodyWidth < 768) {
-            viewportID = "sm";
+            var viewportID = "sm";
             return viewportID;
         } else {
             viewportID = "";
@@ -92,7 +92,7 @@ $(document).ready(function() {
     }
 
     function getLocalData(eID, cb) {
-        elementID = eID;
+        var elementID = eID;
         var projectDataStrSaved = localStorage.getItem(elementID);
         cb(JSON.parse(projectDataStrSaved));
     }
@@ -131,12 +131,12 @@ $(document).ready(function() {
             // YES: We can use localStorage, check if localStorage var has been initiated
             if(localStorage.getItem(localStoreDataID)) {
                 // YES: Update project data
-                projectDataStr = JSON.stringify(passFormData);
+                let projectDataStr = JSON.stringify(passFormData);
                 localStorage.setItem(localStoreDataID, projectDataStr);
                 alert("This only gets fired if the project data needs to be updated; functionality TK");
             } else {
                 // Initiate localStorage using the widgetID for the localStorage object name and add project data
-                projectDataStr = JSON.stringify(passFormData);
+                let projectDataStr = JSON.stringify(passFormData);
                 localStorage.setItem(localStoreDataID, projectDataStr);
             }
         } else {
@@ -146,30 +146,33 @@ $(document).ready(function() {
     }
 
     function whatColorScheme() {
-        if (bodyClasses = $("main").attr("class")) {
-            if (bodyClasses != "") {
-                let schemeID = bodyClasses.split(" ");
-                for (i in schemeID) {
-                    if (schemeID[i] == "make-dark") {
-                        return schemeID[i];
-                    } else {
-                        return "";
-                    }
-                }
-            } else {
-                return "";
-            }
-        } else {
-            return "";
-        }
-    }
+        // Determine if a color scheme has been applied to the main element yet
+        let mainClasses;
+          if (mainClasses = $("main").attr("class")) {
+              if (mainClasses != "") {
+                  let schemeID = mainClasses.split(" ");
+                  for (var i in schemeID) {
+                      if (schemeID[i] == "make-dark") {
+                          return schemeID[i];
+                      } else {
+                          return "";
+                      }
+                  }
+              } else {
+                  return "";
+              }
+          } else {
+              return "";
+          }
+      }
 
-    /* Validates project form data */
     function validateInput(value, iField) {
+        // Validate project form data
         let checkValue = value;
         let targetName = iField;
         if (checkValue == "") {
           return false;
+          // Next check against a list of bad words (this validation has not been finished yet but logic has been added to expand in future)
         } else if (checkValue == "badword") {
             alert(targetName + " should be nicer.");
           return false;
