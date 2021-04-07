@@ -81,7 +81,7 @@ $(document).ready(function() {
 /* ******* CUSTOM COMMON JAVASCRIPT ********** */
 
     function convertViewportWidth() {
-        let bodyWidth = $("body").width();
+        var bodyWidth = $("body").width();
         if (bodyWidth < 768) {
             var viewportID = "sm";
             return viewportID;
@@ -147,7 +147,7 @@ $(document).ready(function() {
 
     function whatColorScheme() {
         // Determine if a color scheme has been applied to the main element yet
-        let mainClasses;
+        var mainClasses;
           if (mainClasses = $("main").attr("class")) {
               if (mainClasses != "") {
                   let schemeID = mainClasses.split(" ");
@@ -168,8 +168,8 @@ $(document).ready(function() {
 
     function validateInput(value, iField) {
         // Validate project form data
-        let checkValue = value;
-        let targetName = iField;
+        var checkValue = value;
+        var targetName = iField;
         if (checkValue == "") {
           return false;
           // Next check against a list of bad words (this validation has not been finished yet but logic has been added to expand in future)
