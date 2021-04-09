@@ -357,3 +357,7 @@ h1, h2, h3, h4, h5, h6 {
 .make-dark-04 {
     background-color: rgba(255, 221, 170, .5);
 }
+
+.make-weather-dark-01 {
+    background-image: linear-gradient(#333, #000);
+}

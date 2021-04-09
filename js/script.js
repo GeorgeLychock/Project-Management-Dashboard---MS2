@@ -194,6 +194,7 @@ $(document).ready(function() {
         $(".pmd-btn-library").addClass('make-dark-04');
         $(".wName").addClass('make-dark-01');
         $(".pmd-hcolor-1").addClass('make-dark-01');
+        $(".pmd-weather-desc").addClass('make-weather-dark-01');
         updateUserSettings("scenario", "dark");
     }
 
