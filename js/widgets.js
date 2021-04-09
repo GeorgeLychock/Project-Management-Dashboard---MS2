@@ -164,8 +164,12 @@ function buildWidgetPanelMU(owdata, widgetID) {
                 <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
                 <div class="pmd-weather-temp">${bigTemp} &#176;</div>
                 <div class="pmd-weather-desc">
-                    <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
-                    <div class="pmd-pcolor-1">with ${apiData.weather[0]["description"]}</div>
+                <div class="pmd-bg-water"><img src="images/waves-bg-01.png" width="50px" alt="Waves in the background"></div>
+                    <div>
+                        <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
+                        <div class="pmd-pcolor-1">with ${apiData.weather[0]["description"]}</div>
+                    </div>
+
                 </div>
             </div>
         </div>
