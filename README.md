@@ -126,25 +126,20 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   Widget Library Buttons
     -   Each button panel needs to display the project name and an Add button
     -   Determine a method for making sure that only one instance of each widget is added or removed when clicking the Add/Close buttons
--   Active Widgets Viewport
+-   Dashboard Viewport
     -   A settings cog should be present to give users access to the following changeable settings:
         -   Change background color
     -   The cog should activate a modal window
--   Activated Widgets in Viewport
-    -   A settings cog icon should be present in each active widget to allow for the following settings changes:
-        -   Change background color
-        -   The cog should activate a modal window
 -   Persistent Settings
     -   Activated widgets should be persistent when a user returns to the app.
-    -   Ability to 'clear' the dashboard (clear localStorage)
+    -   Save and recall dashboard settings (eg color scheme choice) in localStorage
+    -   Save and recall library settings (eg position choice) in localStorage
 -   OpenWeather Widget
     -   The background styling should be an indicator it is daytime(light blue) or nighttime (dark blue)
 -   Adding/Removing User Projects
     -   App should demontrate what adding a project to the dashboard and library is like.
     -   The projects should be persistent when the user relaunches the browser
     -   The user should be able to delete a project
--   Save and recall dashboard settings (eg color scheme choice) in localStorage
-
 
 ### Technical Requirements for this project:
 -   Use template literals
@@ -244,9 +239,9 @@ Below are placeholders:
 -   [Lighthouse](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
     - [Results: Desktop Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-desktop-index.jpg)
     - [Results: Mobile Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-mobile-index.jpg)
-    - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
-        -   Tested all script.js functions in JSHint 4/7/21
-        -   Tested all usersettings.js functions in JSHint 4/7/21
+- [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
+    -   Tested all script.js functions in JSHint 4/7/21
+    -   Tested all usersettings.js functions in JSHint 4/7/21
 
 -   ### Testing User Stories from User Experience (UX) Section
     -   #### General User Experience
@@ -281,6 +276,7 @@ Below are placeholders:
 
 ### Known Bugs
 #### OPEN 
+-   Open Weather - Current time displays a negative value befor 12pm
 
 
 #### FIXED 
