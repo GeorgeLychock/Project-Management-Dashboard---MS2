@@ -131,14 +131,18 @@ function buildWidgetPanelMU(owdata, widgetID) {
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
     var weatherBGClass = "";
+    var weatherDesClass = "";
 
     timeInfo = Unix_timestamp(apiData.dt);
     var currentTime = timeInfo.fulltime;
     var dayTimeHours = timeInfo.hours;
+
     if(dayTimeHours >= 6 && dayTimeHours <= 18) {
-        weatherBGClass = "pmd-weather-icon-bg-day";
+        weatherBGClass = " pmd-weather-icon-bg-day";
+        weatherDesClass = " pmd-weather-des-bg-day";
     } else {
-        weatherBGClass = "pmd-weather-icon-bg-night";
+        weatherBGClass = " pmd-weather-icon-bg-night";
+        weatherDesClass = " pmd-weather-des-bg-night";
     };
 
     // Create color scheme selector variables
@@ -163,7 +167,7 @@ function buildWidgetPanelMU(owdata, widgetID) {
             <div class="${weatherBGClass}">
                 <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
                 <div class="pmd-weather-temp">${bigTemp} &#176;</div>
-                <div class="pmd-weather-desc">
+                <div class="pmd-weather-desc${weatherDesClass}">
                 <div class="pmd-bg-water"><img src="images/waves-bg-01.png" width="50px" alt="Waves in the background"></div>
                     <div>
                         <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
