@@ -17,7 +17,7 @@
 
 <body>
     <main>
-        <!-- Desktop Nav -->
+        <!-- Nav -->
         <div class="container-fluid pmd-nav-cntnr">
             <div class="row no-gutters pmd-bcolor-nav">
                 <div class="col">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <!-- /Desktop Nav -->
+        <!-- /Nav -->
         <!-- Header -->
         <header>
             <div class="container-fluid pmd-header-cntnr">
@@ -98,7 +98,11 @@
                             <div class="pmd-project-lib">
                                 <div>
                                     <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
-                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+
+                                    <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
+                                        <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
+                                    </div>
+
                                 </div>
                                 <div id="projects-library"></div>
                             </div>
@@ -110,7 +114,7 @@
                             <p class="pmd-lib-directions">Click the + plus sign to add a widget to the Dashboard</p>
                         </div>
                         <!-- //Display Libraries Panel for Desktop and Tablet-->
-                        <div class="col">
+                        <div class="col-md-9">
                             <div class="row no-gutters">
                                 <div class="col">
                                     <div class="pmd-active-projects-head pmd-bcolor-4 pmd-pcolor-1">My Projects</div>
@@ -172,6 +176,36 @@
         </div>
     </div>
     <!-- /Bootstrap Modal - Dashboard Settings -->
+    <!-- Bootstrap Modal - Library Settings -->
+    <div class="modal fade" id="librarySettings" tabindex="-1" aria-labelledby="librarySettingsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="librarySettingsLabel">Library Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <button class="pmd-icon-03" onclick="posLibRight()">
+                            <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
+                            Position the Library to the Right
+                        </button>
+                        <button class="pmd-icon-03" onclick="posLibLeft()">
+                            <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
+                            Position the Library to the Left
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Bootstrap Modal - Library Settings -->
     <!-- Bootstrap Modal - Add Project -->
     <div class="modal fade" id="addProject" tabindex="-1" aria-labelledby="addProjectLabel" aria-hidden="true">
         <div class="modal-dialog">

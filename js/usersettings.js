@@ -61,6 +61,14 @@ function loadUserSettings() {
             break;
         }
         // set library position
+        let setPosition = checkSetJSON.librarypos;
+        console.log(setPosition);
+        switch (setPosition) {
+            case "right": posLibRight();
+            break;
+            case "left": posLibLeft();
+            break;
+        }
 
     } else {
         console.log("localStore Does Not exist");

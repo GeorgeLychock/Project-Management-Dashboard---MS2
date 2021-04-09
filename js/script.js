@@ -210,5 +210,15 @@ $(document).ready(function() {
         updateUserSettings("scenario", "light");
     }
 
+    function posLibRight() {
+        $(".pmd-w-library").addClass('order-10');
+        updateUserSettings("librarypos", "right");
+    }
+
+    function posLibLeft() {
+        $(".pmd-w-library").removeClass('order-10');
+        updateUserSettings("librarypos", "left");
+    }
+
 /* ******* END CUSTOM STYLE JAVASCRIPT ********** */
 
