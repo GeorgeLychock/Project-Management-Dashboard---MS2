@@ -18,18 +18,20 @@ function createActiveWidgets() {
 
         for (let i in activeWidgets) {
 
-            var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
+            if (activeWidgets[i] == "widget0001") {
+                var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
 
-            // Grab the api key from the JSON file
-            getData(keyURL, function (keydata) {
-                
-                APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
-
-                // Grab the Open Weather data from the api
-                getData(APIurl, function (owdata) {
-                    return $("#active-widgets-data").append(buildWidgetPanelMU(owdata, keydata.widgetID));
+                // Grab the api key from the JSON file
+                getData(keyURL, function (keydata) {
+                    
+                    var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
+    
+                    // Grab the Open Weather data from the api
+                    getData(APIurl, function (owdata) {
+                        return $("#active-widgets-data").append(buildWeatherPanelMU(owdata, keydata.widgetID));
+                    });
                 });
-            });
+            }
         }
     }
 }
@@ -41,7 +43,7 @@ function createWidgetLibBtns() {
     if (localStorage.localWidgets) {
 
         //Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
-        var widgetIDs = ["widget0001"];
+        var widgetIDs = ["widget0001", "widget0002"];
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
         var widgetIDsSaved = activeWidgetsSaved.split(',');
         var widgetBuildIDs = [];
@@ -53,7 +55,7 @@ function createWidgetLibBtns() {
             }
         }
     } else {
-        var widgetBuildIDs = ["widget0001"]; // else all widgets are available in the library
+        var widgetBuildIDs = ["widget0001", "widget0002"]; // else all widgets are available in the library
     }
 
     for (let i in widgetBuildIDs) {
@@ -74,7 +76,7 @@ function turnWidgetOn(widgetIdOn, vpcodepass) {
 
     getData(url, function(data) {
 
-        let keydata = data;
+        var keydata = data;
 
         // Check if localStorage is enabled
         if (storageAvailable('localStorage')) {
@@ -97,13 +99,21 @@ function turnWidgetOn(widgetIdOn, vpcodepass) {
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The widget Management Dashboard in a new browser window.");
         }
 
-        // Grab the Open Weather data from the api
-        APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
+        console.log(keydata.widgetID);
 
-        getData(APIurl, function (owdata) {
-        // Add widget to the dashboard and remove the library buttons from both Desktop and Mobile views
-            return $("#active-widgets-data").append(buildWidgetPanelMU(owdata, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
-        });
+        if (keydata.widgetID == "widget0001") {
+            // Grab the Open Weather data from the api
+            var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
+            getData(APIurl, function(data) {
+                //if wid0001 build weather button
+                return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+            });
+        } else if (keydata.widgetID == "widget0002") {
+            //if to do ist wid, build to do ist panel
+            GetToDoistData(keydata.key, function(data) {
+                return $("#active-widgets-data").append(buildToDoistPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+            });
+        }
     });
 }
 
@@ -125,7 +135,7 @@ function turnWidgetOff(widgetIdOff) {
     return $("#" + elementID).remove();
 }
 
-function buildWidgetPanelMU(owdata, widgetID) {
+function buildWeatherPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
     let bigTemp = apiData.main["temp"];
@@ -155,9 +165,13 @@ function buildWidgetPanelMU(owdata, widgetID) {
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
     <div class="pmd-panel-head">
+        <div class="pmd-panel-headtext${colorSchemeFinal01}">
+            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
+                <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
+            </div>
+        </div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
-            <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
-            <div class="float-right"><div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
+            <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
         </div>
     </div>
         <div class="pmd-active-widget pmd-bcolor-2">
@@ -205,10 +219,62 @@ function buildWidgetLibBtnMUMobile(data) {
     // Add the viewport code to the ID to make unique ID for mobile library button
     let elementID = vpcode + "-" + data.widgetID;
 
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
+    var colorSchemeFinal01 = "";
+    var colorSchemeFinal02 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+    colorSchemeFinal01 = " " + colorScheme + "-04";
+    colorSchemeFinal02 = " " + colorScheme + "-01";
+    }
+
+    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
+    </div>`;
+}
+
+
+/* ToDoist Data Call
+
+function GetToDoistData(key) {
+    //$("#addToDoistbutton").click(function(){
+        $.ajax({
+            url: "https://api.todoist.com/sync/v8/sync",
+            token: key,
+            sync_token: "*",
+            resource_types: '["projects"]',
+            success: function(result){
+                $("#div1").html(result);
+            }
+        });
+    //});
+}
+ */
+
+
+function buildToDoistPanelMU(tddata, widgetID) {
+
+    var apiData = tddata;
+
+    // Create color scheme selector variables
+    var colorSchemeFinal01 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-01";
+    }
+
+    /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
+    return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
+    <div class="pmd-panel-head">
+        <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
+            <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
+            <div class="float-right"><div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
+        </div>
+    </div>
+        <div class="pmd-active-widget pmd-bcolor-2">
+            This is where the api data goes: ${apiData}
+        </div>
     </div>`;
 }
