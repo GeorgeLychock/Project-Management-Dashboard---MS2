@@ -13,7 +13,8 @@ function updateUserSettings(key, value) {
     // The user setting object will contain all user preferences for the predefined customization features
     var userSettingsOBJ = {
         scenario: "",
-        librarypos: ""
+        librarypos: "",
+        location: ""
     };
 
     // Check if localStorage is enabled
@@ -34,6 +35,8 @@ function updateUserSettings(key, value) {
             break;
             case 'librarypos': userSettingsOBJ.librarypos = setValue;
             break;
+            case 'location': userSettingsOBJ.location = setValue;
+            break;
         }
 
     userSettingsStr = JSON.stringify(userSettingsOBJ);
@@ -53,7 +56,6 @@ function loadUserSettings() {
 
         // set scenario
         let setScenario = checkSetJSON.scenario;
-        console.log(setScenario);
         switch (setScenario) {
             case "dark": makeDark();
             break;
@@ -62,16 +64,14 @@ function loadUserSettings() {
         }
         // set library position
         let setPosition = checkSetJSON.librarypos;
-        console.log(setPosition);
         switch (setPosition) {
             case "right": posLibRight();
             break;
             case "left": posLibLeft();
             break;
         }
-
     } else {
-        console.log("localStore Does Not exist");
+        console.log("No user settings exist yet");
     }
 }
 

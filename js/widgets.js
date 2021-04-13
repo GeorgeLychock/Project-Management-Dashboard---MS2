@@ -99,9 +99,8 @@ function turnWidgetOn(widgetIdOn, vpcodepass) {
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The widget Management Dashboard in a new browser window.");
         }
 
-        console.log(keydata.widgetID);
-
         if (keydata.widgetID == "widget0001") {
+
             // Grab the Open Weather data from the api
             var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
             getData(APIurl, function(data) {
@@ -143,6 +142,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     var weatherBGClass = "";
     var weatherDesClass = "";
 
+    // Convert time stamp and set styles according to time of day
     timeInfo = Unix_timestamp(apiData.dt);
     var currentTime = timeInfo.fulltime;
     var dayTimeHours = timeInfo.hours;
@@ -155,7 +155,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
         weatherDesClass = " pmd-weather-des-bg-night";
     };
 
-    // Create color scheme selector variables
+    // Create app color scheme selector variables
     var colorSchemeFinal01 = "";
     var colorScheme = whatColorScheme();
     if (colorScheme != "") {
@@ -194,7 +194,6 @@ function buildWeatherPanelMU(owdata, widgetID) {
     </div>`;
 }
 
-// These next two (2) functions can be made common if we pass the onClick function name from the calling function
 function buildWidgetLibBtnMU(data) {
 
     var colorSchemeFinal01 = "";
@@ -230,9 +229,60 @@ function buildWidgetLibBtnMUMobile(data) {
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
+    <div class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
+}
+
+function saveOpenWeatherLocation() {
+
+    let elementID = "widget0001";
+    let key = "location";
+    var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+    // grab form data
+    let enteredZip = document.getElementById("openWeatherFormModal").elements.namedItem("weatherZipModal").value;
+    let enteredLocation = document.getElementById("openWeatherFormModal").elements.namedItem("weatherLocationModal").value;
+
+    console.log(enteredZip, enteredLocation);
+
+    //validate entered zip and location
+    let validateZipReply = validateInput(enteredZip, "Zipcode");
+    let validateLocationReply = validateInput(enteredLocation, "Location");
+
+    console.log(validateZipReply, validateLocationReply);
+
+    if (validateZipReply == false && validateLocationReply == false) {
+        return $(".valAlert01").html("* Required Field");
+    } else {
+        //Clear form
+        /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
+        var x = document.getElementById("openWeatherFormModal");
+        for (let i = 0; i < x.length ;i++) {
+            x.elements[i].value = "";
+        }
+        // determine which parameter to pass, zipcode takes precendence
+        if(enteredLocation && !enteredZip) {
+            var storedLocation = "q=" + enteredLocation;
+        } else {
+            var storedLocation = "zip=" + enteredZip;
+        }
+
+        //update user settings local storage
+        updateUserSettings(key, storedLocation);
+
+        //update the weather panel
+        // Grab the api key from the JSON file
+        getData(keyURL, function (keydata) {
+            
+            var APIurl = `https://api.openweathermap.org/data/2.5/weather?${storedLocation}&units=imperial&appid=${keydata.key}`;
+
+            // Grab the Open Weather data from the api
+            getData(APIurl, function (owdata) {
+                return $("#" + elementID).remove(), $("#active-widgets-data").append(buildWeatherPanelMU(owdata, keydata.widgetID));
+            });
+        });
+        return $(".valAlert01").html(""), $("#saveLocalConfirmModal").html("Your location has been updated!");
+    }
 }
 
 

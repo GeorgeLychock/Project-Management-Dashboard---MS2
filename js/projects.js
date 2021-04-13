@@ -159,9 +159,9 @@ function buildProjectPanelMU(data) {
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
     return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
     <div class="pmd-panel-head">
+        <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
-            <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
-            <div class="float-right"><div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div><i class="bi bi-x-circle pmd-icon-01 pmd-acolor-1" aria-hidden="true"></i></div>
+            <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
         </div>
     </div>
         <div class="pmd-active-widget pmd-bcolor-2">
@@ -209,10 +209,18 @@ function buildProjectLibBtnMUMobile(data) {
     // Add the viewport code to the ID to make unique ID for mobile library button
     let elementID = vpcode + "-" + data.widgetID;
 
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-${elementID}">
+    var colorSchemeFinal01 = "";
+    var colorSchemeFinal02 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-04";
+        colorSchemeFinal02 = " " + colorScheme + "-01";
+    }
+
+    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
     <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-acolor-1 wName">${data.name}</div>
+    <div class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
@@ -252,8 +260,7 @@ function saveProjectDataModal() {
             //Clear form
             /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
             var x = document.getElementById("projectFormModal");
-            var i;
-            for (i = 0; i < x.length ;i++) {
+            for (var i = 0; i < x.length ;i++) {
             x.elements[i].value = "";
             }
 

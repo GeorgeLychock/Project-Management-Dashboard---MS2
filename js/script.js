@@ -172,7 +172,7 @@ $(document).ready(function() {
         var targetName = iField;
         if (checkValue == "") {
           return false;
-          // Next check against a list of bad words (this validation has not been finished yet but logic has been added to expand in future)
+          // Next check against a list of bad words and a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
         } else if (checkValue == "badword") {
             alert(targetName + " should be nicer.");
           return false;

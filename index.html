@@ -297,7 +297,41 @@
             </div>
         </div>
     </div>
-    <!-- /Bootstrap Modal - Add Project -->
+    <!-- /Bootstrap Modal - Delete Project -->
+    <!-- Bootstrap Modal - Open Weather Settings Modal -->
+    <div class="modal fade" id="openWeatherSettings" tabindex="-1" aria-labelledby="openWeatherSettingsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="openWeatherSettingsLabel">Open Weather Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pmdform">
+                        <form id="openWeatherFormModal" name="openWeatherFormModal">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <div class="valIndicator01">*</div><label for="weatherZipModal">Enter Zipcode</label>
+                                    <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valAlert02"></div>
+                                    <div class="valIndicator01">*</div><label for="weatherLocationModal">or Enter Location</label>
+                                    <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valAlert03"></div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-primary" onclick="saveOpenWeatherLocation()" aria-label="Submit Location">Submit Location</button>
+                    </div>
+                    <p id="saveLocalConfirmModal"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Bootstrap Modal - Open Weather Settings Modal -->
     <!-- /Bootstrap MODALS -->
 
     <!-- Load Bootstrap js and its dependencies -->
