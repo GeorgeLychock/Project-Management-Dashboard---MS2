@@ -80,6 +80,15 @@ $(document).ready(function() {
 
 /* ******* CUSTOM COMMON JAVASCRIPT ********** */
 
+
+// settings cog hint styling, highlights any settings cog on the dashboard when a user hovers the instruction text
+$(".pmd-cog-instructions").mouseenter(function() {
+    $(".bi-gear").addClass("pmd-cog-show");
+})
+$(".pmd-cog-instructions").mouseleave(function() {
+    $(".bi-gear").removeClass("pmd-cog-show");
+})
+
     function convertViewportWidth() {
         var bodyWidth = $("body").width();
         if (bodyWidth < 768) {
@@ -195,6 +204,7 @@ $(document).ready(function() {
         $(".wName").addClass('make-dark-01');
         $(".pmd-hcolor-1").addClass('make-dark-01');
         $(".pmd-weather-desc").addClass('make-weather-dark-01');
+        $(".pmd-username").addClass('make-dark-01');
         updateUserSettings("scenario", "dark");
     }
 
@@ -207,6 +217,7 @@ $(document).ready(function() {
         $(".pmd-btn-library").removeClass('make-dark-04');
         $(".wName").removeClass('make-dark-01');
         $(".pmd-hcolor-1").removeClass('make-dark-01');
+        $(".pmd-username").removeClass('make-dark-01');
         updateUserSettings("scenario", "light");
     }
 

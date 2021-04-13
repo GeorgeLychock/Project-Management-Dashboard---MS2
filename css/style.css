@@ -51,17 +51,21 @@ h1, h2, h3, h4, h5, h6 {
 /*header colors*/
 .pmd-hcolor-1 {color:#619aea;}
 .pmd-hcolor-2 {color:#000;}
+
 /*nav colors */
 .pmd-ncolor-1 {color:#4dd2ff;}
 .pmd-ncolor-2 {color:#fff;}
 .pmd-ncolor-3 {color:#fa0;}
+.pmd-ncolor-4 {color: yellow;}
+
 /* main text colors */
 .pmd-pcolor-1 {color:whitesmoke;}
 .pmd-pcolor-2 {color:#000;}
+.pmd-pcolor-3 {color:#333;}
+
 /* link colors */
 .pmd-acolor-1 {color:#666;}
 .pmd-acolor-2 {color:#000;}
-
 .pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
 
@@ -177,6 +181,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0 0 5px;
 }
 
+.pmd-cog-instructions {
+    padding-right: 15px;
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.pmd-cog-show {
+    color: red;
+    font-weight: bolder;
+}
+
 /* Header */
 .pmd-header-cntnr {
     padding: 0;
@@ -185,6 +200,15 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-header {
     padding: 10px 10px 10px 20px;
     margin: 0 0 0 50px;
+}
+
+.pmd-tagline {
+    font-weight: bolder;
+}
+
+.pmd-username {
+    font-size: larger;
+    float: right;
 }
 
 /* Banner */
