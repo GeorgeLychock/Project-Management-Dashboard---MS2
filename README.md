@@ -2,18 +2,22 @@
 ### Salem State University Fullstack Software Developer Certificate
 #### JavaScript/jQuery/API/DOM Module
 -   Live Dev Site - [View](http://www.georgelychock-career.com/pages/_sandbox/ms2/index.html)
+
+###
 ### Use Case:
 A configurable user dashboard that displays and organizes key metrics and other data from native or third-party datastreams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party datastreams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
 A limited number of dashboard settings will be available from a settings cog that will enhance the user experience. Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
-#### Notes
--   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
--   This is a front-end website that gives the user methods to add content and change appearance.
--   The project consists of one page, a dashboard.
--   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
--   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized while keeping main functionality and components/content intact.
--   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dahsboard configurations for styling and panel/button visiiblity.
--   The user stories below indicate a "logged-in user" since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
+>
+> #### Notes
+>
+>-   The primary focus of this project is to display JavaScript, jQuery, and API skills learned in the Interactive Frontend Development Module of the Salem State University / Code Institute Full Stack Software Developer Certificate Program. The website will have limited styling and content since functionality takes precedence under the time constraints.
+>-   This is a front-end website that gives the user methods to add content and change appearance.
+>-   The project consists of one page, a dashboard.
+>-   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
+>-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized while keeping main functionality and components/content intact.
+>-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dahsboard configurations for styling and panel/button visiiblity.
+>-   The user stories below indicate a "logged-in user" since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 
 ### User Stories:
@@ -60,6 +64,8 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   I can change the color Scheme using a button to a dark scheme
     -   I can change the scheme back to light
     -   The color scheme I used last will be present when I come back to the site
+
+###
 
 ### Wireframes
 -   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
@@ -118,6 +124,7 @@ As a logged in project manager, I want the ability to change certain dashboard v
 -   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget available to the dashboard; its possible these values would be created with a Create Project module or Third Party app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js file:
 `        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];`
 
+###
 ### Requirements
 -   Widgets Library Viewport
     -   A settings cog should be present to give users access to the following changeable settings:
@@ -136,36 +143,35 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   Save and recall library settings (eg position choice) in localStorage
 -   OpenWeather Widget
     -   The background styling should be an indicator it is daytime(light blue) or nighttime (dark blue)
+    -   Ability for user to input zip code or location to access weather data (currently default setting is Quincy, MA, USA locale); should activate a modal
 -   Adding/Removing User Projects
     -   App should demontrate what adding a project to the dashboard and library is like.
     -   The projects should be persistent when the user relaunches the browser
     -   The user should be able to delete a project
+-   Instructional text and tips should not take up much dashboard space but be effective in message and visual queues.
+    -   Describe what a user can do with the settings cogs
+    -   Instruct user on how to add and remove panels from the dashboard
 
 ### Technical Requirements for this project:
 -   Use template literals
 -   Use ternary operator, if possible/needed
 -   Access and parse JSON data
 -   Store data in localStorage
+-   Connect app to an open source api
 -   Limit duplication of code, use functions effectively
-    -   Known code that is duplicated:
-        -   These next four (4) functions can be made common if we pass the onClick function name from the calling function: buildWidgetLibBtnMU(data), buildWidgetLibBtnMUMobile(data), buildProjectLibBtnMU, buildProjectLibBtnMUMobile(data)
-        -   The localStorage check code in script.js is from MDN. Currently a solution cannot be found to var in the .localName (localWidgets in the code below):
-            ``` // Check if localStorage is enabled
-                if (storageAvailable('localStorage')) {
-                // YES: We can use localStorage, check if localStorage var has been initiated
-                 if (localStorage.localWidgets) ```
 -   Write Jasmine tests when possible, time permitted
+-   Use JSHint to check javascript syntax
 
 ### Future Features
 -   A Calendar widget
--   A To-Do List widget
+-   A To-Do List widget (looked at ToDoist, it required Python or curl to make api calls)
 -   Ability to shuffle (re-position) the dashboard panels
 -   Add a status indicator to the project panels.
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
-    -   Ability for user to input zip code to access weather data (currently set to Quincy, MA, USA locale)
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
 
+###
 ### Sprints and Release Strategy
 -   Sprint 1 2/21 - 2/27
     -   Make the ON/OFF buttons only open or close once
@@ -206,6 +212,7 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   Finalize README.md
     -   Have Final mentor session
 
+###
 ### Languages Used
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -228,6 +235,7 @@ As a logged in project manager, I want the ability to change certain dashboard v
 6. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 
+###
 ## Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
@@ -285,6 +293,7 @@ Below are placeholders:
 -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels
 
+###
 ## Deployment
 ### Hosting
 
@@ -335,6 +344,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
+###
 ## Credits
 
 ### Resources Used
