@@ -18,9 +18,9 @@ function createActiveWidgets() {
 
         for (let i in activeWidgets) {
 
-            if (activeWidgets[i] == "widget0001") {
-                var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
+            var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
 
+            if (activeWidgets[i] == "widget0001") {
                 // Grab the api key from the JSON file
                 getData(keyURL, function (keydata) {
                     
@@ -31,6 +31,9 @@ function createActiveWidgets() {
                         return $("#active-widgets-data").append(buildWeatherPanelMU(owdata, keydata.widgetID));
                     });
                 });
+            } else if (activeWidgets[i] == "widget0002") {
+                //Build GitHub pavel since widget0002 is assigned to GitHub widget
+                return $("#active-widgets-data").append(buildGitHubPanelMU("widget0002"));
             }
         }
     }
@@ -67,7 +70,7 @@ function createWidgetLibBtns() {
     }
 }
 
-/* Widget Library ON/OFF Buttons */
+/* Widget Library Add/Remove Buttons */
 function turnWidgetOn(widgetIdOn, vpcodepass) {
 
     let elementID = widgetIdOn;
@@ -108,10 +111,9 @@ function turnWidgetOn(widgetIdOn, vpcodepass) {
                 return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
             });
         } else if (keydata.widgetID == "widget0002") {
-            //if to do ist wid, build to do ist panel
-            GetToDoistData(keydata.key, function(data) {
-                return $("#active-widgets-data").append(buildToDoistPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
-            });
+            //Build GitHub pavel since widget0002 is assigned to GitHub widget
+            return $("#active-widgets-data").append(buildGitHubPanelMU(elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+
         }
     });
 }
@@ -132,66 +134,6 @@ function turnWidgetOff(widgetIdOff) {
 
     // Remove panel from dashboard
     return $("#" + elementID).remove();
-}
-
-function buildWeatherPanelMU(owdata, widgetID) {
-
-    var apiData = owdata;
-    let bigTemp = apiData.main["temp"];
-    bigTemp = bigTemp.toFixed(0);
-    var weatherBGClass = "";
-    var weatherDesClass = "";
-
-    // Convert time stamp and set styles according to time of day
-    timeInfo = Unix_timestamp(apiData.dt);
-    var currentTime = timeInfo.fulltime;
-    var dayTimeHours = timeInfo.hours;
-
-    if(dayTimeHours >= 6 && dayTimeHours <= 18) {
-        weatherBGClass = " pmd-weather-icon-bg-day";
-        weatherDesClass = " pmd-weather-des-bg-day";
-    } else {
-        weatherBGClass = " pmd-weather-icon-bg-night";
-        weatherDesClass = " pmd-weather-des-bg-night";
-    };
-
-    // Create app color scheme selector variables
-    var colorSchemeFinal01 = "";
-    var colorScheme = whatColorScheme();
-    if (colorScheme != "") {
-        colorSchemeFinal01 = " " + colorScheme + "-01";
-    }
-
-    /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
-    <div class="pmd-panel-head">
-        <div class="pmd-panel-headtext${colorSchemeFinal01}">
-            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
-                <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
-            <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
-        </div>
-    </div>
-        <div class="pmd-active-widget pmd-bcolor-2">
-            <div class="float-right">My Weather</div>
-            <h5>${apiData.name}</h5>
-            <div>Current Time: ${currentTime}</div>
-            <div class="${weatherBGClass}">
-                <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
-                <div class="pmd-weather-temp">${bigTemp} &#176;</div>
-                <div class="pmd-weather-desc${weatherDesClass}">
-                <div class="pmd-bg-water"><img src="images/waves-bg-01.png" width="50px" alt="Waves in the background"></div>
-                    <div>
-                        <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
-                        <div class="pmd-pcolor-1">with ${apiData.weather[0]["description"]}</div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>`;
 }
 
 function buildWidgetLibBtnMU(data) {
@@ -233,7 +175,109 @@ function buildWidgetLibBtnMUMobile(data) {
     </button>
     </div>`;
 }
+/* END Widget Library Add/Remove Buttons */
 
+/* Dashboard Panels */
+function buildWeatherPanelMU(owdata, widgetID) {
+
+    var apiData = owdata;
+    let bigTemp = apiData.main["temp"];
+    bigTemp = bigTemp.toFixed(0);
+    var weatherBGClass = "";
+    var weatherDesClass = "";
+
+    // Convert time stamp and set styles according to time of day
+    timeInfo = Unix_timestamp(apiData.dt);
+    var currentTime = timeInfo.fulltime;
+    var dayTimeHours = timeInfo.hours;
+
+    if(dayTimeHours >= 6 && dayTimeHours <= 18) {
+        weatherBGClass = " pmd-weather-icon-bg-day";
+        weatherDesClass = " pmd-weather-des-bg-day";
+    } else {
+        weatherBGClass = " pmd-weather-icon-bg-night";
+        weatherDesClass = " pmd-weather-des-bg-night";
+    };
+
+    // Create app color scheme selector variables
+    var colorSchemeFinal01 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-01";
+    }
+
+    return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
+    <div class="pmd-panel-head">
+        <div class="pmd-panel-headtext${colorSchemeFinal01}">
+            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
+                <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
+            <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
+        </div>
+    </div>
+        <div class="pmd-active-widget pmd-bcolor-2">
+            <div class="float-right">My Weather</div>
+            <h5>${apiData.name}</h5>
+            <div>Current Time: ${currentTime}</div>
+            <div class="${weatherBGClass}">
+                <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
+                <div class="pmd-weather-temp">${bigTemp} &#176;</div>
+                <div class="pmd-weather-desc${weatherDesClass}">
+                <div class="pmd-bg-water"><img src="images/waves-bg-01.png" width="50px" alt="Waves in the background"></div>
+                    <div>
+                        <div class="pmd-pcolor-1">Currently: ${apiData.weather[0]["main"]}</div>
+                        <div class="pmd-pcolor-1">with ${apiData.weather[0]["description"]}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function buildGitHubPanelMU(widgetID) {
+
+    // Create app color scheme selector variables
+    var colorSchemeFinal01 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-01";
+    }
+
+    return `<div id="${widgetID}" class="col col-md-9">
+    <div class="pmd-panel-head">
+        <div class="pmd-panel-headtext${colorSchemeFinal01}">
+            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
+                <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
+            <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
+        </div>
+    </div>
+        <div class="pmd-active-widget pmd-bcolor-2">
+            <div class="row">
+                <div class="col">
+                    <h5 class="text-center">Search GitHub Projects</h5>
+                    <div class="pmd-gh-inputarea">
+                        <div class="pmd-gh-inputtext"><input type="text" id="gh-username" value="GeorgeLychock" oninput="fetchGitHubInformation()" /></div>
+                        <div class="pmd-gh-inputlabel">Enter a valid GitHub username: </div>
+                    </div>
+                    <div class="pmd-gh-user-data">
+                        <div id="gh-user-data"></div>
+                    </div>
+                    <div>
+                        <div id="gh-repo-data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+/* END Dashboard Panels */
+
+/* Open Weather Custom Functions */
 function saveOpenWeatherLocation() {
 
     let elementID = "widget0001";
@@ -284,4 +328,4 @@ function saveOpenWeatherLocation() {
         return $(".valAlert01").html(""), $("#saveLocalConfirmModal").html("Your location has been updated!");
     }
 }
-
+/* END Open Weather Custom Functions */
