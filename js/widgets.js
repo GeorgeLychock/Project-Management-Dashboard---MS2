@@ -247,11 +247,7 @@ function buildGitHubPanelMU(widgetID) {
 
     return `<div id="${widgetID}" class="col col-md-9">
     <div class="pmd-panel-head">
-        <div class="pmd-panel-headtext${colorSchemeFinal01}">
-            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
-                <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
-            </div>
-        </div>
+        <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
             <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
         </div>
@@ -267,7 +263,7 @@ function buildGitHubPanelMU(widgetID) {
                     <div class="pmd-gh-user-data">
                         <div id="gh-user-data"></div>
                     </div>
-                    <div>
+                    <div class="pmd-gh-repo-data">
                         <div id="gh-repo-data"></div>
                     </div>
                 </div>

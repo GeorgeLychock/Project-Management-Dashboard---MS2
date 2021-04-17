@@ -199,7 +199,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-header {
     padding: 10px 10px 10px 20px;
-    margin: 0 0 0 50px;
+    margin: 0 0 0 10px;
+}
+
+.pmd-title {
+    font-size: 2rem;
 }
 
 .pmd-tagline {
@@ -207,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-username {
-    font-size: larger;
+    margin-top: 3px;
     float: right;
 }
 
@@ -357,8 +361,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* @media */
 @media only screen and (min-width: 767px) {
-
+    .pmd-username {
+        font-size: larger;
+        float: right;
     }
+
+    .pmd-title {
+        font-size: 3rem;
+    }
+
+    .pmd-header {
+        margin: 0 0 0 50px;
+    }
+
+}
 
 /* Color Schemes */
 .make-dark {

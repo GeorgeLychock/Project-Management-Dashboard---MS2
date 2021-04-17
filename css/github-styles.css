@@ -35,6 +35,11 @@
 
 .pmd-gh-info {
   font-size: .8rem;
+  display: inline;
+}
+
+.pmd-gh-repo-data {
+  margin-top: 15px;
 }
 
 .pmd-gh-repolist {

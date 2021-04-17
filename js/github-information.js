@@ -1,7 +1,7 @@
 function userInformationHTML(user) {
     return `
         <h6>GitHub Profile:</h6>
-        <div>
+        <div class="d-inline">
             <div class="pmd-gh-avatar">
                 <a href="${user.html_url}" target="_blank">
                     <img src="${user.avatar_url}" height="30px" alt="${user.login}">
@@ -14,7 +14,7 @@ function userInformationHTML(user) {
             </div>
         </div>
 
-        <div class="gh-content">
+        <div class="gh-content d-inline">
 
         </div>
         <div class="pmd-gh-info">Followers: ${user.followers} | Following: ${user.following} | Repos: ${user.public_repos}</div>
@@ -32,7 +32,7 @@ function repoInformationHTML(repos) {
     });
     return `<div class="clearfix repo-list">
                 <div class="pmd-gh-repolist-title">
-                    <h6>User GitHub Repos:</h6>
+                    <h6>User's GitHub Repos:</h6>
                 </div>
                 <div class="pmd-gh-repolist">
                     <ul>

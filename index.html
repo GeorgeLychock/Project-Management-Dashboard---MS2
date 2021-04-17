@@ -57,7 +57,7 @@
                         <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#dashboardSettings">
                             <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
                         </div>
-                        <h1>My PM Dashboard</h1>
+                        <h1 class="pmd-title">My PM Dashboard</h1>
                         <div class="pmd-tagline">THE project status and management tools portal.</div>
                         <div class="pmd-username pmd-pcolor-3">User: George Lychock</div>
                     </div>
@@ -191,14 +191,18 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        <button class="pmd-icon-03" onclick="posLibRight()">
-                            <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
-                            Position the Library to the Right
-                        </button>
-                        <button class="pmd-icon-03" onclick="posLibLeft()">
-                            <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
-                            Position the Library to the Left
-                        </button>
+                        <div>
+                            <button class="pmd-icon-03" onclick="posLibRight()">
+                                <i class="bi bi-arrow-right pmd-acolor-2" aria-hidden="true"></i>
+                                Library Right
+                            </button>
+                        </div>
+                        <div>
+                            <button class="pmd-icon-03" onclick="posLibLeft()">
+                                <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+                                Library Left
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

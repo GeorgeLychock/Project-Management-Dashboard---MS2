@@ -12,6 +12,8 @@
 
 .pmd-weather-desc {
     padding: 20px 0 15px 10px;
+    min-height: 80px;
+    font-size: .75rem;
 }
 
 .pmd-weather-des-bg-day {
