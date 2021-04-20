@@ -217,10 +217,10 @@ function buildProjectLibBtnMUMobile(data) {
         colorSchemeFinal02 = " " + colorScheme + "-01";
     }
 
-    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
+    return `<div class="pmd-mobile-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
-    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
+    <i class="bi bi-plus pmd-acolor-1" aria-hidden="true"></i>
+    <div class="pmd-dinline pmd-acolor-1${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }

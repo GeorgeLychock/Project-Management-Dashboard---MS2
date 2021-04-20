@@ -155,18 +155,28 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-.pmd-mobile-lib-btn {
+.pmd-mobile-btn-library {
+    border: none;
     font-size: small;
     padding: 2px 4px;
-    margin: 10px;
+    margin: 0 0 20px 10px;
+    border-radius: 10px;
+}
+
+.pmd-mobile-lib-btn {
+    margin: 5px;
+    padding: 2px 5px;
+    font-size: .75rem;
+    border-radius: 20px;
 }
 
 /* Nav */
 .pmd-nav-item {
-    border: none;
-    background: transparent;
-    padding-top: 4px;
-    margin: 0 4px 0 8px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 0 0 10px;
+    margin: 0 15px 4px 8px; 
 }
 .pmd-nav-item:hover {
     color: whitesmoke;
@@ -181,10 +191,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0 0 5px;
 }
 
+.pmd-nav-icon {
+    font-size: .75rem;
+    margin-right: 5px;
+}
+
 .pmd-cog-instructions {
-    padding-right: 15px;
-    font-size: .85rem;
-    font-weight: 500;
+    font-size: .75rem;
 }
 
 .pmd-cog-show {
@@ -222,10 +235,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #e6e6e6;
 
 }
+
 .pmd-mobile-lib-box {
     padding-left: 10px;
-    min-height: 40px;
-    margin-bottom: 15px;
+}
+
+.pmd-mobile-header {
+    font-size: 1.25rem;
 }
 
 /* Project Form */
@@ -361,6 +377,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* @media */
 @media only screen and (min-width: 767px) {
+    .pmd-nav-item {
+        border: none;
+        background: transparent;
+        padding-top: 4px;
+        margin: 0 4px 0 8px;
+    }
+    
     .pmd-username {
         font-size: larger;
         float: right;
@@ -372,6 +395,12 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-header {
         margin: 0 0 0 50px;
+    }
+
+    .pmd-cog-instructions {
+        padding-right: 15px;
+        font-size: .85rem;
+        font-weight: 500;
     }
 
 }

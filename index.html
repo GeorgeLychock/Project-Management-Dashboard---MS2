@@ -27,7 +27,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon pmd-nav-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
@@ -43,8 +43,15 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
+                        <!-- Display Desktop version of the cog hint-->
+                        <div class="d-none d-md-inline pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
                     </nav>
+                </div>
+            </div>
+            <div class="row d-md-none no-gutters pmd-bcolor-nav text-center">
+                <div class="col">
+                    <!-- Display Mobile version of the cog hint-->
+                    <div><div class="pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div></div>
                 </div>
             </div>
         </div>
@@ -59,7 +66,7 @@
                         </div>
                         <h1 class="pmd-title">My PM Dashboard</h1>
                         <div class="pmd-tagline">THE project status and management tools portal.</div>
-                        <div class="pmd-username pmd-pcolor-3">User: George Lychock</div>
+                        <div class="d-none d-md-inline pmd-username pmd-pcolor-3">User: George Lychock</div>
                     </div>
                 </div>
             </div>
@@ -67,19 +74,18 @@
             <div class="container-fluid d-md-none">
                 <div class="row no-gutters">
                     <div class="col">
+                        <div class="d-md-none pmd-username pmd-pcolor-3">User: George Lychock</div>
                         <div class="dropdown ">
-                            <button class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Libraries
-                            </button>
+                            </div>
                             <div class="dropdown-menu pmd-mobile-lib-drop" aria-labelledby="dropdownMenuButton">
                                 <div class="pmd-mobile-lib-box">
-                                    <h4 class="pmd-dinline pmd-hcolor-1">My Projects Library</h4>
-                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-1">My Projects Library</h4>
                                 </div>
                                 <div id="mobile-projects-library"></div>
                                 <div class="pmd-mobile-lib-box">
-                                    <h4 class="pmd-dinline pmd-hcolor-1">My Widgets Library</h4>
-                                    <button class="pmd-icon-02"><i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i></button>
+                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-1">My Widgets Library</h4>
                                 </div>
                                 <div id="mobile-widgets-library"></div>
                                 <p class="pmd-mobile-lib-box">Click the + plus sign to add a widget to the Dashboard</p>
@@ -268,7 +274,7 @@
                         </form>
                         <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
                     </div>
-                    <p id="saveConfirmationModal" name="saveConfirmationModal"></p>
+                    <p id="saveConfirmationModal" name="saveConfirmationModal">You can add and delete projects from your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
