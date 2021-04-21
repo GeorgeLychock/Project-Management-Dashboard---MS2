@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-ncolor-1 {color:#4dd2ff;}
 .pmd-ncolor-2 {color:#fff;}
 .pmd-ncolor-3 {color:#fa0;}
-.pmd-ncolor-4 {color: yellow;}
+.pmd-ncolor-4 {color: #000;}
 
 /* main text colors */
 .pmd-pcolor-1 {color:whitesmoke;}
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Nav */
 .pmd-nav-item {
-    border: 1px solid #333;
+    border: 2px solid #add8e6;
     border-radius: 10px;
     background: #fff;
     padding: 0 0 0 10px;
