@@ -18,6 +18,8 @@
 /* Header */
 /* Banner */
 /* Mobile Library Dropdown */
+/* Project Form */
+/* Dashboard */
 /* Dashboard Panels */
 /* Active Projects Dashboard /*
 /* Active Widgets Dashboard */
@@ -51,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 /*header colors*/
 .pmd-hcolor-1 {color:#619aea;}
 .pmd-hcolor-2 {color:#000;}
+.pmd-hcolor-3 {color:#999;}
 
 /*nav colors */
 .pmd-ncolor-1 {color:#4dd2ff;}
@@ -71,15 +74,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Common Background Colors*/
 .pmd-bcolor-1 {background-color:rgba(0, 0, 0, .04);}
-.pmd-bcolor-4 {background-color:#666;}
 .pmd-bcolor-2 {background-color:whitesmoke;}
 .pmd-bcolor-3 {background-color:#999;}
+.pmd-bcolor-4 {background-color:#5a6268;}
 .pmd-bcolor-5 {background-color:#000;}
 .pmd-bcolor-nav {background-color:#83b0ef;}
 .pmd-bcolor-foot {background-color:#fda;}
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color: #ffc266}
+.pmd-btncolor-1 {background-color: #fda}
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
@@ -128,6 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Buttons and Icons*/
 .pmd-icon-02 {
+    font-size: .75rem;
     border: none;
     display: inline;
     float: right;
@@ -171,6 +175,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav */
+.pmd-corp-title {
+    font-size: 1.0rem;
+}
+
+.pmd-nav-tog {
+    font-size: .75rem;
+    border: none;
+}
+
 .pmd-nav-item {
     border: 2px solid #add8e6;
     border-radius: 10px;
@@ -178,6 +191,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0 0 10px;
     margin: 0 15px 4px 8px; 
 }
+
 .pmd-nav-item:hover {
     color: whitesmoke;
 }
@@ -196,8 +210,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 5px;
 }
 
+.pmd-mobile-drop {
+    margin: 10px 0;
+}
+
 .pmd-cog-instructions {
     font-size: .75rem;
+    margin: 20px 0;
 }
 
 .pmd-cog-show {
@@ -211,8 +230,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-header {
-    padding: 10px 10px 10px 20px;
-    margin: 0 0 0 10px;
+    padding: 10px;
+    margin: 10px 0 0 5px;
 }
 
 .pmd-title {
@@ -266,12 +285,21 @@ h1, h2, h3, h4, h5, h6 {
     color: green;
 }
 
+/* Dashboard */
+.pmd-dashboard {
+    background-color: #e6e6e6;
+}
+
 /* Dashboard Panels */
 .pmd-active-widget {
     border: solid 1px #707070;
     padding: 10px 10px 0 10px;
     margin: 0px 10px 10px 0px;
     height: 250px;
+}
+
+.pmd-active-widget h5 {
+    font-size: .85rem;
 }
 
 .pmd-panel-head {
@@ -310,12 +338,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0px 10px 5px 0px;
 }
 
+
 /* Active Projects Dashboard */
 .pmd-active-projects-head {
-    margin-bottom: 10px;
+    margin: 10px 0;
     padding: 2px 0 0 15px;
-    border: solid 1px #707070;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .pmd-active-projects {
@@ -327,12 +355,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3px 0px;
 }
 
+.pmd-project-data2 {
+    font-size: .65rem;
+    padding: 3px 0px;
+}
+
 /* Active Widgets Dashboard */
 .pmd-active-widgets-head {
-    margin-bottom: 10px;
+    margin: 20px 0 10px 0;
     padding: 2px 0 0 15px;
-    border: solid 1px #707070;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .pmd-active-widgets {
@@ -353,7 +385,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Widget Library */
 .pmd-w-library {
     padding: 20px 10px 10px 10px;
-    border-radius: 25px;
 }
 
 .pmd-project-lib {
@@ -376,12 +407,36 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* @media */
+@media only screen and (max-width: 767px) {
+
+    
+}
+
 @media only screen and (min-width: 767px) {
+
+    .pmd-ncolor-4 {color: whitesmoke;}
+
+    .pmd-corp-title {
+        font-size: 1.0rem;
+    }
+
     .pmd-nav-item {
         border: none;
         background: transparent;
         padding-top: 4px;
         margin: 0 4px 0 8px;
+    }
+
+    .pmd-header {
+        padding: 10px 10px 10px 20px;
+        margin: 0 0 0 10px;
+    }
+
+    .pmd-icon-02 {
+        border: none;
+        display: inline;
+        float: right;
+        background-color: transparent;
     }
     
     .pmd-username {
@@ -398,9 +453,32 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-cog-instructions {
-        padding-right: 15px;
+        padding: 5px 15px 0 0;
         font-size: .85rem;
         font-weight: 500;
+        margin: 0;
+    }
+
+    .pmd-dashboard {
+        background-color: inherit;
+    }
+
+    .pmd-active-projects-head {
+        margin: 0 0 10px 0;
+        padding: 2px 0 0 15px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .pmd-active-widgets-head {
+        margin: 0 0 10px 0;
+        padding: 2px 0 0 15px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .pmd-active-widget h5 {
+        font-size: 1.25rem;
     }
 
 }

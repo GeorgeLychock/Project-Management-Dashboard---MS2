@@ -157,7 +157,7 @@ function buildProjectPanelMU(data) {
     }
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col-sm-12 col-md-3">
+    return `<div id="${projectData.widgetID}" class="col-6 col-md-3">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
@@ -166,9 +166,9 @@ function buildProjectPanelMU(data) {
     </div>
         <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
-            <div>Project Due Date: ${projectData.duedate}</div>
-            <div class="pmd-project-data1">Project Owner: ${projectData.owner}</div>
-            <div class="pmd-project-data1">${projectData.description}</div>
+            <div class="pmd-project-data1">Due Date: ${projectData.duedate}</div>
+            <div class="pmd-project-data1">Owner: ${projectData.owner}</div>
+            <div class="pmd-project-data2">${projectData.description}</div>
             <div class="progress pmd-prg-row">
                 <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100">% Complete: ${projectData.percentcomplete}%</div>
             </div>

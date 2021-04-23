@@ -23,8 +23,8 @@
             <div class="row no-gutters pmd-bcolor-nav">
                 <div class="col">
                     <nav class="navbar navbar-expand-lg navbar-light pmd-nar-bar">
-                        <a class="navbar-brand" href="#">pmDashboard</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        <a class="navbar-brand pmd-corp-title" href="#">pmDashboard</a>
+                        <button class="navbar-toggler pmd-nav-tog" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon pmd-nav-icon"></span>
@@ -43,7 +43,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <!-- Display Mobile version of the cog hint-->
-                                    <div class="pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
+                                    <div class="d-md-none pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
                                 </li>
                             </ul>
                         </div>
@@ -63,13 +63,13 @@
                             <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
                         </div>
                         <h1 class="pmd-title">My PM Dashboard</h1>
-                        <div class="pmd-tagline">THE project status and management tools portal.</div>
+                        <div class="pmd-tagline pmd-hcolor-3">project status and management tools portal</div>
                         <div class="d-none d-md-inline pmd-username pmd-pcolor-3">User: George Lychock</div>
                     </div>
                 </div>
             </div>
             <!-- Mobile Library Dropdown -->
-            <div class="container-fluid d-md-none">
+            <div class="container-fluid d-md-none pmd-mobile-drop">
                 <div class="row no-gutters">
                     <div class="col">
                         <div class="d-md-none pmd-username pmd-pcolor-3">User: George Lychock</div>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div id="mobile-projects-library"></div>
                                 <div class="pmd-mobile-lib-box">
-                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-1">My Widgets Library</h4>
+                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-1">My Tools Library</h4>
                                 </div>
                                 <div id="mobile-widgets-library"></div>
                                 <p class="pmd-mobile-lib-box">Click the + plus sign to add a widget to the Dashboard</p>
@@ -98,7 +98,7 @@
         <!-- Dashboard -->
         <article>
             <section>
-                <div class="container-fluid">
+                <div class="container-fluid pmd-dashboard">
                     <div class="row pmd-row-main">
                         <!-- Display Libraries Panel for desktop and tablet-->
                         <div class="col-3 d-none d-md-block pmd-w-library pmd-bcolor-1">
