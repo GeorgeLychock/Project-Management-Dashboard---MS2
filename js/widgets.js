@@ -148,8 +148,8 @@ function buildWidgetLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}')">
-    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
+    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
+    <div id="wName" class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
@@ -170,8 +170,8 @@ function buildWidgetLibBtnMUMobile(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
-    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
+    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
+    <div class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }

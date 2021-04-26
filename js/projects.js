@@ -157,7 +157,7 @@ function buildProjectPanelMU(data) {
     }
 
     /* CODE REUSE - Progress Bar below is from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/  */
-    return `<div id="${projectData.widgetID}" class="col-6 col-md-3">
+    return `<div id="${projectData.widgetID}" class="col-6 col-lg-3">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnProjectOff('${projectData.widgetID}')">
@@ -167,7 +167,7 @@ function buildProjectPanelMU(data) {
         <div class="pmd-active-widget pmd-bcolor-2">
             <h5>${projectData.name}</h5>
             <div class="pmd-project-data1">Due Date: ${projectData.duedate}</div>
-            <div class="pmd-project-data1">Owner: ${projectData.owner}</div>
+            <div class="pmd-project-data2">Owner: ${projectData.owner}</div>
             <div class="pmd-project-data2">${projectData.description}</div>
             <div class="progress pmd-prg-row">
                 <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100">% Complete: ${projectData.percentcomplete}%</div>
@@ -178,7 +178,7 @@ function buildProjectPanelMU(data) {
             <div class="progress pmd-prg-row">
                 <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2">SV: ${projectData.sv}</div>
             </div>
-            <div class="pmd-project-data1"><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
+            <div class="pmd-project-data2"><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
         </div>
     </div>`;
 }
@@ -197,8 +197,8 @@ function buildProjectLibBtnMU(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}')">
-    <i class="bi bi-plus-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-acolor-1 wName${colorSchemeFinal02}">${data.name}</div>
+    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
+    <div id="wName" class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
@@ -219,8 +219,8 @@ function buildProjectLibBtnMUMobile(data) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
     <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
-    <i class="bi bi-plus pmd-acolor-1" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-1${colorSchemeFinal02}">${data.name}</div>
+    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
+    <div class="pmd-dinline pmd-acolor-5${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }

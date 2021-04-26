@@ -194,17 +194,16 @@ $(".pmd-cog-instructions").mouseleave(function() {
 /* ******* CUSTOM STYLE JAVASCRIPT ********** */
 
     function makeDark() {
-        console.log("Am I firing?");
         $("body").addClass('make-dark');
         $("main").addClass('make-dark');
         $(".pmd-panel-headtext").addClass('make-dark-01');
         $(".pmd-w-library").addClass('make-dark-02');
         $(".pmd-banner").addClass('make-dark-03');
-        $(".pmd-btn-library").addClass('make-dark-04');
         $(".wName").addClass('make-dark-01');
         $(".pmd-hcolor-1").addClass('make-dark-01');
         $(".pmd-weather-desc").addClass('make-weather-dark-01');
         $(".pmd-username").addClass('make-dark-01');
+        $(".pmd-dashboard").addClass('make-dark-05');
         updateUserSettings("scenario", "dark");
     }
 
@@ -214,10 +213,10 @@ $(".pmd-cog-instructions").mouseleave(function() {
         $(".pmd-panel-headtext").removeClass('make-dark-01');
         $(".pmd-w-library").removeClass('make-dark-02');
         $(".pmd-banner").removeClass('make-dark-03');
-        $(".pmd-btn-library").removeClass('make-dark-04');
         $(".wName").removeClass('make-dark-01');
         $(".pmd-hcolor-1").removeClass('make-dark-01');
         $(".pmd-username").removeClass('make-dark-01');
+        $(".pmd-dashboard").removeClass('make-dark-05');
         updateUserSettings("scenario", "light");
     }
 

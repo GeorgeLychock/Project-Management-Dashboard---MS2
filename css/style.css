@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-hcolor-1 {color:#619aea;}
 .pmd-hcolor-2 {color:#000;}
 .pmd-hcolor-3 {color:#999;}
+.pmd-hcolor-4 {color:whitesmoke}
 
 /*nav colors */
 .pmd-ncolor-1 {color:#4dd2ff;}
@@ -71,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-acolor-2 {color:#000;}
 .pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
+.pmd-acolor-5 {color:#fff;}
 
 /*Common Background Colors*/
 .pmd-bcolor-1 {background-color:rgba(0, 0, 0, .04);}
@@ -78,11 +80,12 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-3 {background-color:#999;}
 .pmd-bcolor-4 {background-color:#5a6268;}
 .pmd-bcolor-5 {background-color:#000;}
+.pmd-bcolor-6 {background-color:#154e9e;}
 .pmd-bcolor-nav {background-color:#83b0ef;}
 .pmd-bcolor-foot {background-color:#fda;}
 
 /*Common Button Colors*/
-.pmd-btncolor-1 {background-color: #fda}
+.pmd-btncolor-1 {background-color: #ea8361}
 .pmd-btncolor-2 {background-color: #000;}
 
 /* Spacers */
@@ -153,25 +156,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-btn-library {
-    margin: 5px;
-    padding: 2px 5px;
-    border-radius: 20px;
+    margin: 15px 5px;
+    border-radius: 50px;
     display: block;
-}
-
-.pmd-mobile-btn-library {
-    border: none;
-    font-size: small;
-    padding: 2px 4px;
-    margin: 0 0 20px 10px;
-    border-radius: 10px;
-}
-
-.pmd-mobile-lib-btn {
-    margin: 5px;
-    padding: 2px 5px;
-    font-size: .75rem;
-    border-radius: 20px;
 }
 
 /* Nav */
@@ -210,10 +197,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 5px;
 }
 
-.pmd-mobile-drop {
-    margin: 10px 0;
-}
-
 .pmd-cog-instructions {
     font-size: .75rem;
     margin: 20px 0;
@@ -250,17 +233,40 @@ h1, h2, h3, h4, h5, h6 {
 /* Banner */
 
 /* Mobile Library Dropdown */
-.pmd-mobile-lib-drop {
-    background-color: #e6e6e6;
-
+#mobile-projects-library{
+    padding: 0 10px;
+}
+.pmd-mobile-drop {
+    margin: 30px 0 10px 0;
 }
 
 .pmd-mobile-lib-box {
     padding-left: 10px;
+    margin-top: 5px;
+}
+
+.pmd-mobile-lib-box2 {
+    padding-left: 10px;
+    margin-top: 20px;
 }
 
 .pmd-mobile-header {
     font-size: 1.25rem;
+}
+
+.pmd-mobile-btn-library {
+    border: none;
+    font-size: small;
+    padding: 2px 4px;
+    margin: 0 0 20px 10px;
+    border-radius: 10px;
+}
+
+.pmd-mobile-lib-btn {
+    margin: 5px;
+    padding: 2px 5px;
+    font-size: .75rem;
+    border-radius: 20px;
 }
 
 /* Project Form */
@@ -288,6 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Dashboard */
 .pmd-dashboard {
     background-color: #e6e6e6;
+    padding: 0;
 }
 
 /* Dashboard Panels */
@@ -295,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
     border: solid 1px #707070;
     padding: 10px 10px 0 10px;
     margin: 0px 10px 10px 0px;
-    height: 250px;
+    height: 225px;
 }
 
 .pmd-active-widget h5 {
@@ -304,8 +311,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-panel-head {
     border: solid 1px #707070;
-    border-radius: 20px 20px 0px 0px;
-    margin: 0px 10px 5px 0px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px 10px 0px 0px;
     padding: 0px 10px;
 }
 
@@ -316,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-panel-headtext {
-    font-size: .75rem;
+    font-size: .55rem;
     margin-right: 4px;
     padding-top: 3px;
     display: inline;
@@ -373,13 +380,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Progress Bar */
 .pmd-prg-row {
-    margin: 5px;
-    padding: 3px;
-    height: 1rem;
+    margin: 2px;
+    padding: 1px;
+    height: .80rem;
 }
 
 .pmd-prg-bar {
-    font-size: .5rem;
+    font-size: .4rem;
 }
 
 /* Widget Library */
@@ -463,6 +470,14 @@ h1, h2, h3, h4, h5, h6 {
         background-color: inherit;
     }
 
+    .pmd-active-widget {
+        height: 250px;
+    }
+
+    .pmd-panel-head {
+        border-radius: 20px 20px 0px 0px;
+    }
+
     .pmd-active-projects-head {
         margin: 0 0 10px 0;
         padding: 2px 0 0 15px;
@@ -479,6 +494,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-active-widget h5 {
         font-size: 1.25rem;
+    }
+
+    .pmd-prg-row {
+        margin: 5px;
+        padding: 3px;
+        height: 1rem;
+    }
+
+    .pmd-prg-bar {
+        font-size: .5rem;
     }
 
 }
@@ -504,6 +529,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .make-dark-04 {
     background-color: rgba(255, 221, 170, .5);
+}
+
+.make-dark-05 {
+    background-color: rgba(255, 255, 255, .08);
 }
 
 .make-weather-dark-01 {
