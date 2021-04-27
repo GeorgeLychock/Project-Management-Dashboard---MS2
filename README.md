@@ -64,6 +64,12 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   I can change the color Scheme using a button to a dark scheme
     -   I can change the scheme back to light
     -   The color scheme I used last will be present when I come back to the site
+    -   I can position the Library Panel on the right or the left of desktop or tablet viewports
+
+#### Story 6
+As a user, I want instruction or an indication of how and where to change dashboard visual settings
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A visual message or banner informs me how to change settings
 
 ###
 
@@ -284,6 +290,7 @@ Below are placeholders:
 ### Known Bugs
 #### OPEN 
 -   Open Weather - Current time displays a negative value befor 12pm
+-   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
 
 
 #### FIXED 
