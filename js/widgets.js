@@ -221,7 +221,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
             <div class="float-right">My Weather</div>
             <h5>${apiData.name}</h5>
             <div>Current Time: ${currentTime}</div>
-            <div class="${weatherBGClass}">
+            <div class="pmd-weather-bg${weatherBGClass}">
                 <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
                 <div class="pmd-weather-temp">${bigTemp} &#176;</div>
                 <div class="pmd-weather-desc${weatherDesClass}">
