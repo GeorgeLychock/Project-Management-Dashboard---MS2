@@ -206,7 +206,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
         colorSchemeFinal01 = " " + colorScheme + "-01";
     }
 
-    return `<div id="${widgetID}" class="col col-md-3 pmd-max-width-250">
+    return `<div id="${widgetID}" class="col-12 col-md-3 pmd-max-width-250">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}">
             <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
@@ -245,17 +245,18 @@ function buildGitHubPanelMU(widgetID) {
         colorSchemeFinal01 = " " + colorScheme + "-01";
     }
 
-    return `<div id="${widgetID}" class="col col-md-9">
+    return `<div id="${widgetID}" class="col-12 col-md-9">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
             <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
         </div>
     </div>
-        <div class="pmd-active-widget pmd-bcolor-2">
+        <div class="pmd-active-gh-widget pmd-bcolor-2">
             <div class="row">
                 <div class="col">
-                    <h5 class="text-center">Search GitHub Projects</h5>
+                    <div class="d-inline pmd-gh-icon"><i class="bi bi-github"></i></div>
+                    <div class="d-inline float-right"><h5 class="text-center">Search GitHub Projects</h5></div>
                     <div class="pmd-gh-inputarea">
                         <div class="pmd-gh-inputtext"><input type="text" id="gh-username" value="GeorgeLychock" oninput="fetchGitHubInformation()" /></div>
                         <div class="pmd-gh-inputlabel">Enter a valid GitHub username: </div>

@@ -92,7 +92,6 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-min-height-295 {
     min-height: 295px;
 }
-
 /* Font Styles */
 .pmd-uppercase {
     text-transform: uppercase;
@@ -302,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
     border: solid 1px #707070;
     padding: 10px 10px 0 10px;
     margin: 0px 10px 10px 0px;
-    height: 258px;
+    min-height: 258px;
     font-size: .75rem;
 }
 
@@ -420,7 +419,12 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
+
+
+}
+
+@media only screen and (min-width: 992px) {
 
     .pmd-ncolor-4 {color: whitesmoke;}
 

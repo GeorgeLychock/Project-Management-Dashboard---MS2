@@ -1,3 +1,13 @@
+/* george lychock MS2 stylesheet */
+/* NOTES:
+    - Except for base html elements and colors, all other custom selectors names begin with "pmd" to make it easier to see in the markup */
+
+
+/* ######## CSS TOC - In Order of Appearance: */
+/* Open Weather Styles */
+
+
+/* Open Weather Styles */
 .pmd-weather-icon-bg-night {
     background-image: linear-gradient(#00264d, #666);
 }
@@ -40,3 +50,4 @@
     padding-right: 20px;
     padding-top: 10px;
 }
+
