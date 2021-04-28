@@ -426,11 +426,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (min-width: 768px) {
+    h2 {
+        font-size: 1.25rem;
+    }
 
+    .pmd-cog-instructions {
+        margin: 0;
+    }
+
+    .pmd-btn-library {
+        font-size: .75rem;
+    }
 
 }
 
 @media only screen and (min-width: 992px) {
+    h2 {
+        font-size: 2.0rem;
+    }
 
     .pmd-ncolor-4 {color: whitesmoke;}
 
@@ -477,8 +490,16 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
 
+    .pmd-cog-msgbox {
+        position: absolute;
+    }
+
     .pmd-dashboard {
         background-color: inherit;
+    }
+
+    .pmd-btn-library {
+        font-size: 1.0rem;
     }
 
     .pmd-dashboard-vp {
@@ -486,7 +507,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-active-widget {
-        height: 250px;
+        height: 300px;
     }
 
     .pmd-panel-head {
@@ -523,6 +544,14 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+@media only screen and (min-width: 1300px) {
+
+    .pmd-active-widget {
+        height: 258px;
+    }
+
+}
+
 /* Color Schemes */
 .make-dark {
     /*background-color: rgba(115, 68, 68, .25); */
@@ -552,4 +581,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .make-weather-dark-01 {
     background-image: linear-gradient(#333, #000);
+}
+
+
+/* Positioning Schemes */
+.pmd-lib-right-fix {
+    padding-right: 15px;
+    padding-left: 0px;
 }

@@ -84,10 +84,14 @@ $(document).ready(function() {
 // settings cog hint styling, highlights any settings cog on the dashboard when a user hovers the instruction text
 $(".pmd-cog-instructions").mouseenter(function() {
     $(".bi-gear").addClass("pmd-cog-show");
+    $(".bi-gear").html('<span class="pmd-cog-msgbox">Click Me!</span>');
 })
 $(".pmd-cog-instructions").mouseleave(function() {
     $(".bi-gear").removeClass("pmd-cog-show");
+    $(".bi-gear").html("<span></span>");
 })
+
+// END settings cog hint styling,
 
     function convertViewportWidth() {
         var bodyWidth = $("body").width();
@@ -222,11 +226,13 @@ $(".pmd-cog-instructions").mouseleave(function() {
 
     function posLibRight() {
         $(".pmd-w-library").addClass('order-10');
+        $(".pmd-dashboard-vp").addClass('pmd-lib-right-fix');
         updateUserSettings("librarypos", "right");
     }
 
     function posLibLeft() {
         $(".pmd-w-library").removeClass('order-10');
+        $(".pmd-dashboard-vp").removeClass('pmd-lib-right-fix');
         updateUserSettings("librarypos", "left");
     }
 

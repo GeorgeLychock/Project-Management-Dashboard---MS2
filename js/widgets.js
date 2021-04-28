@@ -206,7 +206,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
         colorSchemeFinal01 = " " + colorScheme + "-01";
     }
 
-    return `<div id="${widgetID}" class="col-12 col-md-3 pmd-max-width-250">
+    return `<div id="${widgetID}" class="col-12 col-md-6 col-lg-6 col-xl-3 pmd-max-width-250">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}">
             <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
@@ -245,7 +245,7 @@ function buildGitHubPanelMU(widgetID) {
         colorSchemeFinal01 = " " + colorScheme + "-01";
     }
 
-    return `<div id="${widgetID}" class="col-12 col-md-6">
+    return `<div id="${widgetID}" class="col-12 col-md-6 col-lg-6">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">
