@@ -245,7 +245,7 @@ function buildGitHubPanelMU(widgetID) {
         colorSchemeFinal01 = " " + colorScheme + "-01";
     }
 
-    return `<div id="${widgetID}" class="col-12 col-md-9">
+    return `<div id="${widgetID}" class="col-12 col-md-6">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}"></div>
         <div class="pmd-icon-wrapper01" onclick="turnWidgetOff('${widgetID}')">

@@ -209,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Header */
 .pmd-header-cntnr {
     padding: 0;
+    max-width: 1400px;
 }
 
 .pmd-header {
@@ -294,6 +295,11 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-dashboard {
     background-color: #e6e6e6;
     padding: 0;
+    max-width: 1400px;
+}
+
+.pmd-dashboard-vp {
+    padding-right: 15px;
 }
 
 /* Dashboard Panels */
@@ -475,6 +481,10 @@ h1, h2, h3, h4, h5, h6 {
         background-color: inherit;
     }
 
+    .pmd-dashboard-vp {
+        padding-right: 0px;
+    }
+
     .pmd-active-widget {
         height: 250px;
     }
@@ -533,7 +543,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .make-dark-04 {
-    background-color: rgba(255, 221, 170, .5);
+    background-color: #ea8361;
 }
 
 .make-dark-05 {
