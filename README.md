@@ -244,7 +244,8 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Code the Rebuild Library Buttons function from the localStorage
     -   Add Progress Bar to project panels
     -   Wireframe active project panels
-    -   ** Have first mentor session
+
+-   ** First Mentor Session
 
 -   Sprint 2 2/28 - 3/6
     -   Create Look and Feel
@@ -265,7 +266,8 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Add clear dashboard button (in dashboard settings?)
     -   wireframe mobile home page
     -   Create a Library settings modal to change R/L position of Library
-    -   ** Have second mentor session
+
+-   ** Second Mentor Session
 
 -   Sprint 5 3/21 - 3/28
     -   Research Firebase
@@ -305,11 +307,32 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Add GitHub API widget to Library
     -   Add GitHub API widget to Dashbaord
 
--   ** Mentor Meeting 3
+-   ** Third Mentor Session
 -   5/4 - 5/5 - Sprint Planning
 
 -   Sprint 9 5/3 - 5/9
     -   Sprint Planning
+    -   Add TOC to RM
+    -   Make Library sections overflow to scroll
+    -   Add dev site web link to Add Project modal
+    -   Fix Delete project modal bug
+    -   Fix cog tip bug
+    -   Add infomation link to Nav
+
+-   Sprint 10 5/10 - 5/16
+    -   Create a modal to have a user log in
+    -   Save user login data to LS
+    -   When creating new project, default Owner to logged in user, but give ability to chnge owner
+    -   Apply Toastr notifications
+
+-   Sprint 10 5/17 - 5/23
+    -   Submit for Peer Review
+    -   Breakout Testing sections in RM
+    -   Test
+    -   Add device and browser compatability section in RM
+    -   Submit to Maranatha
+
+
 
 
 
