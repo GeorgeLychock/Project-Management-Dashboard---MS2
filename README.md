@@ -244,35 +244,74 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Code the Rebuild Library Buttons function from the localStorage
     -   Add Progress Bar to project panels
     -   Wireframe active project panels
-    -   Have first mentor session
+    -   ** Have first mentor session
 
--   Sprint 2 2/28 -3/6
+-   Sprint 2 2/28 - 3/6
     -   Create Look and Feel
     -   Create a light and dark shade color scheme for overall appearance
     -   Add dashboard settings button
     -   Add clear dashboard button (in dashboard settings?)
     -   wireframe mobile home page
 
--   Sprint 3 3/7 -3/13
+-   Sprint 3 3/7 - 3/13
     -   Add a third-party widget to the library
     -   Style widget panels
     -   Style Progress Bar to project panels
     -   Make a function for .append to pass the widget panel MU
 
--   Sprint 4 3/14 -3/20
+-   Sprint 4 3/14 - 3/20
     -   Update Dark view styles
     -   Style dashboard settings modal
     -   Add clear dashboard button (in dashboard settings?)
     -   wireframe mobile home page
     -   Create a Library settings modal to change R/L position of Library
-    -   Have second mentor session
+    -   ** Have second mentor session
 
--   Sprint 5 3/21 -3/27
-    -   Validate CSS/HTML/JS
-    -   Create Test data based on User Stories
-    -   Test and validate
-    -   Finalize README.md
-    -   Have Final mentor session
+-   Sprint 5 3/21 - 3/28
+    -   Research Firebase
+    -   Setup Firebase account and key
+    -   Create Firebase API html/JS files
+    -   Test Firebase API
+    -   FIX: When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly
+    -   FIX: When reentering the site or refreshing the browser the scenario doesn't persist in the project panel heads on the dashboard in dark mode. 
+
+-   Sprint 6 3/29 - 4/4
+    -   Add Project Add Modal to Nav
+        -   Create LocalStorage schema for user setting saving
+    -   Add Project Delete Modal
+    -   Style Project Add/Del Modals
+    -   Add validation to Add Nodal
+    -   Create Project Delete messaging/responses
+
+-   Sprint 7 4/5 - 4/11
+    -   Add cog tip to nav
+    -   Create cog tip JS to highlight cogs
+    -   Restyle Open Weather widget
+    -   Add location input for Open Weather widget
+    -   Save location to user settings localStorage
+
+-   Sprint 8 4/12 - 4/18
+    -   Restyle dark color scheme
+    -   Create Mobile wireframe
+    -   Apply mobile styling
+    -   Apply desktop css media styles
+
+-   Sprint 8 4/19 - 4/25
+    -   Create Tablet wireframe
+    -   Apply Tablet styling
+    -   Apply Tablet Landscape css media styles
+
+-   Sprint 8 4/26 - 5/2
+    -   Add GitHub API widget to Library
+    -   Add GitHub API widget to Dashbaord
+
+-   ** Mentor Meeting 3
+-   5/4 - 5/5 - Sprint Planning
+
+-   Sprint 9 5/3 - 5/9
+    -   Sprint Planning
+
+
 
 <a name="TEST"></a>
 # Testing
@@ -328,13 +367,14 @@ Below are placeholders:
 <a name="BUGS"></a>
 ## Bugs / Fixes
 ### Fixed Bugs after Testing
--   Issue: On tablet viewports the My Profile Section overflows on the Credentials Section on Home page.
-    -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape. Also adjusted the My Profile links to take up less width.
+-   Issue: On tablet viewports 
+    -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape.
 
 ### Known Bugs
 #### OPEN 
 -   Open Weather - Current time displays a negative value befor 12pm
 -   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
+-   Hover Cog Hint in Nav displays a "Click Me!" next to the icon in the nav text
 
 
 #### FIXED 
