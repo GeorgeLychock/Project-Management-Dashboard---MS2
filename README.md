@@ -7,13 +7,13 @@
 
 <h1 align="center"><img src="_documentation/look-and-feel/montage-screenshot.png" /></h1>
 
-# Table of Contents
+## Table of Contents
 
 - [Use Case](#UC)
 
 - [User Stories](#US)
 
-- [Design](#UXUI)
+- [UX/UI](#UXUI)
 
 - [Design](#DES)
 
@@ -25,8 +25,16 @@
 
 - [Testing](#TEST)
 
+- [Bugs and Fixes](#BUGS)
+
+- [Deployment](#DPLY)
+
+- [Credits](#CREDS)
+
+
+
 <a name="UC"></a>
-# Use Case:
+# Use Case
 A configurable user dashboard that displays and organizes key metrics and other data from native or third-party datastreams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party datastreams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
 A limited number of dashboard settings will be available from a settings cog that will enhance the user experience. Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
 
@@ -42,7 +50,7 @@ A limited number of dashboard settings will be available from a settings cog tha
 >-   The user stories below indicate a "logged-in user". Since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 <a name="US"></a>
-# User Stories:
+## User Stories
 ### Story 1 done
 As a logged-in project manager, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
 -   Acceptance Criteria -- Duplicated in Testing section below
@@ -277,8 +285,6 @@ As a user, I want instruction or an indication of how and where to change dashbo
 ### Navigation Bar
 -   
 
-
-
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
 
 Below are placeholders:
@@ -319,6 +325,8 @@ Below are placeholders:
 -   All pages were given at least one cold read.
 -   Used Lighthouse to identify areas on improvement which are documented below in Fixed Bugs after Testing.
 
+<a name="BUGS"></a>
+## Bugs / Fixes
 ### Fixed Bugs after Testing
 -   Issue: On tablet viewports the My Profile Section overflows on the Credentials Section on Home page.
     -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape. Also adjusted the My Profile links to take up less width.
@@ -335,7 +343,7 @@ Below are placeholders:
 -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels
 
-###
+<a name="DPLY"></a>
 ## Deployment
 ### Hosting
 
@@ -343,6 +351,7 @@ The project was deployed to GitHub Pages hosting service:
 
 [URL to GitHub Pages Site](https://georgelychock.github.io/georgelychock-career/)
 
+### *CLOANING INFORMATION from CODE INSTITUTE README.md template from User Centric Module*
 GitHub Pages
 The project was deployed to GitHub Pages using the following steps...
    1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
@@ -353,7 +362,6 @@ The project was deployed to GitHub Pages using the following steps...
    5. The page will automatically refresh.
    6. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
 
-## *CLOANING INFORMATION from CODE INSTITUTE README.md template from User Centric Module*
 ### Forking the GitHub Repository
 
 1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
@@ -386,7 +394,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-###
+<a name="CREDS"></a>
 ## Credits
 
 ### Resources Used
@@ -420,12 +428,12 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
           x.elements[i].value = "";
         }
 
-### Content
+## Content
 
 -   All content was written by the developer.
 
-### Media
+## Media
 
 -   All Images were created by the developer.
 
-### Acknowledgements
+## Acknowledgements
