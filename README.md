@@ -298,43 +298,39 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Apply mobile styling
     -   Apply desktop css media styles
 
--   Sprint 8 4/19 - 4/25
+-   Sprint 9 4/19 - 4/25
     -   Create Tablet wireframe
     -   Apply Tablet styling
     -   Apply Tablet Landscape css media styles
 
--   Sprint 8 4/26 - 5/2
+-   Sprint 10 4/26 - 5/2
     -   Add GitHub API widget to Library
     -   Add GitHub API widget to Dashbaord
 
 -   ** Third Mentor Session
 -   5/4 - 5/5 - Sprint Planning
 
--   Sprint 9 5/3 - 5/9
+-   Sprint 11 5/3 - 5/9
     -   Sprint Planning
     -   Add TOC to RM
     -   Make Library sections overflow to scroll
     -   Add dev site web link to Add Project modal
-    -   Fix Delete project modal bug
-    -   Fix cog tip bug
+    -   FIX: Delete Project modal bug
+    -   FIX: Cog tip bug
     -   Add infomation link to Nav
 
--   Sprint 10 5/10 - 5/16
+-   Sprint 12 5/10 - 5/16
     -   Create a modal to have a user log in
     -   Save user login data to LS
     -   When creating new project, default Owner to logged in user, but give ability to chnge owner
     -   Apply Toastr notifications
 
--   Sprint 10 5/17 - 5/23
+-   Sprint 13 5/17 - 5/23
     -   Submit for Peer Review
     -   Breakout Testing sections in RM
     -   Test
     -   Add device and browser compatability section in RM
     -   Submit to Maranatha
-
-
-
-
 
 <a name="TEST"></a>
 # Testing
@@ -342,10 +338,27 @@ As a user, I want instruction or an indication of how and where to change dashbo
 ## Functionality Testing
 
 ### Navigation Bar
+-   #### Project Add
+-   #### Project Delete
+-   #### Settings Cog Tip
+-   #### About Site
 -   #### Mobile
-    -   
-### Navigation Bar
+    -   Nav Dropdown
+    -   Library Dropdown
+### User Settings
+-   Persistence
+-   Color Scheme
+-   Library Position
+
+### User Login
 -   
+
+### Project Panels
+-   Project Panel
+
+### Widget Panels
+-   GitHub Panel
+-   Open Weather Panel
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
 
