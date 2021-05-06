@@ -170,13 +170,16 @@ function buildProjectPanelMU(data) {
             <div class="pmd-project-data2">Owner: ${projectData.owner}</div>
             <div class="pmd-project-data2">${projectData.description}</div>
             <div class="progress pmd-prg-row">
-                <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100">% Complete: ${projectData.percentcomplete}%</div>
+                <div class="pmd-prg-bar-title">% Complete: </div>
+                <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="progress pmd-prg-row">
-                <div class="progress-bar bg-info pmd-prg-bar" role="progressbar" style="width: ${cpi}%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2">CPI: ${projectData.cpi}</div>
+                <div class="pmd-prg-bar-title">CPI: </div>
+                <div class="progress-bar bg-info pmd-prg-bar" role="progressbar" style="width: ${cpi}%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div class="progress pmd-prg-row">
-                <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2">SV: ${projectData.sv}</div>
+                <div class="pmd-prg-bar-title">SV: </div>
+                <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div class="pmd-project-data2"><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
         </div>

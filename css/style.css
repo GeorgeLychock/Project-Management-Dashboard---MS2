@@ -154,6 +154,16 @@ h1, h2, h3, h4, h5, h6 {
     color: turquoise;
 }
 
+.pmd-icon-04 {
+    border: none;
+    display: inline;
+    background-color: transparent;
+}
+
+.pmd-icon-04 i:hover {
+    color: turquoise;
+}
+
 .pmd-btn-library {
     margin: 15px 5px;
     border-radius: 50px;
@@ -225,6 +235,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bolder;
 }
 
+.pmd-userpanel {
+    margin-top: 3px;
+    float: right;
+}
+
 .pmd-username {
     margin-top: 3px;
     float: right;
@@ -267,6 +282,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2px 5px;
     font-size: .75rem;
     border-radius: 20px;
+}
+
+/* Project Form */
+.valUserNameAlert01 {
+    color: red;
+    font-weight: 700;
 }
 
 /* Project Form */
@@ -395,6 +416,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .4rem;
 }
 
+.pmd-prg-bar-title {
+    font-size: .5rem;
+    padding: 7px 5px 0 0;
+    width: 55px;
+    text-align: right;
+    background-color: whitesmoke;
+}
+
 /* Widget Library */
 .pmd-w-library {
     padding: 20px 10px 10px 10px;
@@ -470,11 +499,6 @@ h1, h2, h3, h4, h5, h6 {
         background-color: transparent;
     }
     
-    .pmd-username {
-        font-size: larger;
-        float: right;
-    }
-
     .pmd-title {
         font-size: 3rem;
     }
@@ -492,6 +516,25 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-cog-msgbox {
         position: absolute;
+    }
+
+    .pmd-up-row {
+        height: 100px;
+    }
+
+    .pmd-up-col {
+        background-color: rgba(234, 131, 97, .4);
+        border: 1px solid #ea8361;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .pmd-userpanel {
+        float: none;
+    }
+
+    .pmd-username {
+        margin: 3px 0 0 10px;
+        float: none;
     }
 
     .pmd-dashboard {
@@ -534,7 +577,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-prg-row {
         margin: 5px;
-        padding: 3px;
+        padding: 1px;
         height: 1rem;
     }
 

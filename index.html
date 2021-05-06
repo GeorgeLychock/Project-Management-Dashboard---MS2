@@ -64,7 +64,18 @@
                         </div>
                         <h1 class="pmd-title">My PM Dashboard</h1>
                         <div class="pmd-tagline pmd-hcolor-3">project status and management tools portal</div>
-                        <div class="d-none d-md-inline pmd-username pmd-pcolor-3">User: George Lychock</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row no-gutters pmd-up-row">
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-3 pmd-up-col pmd-hcolor-1">
+                        <div class="d-none d-md-inline pmd-userpanel">
+                            <div id="pmd-log-btn" class="pmd-log-btn"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -342,6 +353,39 @@
         </div>
     </div>
     <!-- /Bootstrap Modal - Open Weather Settings Modal -->
+     <!-- Bootstrap Modal - Login -->
+     <div class="modal fade" id="loginPanel" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginPanelLabel">Add Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pmdform">
+                        <form id="loginFormModal" name="loginFormModal">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <div class="valIndicator01">*</div><label for="userNameModal">Enter Your Username</label>
+                                    <input type="text" id="userNameModal" name="userNameModal" class="form-control"><div class="valUserNameAlert01" id="valUserNameAlert01"></div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-primary" onclick="saveUserNameModal()">Save Username</button>
+                    </div>
+                    <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogInFormAlerts()">
+                        <span aria-hidden="true">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Bootstrap Modal - Login -->
     <!-- /Bootstrap MODALS -->
 
     <!-- Load Bootstrap js and its dependencies -->
