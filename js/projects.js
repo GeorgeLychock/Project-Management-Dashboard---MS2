@@ -297,7 +297,7 @@ function createDeleteProjectList() {
             if (!$("#widget-btn-del-" + delWidgetIDList[i]).length) {
                 var elementID = delWidgetIDList[i];
                 getLocalData(elementID, function(localData) {
-                    // Add project to the dashboard and remove the library button from both Desktop and Mobile views
+                    // Add project name to the delete list
                     return $("#delProjectListModal").append(buildProjectDelBtnMU(localData));
                 });
             }

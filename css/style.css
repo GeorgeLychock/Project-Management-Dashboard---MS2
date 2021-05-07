@@ -519,13 +519,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-up-row {
-        height: 100px;
+        height: 70px;
+        margin-bottom: 20px;
     }
 
     .pmd-up-col {
-        background-color: rgba(234, 131, 97, .4);
-        border: 1px solid #ea8361;
-        border-radius: 20px 20px 0 0;
+        background-color: rgba(131, 176, 239, .4);
     }
 
     .pmd-userpanel {
@@ -535,6 +534,11 @@ h1, h2, h3, h4, h5, h6 {
     .pmd-username {
         margin: 3px 0 0 10px;
         float: none;
+    }
+
+    .pmd-un-confirm {
+        margin-top: 5px;
+        color: green;
     }
 
     .pmd-dashboard {

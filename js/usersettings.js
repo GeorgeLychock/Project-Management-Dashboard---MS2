@@ -11,17 +11,18 @@ function updateUserSettings(key, value) {
     var localStoreName = "userSettings";
     var userSettingsStr;
     // The user setting object will contain all user preferences for the predefined customization features
-    var userSettingsOBJ = {
-        scenario: "",
-        librarypos: "",
-        location: "",
-        username: ""
-    };
+    var userSettingsOBJ = {};
 
     // Check if localStorage is enabled
     if (storageAvailable('localStorage')) {
         // YES: We can use localStorage, check if localStorage var has been initiated
         if (!localStorage.getItem(localStoreName)) {
+            userSettingsOBJ = {
+                scenario: "",
+                librarypos: "",
+                location: "",
+                username: ""
+            };
             userSettingsStr = JSON.stringify(userSettingsOBJ);
             localStorage.setItem(localStoreName, userSettingsStr);
 
@@ -97,9 +98,9 @@ function createUserLoginPanel() {
         // if logged in, then show log out btn and username block
         if (checkSetJSON.username) {
             return $('#pmd-log-btn').html(`
-                <div type="button" class="pmd-icon-04" data-toggle="modal" data-target="#logOutPanel">
+                <div type="button" class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
                     <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true"></i>
-                    Log Out
+                    <div>Log Out</div>
                 </div>
                 <div class="pmd-username pmd-pcolor-3">User: ${checkSetJSON.username}</div>
             `);
@@ -131,7 +132,6 @@ function saveUserNameModal() {
 
     //grab input form data from modal
     passFormData.username = document.getElementById("loginFormModal").elements.namedItem("userNameModal").value;
-    console.log(passFormData.username);
 
     // Validate data, and if OK, save data
     let validateInputReply = validateInput(passFormData.username, "Name");
@@ -145,10 +145,11 @@ function saveUserNameModal() {
         //Clear form
         /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
         var x = document.getElementById("loginFormModal");
-        for (var i = 0; i < x.length ;i++) {
-        x.elements[i].value = "";
+        for (var i = 0; i < x.length; i++) {
+            x.elements[i].value = "";
         }
-        return $("#valUserNameAlert01").html(""), $("#pmd-log-btn").append(createUserLoginPanel());
+        return $("#valUserNameAlert01").html(""), $("#pmd-log-btn").append(createUserLoginPanel()), $("#saveUserConfirmModal").html(`
+        <div class="pmd-un-confirm">Username Saved!</div>`);
     }
 }
 
@@ -156,8 +157,36 @@ function clearLogInFormAlerts() {
     return $("#saveUserConfirmModal").html(""), $("#valUserNameAlert01").html("");
 }
 
-function logOut() {
+function clearLogOutPanelAlerts() {
+    return $("#saveUserConfirmModal").html("");
+}
+
+/* Delete Username Functions */
+function createDeleteUsernameList() {
+    var localStorageName = "usersettings";
+    if (localStorage.getItem(localStorageName)) {
+        let checkSet = localStorage.getItem(localStorageName).split(',');
+        console.log(checkSet.username);
+        // Create username button
+        return $("#logOutPanelListModal").append(buildUserDelBtnMU(checkSet.username));
+    }
+}
+
+function buildUserDelBtnMU(un) {
+
+    return `<div class="pmd-btn-library pmd-btncolor-1">
+    <button class="pmd-icon-03" onclick="logOut(${un})">
+    <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
+    <div class="pmd-dinline pmd-icon-01 pmd-acolor-1">${un}</div>
+    </button>
+    </div>`;
+}
+
+function logOut(username) {
     // remove username from localSTorage
+    updateUserSettings("username", "");
+    return $("#logOutPanelListModal").html("");
+
 }
 
 

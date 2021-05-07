@@ -67,6 +67,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Display User Panel-->
             <div class="container-fluid">
                 <div class="row no-gutters pmd-up-row">
                     <div class="col-3"></div>
@@ -295,7 +296,7 @@
     </div>
     <!-- /Bootstrap Modal - Add Project -->
      <!-- Bootstrap Modal - Delete Project -->
-     <div class="modal fade" id="delProject" tabindex="-1" aria-labelledby="addProjectLabel" aria-hidden="true">
+     <div class="modal fade" id="delProject" tabindex="-1" aria-labelledby="delProjectLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -353,12 +354,12 @@
         </div>
     </div>
     <!-- /Bootstrap Modal - Open Weather Settings Modal -->
-     <!-- Bootstrap Modal - Login -->
-     <div class="modal fade" id="loginPanel" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
+    <!-- Bootstrap Modal - Login -->
+    <div class="modal fade" id="loginPanel" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginPanelLabel">Add Project</h5>
+                    <h5 class="modal-title" id="loginPanelLabel">Log In</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -368,17 +369,21 @@
                         <form id="loginFormModal" name="loginFormModal">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <div class="valIndicator01">*</div><label for="userNameModal">Enter Your Username</label>
-                                    <input type="text" id="userNameModal" name="userNameModal" class="form-control"><div class="valUserNameAlert01" id="valUserNameAlert01"></div>
+                                    <div class="valIndicator01">*</div><label for="userNameModal">Enter Your
+                                        Username</label>
+                                    <input type="text" id="userNameModal" name="userNameModal" class="form-control">
+                                    <div class="valUserNameAlert01" id="valUserNameAlert01"></div>
                                 </div>
                             </div>
                         </form>
                         <button type="button" class="btn btn-primary" onclick="saveUserNameModal()">Save Username</button>
                     </div>
-                    <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username here.</p>
+                    <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username
+                        here.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogInFormAlerts()">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        onclick="clearLogInFormAlerts()">
                         <span aria-hidden="true">Close</span>
                     </button>
                 </div>
@@ -386,6 +391,31 @@
         </div>
     </div>
     <!-- /Bootstrap Modal - Login -->
+     <!-- Bootstrap Modal - LogOut -->
+     <div class="modal fade" id="logOutPanel" tabindex="-1" aria-labelledby="logOutPanelLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logOutPanelLabel">Remove Username</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>Logged In User:</div>
+                    <div class="pmddelmodal" id="logOutPanelListModal">
+                    </div>
+                    <p id="delUserConfirmModal" name="delUserConfirmModal"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogOutPanelAlerts()">
+                        <span aria-hidden="true">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Bootstrap Modal - LogOut -->
     <!-- /Bootstrap MODALS -->
 
     <!-- Load Bootstrap js and its dependencies -->
