@@ -100,7 +100,7 @@ function createUserLoginPanel() {
             return $('#pmd-log-btn').html(`
                 <div type="button" class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
                     <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true"></i>
-                    <div>Log Out</div>
+                    Log Out
                 </div>
                 <div class="pmd-username pmd-pcolor-3">User: ${checkSetJSON.username}</div>
             `);
@@ -149,7 +149,8 @@ function saveUserNameModal() {
             x.elements[i].value = "";
         }
         return $("#valUserNameAlert01").html(""), $("#pmd-log-btn").append(createUserLoginPanel()), $("#saveUserConfirmModal").html(`
-        <div class="pmd-un-confirm">Username Saved!</div>`);
+        <div class="pmd-un-confirm">Username Saved!</div>
+        `);
     }
 }
 
@@ -163,9 +164,11 @@ function clearLogOutPanelAlerts() {
 
 /* Delete Username Functions */
 function createDeleteUsernameList() {
-    var localStorageName = "usersettings";
+    console.log("Am I getting in?")
+    var localStorageName = "userSettings";
     if (localStorage.getItem(localStorageName)) {
-        let checkSet = localStorage.getItem(localStorageName).split(',');
+        let checkSet = JSON.parse(localStorage.getItem(localStorageName).split(','));
+        console.log(checkSet);
         console.log(checkSet.username);
         // Create username button
         return $("#logOutPanelListModal").append(buildUserDelBtnMU(checkSet.username));
@@ -175,7 +178,7 @@ function createDeleteUsernameList() {
 function buildUserDelBtnMU(un) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1">
-    <button class="pmd-icon-03" onclick="logOut(${un})">
+    <button class="pmd-icon-03" onclick="logOut('${un}')">
     <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
     <div class="pmd-dinline pmd-icon-01 pmd-acolor-1">${un}</div>
     </button>
@@ -185,8 +188,10 @@ function buildUserDelBtnMU(un) {
 function logOut(username) {
     // remove username from localSTorage
     updateUserSettings("username", "");
-    return $("#logOutPanelListModal").html("");
-
+    createUserLoginPanel();
+    return $("#logOutPanelListModal").html(""), $('#delUserConfirmModal').html(`
+    <div class="pmd-un-confirm-red">Username Removed!</div>`
+    );
 }
 
 

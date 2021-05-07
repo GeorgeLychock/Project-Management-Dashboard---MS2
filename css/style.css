@@ -541,6 +541,11 @@ h1, h2, h3, h4, h5, h6 {
         color: green;
     }
 
+    .pmd-un-confirm-red {
+        margin-top: 5px;
+        color: red;
+    }
+
     .pmd-dashboard {
         background-color: inherit;
     }
