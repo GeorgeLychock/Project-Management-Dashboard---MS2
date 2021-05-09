@@ -78,20 +78,27 @@ $(document).ready(function() {
 /* ******* END REUSED JAVASCRIPT ********** */
 
 
+
+/* ******* CUSTOM LISTENING EVENTS JAVASCRIPT ********** */
+
+    // settings cog hint styling, highlights any settings cog on the dashboard when a user hovers the instruction text
+        $(".pmd-cog-instructions").mouseenter(function() {
+            $(".bi-gear").addClass("pmd-cog-show");
+            $(".pmd-bi-gear").html('<span class="pmd-cog-msgbox"><i class="bi bi-arrow-left-short"></i></span>');
+            $(".pmd-bi-gear-ow").html('<span class="pmd-cog-msgbox-2"><i class="bi bi-arrow-left-short"></i></span>');
+        })
+        $(".pmd-cog-instructions").mouseleave(function() {
+            $(".bi-gear").removeClass("pmd-cog-show");
+            $(".pmd-bi-gear").html("<span></span>");
+            $(".pmd-bi-gear-ow").html("<span></span>");
+        })
+    // END settings cog hint styling,
+
+/* ******* END CUSTOM LISTENING EVENTS JAVASCRIPT ********** */
+
+
+
 /* ******* CUSTOM COMMON JAVASCRIPT ********** */
-
-
-// settings cog hint styling, highlights any settings cog on the dashboard when a user hovers the instruction text
-$(".pmd-cog-instructions").mouseenter(function() {
-    $(".bi-gear").addClass("pmd-cog-show");
-    $(".bi-gear").html('<span class="pmd-cog-msgbox">Click Me!</span>');
-})
-$(".pmd-cog-instructions").mouseleave(function() {
-    $(".bi-gear").removeClass("pmd-cog-show");
-    $(".bi-gear").html("<span></span>");
-})
-
-// END settings cog hint styling,
 
     function convertViewportWidth() {
         var bodyWidth = $("body").width();

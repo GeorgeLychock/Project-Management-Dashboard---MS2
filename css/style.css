@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
     color: turquoise;
 }
 
-.pmd-icon-03 {
+.pmd-icon-03 { /* OpenWeather Cog*/
     border: none;
     display: inline;
     background-color: transparent;
@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-cog-show {
-    color: red;
+    color: red !important;
     font-weight: bolder;
 }
 
@@ -539,6 +539,11 @@ h1, h2, h3, h4, h5, h6 {
         position: absolute;
     }
 
+    .pmd-cog-msgbox-2 {
+        position: absolute;
+        clear: right;
+    }
+
     .pmd-up-row {
         height: 70px;
         margin-bottom: 20px;
@@ -662,4 +667,14 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-lib-right-fix {
     padding-right: 15px;
     padding-left: 0px;
+}
+
+/* Test CSS */
+.test-pos-parent {
+    
+}
+
+.test-pos-child {
+    position: absolute;
+
 }
