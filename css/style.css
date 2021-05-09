@@ -70,8 +70,9 @@ h1, h2, h3, h4, h5, h6 {
 /* link colors */
 .pmd-acolor-1 {color:#666;}
 .pmd-acolor-2 {color:#000;}
-.pmd-acolor-2-hover a:hover {color:#4dd2ff; text-decoration: none;}
+.pmd-acolor-2-hover a:hover {color:#b2c8cf; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
+.pmd-acolor-3:hover {color:red; text-decoration: none;}
 .pmd-acolor-5 {color:#fff;}
 
 /*Common Background Colors*/
@@ -132,6 +133,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Buttons and Icons*/
+.pmd-icon-01:hover {
+    color: red;
+    cursor: pointer;
+}
+
 .pmd-icon-02 {
     font-size: .75rem;
     border: none;
@@ -156,12 +162,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-icon-04 {
     border: none;
-    display: inline;
+    margin-left: 5px;
     background-color: transparent;
 }
 
 .pmd-icon-04 i:hover {
     color: turquoise;
+}
+
+.pmd-icon-05 {
+    font-size: .75rem;
+    border: none;
+    background-color: transparent;
+}
+
+.pmd-icon-05 i:hover {
+    color: turquoise;
+}
+
+.pmd-icon-06 {
+    border: none;
+    display: inline;
+    background-color: transparent;
+}
+
+.pmd-icon-06:hover {
+    color: red;
 }
 
 .pmd-btn-library {
@@ -361,11 +387,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
-.pmd-icon-01:hover {
-    color: red;
-    cursor: pointer;
-}
-
 .pmd-panel-main {
     border: solid 1px #707070;
     padding: 0px 10px;
@@ -524,16 +545,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-up-col {
-        background-color: rgba(131, 176, 239, .4);
+        padding-top: 10px;
     }
 
     .pmd-userpanel {
-        float: none;
+
     }
 
     .pmd-username {
-        margin: 3px 0 0 10px;
+        margin: 10px 0 0 10px;
         float: none;
+        font-size: 1.5rem;
     }
 
     .pmd-un-confirm {

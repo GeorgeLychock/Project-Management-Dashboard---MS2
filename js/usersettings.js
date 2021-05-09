@@ -95,21 +95,26 @@ function createUserLoginPanel() {
         // yes, grab data
         let checkSet = localStorage.getItem(localStoreName).split(',');
         var checkSetJSON = JSON.parse(checkSet);
+
+        var colorSchemeFinal01 = "";
+        var colorScheme = whatColorScheme();
+        if (colorScheme != "") {
+            colorSchemeFinal01 = " " + colorScheme + "-01";
+        }
+
         // if logged in, then show log out btn and username block
         if (checkSetJSON.username) {
             return $('#pmd-log-btn').html(`
+                <div class="pmd-username pmd-pcolor-3${colorSchemeFinal01}">${checkSetJSON.username}</div>
                 <div type="button" class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
-                    <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true"></i>
-                    Log Out
+                    <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
                 </div>
-                <div class="pmd-username pmd-pcolor-3">User: ${checkSetJSON.username}</div>
             `);
         // else, show user login btn
         } else {
             return $('#pmd-log-btn').html(`
                 <div type="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
-                    <i class="bi bi-box-arrow-in-right pmd-acolor-1" aria-hidden="true"></i>
-                    Login
+                    <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
                 </div>
             `);
             }
@@ -117,8 +122,7 @@ function createUserLoginPanel() {
     } else {
     return $('#pmd-log-btn').html(`
         <div type="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
-            <i class="bi bi-box-arrow-in-right pmd-acolor-1" aria-hidden="true"></i>
-            Login
+            <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
         </div>
     `);
     }
@@ -155,11 +159,14 @@ function saveUserNameModal() {
 }
 
 function clearLogInFormAlerts() {
-    return $("#saveUserConfirmModal").html(""), $("#valUserNameAlert01").html("");
+    return $("#saveUserConfirmModal").html(`
+    <div class="pmd-un-confirm">Simulate your login by adding your username
+    here.</div>
+    `), $("#valUserNameAlert01").html("");
 }
 
 function clearLogOutPanelAlerts() {
-    return $("#saveUserConfirmModal").html("");
+    return $("#delUserConfirmModal").html("");
 }
 
 /* Delete Username Functions */
@@ -171,16 +178,15 @@ function createDeleteUsernameList() {
         console.log(checkSet);
         console.log(checkSet.username);
         // Create username button
-        return $("#logOutPanelListModal").append(buildUserDelBtnMU(checkSet.username));
+        return $("#logOutPanelListModal").html(buildUserDelBtnMU(checkSet.username));
     }
 }
 
 function buildUserDelBtnMU(un) {
 
-    return `<div class="pmd-btn-library pmd-btncolor-1">
-    <button class="pmd-icon-03" onclick="logOut('${un}')">
-    <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-icon-01 pmd-acolor-1">${un}</div>
+    return `<div class="pmd-btn-library pmd-btncolor-2">
+    <button class="pmd-icon-06" onclick="logOut('${un}')">
+    <div class="pmd-dinline pmd-acolor-3">${un}</div>
     </button>
     </div>`;
 }

@@ -58,23 +58,16 @@
         <header>
             <div class="container-fluid pmd-header-cntnr">
                 <div class="row no-gutters pmd-header">
-                    <div class="col pmd-hcolor-1">
-                        <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#dashboardSettings">
+                    <div class="col-9 pmd-hcolor-1">
+                        <div type="button" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
                             <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
                         </div>
                         <h1 class="pmd-title">My PM Dashboard</h1>
                         <div class="pmd-tagline pmd-hcolor-3">project status and management tools portal</div>
                     </div>
-                </div>
-            </div>
-            <!-- Display User Panel-->
-            <div class="container-fluid">
-                <div class="row no-gutters pmd-up-row">
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                    <div class="col-3 pmd-up-col pmd-hcolor-1">
-                        <div class="d-none d-md-inline pmd-userpanel">
+                    <!-- Display User Panel-->
+                    <div class="col-3 pmd-up-col">
+                        <div class="d-inline pmd-userpanel">
                             <div id="pmd-log-btn" class="pmd-log-btn"></div>
                         </div>
                     </div>
@@ -84,7 +77,6 @@
             <div class="container-fluid d-md-none pmd-mobile-drop">
                 <div class="row no-gutters">
                     <div class="col">
-                        <div class="d-md-none pmd-username pmd-pcolor-3">User: George Lychock</div>
                         <div class="dropdown ">
                             <div class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Libraries
@@ -117,11 +109,9 @@
                             <div class="pmd-project-lib">
                                 <div>
                                     <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
-
                                     <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
                                         <i class="bi bi-gear pmd-acolor-1" aria-hidden="true"></i>
                                     </div>
-
                                 </div>
                                 <div id="projects-library"></div>
                             </div>
@@ -405,7 +395,7 @@
                     <div>Logged In User:</div>
                     <div class="pmddelmodal" id="logOutPanelListModal">
                     </div>
-                    <p id="delUserConfirmModal" name="delUserConfirmModal"></p>
+                    <p id="delUserConfirmModal" name="delUserConfirmModal">Click on the user to log out.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogOutPanelAlerts()">
