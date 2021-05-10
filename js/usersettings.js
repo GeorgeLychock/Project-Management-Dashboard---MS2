@@ -105,10 +105,10 @@ function createUserLoginPanel() {
         // if logged in, then show log out btn and username block
         if (checkSetJSON.username) {
             return $('#pmd-log-btn').html(`
-                <div class="pmd-username pmd-pcolor-3${colorSchemeFinal01}">${checkSetJSON.username}</div>
-                <div type="button" class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
+                <div class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
                     <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
                 </div>
+                <div class="pmd-username pmd-pcolor-3${colorSchemeFinal01}">${checkSetJSON.username}</div>
             `);
         // else, show user login btn
         } else {

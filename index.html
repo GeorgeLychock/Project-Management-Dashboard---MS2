@@ -57,8 +57,8 @@
         <!-- Header -->
         <header>
             <div class="container-fluid pmd-header-cntnr">
-                <div class="row no-gutters pmd-header">
-                    <div class="col-9 pmd-hcolor-1">
+                <div class="row pmd-header">
+                    <div class="col-12 col-md-9 pmd-hcolor-1">
                         <div type="button" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
                             <i class="bi bi-gear pmd-bi-gear pmd-acolor-1" aria-hidden="true"></i>
                         </div>
@@ -66,37 +66,49 @@
                         <div class="pmd-tagline pmd-hcolor-3">project status and management tools portal</div>
                     </div>
                     <!-- Display User Panel-->
-                    <div class="col-3 pmd-up-col">
-                        <div class="d-inline pmd-userpanel">
+                    <div class="col-12 col-md-3 pmd-up-col">
+                        <div class="pmd-userpanel">
                             <div id="pmd-log-btn" class="pmd-log-btn"></div>
+                            <div class="row d-md-none pmd-mobile-user-menu">
+                                <div class="col">
+                                    <ul class="list-group list-group-horizontal">
+                                        <li>
+                                            <!-- Mobile Library Dropdown -->
+                                            <div class="dropdown ">
+                                                <div class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    My Libraries
+                                                </div>
+                                                <div class="dropdown-menu pmd-mobile-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
+                                                    <div class="pmd-mobile-lib-box">
+                                                        <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Projects Library</h4>
+                                                    </div>
+                                                    <div id="mobile-projects-library"></div>
+                                                    <div class="pmd-mobile-lib-box2">
+                                                        <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Tools Library</h4>
+                                                    </div>
+                                                    <div id="mobile-widgets-library"></div>
+                                                    <p class="pmd-mobile-lib-box pmd-pcolor-1">Click the + plus sign to add a widget to the
+                                                        Dashboard</p>
+                                                </div>
+                                            </div>
+                                            <!-- //Mobile Library Dropdown -->
+                                        </li>
+                                        <li>
+                                            <div class="btn btn-secondary pmd-mobile-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            my next button
+                                            </div>
+                                        </li>
+                                        <li>
+                                            my next button
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Mobile Library Dropdown -->
-            <div class="container-fluid d-md-none pmd-mobile-drop">
-                <div class="row no-gutters">
-                    <div class="col">
-                        <div class="dropdown ">
-                            <div class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Libraries
-                            </div>
-                            <div class="dropdown-menu pmd-mobile-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
-                                <div class="pmd-mobile-lib-box">
-                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Projects Library</h4>
-                                </div>
-                                <div id="mobile-projects-library"></div>
-                                <div class="pmd-mobile-lib-box2">
-                                    <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Tools Library</h4>
-                                </div>
-                                <div id="mobile-widgets-library"></div>
-                                <p class="pmd-mobile-lib-box pmd-pcolor-1">Click the + plus sign to add a widget to the Dashboard</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- //Mobile Library Dropdown -->
         </header>
         <!-- /Header -->
         <!-- Dashboard -->

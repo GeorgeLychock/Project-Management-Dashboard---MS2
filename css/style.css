@@ -148,6 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-icon-02 i:hover {
     color: turquoise;
+    cursor: pointer;
 }
 
 .pmd-icon-03 { /* OpenWeather Cog*/
@@ -158,26 +159,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-icon-03 i:hover {
     color: turquoise;
+    cursor: pointer;
 }
 
 .pmd-icon-04 {
     border: none;
     margin-left: 5px;
     background-color: transparent;
+    float: right;
+    clear: both;
 }
 
 .pmd-icon-04 i:hover {
     color: turquoise;
+    cursor: pointer;
 }
 
-.pmd-icon-05 {
+.pmd-icon-05 { /* dashboardSettings */
     font-size: .75rem;
     border: none;
     background-color: transparent;
+    width: 30px;
 }
 
 .pmd-icon-05 i:hover {
     color: turquoise;
+    cursor: pointer;
 }
 
 .pmd-icon-06 {
@@ -237,6 +244,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px 0;
 }
 
+.pmd-cog-instructions:hover {
+    cursor: pointer;
+}
+
 .pmd-cog-show {
     color: red !important;
     font-weight: bolder;
@@ -246,10 +257,10 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-header-cntnr {
     padding: 0;
     max-width: 1400px;
+    margin-bottom: 10px;
 }
 
 .pmd-header {
-    padding: 10px;
     margin: 10px 0 0 5px;
 }
 
@@ -261,9 +272,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bolder;
 }
 
+.pmd-up-col {
+    background-color: #1a1a1a;
+    padding: 10px 10px 5px 10px;
+}
+
 .pmd-userpanel {
     margin-top: 3px;
-    float: right;
 }
 
 .pmd-username {
@@ -277,8 +292,9 @@ h1, h2, h3, h4, h5, h6 {
 #mobile-projects-library{
     padding: 0 10px;
 }
-.pmd-mobile-drop {
-    margin: 30px 0 10px 0;
+.pmd-mobile-user-menu {
+    margin: 0 0 10px 0;
+    clear: both;
 }
 
 .pmd-mobile-lib-box {
@@ -509,8 +525,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-header {
-        padding: 10px 10px 10px 20px;
-        margin: 0 0 0 10px;
+        padding: 10px 0;
     }
 
     .pmd-icon-02 {
@@ -522,10 +537,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .pmd-title {
         font-size: 3rem;
-    }
-
-    .pmd-header {
-        margin: 0 0 0 50px;
     }
 
     .pmd-cog-instructions {
@@ -550,7 +561,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-up-col {
-        padding-top: 10px;
+        padding-top: 5px;
     }
 
     .pmd-userpanel {
@@ -614,7 +625,6 @@ h1, h2, h3, h4, h5, h6 {
     .pmd-prg-row {
         margin: 5px;
         padding: 1px;
-        height: 1rem;
     }
 
     .pmd-prg-bar {
