@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-3 {background-color:#999;}
 .pmd-bcolor-4 {background-color:#5a6268;}
 .pmd-bcolor-5 {background-color:#000;}
-.pmd-bcolor-6 {background-color:#154e9e;}
+.pmd-bcolor-6 {background-color:rgba(0, 0, 0, .7);}
 .pmd-bcolor-nav {background-color:#83b0ef;}
 .pmd-bcolor-foot {background-color:#fda;}
 
@@ -126,6 +126,9 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+.pmd-hide {
+    visibility: hidden;
+}
 
 /* Main Structure */ 
 .pmd-row-main {
@@ -168,6 +171,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     float: right;
     clear: both;
+    font-size: .75rem;
 }
 
 .pmd-icon-04 i:hover {
@@ -273,7 +277,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-up-col {
-    background-color: #1a1a1a;
     padding: 10px 10px 5px 10px;
 }
 
@@ -288,30 +291,37 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Banner */
 
-/* Mobile Library Dropdown */
-#mobile-projects-library{
+/* User Panel Library Dropdown */
+#usermenu-projects-library{
     padding: 0 10px;
 }
-.pmd-mobile-user-menu {
+
+.pmd-usermenu {
     margin: 0 0 10px 0;
     clear: both;
 }
 
-.pmd-mobile-lib-box {
+.pmd-usermenu-lib-drop {
+    padding: 6px;
+    border: solid 2px #404040;
+    min-width: 300px;
+}
+
+.pmd-usermenu-lib-box {
     padding-left: 10px;
     margin-top: 5px;
 }
 
-.pmd-mobile-lib-box2 {
+.pmd-usermenu-lib-box2 {
     padding-left: 10px;
     margin-top: 20px;
 }
 
-.pmd-mobile-header {
+.pmd-usermenu-header {
     font-size: 1.25rem;
 }
 
-.pmd-mobile-btn-library {
+.pmd-usermenu-btn-library {
     border: none;
     font-size: small;
     padding: 2px 4px;
@@ -319,11 +329,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
 }
 
-.pmd-mobile-lib-btn {
+.pmd-usermenu-lib-btn {
     margin: 5px;
     padding: 2px 5px;
     font-size: .75rem;
     border-radius: 20px;
+    background-color: transparent;
+    color: #333;
 }
 
 /* Project Form */
@@ -472,6 +484,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-lib-directions {
     margin-top: 40px;
+}
+
+.pmd-lib-btn {
+    display: inline;
+    font-size: .75rem;
 }
 
 /* Footer */

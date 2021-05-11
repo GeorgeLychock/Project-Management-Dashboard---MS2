@@ -215,6 +215,7 @@ $(document).ready(function() {
         $(".pmd-weather-desc").addClass('make-weather-dark-01');
         $(".pmd-username").addClass('make-dark-01');
         $(".pmd-dashboard").addClass('make-dark-05');
+        $(".pmd-mobile-lib-btn ").addClass('make-dark-01');
         updateUserSettings("scenario", "dark");
     }
 
@@ -228,6 +229,7 @@ $(document).ready(function() {
         $(".pmd-hcolor-1").removeClass('make-dark-01');
         $(".pmd-username").removeClass('make-dark-01');
         $(".pmd-dashboard").removeClass('make-dark-05');
+        $(".pmd-mobile-lib-btn ").removeClass('make-dark-01');
         updateUserSettings("scenario", "light");
     }
 

@@ -37,6 +37,7 @@ function createActiveProjects() {
 }
 
 function createProjectLibBtns() {
+
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
     if (localStorage.activeProjects) {
 
@@ -63,7 +64,7 @@ function createProjectLibBtns() {
     }
 
     var elementID;
-    // Build Library buttons based on widgetIDs
+    // Build Library buttons based on widgetIDs not already activated to the dashboard
     for (let i in projectBuildIDs) {
 
         elementID = projectBuildIDs[i];
@@ -72,23 +73,22 @@ function createProjectLibBtns() {
         if(localStorage.getItem(elementID)) {
             // YES: Retrieve data and rebuild the library button, and remove project panel from dashboard
             getLocalData(elementID, function(localData) {
-                return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(localData));
+                return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(localData));
             });
         } else {
             //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and remove project panel from dashboard
             var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
             getData(url, function(data) {
-                return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data));
+                return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data));
             });
         }
     }
 }
 
 /* Project Library Buttons */
-function turnProjectOn(widgetIdOn, vpcodepass) {
+function turnProjectOn(widgetIdOn) {
 
     let elementID = widgetIdOn;
-    let vpcode = vpcodepass; //for mobile styling, sets a different unique ID for the mobile library buttons
 
     //is the widgetID is a locally stored object...
     if(localStorage.getItem(elementID)) {
@@ -97,7 +97,7 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
         setProjectIDs(localStoreName, elementID);
         getLocalData(elementID, function(localData) {
         // Add project to the dashboard and remove the library button from both Desktop and Mobile views
-            return $("#active-projects-data").append(buildProjectPanelMU(localData)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+            return $("#active-projects-data").append(buildProjectPanelMU(localData)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
         });
     } else {
         //NO: if not a locally stored data, get data from JSON
@@ -110,7 +110,7 @@ function turnProjectOn(widgetIdOn, vpcodepass) {
             setProjectIDs(localStoreName, data.widgetID);
 
             // Add project to the dashboard and remove the library button from both Desktop and Mobile views
-            return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+            return $("#active-projects-data").append(buildProjectPanelMU(data)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
         });
     }
 }
@@ -130,13 +130,13 @@ function turnProjectOff(widgetIdOff) {
         // YES: Retrieve data and rebuild the library button, and emove project panel from dashboard
         getLocalData(elementID, function(localData) {
             // Add project to the dashboard and remove the library button from both Desktop and Mobile views
-            return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(localData)), $("#" + elementID).remove();
+            return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(localData)), $("#" + elementID).remove();
         });
     } else {
         //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and emove project panel from dashboard
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
         getData(url, function(data) {
-            return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(data)), $("#" + elementID).remove();
+            return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data)), $("#" + elementID).remove();
         });
     }
 }
@@ -190,27 +190,7 @@ function buildProjectPanelMU(data) {
 These next two (2) functions build the Library buttons, mobile version needs to add a code so the button ids are unique. */
 function buildProjectLibBtnMU(data) {
 
-    var colorSchemeFinal01 = "";
-    var colorSchemeFinal02 = "";
-    var colorScheme = whatColorScheme();
-    if (colorScheme != "") {
-        colorSchemeFinal01 = " " + colorScheme + "-04";
-        colorSchemeFinal02 = " " + colorScheme + "-01";
-    }
-
-    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${data.widgetID}">
-    <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}')">
-    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
-    </button>
-    </div>`;
-}
-
-function buildProjectLibBtnMUMobile(data) {
-
-    let vpcode = convertViewportWidth();
-    // Add the viewport code to the ID to make unique ID for mobile library button
-    let elementID = vpcode + "-" + data.widgetID;
+    let elementID = data.widgetID;
 
     var colorSchemeFinal01 = "";
     var colorSchemeFinal02 = "";
@@ -221,9 +201,30 @@ function buildProjectLibBtnMUMobile(data) {
     }
 
     return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
-    <button class="pmd-icon-03" onclick="turnProjectOn('${data.widgetID}', '${vpcode}')">
+    <button class="pmd-icon-03" onclick="turnProjectOn('${elementID}')">
     <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-5${colorSchemeFinal02}">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
+    </button>
+    </div>`;
+}
+
+function buildProjectLibBtnMUUsermenu(data) {
+
+    // Add the viewport code to the ID to make unique ID for mobile library button
+    let elementID = data.widgetID;
+
+    var colorSchemeFinal01 = "";
+    var colorSchemeFinal02 = "";
+    var colorScheme = whatColorScheme();
+    if (colorScheme != "") {
+        colorSchemeFinal01 = " " + colorScheme + "-04";
+        colorSchemeFinal02 = " " + colorScheme + "-01";
+    }
+
+    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-usermenu-${elementID}">
+    <button class="pmd-icon-03" onclick="turnProjectOn('${elementID}')">
+    <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
+    <div class="pmd-lib-btn pmd-acolor-5${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
@@ -280,7 +281,7 @@ function saveProjectDataModal() {
         setLocalStorageData(localStoreDataName, passFormData);
 
         // Build and display the new project library button; show user that the data was saved
-        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#mobile-projects-library").append(buildProjectLibBtnMUMobile(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard when you return unless you clear browser cache.");
+        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard when you return unless you clear browser cache.");
     }
 }
 
@@ -311,7 +312,6 @@ function delProject(wID, pName) {
 
     var elementID = wID;
     var pn = pName;
-    let vpcode = convertViewportWidth();
 
     //Confirm deletion
     var txt = "Are you sure you want to delete " + pn;
@@ -346,7 +346,7 @@ function delProject(wID, pName) {
         //remove panel
         $("#" + elementID).remove();
         //remove library button
-        $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove()
+        $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove()
         //remove del button
         $("#widget-btn-del-" + elementID).remove();
 

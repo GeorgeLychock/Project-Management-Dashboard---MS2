@@ -67,40 +67,44 @@
                     </div>
                     <!-- Display User Panel-->
                     <div class="col-12 col-md-3 pmd-up-col">
-                        <div class="pmd-userpanel">
-                            <div id="pmd-log-btn" class="pmd-log-btn"></div>
-                            <div class="row d-md-none pmd-mobile-user-menu">
+                        <div id="pmd-login" class=""></div>
+                        <div id="pmd-userpanel" class="pmd-userpanel pmd-hide">
+                            <div class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
+                                <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
+                            </div>
+                            <div id="pmd-username" class="pmd-username pmd-pcolor-3"></div>
+                            <div class="row pmd-user-menu">
                                 <div class="col">
                                     <ul class="list-group list-group-horizontal">
                                         <li>
-                                            <!-- Mobile Library Dropdown -->
-                                            <div class="dropdown ">
-                                                <div class="btn btn-secondary dropdown-toggle pmd-mobile-lib-btn" type="button"
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button"
                                                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    My Libraries
+                                                    <i class="bi bi-book" aria-hidden="true"></i>
                                                 </div>
-                                                <div class="dropdown-menu pmd-mobile-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
-                                                    <div class="pmd-mobile-lib-box">
-                                                        <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Projects Library</h4>
+                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
+                                                    <div class="pmd-usermenu-lib-box">
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Projects Library</h4>
                                                     </div>
-                                                    <div id="mobile-projects-library"></div>
-                                                    <div class="pmd-mobile-lib-box2">
-                                                        <h4 class="pmd-dinline pmd-mobile-header pmd-hcolor-4">My Tools Library</h4>
+                                                    <div id="usermenu-projects-library"></div>
+                                                    <div class="pmd-usermenu-lib-box2">
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Tools Library</h4>
                                                     </div>
-                                                    <div id="mobile-widgets-library"></div>
-                                                    <p class="pmd-mobile-lib-box pmd-pcolor-1">Click the + plus sign to add a widget to the
+                                                    <div id="usermenu-widgets-library"></div>
+                                                    <p class="pmd-usermenu-lib-box pmd-pcolor-1">Click the + plus sign to add a widget to the
                                                         Dashboard</p>
                                                 </div>
                                             </div>
-                                            <!-- //Mobile Library Dropdown -->
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary pmd-mobile-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            my next button
+                                            <div class="btn btn-secondary pmd-usermenu-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-person" aria-hidden="true"></i>
                                             </div>
                                         </li>
                                         <li>
-                                            my next button
+                                            <div class="btn btn-secondary pmd-usermenu-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-gear pmd-bi-gear" aria-hidden="true"></i>
+                                                </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -181,11 +185,11 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        <button class="pmd-icon-03" onclick="makeDark()">
+                        <button class="pmd-icon-03" onclick="makeDark()" data-dismiss="modal">
                             <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
                             Dark Dashboard Scheme
                         </button>
-                        <button class="pmd-icon-03" onclick="makeLight()">
+                        <button class="pmd-icon-03" onclick="makeLight()" data-dismiss="modal">
                             <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
                             Light Dashboard Scheme
                         </button>
@@ -380,7 +384,7 @@
                                 </div>
                             </div>
                         </form>
-                        <button type="button" class="btn btn-primary" onclick="saveUserNameModal()">Save Username</button>
+                        <button type="button" class="btn btn-primary" onclick="saveUserNameModal()" data-dismiss="modal">Save Username</button>
                     </div>
                     <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username
                         here.</p>
