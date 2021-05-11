@@ -16,8 +16,7 @@
 - [UX/UI](#UXUI)
 
 - [Design](#DES)
-
-- [Wireframes](#WF)
+    - [Wireframes](#WF)
 
 - [Technical Background](#TECH)
 
@@ -144,10 +143,12 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   A Calendar widget
 -   A To-Do List widget (looked at ToDoist, it required Python or curl to make api calls)
 -   Ability to shuffle (re-position) the dashboard panels
--   Add a status indicator to the project panels.
+-   Add a project status indicator to the project panels.
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
+-   Create a button panel in the user panel. Button one: Displaying/Hidding Library Panel
+-   Add animation to fill the progress bars in the project panels
 
 <a name="DES"></a>
 # Design
