@@ -65,16 +65,15 @@ function createWidgetLibBtns() {
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
         //Build Library buttons for Desktop and Mobile
         getData(url, function(data) {
-            return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#mobile-widgets-library").append(buildWidgetLibBtnMUMobile(data));
+            return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
         });
     }
 }
 
 /* Widget Library Add/Remove Buttons */
-function turnWidgetOn(widgetIdOn, vpcodepass) {
+function turnWidgetOn(widgetIdOn) {
 
     let elementID = widgetIdOn;
-    let vpcode = vpcodepass;
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
 
     getData(url, function(data) {
@@ -108,11 +107,11 @@ function turnWidgetOn(widgetIdOn, vpcodepass) {
             var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
             getData(APIurl, function(data) {
                 //if wid0001 build weather button
-                return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+                return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
             });
         } else if (keydata.widgetID == "widget0002") {
             //Build GitHub pavel since widget0002 is assigned to GitHub widget
-            return $("#active-widgets-data").append(buildGitHubPanelMU(elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-" + vpcode + "-" + elementID).remove();
+            return $("#active-widgets-data").append(buildGitHubPanelMU(elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
 
         }
     });
@@ -129,7 +128,7 @@ function turnWidgetOff(widgetIdOff) {
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     //Build Library buttons for Desktop and Mobile
     getData(url, function(data) {
-        return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#mobile-widgets-library").append(buildWidgetLibBtnMUMobile(data));
+        return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
     });
 
     // Remove panel from dashboard
@@ -154,11 +153,10 @@ function buildWidgetLibBtnMU(data) {
     </div>`;
 }
 
-function buildWidgetLibBtnMUMobile(data) {
+function buildWidgetLibBtnMUUsermenu(data) {
 
-    let vpcode = convertViewportWidth();
     // Add the viewport code to the ID to make unique ID for mobile library button
-    let elementID = vpcode + "-" + data.widgetID;
+    let elementID = data.widgetID;
 
     var colorSchemeFinal01 = "";
     var colorSchemeFinal02 = "";
@@ -168,10 +166,10 @@ function buildWidgetLibBtnMUMobile(data) {
     colorSchemeFinal02 = " " + colorScheme + "-01";
     }
 
-    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-${elementID}">
-    <button class="pmd-icon-03" onclick="turnWidgetOn('${data.widgetID}', '${vpcode}')">
+    return `<div class="pmd-btn-library pmd-btncolor-1${colorSchemeFinal01}" id="widget-btn-usermenu-${elementID}">
+    <button class="pmd-icon-03" onclick="turnWidgetOn('${elementID}')">
     <i class="bi bi-plus pmd-acolor-5" aria-hidden="true"></i>
-    <div class="pmd-dinline pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
+    <div class="pmd-lib-btn pmd-acolor-5 wName${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
 }
