@@ -128,6 +128,14 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Instructional text and tips should not take up much dashboard space but be effective in message and visual queues.
     -   Describe what a user can do with the settings cogs
     -   Instruct user on how to add and remove panels from the dashboard
+-   User Login Simulation
+    -   Display a method for a visitor to add a username to the dashboard app
+    -   Saved username should be persistent
+    -   Display a method for a user to remove the username from the dashboard app
+-   User Menu
+    -   Create a button panel in the user panel. Button 1: Library dropdown; Button 2: Profile dropdown; Button 3: Settings dropdown
+-   User Menu Tool Tips
+    -   A simple, lighweight tooltip should display when user hovers user menu icons
 
 ## Technical Requirements for this project:
 -   Use template literals
@@ -147,7 +155,8 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
--   Create a button panel in the user panel. Button one: Displaying/Hidding Library Panel
+-   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
+-   Build user Settings dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
 
 <a name="DES"></a>
@@ -155,7 +164,9 @@ As a user, I want instruction or an indication of how and where to change dashbo
 <a name="WF"></a>
 ## Wireframes
 -   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
+-   Mobile Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-mobile-desktop-01.png)
 -   Active Widget Panel Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/active-panel-desktop-01.png)
+-   User Access Panel Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/user-access-panel-01.png)
 
 ## Design - Look and Feel
 -   Emphasis is on an uncluttered, business tool design that has light colors and a lot of white space.
