@@ -1,6 +1,6 @@
 /* george lychock MS2 stylesheet */
 /* NOTES:
-    - Except for base html elements and colors, all other custom selectors names begin with "pmd" to make it easier to see in the markup */
+    - Except for base html elements, common colors, and dashboard color scheme styles, all other custom selectors names begin with "pmd" to make it easier to see in the markup */
 
 
 /* ######## CSS TOC - In Order of Appearance: */
@@ -15,8 +15,8 @@
 /* Common Other*/
 /* Buttons */
 /* Nav */
-/* Header */
 /* Banner */
+/* Header */
 /* Mobile Library Dropdown */
 /* Project Form */
 /* Dashboard */
@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-acolor-2-hover a:hover {color:#b2c8cf; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
 .pmd-acolor-3:hover {color:red; text-decoration: none;}
+.pmd-acolor-4 {color:#000;}
+.pmd-acolor-4 i:hover {color:orange; text-decoration: none;}
+.pmd-acolor-4 .banner-msg-01:hover {color:orange; text-decoration: none;}
 .pmd-acolor-5 {color:#fff;}
 
 /*Common Background Colors*/
@@ -255,6 +258,16 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-cog-show {
     color: red !important;
     font-weight: bolder;
+}
+
+/* Banner */
+.pmd-banner-msg-block {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.banner-msg-01 {
+    display: inline;
 }
 
 /* Header */
@@ -689,6 +702,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .make-dark-05 {
     background-color: rgba(255, 255, 255, .08);
+}
+
+.make-dark-06 {
+    border: solid 1px whitesmoke;
 }
 
 .make-weather-dark-01 {

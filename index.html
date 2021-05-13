@@ -55,6 +55,19 @@
             </div>
         </div>
         <!-- /Nav -->
+        <!-- Banner -->
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="pmd-banner-msg-block pmd-acolor-4">
+                        <div class="banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
+                            What is pmDashboard?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Banner -->
         <!-- Header -->
         <header>
             <div class="container-fluid pmd-header-cntnr">
@@ -200,258 +213,281 @@
         <!-- /Footer -->
     </main>
     <!-- Bootstrap MODALS -->
-    <!-- Bootstrap Modal - Dashboard Settings -->
-    <div class="modal fade" id="dashboardSettings" tabindex="-1" aria-labelledby="dashboardSettingsLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="dashboardSettingsLabel">Main Dashboard Settings</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <button class="pmd-icon-03 pmd-settings-btn" onclick="makeDark()" data-dismiss="modal">
-                            <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
-                            Dark Dashboard Scheme
-                        </button>
-                        <button class="pmd-icon-03 pmd-settings-btn" onclick="makeLight()" data-dismiss="modal">
-                            <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
-                            Light Dashboard Scheme
+        <!-- Bootstrap Modal - What Is pmDashboard -->
+        <div class="modal fade" id="whatIsPMdashboard" tabindex="-1" aria-labelledby="whatIsPMdashboardLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="whatIsPMdashboardLabel">What is pmDashboard?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class="modal-body">
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Bootstrap Modal - Dashboard Settings -->
-    <!-- Bootstrap Modal - Library Settings -->
-    <div class="modal fade" id="librarySettings" tabindex="-1" aria-labelledby="librarySettingsLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="librarySettingsLabel">Library Settings</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
+        <!-- /Bootstrap Modal - What Is pmDashboard -->
+        <!-- Bootstrap Modal - Dashboard Settings -->
+        <div class="modal fade" id="dashboardSettings" tabindex="-1" aria-labelledby="dashboardSettingsLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dashboardSettingsLabel">Main Dashboard Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
                         <div>
-                            <button class="pmd-icon-03" onclick="posLibRight()">
-                                <i class="bi bi-arrow-right pmd-acolor-2" aria-hidden="true"></i>
-                                Library Right
+                            <button class="pmd-icon-03 pmd-settings-btn" onclick="makeDark()" data-dismiss="modal">
+                                <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
+                                Dark Dashboard Scheme
                             </button>
-                        </div>
-                        <div>
-                            <button class="pmd-icon-03" onclick="posLibLeft()">
-                                <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
-                                Library Left
+                            <button class="pmd-icon-03 pmd-settings-btn" onclick="makeLight()" data-dismiss="modal">
+                                <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
+                                Light Dashboard Scheme
                             </button>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Bootstrap Modal - Library Settings -->
-    <!-- Bootstrap Modal - Add Project -->
-    <div class="modal fade" id="addProject" tabindex="-1" aria-labelledby="addProjectLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProjectLabel">Add Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pmdform">
-                        <form id="projectFormModal" name="projectFormModal">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <div class="valIndicator01">*</div><label for="projectNameModal">Project Name</label>
-                                    <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valAlert01"></div>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="projectOwnerModal">Project Owner</label>
-                                    <input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="projectDesModal">Project Description</label>
-                                    <input type="text" id="projectDesModal" name="projectDesModal" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="startDateModal">Start Date</label>
-                                    <input type="date" id="startDateModal" name="startDateModal" class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="dueDateModal">Due Date</label>
-                                    <input type="date" id="dueDateModal" name="dueDateModal" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4 pmd-form-input-1">
-                                    <label for="percentCompleteModal">Percent Complete</label>
-                                    <input type="number" id="percentCompleteModal" name="percentCompleteModal" class="form-control" placeholder="(0-100)" pattern="[0-9][.]">
-                                </div>
-                                <div class="form-group col-md-4 pmd-form-input-1">
-                                    <label for="CPIModal">Cost Performance Index</label>
-                                    <input type="number" id="CPIModal" name="CPIModal" class="form-control" placeholder="(0.0 - 2.0)">
-                                </div>
-                                <div class="form-group col-md-4 pmd-form-input-1">
-                                    <label for="SVModal">Schedule Variance</label>
-                                    <input type="number" id="SVModal" name="SVModal" class="form-control" placeholder="(0.0 - 2.0)">
-                                </div>
-                            </div>
-                        </form>
-                        <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
-                    <p id="saveConfirmationModal" name="saveConfirmationModal">You can add and delete projects from your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
-                        <span aria-hidden="true">Close</span>
-                    </button>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Bootstrap Modal - Add Project -->
-     <!-- Bootstrap Modal - Delete Project -->
-     <div class="modal fade" id="delProject" tabindex="-1" aria-labelledby="delProjectLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delProjectLabel">Delete Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>My Saved Projects : Delete Project</div>
-                    <div class="pmddelmodal" id="delProjectListModal">
+        <!-- /Bootstrap Modal - Dashboard Settings -->
+        <!-- Bootstrap Modal - Library Settings -->
+        <div class="modal fade" id="librarySettings" tabindex="-1" aria-labelledby="librarySettingsLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="librarySettingsLabel">Library Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <p id="delConfirmationModal" name="delConfirmationModal"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
-                        <span aria-hidden="true">Close</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Bootstrap Modal - Delete Project -->
-    <!-- Bootstrap Modal - Open Weather Settings Modal -->
-    <div class="modal fade" id="openWeatherSettings" tabindex="-1" aria-labelledby="openWeatherSettingsLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="openWeatherSettingsLabel">Open Weather Settings</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pmdform">
-                        <form id="openWeatherFormModal" name="openWeatherFormModal">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <div class="valIndicator01">*</div><label for="weatherZipModal">Enter Zipcode</label>
-                                    <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valAlert02"></div>
-                                    <div class="valIndicator01">*</div><label for="weatherLocationModal">or Enter Location</label>
-                                    <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valAlert03"></div>
-                                </div>
+                    <div class="modal-body">
+                        <div>
+                            <div>
+                                <button class="pmd-icon-03" onclick="posLibRight()">
+                                    <i class="bi bi-arrow-right pmd-acolor-2" aria-hidden="true"></i>
+                                    Library Right
+                                </button>
                             </div>
-                        </form>
-                        <button type="button" class="btn btn-primary" onclick="saveOpenWeatherLocation()" aria-label="Submit Location">Submit Location</button>
-                    </div>
-                    <p id="saveLocalConfirmModal"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Bootstrap Modal - Open Weather Settings Modal -->
-    <!-- Bootstrap Modal - Login -->
-    <div class="modal fade" id="loginPanel" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginPanelLabel">Log In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pmdform">
-                        <form id="loginFormModal" name="loginFormModal">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <div class="valIndicator01">*</div><label for="userNameModal">Enter Your
-                                        Username</label>
-                                    <input type="text" id="userNameModal" name="userNameModal" class="form-control">
-                                    <div class="valUserNameAlert01" id="valUserNameAlert01"></div>
-                                </div>
+                            <div>
+                                <button class="pmd-icon-03" onclick="posLibLeft()">
+                                    <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+                                    Library Left
+                                </button>
                             </div>
-                        </form>
-                        <button type="button" class="btn btn-primary" onclick="saveUserNameModal()" data-dismiss="modal">Save Username</button>
+                        </div>
                     </div>
-                    <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username
-                        here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        onclick="clearLogInFormAlerts()">
-                        <span aria-hidden="true">Close</span>
-                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Bootstrap Modal - Login -->
-     <!-- Bootstrap Modal - LogOut -->
-     <div class="modal fade" id="logOutPanel" tabindex="-1" aria-labelledby="logOutPanelLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="logOutPanelLabel">Remove Username</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>Logged In User:</div>
-                    <div class="pmddelmodal" id="logOutPanelListModal">
+        <!-- /Bootstrap Modal - Library Settings -->
+        <!-- Bootstrap Modal - Add Project -->
+        <div class="modal fade" id="addProject" tabindex="-1" aria-labelledby="addProjectLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProjectLabel">Add Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <p id="delUserConfirmModal" name="delUserConfirmModal">Click on the user to log out.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogOutPanelAlerts()">
-                        <span aria-hidden="true">Close</span>
-                    </button>
+                    <div class="modal-body">
+                        <div class="pmdform">
+                            <form id="projectFormModal" name="projectFormModal">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <div class="valIndicator01">*</div><label for="projectNameModal">Project Name</label>
+                                        <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valAlert01"></div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="projectOwnerModal">Project Owner</label>
+                                        <input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="projectDesModal">Project Description</label>
+                                        <input type="text" id="projectDesModal" name="projectDesModal" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="startDateModal">Start Date</label>
+                                        <input type="date" id="startDateModal" name="startDateModal" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="dueDateModal">Due Date</label>
+                                        <input type="date" id="dueDateModal" name="dueDateModal" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4 pmd-form-input-1">
+                                        <label for="percentCompleteModal">Percent Complete</label>
+                                        <input type="number" id="percentCompleteModal" name="percentCompleteModal" class="form-control" placeholder="(0-100)" pattern="[0-9][.]">
+                                    </div>
+                                    <div class="form-group col-md-4 pmd-form-input-1">
+                                        <label for="CPIModal">Cost Performance Index</label>
+                                        <input type="number" id="CPIModal" name="CPIModal" class="form-control" placeholder="(0.0 - 2.0)">
+                                    </div>
+                                    <div class="form-group col-md-4 pmd-form-input-1">
+                                        <label for="SVModal">Schedule Variance</label>
+                                        <input type="number" id="SVModal" name="SVModal" class="form-control" placeholder="(0.0 - 2.0)">
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
+                        </div>
+                        <p id="saveConfirmationModal" name="saveConfirmationModal">You can add and delete projects from your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
+                            <span aria-hidden="true">Close</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Bootstrap Modal - LogOut -->
+        <!-- /Bootstrap Modal - Add Project -->
+        <!-- Bootstrap Modal - Delete Project -->
+        <div class="modal fade" id="delProject" tabindex="-1" aria-labelledby="delProjectLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delProjectLabel">Delete Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>My Saved Projects : Delete Project</div>
+                        <div class="pmddelmodal" id="delProjectListModal">
+                        </div>
+                        <p id="delConfirmationModal" name="delConfirmationModal"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
+                            <span aria-hidden="true">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Bootstrap Modal - Delete Project -->
+        <!-- Bootstrap Modal - Open Weather Settings Modal -->
+        <div class="modal fade" id="openWeatherSettings" tabindex="-1" aria-labelledby="openWeatherSettingsLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="openWeatherSettingsLabel">Open Weather Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pmdform">
+                            <form id="openWeatherFormModal" name="openWeatherFormModal">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <div class="valIndicator01">*</div><label for="weatherZipModal">Enter Zipcode</label>
+                                        <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valAlert02"></div>
+                                        <div class="valIndicator01">*</div><label for="weatherLocationModal">or Enter Location</label>
+                                        <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valAlert03"></div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-primary" onclick="saveOpenWeatherLocation()" aria-label="Submit Location">Submit Location</button>
+                        </div>
+                        <p id="saveLocalConfirmModal"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Bootstrap Modal - Open Weather Settings Modal -->
+        <!-- Bootstrap Modal - Login -->
+        <div class="modal fade" id="loginPanel" tabindex="-1" aria-labelledby="loginPanelLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginPanelLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pmdform">
+                            <form id="loginFormModal" name="loginFormModal">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <div class="valIndicator01">*</div><label for="userNameModal">Enter Your
+                                            Username</label>
+                                        <input type="text" id="userNameModal" name="userNameModal" class="form-control">
+                                        <div class="valUserNameAlert01" id="valUserNameAlert01"></div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-primary" onclick="saveUserNameModal()" data-dismiss="modal">Save Username</button>
+                        </div>
+                        <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username
+                            here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            onclick="clearLogInFormAlerts()">
+                            <span aria-hidden="true">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Bootstrap Modal - Login -->
+        <!-- Bootstrap Modal - LogOut -->
+        <div class="modal fade" id="logOutPanel" tabindex="-1" aria-labelledby="logOutPanelLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logOutPanelLabel">Remove Username</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>Logged In User:</div>
+                        <div class="pmddelmodal" id="logOutPanelListModal">
+                        </div>
+                        <p id="delUserConfirmModal" name="delUserConfirmModal">Click on the user to log out.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogOutPanelAlerts()">
+                            <span aria-hidden="true">Close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Bootstrap Modal - LogOut -->
     <!-- /Bootstrap MODALS -->
 
     <!-- Load Bootstrap js and its dependencies -->

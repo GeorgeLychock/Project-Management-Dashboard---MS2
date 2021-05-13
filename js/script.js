@@ -214,7 +214,10 @@ $(document).ready(function() {
         $(".pmd-weather-desc").addClass('make-weather-dark-01');
         $(".pmd-username").addClass('make-dark-01');
         $(".pmd-dashboard").addClass('make-dark-05');
-        $(".pmd-usermenu-lib-btn ").addClass('make-dark-01');
+        $(".pmd-usermenu-lib-btn").addClass('make-dark-01');
+        $(".pmd-banner-msg-block").addClass('make-dark-01');
+        $(".pmd-tooltiptext").addClass('make-dark-06');
+        
         updateUserSettings("scenario", "dark");
     }
 
@@ -228,7 +231,9 @@ $(document).ready(function() {
         $(".pmd-hcolor-1").removeClass('make-dark-01');
         $(".pmd-username").removeClass('make-dark-01');
         $(".pmd-dashboard").removeClass('make-dark-05');
-        $(".pmd-usermenu-lib-btn ").removeClass('make-dark-01');
+        $(".pmd-usermenu-lib-btn").removeClass('make-dark-01');
+        $(".pmd-banner-msg-block").removeClass('make-dark-01');
+        $(".pmd-tooltiptext").removeClass('make-dark-06');
         updateUserSettings("scenario", "light");
     }
 
