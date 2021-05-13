@@ -53,7 +53,7 @@ $(document).ready(function() {
     /* /CODE REUSE - localStorage Check MDN*/
 
     /* Converts timestamp for display; captures AM/PM to control weather background
-    /* CODE REUSE - Covert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php */
+    /* CODE REUSE - Convert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php */
     function Unix_timestamp(t) {
         var timeMer = "";
         var dt = new Date(t * 1000);
@@ -72,8 +72,7 @@ $(document).ready(function() {
         };
         return currentTimeObj;
     }
-    /* /CODE REUSE - Covert UNIX Timestamp */
-
+    /* /CODE REUSE - Convert UNIX Timestamp */
 
 /* ******* END REUSED JAVASCRIPT ********** */
 
@@ -215,7 +214,7 @@ $(document).ready(function() {
         $(".pmd-weather-desc").addClass('make-weather-dark-01');
         $(".pmd-username").addClass('make-dark-01');
         $(".pmd-dashboard").addClass('make-dark-05');
-        $(".pmd-mobile-lib-btn ").addClass('make-dark-01');
+        $(".pmd-usermenu-lib-btn ").addClass('make-dark-01');
         updateUserSettings("scenario", "dark");
     }
 
@@ -229,7 +228,7 @@ $(document).ready(function() {
         $(".pmd-hcolor-1").removeClass('make-dark-01');
         $(".pmd-username").removeClass('make-dark-01');
         $(".pmd-dashboard").removeClass('make-dark-05');
-        $(".pmd-mobile-lib-btn ").removeClass('make-dark-01');
+        $(".pmd-usermenu-lib-btn ").removeClass('make-dark-01');
         updateUserSettings("scenario", "light");
     }
 

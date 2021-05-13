@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0f32915ec7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
@@ -69,18 +70,18 @@
                     <div class="col-12 col-md-3 pmd-up-col">
                         <div id="pmd-login" class=""></div>
                         <div id="pmd-userpanel" class="pmd-userpanel pmd-hide">
-                            <div class="pmd-icon-04" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
-                                <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
-                            </div>
                             <div id="pmd-username" class="pmd-username pmd-pcolor-3"></div>
                             <div class="row pmd-user-menu">
                                 <div class="col">
                                     <ul class="list-group list-group-horizontal">
                                         <li>
                                             <div class="dropdown">
-                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button"
-                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="bi bi-book" aria-hidden="true"></i>
+                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownMenuButton"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="pmd-tooltip">
+                                                        <i class="fas fa-university" aria-hidden="true"></i>
+                                                        <span class="pmd-tooltiptext">My Library</span>
+                                                    </div>
                                                 </div>
                                                 <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
                                                     <div class="pmd-usermenu-lib-box">
@@ -97,14 +98,41 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary pmd-usermenu-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bi bi-person" aria-hidden="true"></i>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownProfileBtn"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="pmd-tooltip">
+                                                        <i class="bi bi-person" aria-hidden="true"></i>
+                                                        <span class="pmd-tooltiptext">My Profile</span>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownProfileBtn">
+                                                    <div class="pmd-usermenu-lib-box">
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Profile</h4>
+                                                        <p class="pmd-pcolor-1">Future User Profile functionality coming soon!</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary pmd-usermenu-lib-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bi bi-gear pmd-bi-gear" aria-hidden="true"></i>
+                                            <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownProfileBtn"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="pmd-tooltip">
+                                                    <i class="bi bi-gear" aria-hidden="true"></i>
+                                                    <span class="pmd-tooltiptext">My Settings</span>
                                                 </div>
+                                            </div>
+                                            <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownProfileBtn">
+                                                <div class="pmd-usermenu-lib-box">
+                                                    <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Settings</h4>
+                                                    <p class="pmd-pcolor-1">Future User Settings functionality coming soon!</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="btn btn-secondary pmd-usermenu-lib-btn pmd-icon-04" type="button" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
+                                                <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -185,11 +213,11 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        <button class="pmd-icon-03" onclick="makeDark()" data-dismiss="modal">
+                        <button class="pmd-icon-03 pmd-settings-btn" onclick="makeDark()" data-dismiss="modal">
                             <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
                             Dark Dashboard Scheme
                         </button>
-                        <button class="pmd-icon-03" onclick="makeLight()" data-dismiss="modal">
+                        <button class="pmd-icon-03 pmd-settings-btn" onclick="makeLight()" data-dismiss="modal">
                             <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
                             Light Dashboard Scheme
                         </button>
@@ -427,15 +455,9 @@
     <!-- /Bootstrap MODALS -->
 
     <!-- Load Bootstrap js and its dependencies -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <!-- /Load Bootstrap js and its dependencies -->
 
     <!-- Load custom JS files -->

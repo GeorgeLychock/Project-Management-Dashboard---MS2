@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-3 {background-color:#999;}
 .pmd-bcolor-4 {background-color:#5a6268;}
 .pmd-bcolor-5 {background-color:#000;}
-.pmd-bcolor-6 {background-color:rgba(0, 0, 0, .7);}
+.pmd-bcolor-6 {background-color:rgba(0, 0, 0, .75);}
 .pmd-bcolor-nav {background-color:#83b0ef;}
 .pmd-bcolor-foot {background-color:#fda;}
 
@@ -276,6 +276,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bolder;
 }
 
+.pmd-settings-btn {
+    margin-bottom: 10px;
+}
+
 .pmd-up-col {
     padding: 10px 10px 5px 10px;
 }
@@ -286,7 +290,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-username {
     margin-top: 3px;
-    float: right;
 }
 
 /* Banner */
@@ -591,7 +594,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-username {
         margin: 10px 0 0 10px;
-        float: none;
         font-size: 1.5rem;
     }
 
