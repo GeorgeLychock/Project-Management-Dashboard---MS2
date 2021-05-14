@@ -99,12 +99,12 @@ function createUserLoginPanel() {
         var colorSchemeFinal01 = "";
         var colorScheme = whatColorScheme();
         if (colorScheme != "") {
-            colorSchemeFinal01 = colorScheme + "-01";
+            colorSchemeFinal01 = " " + colorScheme + "-01";
         }
 
         // if logged in, then show log out btn and username block
         if (checkSetJSON.username) {
-            return $('#pmd-username').text(checkSetJSON.username), $('#pmd-userpanel').removeClass("pmd-hide").addClass(colorSchemeFinal01), $('#pmd-login').first().html("");
+            return $('#pmd-username').text(checkSetJSON.username), $('#pmd-userpanel').removeClass("pmd-hide").addClass(colorSchemeFinal01), $('#pmd-login').html("<div></div>");
         // else, show user login btn
         } else {
             return $('#pmd-login').html(`
@@ -147,7 +147,8 @@ function saveUserNameModal() {
         for (var i = 0; i < x.length; i++) {
             x.elements[i].value = "";
         }
-        return $("#valUserNameAlert01").html(""), $("#pmd-userpanel").append(createUserLoginPanel()), $("#saveUserConfirmModal").html(`
+        createUserLoginPanel();
+        return $("#valUserNameAlert01").html(""), $("#saveUserConfirmModal").html(`
         <div class="pmd-un-confirm">Username Saved!</div>
         `);
     }

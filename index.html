@@ -60,7 +60,7 @@
             <div class="row no-gutters">
                 <div class="col">
                     <div class="pmd-banner-msg-block pmd-acolor-4">
-                        <div class="banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
+                        <div class="pmd-banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
                             What is pmDashboard?
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     <!-- Display User Panel-->
                     <div class="col-12 col-md-3 pmd-up-col">
                         <div id="pmd-login" class=""></div>
-                        <div id="pmd-userpanel" class="pmd-userpanel pmd-hide">
+                        <div id="pmd-userpanel" class="pmd-hide">
                             <div id="pmd-username" class="pmd-username pmd-pcolor-3"></div>
                             <div class="row pmd-user-menu">
                                 <div class="col">
@@ -219,14 +219,24 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="whatIsPMdashboardLabel">What is pmDashboard?</h5>
+                        <h5 class="modal-title" id="whatIsPMdashboardLabel"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div>
-
+                        <div class="pmd-welcome-msg-block">
+                            <div class="pmd-welcome-msg-header">Welcome to pmDashboard!</div>
+                            <ul>
+                                <li>pmDashboard is a concept for a configurable project management dashboard.</li><br>
+                                <li>There are 5 pre-populated projects available in the Library.</li><br>
+                                <li>You can add or delete your own projects, they will be saved locally in your browser.</li><br>
+                                <li>Use the Library menu to Add/Remove project panels on the dashboard.</li><br>
+                                <li>There are two available Tools widgets: OpenWeather (you can configure the location), and GitHub (you can search a valid Git user).</li><br>
+                                <li>You can log in; your name will be added to the user panel.</li><br>
+                                <li>You can configure a few user settings by clicking the cogs.</li>
+                            </ul>
+                            <div class="pmd-welcome-msg-footer">Have fun exploring my front end project!</div>
                         </div>
                     </div>
                     <div class="modal-footer">

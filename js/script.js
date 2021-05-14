@@ -217,6 +217,7 @@ $(document).ready(function() {
         $(".pmd-usermenu-lib-btn").addClass('make-dark-01');
         $(".pmd-banner-msg-block").addClass('make-dark-01');
         $(".pmd-tooltiptext").addClass('make-dark-06');
+        $(".pmd-login").addClass('make-dark-01');
         
         updateUserSettings("scenario", "dark");
     }
@@ -234,6 +235,8 @@ $(document).ready(function() {
         $(".pmd-usermenu-lib-btn").removeClass('make-dark-01');
         $(".pmd-banner-msg-block").removeClass('make-dark-01');
         $(".pmd-tooltiptext").removeClass('make-dark-06');
+        $(".pmd-login").removeClass('make-dark-01');
+        
         updateUserSettings("scenario", "light");
     }
 

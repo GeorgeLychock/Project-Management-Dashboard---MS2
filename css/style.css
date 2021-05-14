@@ -161,6 +161,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     display: inline;
     background-color: transparent;
+    -webkit-appearance: none;
 }
 
 .pmd-icon-03 i:hover {
@@ -187,6 +188,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background-color: transparent;
     width: 30px;
+    -webkit-appearance: none;
 }
 
 .pmd-icon-05 i:hover {
@@ -266,8 +268,25 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 5px;
 }
 
-.banner-msg-01 {
+.pmd-banner-msg-01 {
     display: inline;
+    -webkit-appearance: none;
+}
+
+.pmd-welcome-msg-block {
+    font-size: .75rem;
+}
+
+.pmd-welcome-msg-block ul {
+    list-style-type: disc;
+}
+
+.pmd-welcome-msg-header {
+    font-size: 2rem;
+}
+
+.pmd-welcome-msg-footer {
+    font-size: 1.5rem;
 }
 
 /* Header */
@@ -304,8 +323,6 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-username {
     margin-top: 3px;
 }
-
-/* Banner */
 
 /* User Panel Library Dropdown */
 #usermenu-projects-library{
@@ -356,6 +373,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
     background-color: transparent;
     color: #333;
+    -webkit-appearance: none;
 }
 
 /* Project Form */
@@ -545,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media only screen and (min-width: 992px) {
     h2 {
-        font-size: 2.0rem;
+        font-size: 1.5rem;
     }
 
     .pmd-ncolor-4 {color: whitesmoke;}
@@ -599,10 +617,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-up-col {
         padding-top: 5px;
-    }
-
-    .pmd-userpanel {
-
     }
 
     .pmd-username {
@@ -670,6 +684,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (min-width: 1300px) {
+
+    h2 {
+        font-size: 2.0rem;
+    }
 
     .pmd-active-widget {
         height: 258px;
