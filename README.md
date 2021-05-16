@@ -422,7 +422,7 @@ Below are placeholders:
 #### OPEN 
 -   Open Weather - Current time displays a negative value befor 12pm
 -   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
--   Hover Cog Hint in Nav displays a "Click Me!" next to the icon in the nav text
+-   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libaries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
 
 
 #### FIXED 
@@ -430,6 +430,8 @@ Below are placeholders:
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added buttons
 -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels
+-   Hover Cog Hint in Nav displays a "Click Me!" next to the icon in the nav text
+    -   FIX: Adjusted selectors so the Click Me! tip onlt displays next to cogs in the Library and Dashboard. 
 
 <a name="DPLY"></a>
 ## Deployment
