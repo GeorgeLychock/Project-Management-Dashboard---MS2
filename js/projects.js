@@ -210,7 +210,6 @@ function buildProjectLibBtnMU(data) {
 
 function buildProjectLibBtnMUUsermenu(data) {
 
-    // Add the viewport code to the ID to make unique ID for mobile library button
     let elementID = data.widgetID;
 
     var colorSchemeFinal01 = "";
@@ -299,12 +298,12 @@ function createDeleteProjectList() {
                 var elementID = delWidgetIDList[i];
                 getLocalData(elementID, function(localData) {
                     // Add project name to the delete list
-                    return $("#delProjectListModal").append(buildProjectDelBtnMU(localData));
+                    return $("#delProjectListModal").append(buildProjectDelBtnMU(localData), $("#delConfirmationModal").text(""));
                 });
             }
         }
     } else {
-        alert("There are no user projects entered yet. Please go to Add Project to add one");
+        return $("#delConfirmationModal").text("There are no user projects entered yet. Please go to Add Project to add one");
     }
 }
 
@@ -321,14 +320,20 @@ function delProject(wID, pName) {
         localStorage.removeItem(elementID);
 
         // delete active widgetID from localStorage
-        let activeProjSaved = localStorage.getItem('activeProjects');
-        let activeProj = activeProjSaved.split(',');
-        activeProj.pop(elementID);
-        localStorage.setItem('activeProjects', activeProj);
+        if (localStorage.getItem('activeProjects')) {
+            let activeProjSaved = localStorage.getItem('activeProjects');
+            let activeProj = activeProjSaved.split(',');
+            if (activeProj.pop(elementID)) {
+                localStorage.setItem('activeProjects', activeProj);
+            }
+        }
 
         // delete widgetID from main list in localStorage
         activeProjSaved = localStorage.getItem('allProjectIDs');
         activeProj = activeProjSaved.split(',');
+
+        console.log("allProjectIDs = " + activeProj);
+        
         activeProj.pop(elementID);
         localStorage.setItem('allProjectIDs', activeProj);
 
@@ -350,17 +355,21 @@ function delProject(wID, pName) {
         //remove del button
         $("#widget-btn-del-" + elementID).remove();
 
-
-        alert("Your project " + pn + " has been deleted");
+        // return $("#delProjectListModal").text("Your project " + pn + " has been deleted");
+        return $("#delConfirmationModal").text("Your project " + pn + " has been deleted");
     }
 }
 
 function buildProjectDelBtnMU(data) {
 
-    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-del-${data.widgetID}">
-    <button class="pmd-icon-03" onclick="delProject('${data.widgetID}', '${data.name}')">
+    let widgetData = data;
+
+    console.log("This is my" + widgetData.widgetID);
+
+    return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-del-${widgetData.widgetID}">
+    <button class="pmd-icon-03" onclick="delProject('${widgetData.widgetID}', '${widgetData.name}')">
     <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-1 wName">${data.name}</div>
+    <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-1 wName">${widgetData.name}</div>
     </button>
     </div>`;
 }

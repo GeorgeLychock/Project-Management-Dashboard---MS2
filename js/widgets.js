@@ -215,7 +215,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
             <div class="pmd-panel-headtext${colorSchemeFinal01}">Close Panel</div>
         </div>
     </div>
-        <div class="pmd-active-widget pmd-bcolor-2">
+        <div class="pmd-active-ow-widget pmd-bcolor-2">
             <div class="float-right">My Weather</div>
             <h5>${apiData.name}</h5>
             <div>Current Time: ${currentTime}</div>

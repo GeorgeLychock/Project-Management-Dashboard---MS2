@@ -38,7 +38,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <div type="button" class="pmd-nav-item" data-toggle="modal" onclick="createDeleteProjectList()" data-target="#delProject">
+                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject" onclick="createDeleteProjectList()">
                                         <div>Delete Project</div>
                                     </div>
                                 </li>
@@ -388,9 +388,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div>My Saved Projects : Delete Project</div>
-                        <div class="pmddelmodal" id="delProjectListModal">
-                        </div>
+                        <div>My Saved Projects :</div>
+                        <div class="pmddelmodal" id="delProjectListModal"></div>
                         <p id="delConfirmationModal" name="delConfirmationModal"></p>
                     </div>
                     <div class="modal-footer">

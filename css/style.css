@@ -479,6 +479,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-project-data2 {
     font-size: .65rem;
     padding: 3px 0px;
+    min-height: 40px;
 }
 
 /* Active Widgets Dashboard */
@@ -506,7 +507,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-prg-bar-title {
     font-size: .5rem;
     padding: 7px 5px 0 0;
-    width: 55px;
+    width: 60px;
     text-align: right;
     background-color: whitesmoke;
 }
@@ -648,6 +649,10 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-active-widget {
         height: 300px;
+    }
+
+    .pmd-active-widget h5 {
+        min-height: 50px;
     }
 
     .pmd-panel-head {
