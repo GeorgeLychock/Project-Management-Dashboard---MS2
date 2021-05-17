@@ -187,6 +187,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     var currentTime = timeInfo.fulltime;
     var dayTimeHours = timeInfo.hours;
 
+    // Determine which background to set, night or day
     if(dayTimeHours >= 6 && dayTimeHours <= 18) {
         weatherBGClass = " pmd-weather-icon-bg-day";
         weatherDesClass = " pmd-weather-des-bg-day";

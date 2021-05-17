@@ -56,19 +56,25 @@ $(document).ready(function() {
     /* CODE REUSE - Convert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php */
     function Unix_timestamp(t) {
         var timeMer = "";
+        var dhr = "";
         var dt = new Date(t * 1000);
-        var hr = dt.getHours() - 12;
-        var dhr = dt.getHours();
-        if (dt.getHours <= 12) { //custom js added by developer
+            console.log(dt);
+        var hr = dt.getHours();
+            console.log(hr);
+        if (hr < 12) { //custom js added by developer
             timeMer = "AM";
+            dhr = hr;
         } else {
             timeMer = "PM";
+            dhr = hr - 12;
         }
+
         var m = "0" + dt.getMinutes();
+
         //custom js added by developer; create and return timestamp object
         let currentTimeObj = {
-            fulltime: hr + ':' + m.substr(-2) + ' ' + timeMer,
-            hours: dhr
+            fulltime: dhr + ':' + m.substr(-2) + ' ' + timeMer,
+            hours: hr
         };
         return currentTimeObj;
     }
@@ -186,7 +192,7 @@ $(document).ready(function() {
                 //if that was the last/only widget ID saved, delete the storage object entirely
                 if (localStorageName == "activeProjects") {
                     if (updatedWidgetIDs == "") {
-                        localStorage.removeItem(localStorageName);
+                        localStorage.removeItem("activeProjects");
 
                         console.log("There was only one widget saved");
 
