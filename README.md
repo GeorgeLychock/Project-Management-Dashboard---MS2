@@ -158,6 +158,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
 -   Build user Settings dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
+-   You can currently save a project with the same name; that might not be a desired event or a confirmation should be presented
 
 <a name="DES"></a>
 # Design
@@ -423,9 +424,14 @@ Below are placeholders:
 -   Open Weather - Current time displays a negative value befor 12pm
 -   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
 -   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libaries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
+-   EFFICIENCY MARKER: [script.js:removeWidgetID] The code for deleting a project or removing a dashboard panel from the local storage array should be made into arrow function(s) if possible
+-   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project 2) When a user creates another project without closing the Add Project modal
+
 
 
 #### FIXED 
+-   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dasboard, and delete projects funtionality when refreshing the browser.
+    -   FIX: Recoded the routine that removes widget IDs from local storage; created a common function in script.js to handle removing IDs
 -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added buttons
 -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
