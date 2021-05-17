@@ -164,6 +164,39 @@ $(document).ready(function() {
         }
     }
 
+    function removeWidgetID(storeName, uID) {
+        //removes widget IDs from all storage objects
+        let localStorageName = storeName;
+        var elementID = uID;
+        // ****** EFFICIENCY MARKER ******* Need to research turning this into an arrow function(s)
+        if (localStorage.getItem(localStorageName)) {
+            let savedWidgetIDs = localStorage.getItem(localStorageName).split(',');
+
+                console.log("IDs saved to the local object" + savedWidgetIDs);
+
+            let delWidgetIndex = savedWidgetIDs.indexOf(elementID);
+
+                console.log("Index" + delWidgetIndex);
+
+            var updatedWidgetIDs = savedWidgetIDs.splice(delWidgetIndex, 1);
+
+                console.log("Updated Array for upload" + updatedWidgetIDs);
+                console.log("Updated Array for upload 2" + savedWidgetIDs);
+
+                //if that was the last/only widget ID saved, delete the storage object entirely
+                if (localStorageName == "activeProjects") {
+                    if (updatedWidgetIDs == "") {
+                        localStorage.removeItem(localStorageName);
+
+                        console.log("There was only one widget saved");
+
+                    }
+                } else {
+                    localStorage.setItem(localStorageName, savedWidgetIDs);
+                }
+        } // else capture error, if needed
+    }
+
     function whatColorScheme() {
         // Determine if a color scheme has been applied to the main element yet
         var mainClasses;

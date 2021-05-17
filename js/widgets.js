@@ -119,11 +119,9 @@ function turnWidgetOn(widgetIdOn) {
 
 function turnWidgetOff(widgetIdOff) {
     var elementID = widgetIdOff;
-    // remove widget from localStorage
-    let activeWidgetsSaved = localStorage.getItem('localWidgets');
-    let activeWidgets = activeWidgetsSaved.split(',');
-    activeWidgets.pop(elementID);
-    localStorage.setItem('localWidgets', activeWidgets);
+
+        // remove active widgetID from localStorage
+        removeWidgetID("localWidgets", elementID);
 
     var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
     //Build Library buttons for Desktop and Mobile

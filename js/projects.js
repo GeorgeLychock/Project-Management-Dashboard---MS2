@@ -119,11 +119,8 @@ function turnProjectOff(widgetIdOff) {
 
     let elementID = widgetIdOff;
 
-    // remove widgetID from localStorage
-    let activeProjectsSaved = localStorage.getItem('activeProjects');
-    let activeProjects = activeProjectsSaved.split(',');
-    activeProjects.pop(elementID);
-    localStorage.setItem('activeProjects', activeProjects);
+    // remove active widgetID from localStorage
+    removeWidgetID("activeProjects", elementID);
 
     // If the widget data is stored locally...
     if(localStorage.getItem(elementID)) {
@@ -187,7 +184,7 @@ function buildProjectPanelMU(data) {
 }
 
 /* Build Library button markup
-These next two (2) functions build the Library buttons, mobile version needs to add a code so the button ids are unique. */
+These next two (2) functions build the Library buttons, dropdown version adds a code so the button ids are unique. */
 function buildProjectLibBtnMU(data) {
 
     let elementID = data.widgetID;
@@ -267,7 +264,7 @@ function saveProjectDataModal() {
             x.elements[i].value = "";
             }
 
-        // Save widgetID to localStorage
+        // Save widgetID to localStorage, master list
         var localStorageName = "allProjectIDs";
         setProjectIDs(localStorageName, passFormData.widgetID);
 
@@ -313,40 +310,20 @@ function delProject(wID, pName) {
     var pn = pName;
 
     //Confirm deletion
-    var txt = "Are you sure you want to delete " + pn;
+    var txt = "Are you sure you want to delete " + pn + "?";
     if (confirm(txt) == true) {
 
         //delete project data
         localStorage.removeItem(elementID);
 
-        // delete active widgetID from localStorage
-        if (localStorage.getItem('activeProjects')) {
-            let activeProjSaved = localStorage.getItem('activeProjects');
-            let activeProj = activeProjSaved.split(',');
-            if (activeProj.pop(elementID)) {
-                localStorage.setItem('activeProjects', activeProj);
-            }
-        }
+        // remove active widgetID from localStorage
+            removeWidgetID("activeProjects", elementID);
 
-        // delete widgetID from main list in localStorage
-        activeProjSaved = localStorage.getItem('allProjectIDs');
-        activeProj = activeProjSaved.split(',');
+        // remove widgetID from master list in localStorage
+            removeWidgetID("allProjectIDs", elementID);
 
-        console.log("allProjectIDs = " + activeProj);
-        
-        activeProj.pop(elementID);
-        localStorage.setItem('allProjectIDs', activeProj);
-
-        // delete widgetID from user list in localStorage
-        activeProjSaved = localStorage.getItem('userProjectIDs');
-        activeProj = activeProjSaved.split(',');
-        activeProj.pop(elementID);
-        //if that was the last/only project saved locally, delete the item entirely
-        if (activeProj == "") {
-            localStorage.removeItem('userProjectIDs');
-        } else {
-            localStorage.setItem('userProjectIDs', activeProj);
-        }
+        // remove widgetID from user list in localStorage
+            removeWidgetID("userProjectIDs", elementID);
 
         //remove panel
         $("#" + elementID).remove();
