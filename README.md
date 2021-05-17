@@ -16,13 +16,18 @@
 - [UX/UI](#UXUI)
 
 - [Design](#DES)
-    - [Wireframes](#WF)
+    -   [Wireframes](#WF)
 
 - [Technical Background](#TECH)
 
 - [Project Management](#PROJ)
 
 - [Testing](#TEST)
+    -   [Usability](#TESTUSABILITY)
+    -   [Functionality](#TESTFUNCTIONALITY)
+    -   [User Stories](#TESTSTORIES)
+    -   [Validation](#TESTVALID)
+    -   [Compatibility](#TESTCOMP)
 
 - [Bugs and Fixes](#BUGS)
 
@@ -347,11 +352,42 @@ As a user, I want instruction or an indication of how and where to change dashbo
 
 <a name="TEST"></a>
 # Testing
+Used test writing guidelines from the following resources:
+    [Guru99](https://www.guru99.com/complete-web-application-testing-checklist.html), [softwaretestinghelp.com](https://www.softwaretestinghelp.com/web-application-testing/)
 
+<a name="TESTUSABILITY"></a>
+## Usability Testing
+-   Web page content should be correct without any spelling or grammatical errors
+-   Tool tip text should be present on the User Menu dropdown icons.
+-   Enough space should be provided between field labels, columns, rows, and error messages.
+-   All the buttons should be in a standard format and size.
+-   Check for broken links and images.
+-   Confirmation message should be displayed for any kind of update and delete operation.
+-   Check the site on different resolutions (640 x 480, 600x800 etc.?)
+-   Perform Peer Review
+-   Scroll bar should appear only if required.
+-   If there is an error message on submit, the information filled by the user should be there.
+-   All fields (Textbox, dropdown, radio button, etc) and buttons should be accessible by keyboard shortcuts and the user should be able to perform all operations by using keyboard.
+-   
+
+    -   [Compatibility](#TESTCOMP)
+
+
+
+
+<a name="TESTFUNCTIONALITY"></a>
 ## Functionality Testing
+### General
+-   All images and icons render correctly
+-   All buttons show pointer on hover
+-   Mandatory fields validate correctly, display message
+-   User Menu dropdown icons fire a menu or message
+-   All Library buttons fire a panel add to the dashboard
+-   
 
 ### Navigation Bar
 -   #### Project Add
+    -   Click on the Add Project nav item: 
 -   #### Project Delete
 -   #### Settings Cog Tip
 -   #### About Site
@@ -373,6 +409,8 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   GitHub Panel
 -   Open Weather Panel
 
+<a name="TESTVALID"></a>
+## Validation
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
 
 Below are placeholders:
@@ -386,31 +424,29 @@ Below are placeholders:
     -   Tested all script.js functions in JSHint 4/7/21
     -   Tested all usersettings.js functions in JSHint 4/7/21
 
--   ### Testing User Stories from User Experience (UX) Section
-    -   #### General User Experience
-        -   **Story 1** As a Site Visitor, I want to have a persistent navigation element/method allowing me to jump to any site content quickly.
-            -  ##### Acceptance Criteria -- Duplicated in Testing below
-                1.  The most detailed Content is never more than **two clicks** away from home.
-                2.  Home is always **one click** away from anywhere on the site.
-                3.  Nav dropdown (collapse) is *prohibited*
-                4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any viewport.
-            -   ##### Results
-                -   (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.
-                -   (3) PASS No nav icon nor dropdown exists'
-                -   (4) PASS Every sub page has at least the Home icon visible at all times, all ports. [Screenshot](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/testing/screenshots/userst-1_4-screenshotfrom2020-11-23.png)
-
 ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widet viewport
 -   Create a library button that turns a div OFF in the active widet viewport
 -   Correctly render data from an external JSON files
 
-### Further Testing
+<a name="TESTSTORIES"></a>
+## User Story Testing
+-   Testing User Stories from User Experience (UX) Section
+    -   **Story 1** As a Site Visitor, I want to have a persistent navigation element/method allowing me to jump to any site content quickly.
+        -  ##### Acceptance Criteria -- Duplicated in Testing below
+            1.  The most detailed Content is never more than **two clicks** away from home.
+            2.  Home is always **one click** away from anywhere on the site.
+            3.  Nav dropdown (collapse) is *prohibited*
+            4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any viewport.
+        -   ##### Results
+            -   (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.
+            -   (3) PASS No nav icon nor dropdown exists'
+            -   (4) PASS Every sub page has at least the Home icon visible at all times, all ports. [Screenshot](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/testing/screenshots/userst-1_4-screenshotfrom2020-11-23.png)
 
+<a name="TESTCOMP"></a>
+### Compatibility Testing
 -   The Website was tested on Google Chrome, Firefox and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone6, iPad8.
--   Testing was done to ensure that all pages were linking correctly.
--   A design professional friend of mine spent 30 minutes with me reviewing the overall design after all pages were constructed and styled.
--   All pages were given at least one cold read.
 -   Used Lighthouse to identify areas on improvement which are documented below in Fixed Bugs after Testing.
 
 <a name="BUGS"></a>
@@ -426,8 +462,7 @@ Below are placeholders:
 -   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libaries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
 -   EFFICIENCY MARKER: [script.js:removeWidgetID] The code for deleting a project or removing a dashboard panel from the local storage array should be made into arrow function(s) if possible
 -   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project 2) When a user creates another project without closing the Add Project modal
-
-
+-   The arrow pointer on the weather widget doesn't line up correctly when the user hovers the cog instruction line in the top nav.
 
 #### FIXED 
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dasboard, and delete projects funtionality when refreshing the browser.
