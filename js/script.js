@@ -58,9 +58,7 @@ $(document).ready(function() {
         var timeMer = "";
         var dhr = "";
         var dt = new Date(t * 1000);
-            console.log(dt);
         var hr = dt.getHours();
-            console.log(hr);
         if (hr < 12) { //custom js added by developer
             timeMer = "AM";
             dhr = hr;

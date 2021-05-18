@@ -128,17 +128,53 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownProfileBtn"
+                                            <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="userMenuSettings"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <div class="pmd-tooltip">
                                                     <i class="bi bi-gear" aria-hidden="true"></i>
                                                     <span class="pmd-tooltiptext">My Settings</span>
                                                 </div>
                                             </div>
-                                            <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownProfileBtn">
+                                            <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownSettingsBtn">
                                                 <div class="pmd-usermenu-lib-box">
-                                                    <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Settings</h4>
-                                                    <p class="pmd-pcolor-1">Future User Settings functionality coming soon!</p>
+                                                    <h4 class="pmd-dinline pmd-usermenu-h4 pmd-hcolor-4">My Settings</h4>
+                                                    <div>
+                                                        <div>
+                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Dashboard Color Scheme</h5>
+                                                            <div>
+                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6" onclick="makeDark()" data-dismiss="modal">
+                                                                    <i class="bi bi-dice-5-fill" aria-hidden="true"></i>
+                                                                    Dark Dashboard
+                                                                </button>
+                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6" onclick="makeLight()" data-dismiss="modal">
+                                                                    <i class="bi bi-dice-5" aria-hidden="true"></i>
+                                                                    Light Dashboard
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-none d-md-block">
+                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Library Panel Position</h5>
+                                                            <div>
+                                                               <button class="pmd-icon-03 pmd-acolor-6" onclick="posLibRight()">
+                                                                   <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                                                                   Library Right
+                                                               </button>
+                                                           </div>
+                                                           <div>
+                                                               <button class="pmd-icon-03 pmd-acolor-6" onclick="posLibLeft()">
+                                                                   <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                                                                   Library Left
+                                                               </button>
+                                                           </div>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Tools Settings</h5>
+                                                            <div type="button" class="pmd-icon-03 pmd-acolor-6" data-toggle="modal" data-target="#openWeatherSettings">
+                                                                <i class="bi bi-gear pmd-bi-gear-ow" aria-hidden="true"></i>
+                                                                Open Weather Settings
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
@@ -230,10 +266,10 @@
                             <ul>
                                 <li>pmDashboard is a concept for a configurable project management dashboard.</li><br>
                                 <li>There are 5 pre-populated projects available in the Library.</li><br>
-                                <li>You can add or delete your own projects, they will be saved locally in your browser.</li><br>
+                                <li>You can Add or Delete your own projects, they will be saved locally in your browser.</li><br>
                                 <li>Use the Library menu to Add/Remove project panels on the dashboard.</li><br>
-                                <li>There are two available Tools widgets: OpenWeather (you can configure the location), and GitHub (you can search a valid Git user).</li><br>
-                                <li>You can log in; your name will be added to the user panel.</li><br>
+                                <li>There are two available Tools widgets: OpenWeather (you can configure the location), and GitHub (you can search a valid GitHub user).</li><br>
+                                <li>If you log in (this is simulated, there is no backend), you will be presented the user panel.</li><br>
                                 <li>You can configure a few user settings by clicking the cogs.</li>
                             </ul>
                             <div class="pmd-welcome-msg-footer">Have fun exploring my front end project!</div>
@@ -246,6 +282,53 @@
             </div>
         </div>
         <!-- /Bootstrap Modal - What Is pmDashboard -->
+         <!-- Bootstrap Modal - User Menu Settings -->
+         <div class="modal fade" id="userMenuSettings" tabindex="-1" aria-labelledby="userMenuSettingsLabel"
+         aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="userMenuSettingsLabel">User Settings</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
+                 <div class="modal-body">
+                     <div>
+                         <button class="pmd-icon-03 pmd-settings-btn" onclick="makeDark()" data-dismiss="modal">
+                             <i class="bi bi-dice-5-fill pmd-acolor-2" aria-hidden="true"></i>
+                             Dark Dashboard Scheme
+                         </button>
+                         <button class="pmd-icon-03 pmd-settings-btn" onclick="makeLight()" data-dismiss="modal">
+                             <i class="bi bi-dice-5 pmd-acolor-2" aria-hidden="true"></i>
+                             Light Dashboard Scheme
+                         </button>
+                     </div>
+                     <div>
+                        <div>
+                            <button class="pmd-icon-03" onclick="posLibRight()">
+                                <i class="bi bi-arrow-right pmd-acolor-2" aria-hidden="true"></i>
+                                Library Right
+                            </button>
+                        </div>
+                        <div>
+                            <button class="pmd-icon-03" onclick="posLibLeft()">
+                                <i class="bi bi-arrow-left pmd-acolor-2" aria-hidden="true"></i>
+                                Library Left
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- /Bootstrap Modal - User Menu Settings -->
+
+
         <!-- Bootstrap Modal - Dashboard Settings -->
         <div class="modal fade" id="dashboardSettings" tabindex="-1" aria-labelledby="dashboardSettingsLabel"
             aria-hidden="true">
@@ -335,7 +418,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="projectDesModal">Project Description</label>
+                                        <label for="projectDesModal">Description</label>
                                         <input type="text" id="projectDesModal" name="projectDesModal" class="form-control">
                                     </div>
                                 </div>

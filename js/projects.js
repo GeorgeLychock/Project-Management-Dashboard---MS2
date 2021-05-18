@@ -282,7 +282,7 @@ function saveProjectDataModal() {
 }
 
 function clearProjectFormAlerts() {
-    return $("#saveConfirmationModal").html(""), $("#valAlert01").html("");
+    return $("#saveConfirmationModal").html(""), $("#valAlert01").html(""), $("#delConfirmationModal").text("");
 }
 
 /* Delete Project Functions */
@@ -341,12 +341,10 @@ function buildProjectDelBtnMU(data) {
 
     let widgetData = data;
 
-    console.log("This is my" + widgetData.widgetID);
-
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-del-${widgetData.widgetID}">
     <button class="pmd-icon-03" onclick="delProject('${widgetData.widgetID}', '${widgetData.name}')">
-    <i class="bi bi-x-circle pmd-acolor-2" aria-hidden="true"></i>
-    <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-1 wName">${widgetData.name}</div>
+    <i class="bi bi-x-circle pmd-acolor-5" aria-hidden="true"></i>
+    <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-5 wName">${widgetData.name}</div>
     </button>
     </div>`;
 }
