@@ -368,12 +368,6 @@ Used test writing guidelines from the following resources:
 -   Scroll bar should appear only if required.
 -   If there is an error message on submit, the information filled by the user should be there.
 -   All fields (Textbox, dropdown, radio button, etc) and buttons should be accessible by keyboard shortcuts and the user should be able to perform all operations by using keyboard.
--   
-
-    -   [Compatibility](#TESTCOMP)
-
-
-
 
 <a name="TESTFUNCTIONALITY"></a>
 ## Functionality Testing
@@ -383,12 +377,34 @@ Used test writing guidelines from the following resources:
 -   Mandatory fields validate correctly, display message
 -   User Menu dropdown icons fire a menu or message
 -   All Library buttons fire a panel add to the dashboard
--   
 
 ### Navigation Bar
 -   #### Project Add
-    -   Click on the Add Project nav item: 
+    -   Click on the Add Project nav item: Project Add modal should appear
+    -   Fields for the following should appear on modal:
+        -   Project Name
+        -   Project Owner
+        -   Project Description
+        -   Start Date (date format)
+        -   Due Date (date format)
+        -   Percent Complete (number format, valid from 0-100)
+        -   Cost Performanace Index (number format, valid from 0.0 - 2.0)
+        -   Schedule Variance (number format, valid from 0.0 - 2.0)
+    -   Project Name is mandatory; indicated by asterisk, color red
+    -   No other fields should be mandatory
+    -   Clicking Save Project Data should produce an error text, color red, under all mandatory fields
+    -   Clicking Save Project Data should produce a confirmation message that the project has been saved
+
 -   #### Project Delete
+    -   Click on the Delete Project nav item: Project Delete modal should appear
+    -   If there are no saved projects yet added, a message show be presented to add projects
+    -   Saved projects should be listed and presented as buttons
+    -   Each project button should perform the following when clicked:
+        -   Project panel should be removed from dashboard, if present
+        -   Project Library button should be removed from the desktop/tablet Library Panel, if present
+        -   Project Library button should be removed from the Library dropdown in the user menu, if present
+        -   Project button should be removed from the Delete Project modal
+
 -   #### Settings Cog Tip
 -   #### About Site
 -   #### Mobile
@@ -463,6 +479,8 @@ Below are placeholders:
 -   EFFICIENCY MARKER: [script.js:removeWidgetID] The code for deleting a project or removing a dashboard panel from the local storage array should be made into arrow function(s) if possible
 -   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project 2) When a user creates another project without closing the Add Project modal
 -   The arrow pointer on the weather widget doesn't line up correctly when the user hovers the cog instruction line in the top nav.
+-   Percent Complete, CPI, and SV fields on Project Add modal should be validate for acceptable value range; increment (increase/decrease) buttons are very small
+-   Increment buttons should not display on Zipcode input field on Open Weather widget settings modal
 
 #### FIXED 
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dasboard, and delete projects funtionality when refreshing the browser.
