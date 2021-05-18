@@ -528,6 +528,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-project-lib {
     min-height: 300px;
+    max-height: 400px;
+}
+
+.pmd-proj-lib {
+    overflow-y: auto;
+    max-height: 300px;
 }
 
 .pmd-lib-directions {

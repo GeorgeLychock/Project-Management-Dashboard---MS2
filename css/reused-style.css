@@ -1,3 +1,31 @@
+/* george lychock MS2 stylesheet */
+/* NOTES:
+    - This style sheet contains all reused css code resourced from 3rd parties. Credits are documented in README.md
+
+/* CODE REUSE - Scrollbar CSS Styling: from Digital Ocean: https://www.digitalocean.com/community/tutorials/css-scrollbars */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #83b0ef #999;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #999;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #83b0ef;
+  border-radius: 20px;
+  border: 1px solid #999;
+}
+
+/* END CODE REUSE - Scrollbar CSS Styling: from Digital Ocean */
+
 
 
 /* CODE REUSE - Tooltip: from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
@@ -32,4 +60,4 @@
   visibility: visible;
 }
 
-  /* /CODE REUSE - Tooltip: from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
+  /* END CODE REUSE - Tooltip: from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
