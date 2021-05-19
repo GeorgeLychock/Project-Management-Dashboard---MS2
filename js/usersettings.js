@@ -177,9 +177,9 @@ function createDeleteUsernameList() {
 
 function buildUserDelBtnMU(un) {
 
-    return `<div class="pmd-btn-library pmd-btncolor-2">
-    <button class="pmd-icon-06" onclick="logOut('${un}')" data-dismiss="modal">
-    <div class="pmd-dinline pmd-acolor-3">${un}</div>
+    return `<div class="pmd-btn-library pmd-btncolor-1">
+    <button class="pmd-icon-03" onclick="logOut('${un}')" data-dismiss="modal">
+    <div class="pmd-dinline pmd-acolor-5">${un}</div>
     </button>
     </div>`;
 }

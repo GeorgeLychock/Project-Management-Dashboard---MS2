@@ -7,6 +7,7 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: #83b0ef #999;
+  scroll-behavior: smooth;
 }
 
 /* Works on Chrome, Edge, and Safari */
