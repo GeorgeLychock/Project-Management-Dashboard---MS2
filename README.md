@@ -396,6 +396,7 @@ Used test writing guidelines from the following resources:
     -   No other fields should be mandatory
     -   Clicking Save Project Data should produce an error text, color red, under all mandatory fields
     -   Clicking Save Project Data should produce a confirmation message that the project has been saved
+    -   Modal should hide when Close is clicked
 
 -   #### Project Delete
     -   Click on the Delete Project nav item: Project Delete modal should appear
@@ -406,26 +407,71 @@ Used test writing guidelines from the following resources:
         -   Project Library button should be removed from the desktop/tablet Library Panel, if present
         -   Project Library button should be removed from the Library dropdown in the user menu, if present
         -   Project button should be removed from the Delete Project modal
+    -   Modal should hide when Close is clicked
 
--   #### Settings Cog Tip
--   #### About Site
--   #### Mobile
+-   #### Settings Cog Instructions
+    -   Hover over the cog instructions on the left side of the nav in desktop view:
+        -   The cog in the instructions should turn red
+        -   The cog in the user menu should turn red
+        -   All cogs in the header, library, and dashboard should turn red and display a small arrow to the right of the cog
+        -   When the mouse is moved off the instruction, arrows should be removed and cogs returned to initial color
+-   ### What is pmDashboard?
+    -   Clicking on "What is pmDashboard?" text should display a modal
+    -   Modal should hide when Close is clicked
+-   ### Header
+    -   Settings cog should be present close to the App title
+    -   Clicking on the cog should display a modal
+    -   Modal should offer user to set the color scheme to light or dark
+    -   When the user click the dark setting, the app changes appearance to a darker color scheme for background and main sections
+    -   When the user click the light setting, the app changes appearance to a lighter (default) color scheme for background and main sections
+    -   Modal should hide when an option is chosen
+
+-   ### User Login/Menu
+    -   When a user first enters the app, a login button should be present on the right side of the header in desktop view
+    -   Clicking the login button should display a modal
+    -   The modal should offer the user the ability to enter and save a user name
+    -   Modal should hide when Close is clicked
+    -   When the save button is clicked the user name should be added to the user panel on the right-hand side of the header; modal should close
+    -   After save, a user menu should appear with the following buttons:
+        -   Library
+        -   Profile
+        -   Settings
+        -   Log Out
+    -   Library button should display a dropdown that contains the non-activated widget buttons; library button functionality should replicate as described above
+    -   Profile button should display a dropdown informing user of future functionality
+    -   Settings button should display a dropdown that contains all available user setting options found on the app.
+    -   Log Out button should produce a modal
+    -   Log Out modal should offer user the ability to close the panel
+    -   When a user logs out the user panel should hide and the Log In button should return
+
+-   ### Library
+    -   Click on a library button in the Library Panel of the desktop view: the widget panel should be added to the dashboard; the library button is removed from the Library; library button is also removed from the Library Dropdown in the user menu
+    -   When the number of Library buttons exceeds max height of the Library panel, a scroll bar should appear
+    -   Settings cog should be present close to the top Library title
+    -   Clicking on the cog should display a modal
+    -   Modal should offer user ability to set the position of the desktop Library Panel
+    -   When the user click the right position button, the Library Panel moves flush right;
+    -   When the user click the left position button, the Library Panel moves flush left (default); 
+    -   Modal should hide when Close is clicked
+
+-   ### Project Panels
+    -   When a user clicks the Close Panel button:
+        -   The project panel should be removed from the dashboard
+        -   The project library button should be added back to the Library Panel and Library dropdown
+
+
+-   ### Widget Panels
+    -   GitHub Panel
+    -   Open Weather Panel
+
+-   ### User Settings
+    -   Persistence
+    -   Color Scheme
+    -   Library Position
+
+-   ### Mobile
     -   Nav Dropdown
     -   Library Dropdown
-### User Settings
--   Persistence
--   Color Scheme
--   Library Position
-
-### User Login
--   
-
-### Project Panels
--   Project Panel
-
-### Widget Panels
--   GitHub Panel
--   Open Weather Panel
 
 <a name="TESTVALID"></a>
 ## Validation
@@ -483,6 +529,9 @@ Below are placeholders:
 -   The arrow pointer on the weather widget doesn't line up correctly when the user hovers the cog instruction line in the top nav.
 -   Percent Complete, CPI, and SV fields on Project Add modal should be validate for acceptable value range; increment (increase/decrease) buttons are very small
 -   Increment buttons should not display on Zipcode input field on Open Weather widget settings modal
+-   Library Buttons:
+    -   The button icon and button text do not :hover simultaneously
+    -   A black box appears when a user clicks a library button (also occures in Delete Project modal)
 
 #### FIXED 
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dashboard, and delete projects functionality when refreshing the browser.
