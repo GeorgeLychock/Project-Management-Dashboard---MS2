@@ -39,8 +39,8 @@
 
 <a name="UC"></a>
 # Use Case
-A configurable user dashboard that displays and organizes key metrics and other data from native or third-party datastreams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party datastreams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These datastreams are congifured as widget elements that can be added and removed from the main dashboard viewport. A widget library is visible as a menu giving the user the ablility to click various widgets on, and off, the main dashboard viewport.
-A limited number of dashboard settings will be available from a settings cog that will enhance the user experience. Activated widgets and viewport/widget settings should be persistent when a user returns to the app.
+A configurable user dashboard that displays and organizes key metrics and other data from native or third-party data streams such as a project schedule or a to-do-list, or personal tools like a weather or email app. The third-party data streams can come from a sister API of the dashboard app or some API from a vendor such as Smartsheet or OpenWeather. These data streams are configured as widget elements that can be added and removed from the main dashboard view port. A widget library is visible as a menu giving the user the ability to click various widgets on, and off, the main dashboard view port.
+A limited number of dashboard settings will be available from a settings cog that will enhance the user experience. Activated widgets and view port/widget settings should be persistent when a user returns to the app.
 
 >
 > ### Notes
@@ -49,8 +49,8 @@ A limited number of dashboard settings will be available from a settings cog tha
 >-   This is a front-end website that gives the user methods to add content and change appearance.
 >-   The project consists of one page, a dashboard.
 >-   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
->-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile viewports are minimalized while keeping main functionality and components/content intact.
->-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dahsboard configurations for styling and panel/button visiiblity.
+>-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile view ports are minimized while keeping main functionality and components/content intact.
+>-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dashboard configurations for styling and panel/button visibility.
 >-   The user stories below indicate a "logged-in user". Since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 <a name="US"></a>
@@ -81,14 +81,14 @@ As a logged in project manager, I want to see project details of the projects af
     -   I can view the project Owner
     -   I can view the project Description
     -   I can view project percent complete to date
-    -   I can view project Cost Performanace Index (CPI) to date
+    -   I can view project Cost Performance Index (CPI) to date
     -   I can view the project Schedule Variance (SV) to date
     -   I can view a link to the live development site, if one exists
 
 ### Story 4 done
 As a logged in project manager, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
-    -   Active widegts are present when I return to the site
+    -   Active widgets are present when I return to the site
     -   Buttons for any available widgets not already activated to the dashboard are present in the Library
 
 ### Story 5
@@ -98,7 +98,7 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   I can change the color Scheme using a button to a dark scheme
     -   I can change the scheme back to light
     -   The color scheme I used last will be present when I come back to the site
-    -   I can position the Library Panel on the right or the left of desktop or tablet viewports
+    -   I can position the Library Panel on the right or the left of desktop or tablet view ports
 
 ### Story 6
 As a user, I want instruction or an indication of how and where to change dashboard visual settings
@@ -108,14 +108,14 @@ As a user, I want instruction or an indication of how and where to change dashbo
 <a name="UXUI"></a>
 # UX/UI
 ## Requirements
--   Widgets Library Viewport
+-   Widgets Library View Port
     -   A settings cog should be present to give users access to the following changeable settings:
         -   Change Library right/left position
     -   The cog should activate a modal window
 -   Widget Library Buttons
     -   Each button panel needs to display the project name and an Add button
     -   Determine a method for making sure that only one instance of each widget is added or removed when clicking the Add/Close buttons
--   Dashboard Viewport
+-   Dashboard View Port
     -   A settings cog should be present to give users access to the following changeable settings:
         -   Change background color
     -   The cog should activate a modal window
@@ -127,7 +127,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   The background styling should be an indicator it is daytime(light blue) or nighttime (dark blue)
     -   Ability for user to input zip code or location to access weather data (currently default setting is Quincy, MA, USA locale); should activate a modal
 -   Adding/Removing User Projects
-    -   App should demontrate what adding a project to the dashboard and library is like.
+    -   App should demonstrate what adding a project to the dashboard and library is like.
     -   The projects should be persistent when the user relaunches the browser
     -   The user should be able to delete a project
 -   Instructional text and tips should not take up much dashboard space but be effective in message and visual queues.
@@ -140,7 +140,9 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   User Menu
     -   Create a button panel in the user panel. Button 1: Library dropdown; Button 2: Profile dropdown; Button 3: Settings dropdown
 -   User Menu Tool Tips
-    -   A simple, lighweight tooltip should display when user hovers user menu icons
+    -   A simple, lightweight tooltip should display when user hovers user menu icons
+-   User Settings dropdown for the User Menu
+    -   Consolidate all user settings available into one dropdown
 
 ## Technical Requirements for this project:
 -   Use template literals
@@ -150,7 +152,8 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Connect app to an open source api
 -   Limit duplication of code, use functions effectively
 -   Write Jasmine tests when possible, time permitted
--   Use JSHint to check javascript syntax
+-   Use JSHint to check Javascript syntax
+-   Use arrow functions, if possible/needed
 
 ## Future Features
 -   A Calendar widget
@@ -161,7 +164,6 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Add wind speed, wind chill, and time zone data to panel view
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
 -   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
--   Build user Settings dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
 -   You can currently save a project with the same name; that might not be a desired event or a confirmation should be presented
 
@@ -183,10 +185,10 @@ As a user, I want instruction or an indication of how and where to change dashbo
         -   Desktop Look and Feel - Dark - [View](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/look-and-feel/desktop-dark.png)
 
 ## Dashboard Structure
--   Nav, Header, and Banner sections span the top of the desktop viewport (vp)
--   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop viewport;  these will be stacked in mobile vp.
--   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop viewport
--   A footer section spans the bottom of all viewports
+-   Nav, Header, and Banner sections span the top of the desktop view port (vp)
+-   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop view port;  these will be stacked in mobile vp.
+-   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop view port
+-   A footer section spans the bottom of all view ports
 -   A significant amount of structure and js is needed to move the Library Panel from a column in desktop/mobile view to a Bootstrap Dropdown in mobile view, please see comments for more information
 
 <a name="TECH"></a>
@@ -197,7 +199,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 
 ## Data Structure and Flow
 -   The widgetID (for projects and widgets/tools) drives everything; it is the unique ID for any content added to the Dashboard and allows the app to target and track what data is being displayed.
--   The Library buttons are duplicated for both desktop and mobile viewports since each displays the Libraries in completely different ways. There is an extra function and markup to support having the Library as a 3col panel in desktop, but featured as a dropdown in mobile.
+-   The Library buttons are duplicated for both desktop and mobile view ports since each displays the Libraries in completely different ways. There is an extra function and markup to support having the Library as a 3col panel in desktop, but featured as a dropdown in mobile.
 -   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the widgetIDs so that the Dashboard can be built again upon the app being relaunched.
 [widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 -   For Projects data, I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
@@ -223,9 +225,9 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   There are 3 JS files: script.js contains most reused and custom scripts called by custom functions in projects.js and widget.js. Both project.js and widget.js are very similar and control how panels are added to the main dashboard sections. These are separated because 1) each dashboard section stores active widget data locally in different localStorage variables; 2) the markup and data retrieval for the API data is different enough to warrant separate functions from the functions that add the project panels to the dashboard. Otherwise every effort was taken to keep duplication of code to a minimum.
 
 
-## Technical and Scope Contraints
+## Technical and Scope Constraints
 -   The site will not have access to a database. All project data will come from JSON files to simulate widget data streams.
--   The project will consist of just a landing page/dashboard; no secondary pages will be active. The focus of the project's first release is to address how the user can configure their primary viewport: a summary of all their projects, displayed in a dashboard.
+-   The project will consist of just a landing page/dashboard; no secondary pages will be active. The focus of the project's first release is to address how the user can configure their primary view port: a summary of all their projects, displayed in a dashboard.
 -   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget available to the dashboard; its possible these values would be created with a Create Project module or Third Party app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js file:
 `        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];`
 
@@ -282,7 +284,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Update Dark view styles
     -   Style dashboard settings modal
     -   Add clear dashboard button (in dashboard settings?)
-    -   wireframe mobile home page
+    -   Wireframe mobile home page
     -   Create a Library settings modal to change R/L position of Library
 
 -   ** Second Mentor Session
@@ -297,7 +299,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 
 -   Sprint 6 3/29 - 4/4
     -   Add Project Add Modal to Nav
-        -   Create LocalStorage schema for user setting saving
+    -   Create LocalStorage schema for user setting saving
     -   Add Project Delete Modal
     -   Style Project Add/Del Modals
     -   Add validation to Add Nodal
@@ -323,7 +325,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 
 -   Sprint 10 4/26 - 5/2
     -   Add GitHub API widget to Library
-    -   Add GitHub API widget to Dashbaord
+    -   Add GitHub API widget to Dashboard
 
 -   ** Third Mentor Session
 -   5/4 - 5/5 - Sprint Planning
@@ -335,19 +337,19 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   Add dev site web link to Add Project modal
     -   FIX: Delete Project modal bug
     -   FIX: Cog tip bug
-    -   Add infomation link to Nav
+    -   Add information link to Nav
 
 -   Sprint 12 5/10 - 5/16
     -   Create a modal to have a user log in
     -   Save user login data to LS
-    -   When creating new project, default Owner to logged in user, but give ability to chnge owner
+    -   When creating new project, default Owner to logged in user, but give ability to change owner
     -   Apply Toastr notifications
 
 -   Sprint 13 5/17 - 5/23
     -   Submit for Peer Review
     -   Breakout Testing sections in RM
     -   Test
-    -   Add device and browser compatability section in RM
+    -   Add device and browser compatibility section in RM
     -   Submit to Maranatha
 
 <a name="TEST"></a>
@@ -388,7 +390,7 @@ Used test writing guidelines from the following resources:
         -   Start Date (date format)
         -   Due Date (date format)
         -   Percent Complete (number format, valid from 0-100)
-        -   Cost Performanace Index (number format, valid from 0.0 - 2.0)
+        -   Cost Performance Index (number format, valid from 0.0 - 2.0)
         -   Schedule Variance (number format, valid from 0.0 - 2.0)
     -   Project Name is mandatory; indicated by asterisk, color red
     -   No other fields should be mandatory
@@ -441,8 +443,8 @@ Below are placeholders:
     -   Tested all usersettings.js functions in JSHint 4/7/21
 
 ### (Jasmine) Test Sequences:
--   Create a library button that turns a div ON in the active widet viewport
--   Create a library button that turns a div OFF in the active widet viewport
+-   Create a library button that turns a div ON in the active widget view port
+-   Create a library button that turns a div OFF in the active widget view port
 -   Correctly render data from an external JSON files
 
 <a name="TESTSTORIES"></a>
@@ -453,7 +455,7 @@ Below are placeholders:
             1.  The most detailed Content is never more than **two clicks** away from home.
             2.  Home is always **one click** away from anywhere on the site.
             3.  Nav dropdown (collapse) is *prohibited*
-            4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any viewport.
+            4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any view port.
         -   ##### Results
             -   (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.
             -   (3) PASS No nav icon nor dropdown exists'
@@ -468,14 +470,14 @@ Below are placeholders:
 <a name="BUGS"></a>
 ## Bugs / Fixes
 ### Fixed Bugs after Testing
--   Issue: On tablet viewports 
-    -   Fix: Adjusted the row divs style to be completely responsive across all viewports, portrait and landscape.
+-   Issue: On tablet view ports 
+    -   Fix: Adjusted the row divs style to be completely responsive across all view ports, portrait and landscape.
 
 ### Known Bugs
 #### OPEN 
--   Open Weather - Current time displays a negative value befor 12pm
+-   Open Weather - Current time displays a negative value before 12pm
 -   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
--   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libaries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
+-   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libraries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
 -   EFFICIENCY MARKER: [script.js:removeWidgetID] The code for deleting a project or removing a dashboard panel from the local storage array should be made into arrow function(s) if possible
 -   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project 2) When a user creates another project without closing the Add Project modal
 -   The arrow pointer on the weather widget doesn't line up correctly when the user hovers the cog instruction line in the top nav.
@@ -483,14 +485,14 @@ Below are placeholders:
 -   Increment buttons should not display on Zipcode input field on Open Weather widget settings modal
 
 #### FIXED 
--   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dasboard, and delete projects funtionality when refreshing the browser.
-    -   FIX: Recoded the routine that removes widget IDs from local storage; created a common function in script.js to handle removing IDs
+-   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dashboard, and delete projects functionality when refreshing the browser.
+    -   FIX: Recorded the routine that removes widget IDs from local storage; created a common function in script.js to handle removing IDs
 -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added buttons
 -   When reentering the site or refreshing the browser the scenario class is not being added to the project panel heads on the dashboard in dark mode.
     -   FIX: Added whatColorScheme() and a selector scheme to capture the current color scheme setting and apply it to any added panels
 -   Hover Cog Hint in Nav displays a "Click Me!" next to the icon in the nav text
-    -   FIX: Adjusted selectors so the Click Me! tip onlt displays next to cogs in the Library and Dashboard. 
+    -   FIX: Adjusted selectors so the Click Me! tip only displays next to cogs in the Library and Dashboard. 
 
 <a name="DPLY"></a>
 ## Deployment
@@ -552,6 +554,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code Credits
 -   All Reused styles are in reused-styles.css
+-   Scrollbar CSS Styling: from Digital Ocean: https://www.digitalocean.com/community/tutorials/css-scrollbars, in reused-styles.css
 -   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
     Find code use indicated by "CODE REUSE - XMLHttpRequest Callback"
         `gd(JSON.parse(this.responseText));`
@@ -576,6 +579,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
         for (i = 0; i < x.length ;i++) {
           x.elements[i].value = "";
         }
+
+-   [Digital Ocean : How To Style Scrollbars with CSS](https://www.digitalocean.com/community/tutorials/css-scrollbars)
 
 ## Content
 
