@@ -309,12 +309,12 @@ function saveProjectDataModal() {
         toastr.success('Your project ' + passFormData.name + ' has been saved!', 'Project Saved!');
 
         // Build and display the new project library button; show user that the data was saved
-        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(passFormData));
+        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(passFormData)), $("#saveConfirmationModal").text("Project data saved to your local browser storage. This information will be available to the dashboard when you return unless you clear browser cache.");
     }
 }
 
 function clearProjectFormAlerts() {
-    return $("#saveConfirmationModal").html(""), $("#valAlert01").html(""), $("#delConfirmationModal").text("");
+    return $("#saveConfirmationModal").text("You can add projects to your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library"), $("#valAlert01").html(""), $("#delConfirmationModal").text("Click on a project to delete it from local storage.");
 }
 
 /* Delete Project Functions */
@@ -327,7 +327,7 @@ function createDeleteProjectList() {
                 var elementID = delWidgetIDList[i];
                 getLocalData(elementID, function(localData) {
                     // Add project name to the delete list
-                    return $("#delProjectListModal").append(buildProjectDelBtnMU(localData), $("#delConfirmationModal").text(""));
+                    return $("#delProjectListModal").append(buildProjectDelBtnMU(localData));
                 });
             }
         }
@@ -366,7 +366,7 @@ function delProject(wID, pName) {
 
         toastr.success('Your project ' + pn + ' has been deleted.', 'Project Deleted');
 
-        return $("#delConfirmationModal").text("");
+        return $("#delConfirmationModal").text('Your project ' + pn + ' has been deleted.', 'Project Deleted');
     }
 }
 

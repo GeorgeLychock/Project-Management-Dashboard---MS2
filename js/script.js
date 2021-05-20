@@ -216,7 +216,7 @@ $(document).ready(function() {
 
                     }
                 } else {
-                    localStorage.setItem(localStorageName, savedWidgetIDs);
+                    localStorage.setItem(localStorageName, updatedWidgetIDs);
                 }
         } // else capture error, if needed
     }

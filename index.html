@@ -450,9 +450,9 @@
                                     </div>
                                 </div>
                             </form>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveProjectDataModal()">Save Project Data</button>
+                            <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
                         </div>
-                        <p id="saveConfirmationModal" name="saveConfirmationModal">You can add and delete projects from your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</p>
+                        <div id="saveConfirmationModal" name="saveConfirmationModal">You can add projects to your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
@@ -476,7 +476,7 @@
                     <div class="modal-body">
                         <div>My Saved Projects :</div>
                         <div class="pmddelmodal" id="delProjectListModal"></div>
-                        <p id="delConfirmationModal" name="delConfirmationModal"></p>
+                        <div id="delConfirmationModal" name="delConfirmationModal">Click on a project to delete it from local storage.</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" onclick="clearProjectFormAlerts()">

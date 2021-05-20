@@ -329,6 +329,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 3px;
 }
 
+.pmd-un-confirm {
+    margin-top: 10px;
+}
+
 /* User Panel Library Dropdown */
 #usermenu-projects-library{
     padding: 0 10px;
@@ -410,8 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #saveConfirmationModal {
-    margin-top: 5px;
-    color: green;
+    margin-top: 10px;
 }
 
 /* Dashboard */
@@ -643,7 +646,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-un-confirm {
         margin-top: 5px;
-        color: green;
+        color: black;
     }
 
     .pmd-un-confirm-red {
