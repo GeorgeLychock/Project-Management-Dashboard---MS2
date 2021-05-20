@@ -166,6 +166,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
 -   You can currently save a project with the same name; that might not be a desired event or a confirmation should be presented
+-   Add Update Project functionality to the app
 
 <a name="DES"></a>
 # Design
@@ -532,6 +533,7 @@ Below are placeholders:
 -   Library Buttons:
     -   The button icon and button text do not :hover simultaneously
     -   A black box appears when a user clicks a library button (also occures in Delete Project modal)
+-   Delete Project modal does not close when user confirms to delete a project
 
 #### FIXED 
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dashboard, and delete projects functionality when refreshing the browser.
