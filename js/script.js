@@ -78,6 +78,26 @@ $(document).ready(function() {
     }
     /* /CODE REUSE - Convert UNIX Timestamp */
 
+    /* CODE REUSE - Toastr Setup */
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        };
+    /* /CODE REUSE - Toastr Setup */
+
 /* ******* END REUSED JAVASCRIPT ********** */
 
 
@@ -222,17 +242,39 @@ $(document).ready(function() {
           }
       }
 
-    function validateInput(value, iField) {
+    function validateInput(vi) {
         // Validate project form data
-        var checkValue = value;
-        var targetName = iField;
-        if (checkValue == "") {
-          return false;
-          // Next check against a list of bad words and a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
-        } else if (checkValue == "badword") {
-            alert(targetName + " should be nicer.");
-          return false;
+        var valItemsList = vi;
+        var valItemsFailed = [];
+        // clear prior alerts
+        $("#valAlert01").html(""), $("#valAlert02").html("");
+
+            console.log("This is the passed object: " + valItemsList);
+
+        for(let i in valItemsList) {
+
+            console.log("This is i: " + i);
+            console.log("This is i.Val: " + valItemsList[i]);      
+
+            switch (i) {
+                case 'name':
+                    if (valItemsList[i] == "") {
+                        valItemsFailed.push("name");
+
+                        console.log("This is name added to return array: " + valItemsFailed[0]);
+
+                    // Next check against a list of bad words and a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
+                    } else if (valItemsList[i] == "badword") {
+                        alert(i + " should be nicer.");
+                        valItemsFailed.push("name");
+                    };
+                case 'url':
+                    if (valItemsList[i] == "badurl") {
+                        valItemsFailed.push("url");
+                    };
+            }
         }
+        return valItemsFailed;
     }
 
 /* ******* END CUSTOM COMMON JAVASCRIPT ********** */

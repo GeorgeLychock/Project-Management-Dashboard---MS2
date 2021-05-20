@@ -142,6 +142,8 @@ function buildProjectPanelMU(data) {
 
     let projectData = data;
 
+    console.log("This is my saved url: " + projectData.livesite);
+
     //convert metrics data to % scales for progress bar settings
     let cpi = projectData.cpi/2 * 100;
     let sv = projectData.sv/2 * 100;
@@ -178,7 +180,7 @@ function buildProjectPanelMU(data) {
                 <div class="pmd-prg-bar-title">SV: </div>
                 <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
-            <div class="pmd-project-data2"><a href="${projectData.liveSite}" target="_blank">Development Site Link</a></div>
+            <div class="pmd-project-data2"><a href="${projectData.livesite}" target="_blank">Go To Project Site</a></div>
         </div>
     </div>`;
 }
@@ -248,11 +250,39 @@ function saveProjectDataModal() {
        passFormData.percentcomplete = document.getElementById("projectFormModal").elements.namedItem("percentCompleteModal").value;
        passFormData.cpi = document.getElementById("projectFormModal").elements.namedItem("CPIModal").value;
        passFormData.sv = document.getElementById("projectFormModal").elements.namedItem("SVModal").value;
-    
+       passFormData.livesite = document.getElementById("projectFormModal").elements.namedItem("projectURLModal").value;
+
+       console.log("This is mu URL" + passFormData.livesite);
+
+        // create an object of items to be validated
+        let valItemsList = {
+            name: passFormData.name,
+            url: passFormData.livesite
+        };
+
+            console.log("This is the collected object: " + valItemsList);
+
        // Validate data, and if OK, assign widgetID and save data, build button
-       let validateInputReply = validateInput(passFormData.name, "Name");
-       if (validateInputReply == false) {
-           return $("#valAlert01").html("* Required Field");
+       let validateInputReply = validateInput(valItemsList);
+
+            console.log("This is the returned result: " + validateInputReply);   
+
+        if(validateInputReply.length) {
+            for(let i in validateInputReply) {
+
+                console.log("This is looping thru returned array" + validateInputReply[i]);
+
+                switch(validateInputReply[i]) {
+                    case 'name':
+                        // Set alerts on all required fields
+                        $("#valAlert01").html("* Required Field");
+                        break;
+                    case 'url':
+                    // Set alert on URL fields
+                        $("#valAlert02").html("* Please enter a validate url");
+                        break;
+                }
+            }
        } else {
         //Add a unique-ish widget ID to the data
         passFormData.widgetID = "widget" + Math.floor(Math.random()*10000000);
@@ -276,8 +306,10 @@ function saveProjectDataModal() {
         var localStoreDataName = passFormData.widgetID;
         setLocalStorageData(localStoreDataName, passFormData);
 
+        toastr.success('Your project ' + passFormData.name + ' has been saved!', 'Project Saved!');
+
         // Build and display the new project library button; show user that the data was saved
-        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(passFormData)), $("#saveConfirmationModal").html("Project data saved to your local browser storage. This information will be available to the dashboard when you return unless you clear browser cache.");
+        return $("#projects-library").append(buildProjectLibBtnMU(passFormData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(passFormData));
     }
 }
 
@@ -332,8 +364,9 @@ function delProject(wID, pName) {
         //remove del button
         $("#widget-btn-del-" + elementID).remove();
 
-        // return $("#delProjectListModal").text("Your project " + pn + " has been deleted");
-        return $("#delConfirmationModal").text("Your project " + pn + " has been deleted");
+        toastr.success('Your project ' + pn + ' has been deleted.', 'Project Deleted');
+
+        return $("#delConfirmationModal").text("");
     }
 }
 
@@ -342,7 +375,7 @@ function buildProjectDelBtnMU(data) {
     let widgetData = data;
 
     return `<div class="pmd-btn-library pmd-btncolor-1" id="widget-btn-del-${widgetData.widgetID}">
-    <button class="pmd-icon-03" onclick="delProject('${widgetData.widgetID}', '${widgetData.name}')">
+    <button class="pmd-icon-03" data-dismiss="modal" onclick="delProject('${widgetData.widgetID}', '${widgetData.name}')">
     <i class="bi bi-x pmd-acolor-5" aria-hidden="true"></i>
     <div id="wName" class="pmd-dinline pmd-icon-01 pmd-acolor-5 wName">${widgetData.name}</div>
     </button>
