@@ -142,8 +142,6 @@ function buildProjectPanelMU(data) {
 
     let projectData = data;
 
-    console.log("This is my saved url: " + projectData.livesite);
-
     //convert metrics data to % scales for progress bar settings
     let cpi = projectData.cpi/2 * 100;
     let sv = projectData.sv/2 * 100;
@@ -252,8 +250,6 @@ function saveProjectDataModal() {
        passFormData.sv = document.getElementById("projectFormModal").elements.namedItem("SVModal").value;
        passFormData.livesite = document.getElementById("projectFormModal").elements.namedItem("projectURLModal").value;
 
-       console.log("This is mu URL" + passFormData.livesite);
-
         // create an object of items to be validated
         let valItemsList = {
             name: passFormData.name,
@@ -348,8 +344,12 @@ function delProject(wID, pName) {
         //delete project data
         localStorage.removeItem(elementID);
 
-        // remove active widgetID from localStorage
+        console.log($("#" + elementID).length);
+
+        // remove active widgetID from localStorage, if its active
+        if ($("#" + elementID).length) {
             removeWidgetID("activeProjects", elementID);
+        }
 
         // remove widgetID from master list in localStorage
             removeWidgetID("allProjectIDs", elementID);

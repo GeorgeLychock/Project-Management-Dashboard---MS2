@@ -196,28 +196,19 @@ $(document).ready(function() {
         if (localStorage.getItem(localStorageName)) {
             let savedWidgetIDs = localStorage.getItem(localStorageName).split(',');
 
-                console.log("IDs saved to the local object" + savedWidgetIDs);
+                console.log("IDs saved to " + localStorageName + ": " + savedWidgetIDs);
 
             let delWidgetIndex = savedWidgetIDs.indexOf(elementID);
 
-                console.log("Index" + delWidgetIndex);
+                console.log("Index of widget to be removed: " + delWidgetIndex);
 
-            var updatedWidgetIDs = savedWidgetIDs.splice(delWidgetIndex, 1);
+            var removedWidgetIDs = savedWidgetIDs.splice(delWidgetIndex, 1);
 
-                console.log("Updated Array for upload" + updatedWidgetIDs);
-                console.log("Updated Array for upload 2" + savedWidgetIDs);
+                console.log("Widget ID for removal: " + removedWidgetIDs);
+                console.log("Updated Array for upload: " + savedWidgetIDs);
 
-                //if that was the last/only widget ID saved, delete the storage object entirely
-                if (localStorageName == "activeProjects") {
-                    if (updatedWidgetIDs == "") {
-                        localStorage.removeItem("activeProjects");
+            localStorage.setItem(localStorageName, savedWidgetIDs);
 
-                        console.log("There was only one widget saved");
-
-                    }
-                } else {
-                    localStorage.setItem(localStorageName, updatedWidgetIDs);
-                }
         } // else capture error, if needed
     }
 

@@ -74,13 +74,6 @@ function loadUserSettings() {
             case "left": posLibLeft();
             break;
         }
-        // set username
-        let setUserName = checkSetJSON.username;
-        //if username is empty, show default avatar "?"
-        //do not show anything in username div
-        // else if username, show username in div
-        // show avatar
-        console.log(setUserName);
     } else {
         console.log("No user settings exist yet");
     }
