@@ -127,12 +127,14 @@ function turnProjectOff(widgetIdOff) {
         // YES: Retrieve data and rebuild the library button, and emove project panel from dashboard
         getLocalData(elementID, function(localData) {
             // Add project to the dashboard and remove the library button from both Desktop and Mobile views
+            toastr.success(localData.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
             return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(localData)), $("#" + elementID).remove();
         });
     } else {
         //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and emove project panel from dashboard
         var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
         getData(url, function(data) {
+            toastr.success(data.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
             return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data)), $("#" + elementID).remove();
         });
     }
@@ -271,11 +273,11 @@ function saveProjectDataModal() {
                 switch(validateInputReply[i]) {
                     case 'name':
                         // Set alerts on all required fields
-                        $("#valAlert01").html("* Required Field");
+                        $("#valPNameAlert01").html("* Required Field");
                         break;
                     case 'url':
                     // Set alert on URL fields
-                        $("#valAlert02").html("* Please enter a validate url");
+                        $("#valURLAlert01").html("* Please enter a validate url");
                         break;
                 }
             }

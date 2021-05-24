@@ -406,7 +406,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="valIndicator01">*</div><label for="projectNameModal">Project Name</label>
-                                        <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valAlert01"></div>
+                                        <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valPNameAlert01"></div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="projectOwnerModal">Project Owner</label>
@@ -446,7 +446,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="projectURLModal">Project Site URL</label>
-                                        <input type="url" id="projectURLModal" name="projectURLModal" class="form-control"><div class="valAlert01" id="valAlert02"></div>
+                                        <input type="url" id="projectURLModal" name="projectURLModal" class="form-control"><div class="valAlert01" id="valURLAlert01"></div>
                                     </div>
                                 </div>
                             </form>
@@ -504,9 +504,9 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="valIndicator01">*</div><label for="weatherZipModal">Enter Zipcode</label>
-                                        <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valAlert02"></div>
+                                        <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valOpenWeatherAlert01"></div>
                                         <div class="valIndicator01">*</div><label for="weatherLocationModal">or Enter Location</label>
-                                        <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valAlert03"></div>
+                                        <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valOpenWeatherAlert02"></div>
                                     </div>
                                 </div>
                             </form>
@@ -539,14 +539,14 @@
                                         <div class="valIndicator01">*</div><label for="userNameModal">Enter Your
                                             Username</label>
                                         <input type="text" id="userNameModal" name="userNameModal" class="form-control">
-                                        <div class="valUserNameAlert01" id="valUserNameAlert01"></div>
+                                        <div class="valAlert01" id="valUserNameAlert01"></div>
                                     </div>
                                 </div>
                             </form>
-                            <button type="button" class="btn btn-primary" onclick="saveUserNameModal()" data-dismiss="modal">Save Username</button>
+                            <button type="button" class="btn btn-primary" onclick="saveUserNameModal()">Save Username</button>
                         </div>
-                        <p id="saveUserConfirmModal" name="saveUserConfirmModal">Simulate your login by adding your username
-                            here.</p>
+                        <div id="saveUserConfirmModal" name="saveUserConfirmModal" class="pmd-login-modal-hint">Simulate your login by adding your username
+                            here.</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"

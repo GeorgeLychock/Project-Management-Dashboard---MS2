@@ -317,6 +317,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
+.pmd-login-modal-hint {
+    margin-top: 10px;
+}
+
 .pmd-up-col {
     padding: 10px 10px 5px 10px;
 }
@@ -644,16 +648,6 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
     }
 
-    .pmd-un-confirm {
-        margin-top: 5px;
-        color: black;
-    }
-
-    .pmd-un-confirm-red {
-        margin-top: 5px;
-        color: red;
-    }
-
     .pmd-dashboard {
         background-color: inherit;
     }
@@ -759,14 +753,4 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-lib-right-fix {
     padding-right: 15px;
     padding-left: 0px;
-}
-
-/* Test CSS */
-.test-pos-parent {
-    
-}
-
-.test-pos-child {
-    position: absolute;
-
 }

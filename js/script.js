@@ -234,13 +234,13 @@ $(document).ready(function() {
       }
 
     function validateInput(vi) {
-        // Validate project form data
+        // Validate any input from the user. Intention is to centralize validation processing of any user input.
         var valItemsList = vi;
         var valItemsFailed = [];
         // clear prior alerts
-        $("#valAlert01").html(""), $("#valAlert02").html("");
+        $(".valAlert01").html("");
 
-            console.log("This is the passed object: " + valItemsList);
+            console.log("This is the passed object: " + JSON.stringify(valItemsList));
 
         for(let i in valItemsList) {
 
@@ -249,20 +249,57 @@ $(document).ready(function() {
 
             switch (i) {
                 case 'name':
+                    // Validation Rule #1
                     if (valItemsList[i] == "") {
                         valItemsFailed.push("name");
 
                         console.log("This is name added to return array: " + valItemsFailed[0]);
 
-                    // Next check against a list of bad words and a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
+                    // Validation Rule #2, check against a list of bad words and/or a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
                     } else if (valItemsList[i] == "badword") {
                         alert(i + " should be nicer.");
                         valItemsFailed.push("name");
-                    };
+                    }
+                    break;
                 case 'url':
+                    // Validation Rule #1, need to add a reg exp here to validate url
                     if (valItemsList[i] == "badurl") {
                         valItemsFailed.push("url");
-                    };
+                    }
+                    break;
+                case 'username':
+                    // Validation Rule #1
+                    if (valItemsList[i] == "") {
+                        valItemsFailed.push("username");
+
+                        console.log("This is flag added to return array: " + valItemsFailed[0]);
+
+                    // Validation Rule #2
+                    } else if (valItemsList[i] == "badword") {
+                        alert(i + " should be nicer.");
+                        valItemsFailed.push("username");
+                    }
+                    break;
+                // currently the following two cases check for the same result, future additional rules can be added targeting specific criteria for each field
+                case 'zipcode':
+                    // Validation Rule #1
+                    
+                    if (valItemsList["zipcode"] == "" && valItemsList["location"] == "") {
+                        valItemsFailed.push("zipcode");
+
+                        console.log("This is ZIPCODE added to return array: " + valItemsFailed[0]);
+
+                    }
+                    break;
+                case 'location':
+                    // Validation Rule #1
+                    if (valItemsList["location"] == "" && valItemsList["zipcode"] == "") {
+                        valItemsFailed.push("location");
+
+                        console.log("This is LOCATION added to return array: " + valItemsFailed[0]);
+
+                    }
+                    break;
             }
         }
         return valItemsFailed;

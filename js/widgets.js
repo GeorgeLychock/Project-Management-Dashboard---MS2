@@ -281,16 +281,37 @@ function saveOpenWeatherLocation() {
     let enteredZip = document.getElementById("openWeatherFormModal").elements.namedItem("weatherZipModal").value;
     let enteredLocation = document.getElementById("openWeatherFormModal").elements.namedItem("weatherLocationModal").value;
 
-    console.log(enteredZip, enteredLocation);
+        console.log(enteredZip, enteredLocation);
 
     //validate entered zip and location
-    let validateZipReply = validateInput(enteredZip, "Zipcode");
-    let validateLocationReply = validateInput(enteredLocation, "Location");
+    let valItemsList = {
+        zipcode: enteredZip,
+        location: enteredLocation
+    };
 
-    console.log(validateZipReply, validateLocationReply);
+    console.log("This is the passed object from Open Weather: " + JSON.stringify(valItemsList));
 
-    if (validateZipReply == false && validateLocationReply == false) {
-        return $(".valAlert01").html("* Required Field");
+    let validateInputReply = validateInput(valItemsList);
+
+        console.log("This is the array returned to Open Weather: " + validateInputReply);
+        console.log("This is the length of the array: " + validateInputReply.length);
+
+    if(validateInputReply.length) {
+        for(let i in validateInputReply) {
+
+            console.log("This is looping thru returned array for OPEN WEATHER" + validateInputReply[i]);
+
+            switch(validateInputReply[i]) {
+                case 'zipcode':
+                    // Set alerts on all required fields
+                    $("#valOpenWeatherAlert01").html("* Required Field");
+                    break;
+                case 'location':
+                // Set alert on URL fields
+                    $("#valOpenWeatherAlert02").html("* Required Field");
+                    break;
+            }
+        }
     } else {
         //Clear form
         /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */

@@ -126,8 +126,16 @@ function saveUserNameModal() {
     passFormData.username = document.getElementById("loginFormModal").elements.namedItem("userNameModal").value;
 
     // Validate data, and if OK, save data
-    let validateInputReply = validateInput(passFormData.username, "Name");
-    if (validateInputReply == false) {
+        // create an object of items to be validated
+        let valItemsList = {
+            username: passFormData.username
+        };
+
+    let validateInputReply = validateInput(valItemsList);
+
+    console.log("This is the returned result for username validation: " + validateInputReply);
+
+    if (validateInputReply == "username") {
         return $("#valUserNameAlert01").html("* Required Field");
 
     } else {
@@ -141,6 +149,7 @@ function saveUserNameModal() {
             x.elements[i].value = "";
         }
         createUserLoginPanel();
+        toastr.success('Your username ' + passFormData.username + ' has been saved!', 'User Logged In');
         return $("#valUserNameAlert01").html(""), $("#saveUserConfirmModal").html(`
         <div class="pmd-un-confirm">Username Saved!</div>
         `);
@@ -171,19 +180,19 @@ function createDeleteUsernameList() {
 function buildUserDelBtnMU(un) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1">
-    <button class="pmd-icon-03" onclick="logOut('${un}')" data-dismiss="modal">
+    <button class="pmd-icon-03" onclick="logOut('${un}')">
     <div class="pmd-dinline pmd-acolor-5">${un}</div>
     </button>
     </div>`;
 }
 
-function logOut(username) {
+function logOut(un) {
+    let pmdUsername = un;
     // remove username from localSTorage
     updateUserSettings("username", "");
     createUserLoginPanel();
-    return $("#logOutPanelListModal").html(""), $('#delUserConfirmModal').html(`
-    <div class="pmd-un-confirm-red">Username Removed!</div>`
-    ), $('#pmd-userpanel').addClass("pmd-hide");
+    toastr.success(pmdUsername + ' has been logged out!', 'User Logged Out');
+    return $("#logOutPanelListModal").html(""), $('#pmd-userpanel').addClass("pmd-hide");
 }
 
 
