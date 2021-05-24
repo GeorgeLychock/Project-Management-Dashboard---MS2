@@ -162,11 +162,15 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Add a project status indicator to the project panels.
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
+    -   Ideally the day/night background would change at the sutset time, currently set at 7pm
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
 -   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
 -   You can currently save a project with the same name; that might not be a desired event or a confirmation should be presented
 -   Add Update Project functionality to the app
+-   Enhance validation routines for all user input
+    -   Add max length restriction to username input
+-   Replace imported icon library with native SVG and styles
 
 <a name="DES"></a>
 # Design
@@ -534,6 +538,8 @@ Below are placeholders:
     -   The button icon and button text do not :hover simultaneously
     -   A black box appears when a user clicks a library button (also occures in Delete Project modal)
 -   Delete Project modal does not close when user confirms to delete a project
+    -   Tried $("#logOutPanel").modal("hide") and researching on internet, but keep getting "...not a function" errors
+-   Toastr notifcations shift when the user closes the modal that triggered the Toastr
 
 #### FIXED 
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dashboard, and delete projects functionality when refreshing the browser.
