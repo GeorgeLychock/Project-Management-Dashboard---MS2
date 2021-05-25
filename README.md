@@ -143,9 +143,10 @@ As a user, I want instruction or an indication of how and where to change dashbo
     -   A simple, lightweight tooltip should display when user hovers user menu icons
 -   User Settings dropdown for the User Menu
     -   Consolidate all user settings available into one dropdown
+-   Add Project modal should display the logged in user as the default Project Owner, if a user is logged in
 
 ## Technical Requirements for this project:
--   Use template literals
+-   Use template literals, if possible/needed
 -   Use ternary operator, if possible/needed
 -   Access and parse JSON data
 -   Store data in localStorage
@@ -154,23 +155,32 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Write Jasmine tests when possible, time permitted
 -   Use JSHint to check Javascript syntax
 -   Use arrow functions, if possible/needed
+-   Apply semantic markup
 
-## Future Features
+### Future Technical Requirements:
+-   Apply ARIA principles across the app; currently I have some structures properly configured with aria attributes but much of that was picked up from Bootstrap component code. Using https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics as a reference to learn ARIA.
+
+## Future Features / Updates
+-   Design and add a fav icon
 -   A Calendar widget
 -   A To-Do List widget (looked at ToDoist, it required Python or curl to make api calls)
 -   Ability to shuffle (re-position) the dashboard panels
 -   Add a project status indicator to the project panels.
 -   OpenWeather Widget
     -   Add wind speed, wind chill, and time zone data to panel view
-    -   Ideally the day/night background would change at the sutset time, currently set at 7pm
+    -   Ideally the day/night background would change at the sunset/sunrise times, currently set at 7pm/am
 -   Finish the project form validation function to check against a list of 'bad' words or other offending input
 -   Build a user Profile dropdown for the user menu (currently has a placeholder drop msg)
 -   Add animation to fill the progress bars in the project panels
 -   You can currently save a project with the same name; that might not be a desired event or a confirmation should be presented
 -   Add Update Project functionality to the app
 -   Enhance validation routines for all user input
-    -   Add max length restriction to username input
+    -   A validation function has been created but only simple rules have been coded at this point. The following are validation rules for future implementation:
+        -   Add max length restriction to username input
+        -   Validate the location format and length for Open Weather user settings
+        -   Add max length restriction to project name input
 -   Replace imported icon library with native SVG and styles
+-   Incorporate substring method to Project Descriptions and (maybe) Project Names in buttons.
 
 <a name="DES"></a>
 # Design
@@ -536,7 +546,7 @@ Below are placeholders:
 -   Increment buttons should not display on Zipcode input field on Open Weather widget settings modal
 -   Library Buttons:
     -   The button icon and button text do not :hover simultaneously
-    -   A black box appears when a user clicks a library button (also occures in Delete Project modal)
+    -   A black box appears when a user clicks a library button (also occures in Delete Project modal). Need to adjust Bootstrap styles for buttons.
 -   Delete Project modal does not close when user confirms to delete a project
     -   Tried $("#logOutPanel").modal("hide") and researching on internet, but keep getting "...not a function" errors
 -   Toastr notifcations shift when the user closes the modal that triggered the Toastr
