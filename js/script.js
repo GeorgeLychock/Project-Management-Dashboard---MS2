@@ -17,6 +17,8 @@ $(document).ready(function() {
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 gd(JSON.parse(this.responseText));
+            } else {
+                // capture error and give alert to user
             }
         };
         xhr.open("GET", url);
@@ -136,8 +138,14 @@ $(document).ready(function() {
 
     function getLocalData(eID, cb) {
         var elementID = eID;
-        var projectDataStrSaved = localStorage.getItem(elementID);
-        cb(JSON.parse(projectDataStrSaved));
+
+            console.log("passed ID or localStorage name: " + elementID);
+
+        let dataStrSaved = localStorage.getItem(elementID);
+
+        console.log("Retrieved data: " + dataStrSaved);
+
+        cb(JSON.parse(dataStrSaved));
     }
 
     function setProjectIDs(localName, wID) {

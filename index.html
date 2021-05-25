@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://kit.fontawesome.com/0f32915ec7.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
@@ -27,47 +29,53 @@
                     <nav class="navbar navbar-expand-lg navbar-light pmd-nar-bar">
                         <a class="navbar-brand pmd-corp-title" href="#">pmDashboard</a>
                         <button class="navbar-toggler pmd-nav-tog" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon pmd-nav-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#addProject">
+                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#addProject" onclick="setDefaultOwner()">
                                         <div>Add Project</div>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject" onclick="createDeleteProjectList()">
+                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject"
+                                        onclick="createDeleteProjectList()">
                                         <div>Delete Project</div>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <!-- Display Mobile version of the cog hint-->
-                                    <div class="d-lg-none pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
+                                    <div class="d-lg-none pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i
+                                            class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your
+                                        dashboard!</div>
                                 </li>
                             </ul>
                         </div>
                         <!-- Display Desktop version of the cog hint-->
-                        <div class="d-none d-lg-inline pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
+                        <div class="d-none d-lg-inline pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i
+                                class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
                     </nav>
                 </div>
             </div>
         </div>
         <!-- /Nav -->
         <!-- Banner -->
-        <div class="container-fluid">
-            <div class="row no-gutters">
-                <div class="col">
-                    <div class="pmd-banner-msg-block pmd-acolor-4">
-                        <div class="pmd-banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
-                            What is pmDashboard?
+        <aside role="banner">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <div class="pmd-banner-msg-block pmd-acolor-4">
+                            <div class="pmd-banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
+                                What is pmDashboard?
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
         <!-- /Banner -->
         <!-- Header -->
         <header>
@@ -195,11 +203,11 @@
         <!-- /Header -->
         <!-- Dashboard -->
         <article>
-            <section>
-                <div class="container-fluid pmd-dashboard">
-                    <div class="row pmd-row-main">
-                        <!-- Display Libraries Panel for desktop and tablet-->
-                        <div class="col-3 d-none d-md-block pmd-w-library pmd-bcolor-1">
+            <div class="container-fluid pmd-dashboard">
+                <div class="row pmd-row-main">
+                    <!-- Display Libraries Panel for desktop and tablet-->
+                    <div class="col-3 d-none d-md-block pmd-w-library pmd-bcolor-1">
+                        <section>
                             <div class="pmd-project-lib">
                                 <div>
                                     <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
@@ -213,10 +221,13 @@
                                 <h2 class="pmd-dinline pmd-hcolor-1">My Tools Library</h2>
                             </div>
                             <div id="widgets-library"></div>
-                            <p class="pmd-lib-directions">Click a widget button to add the Project or Tool panel to the Dashboard.</p>
-                        </div>
-                        <!-- //Display Libraries Panel for Desktop and Tablet-->
-                        <div class="col-md-9 pmd-dashboard-vp">
+                            <p class="pmd-lib-directions">Click a widget button to add the Project or Tool panel to the
+                                Dashboard.</p>
+                        </section>
+                    </div>
+                    <!-- //Display Libraries Panel for Desktop and Tablet-->
+                    <div class="col-md-9 pmd-dashboard-vp">
+                        <section>
                             <div class="row no-gutters">
                                 <div class="col">
                                     <div class="pmd-active-projects-head pmd-bcolor-4 pmd-pcolor-1">My Projects</div>
@@ -229,10 +240,10 @@
                                 </div>
                             </div>
                             <div class="row no-gutters pmd-active-widgets pmd-min-height-295" id="active-widgets-data"></div>
-                        </div>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </article>
         <!-- /Dashboard -->
         <!-- Footer -->
@@ -277,7 +288,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>
             </div>
@@ -321,7 +332,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
                 </div>
             </div>
         </div>
@@ -350,7 +361,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>
             </div>
@@ -384,7 +395,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>
             </div>
@@ -410,7 +421,8 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="projectOwnerModal">Project Owner</label>
-                                        <input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control">
+                                        <div id="projectOwner"></div>
+
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -479,7 +491,7 @@
                         <div id="delConfirmationModal" name="delConfirmationModal">Click on a project to delete it from local storage.</div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="close" data-dismiss="modal" onclick="clearProjectFormAlerts()">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
                             <span aria-hidden="true">Close</span>
                         </button>
                     </div>
@@ -515,7 +527,7 @@
                         <p id="saveLocalConfirmModal"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>
             </div>

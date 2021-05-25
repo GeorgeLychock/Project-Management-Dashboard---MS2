@@ -63,11 +63,10 @@ function createProjectLibBtns() {
         localStorage.setItem('allProjectIDs', projectBuildIDs);
     }
 
-    var elementID;
     // Build Library buttons based on widgetIDs not already activated to the dashboard
     for (let i in projectBuildIDs) {
 
-        elementID = projectBuildIDs[i];
+        var elementID = projectBuildIDs[i];
 
         // If the widget data is stored locally...
         if(localStorage.getItem(elementID)) {
@@ -225,6 +224,23 @@ function buildProjectLibBtnMUUsermenu(data) {
     <div class="pmd-lib-btn pmd-acolor-5${colorSchemeFinal02}">${data.name}</div>
     </button>
     </div>`;
+}
+
+function setDefaultOwner() {
+
+    var localStoreName = "userSettings";
+
+    if (localStorage.getItem(localStoreName)) {
+        getLocalData(localStoreName, function (localData) {
+            if (localData.username) {
+                return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control" value="${localData.username}"></input>`);
+            } else {
+                return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
+            }
+        });
+    } else {
+        return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
+    }
 }
 
 function saveProjectDataModal() {

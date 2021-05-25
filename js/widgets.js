@@ -177,6 +177,9 @@ function buildWidgetLibBtnMUUsermenu(data) {
 function buildWeatherPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
+
+        console.log("This is the weather object returned from API (main): " + apiData.weather.main);
+
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
     var weatherBGClass = "";
