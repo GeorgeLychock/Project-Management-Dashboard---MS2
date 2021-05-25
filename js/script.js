@@ -62,8 +62,13 @@ $(document).ready(function() {
         var dt = new Date(t * 1000);
         var hr = dt.getHours();
         if (hr < 12) { //custom js added by developer
+            console.log("This is the current hr" + hr);
             timeMer = "AM";
-            dhr = hr;
+            if (hr == 0) {
+                dhr = 12;
+            } else {
+                dhr = hr;
+            }
         } else {
             timeMer = "PM";
             dhr = hr - 12;
