@@ -5,6 +5,8 @@ $(document).ready(function() {
 
 })
 
+/* CONSTANTS */
+const JSONFolderURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 

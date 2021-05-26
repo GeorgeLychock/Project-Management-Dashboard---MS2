@@ -26,7 +26,7 @@ function createActiveProjects() {
                 });
             } else {
                 //NO: then the data is default JSON data, retrieve and build panel
-                var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+                var url = JSONFolderURL + elementID + ".json";
                 getData(url, function (data) {
                     return $("#active-projects-data").append(buildProjectPanelMU(data));
                 });
@@ -76,7 +76,7 @@ function createProjectLibBtns() {
             });
         } else {
             //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and remove project panel from dashboard
-            var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+            var url = JSONFolderURL + elementID + ".json";
             getData(url, function(data) {
                 return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data));
             });
@@ -100,7 +100,7 @@ function turnProjectOn(widgetIdOn) {
         });
     } else {
         //NO: if not a locally stored data, get data from JSON
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+        var url = JSONFolderURL + elementID + ".json";
 
         getData(url, function(data) {
     
@@ -131,7 +131,7 @@ function turnProjectOff(widgetIdOff) {
         });
     } else {
         //NO: then the data is default data stored in JSON, retrieve data and rebuild library button, and emove project panel from dashboard
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+        var url = JSONFolderURL + elementID + ".json";
         getData(url, function(data) {
             toastr.success(data.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
             return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data)), $("#" + elementID).remove();

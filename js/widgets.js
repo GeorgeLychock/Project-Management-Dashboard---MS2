@@ -18,7 +18,7 @@ function createActiveWidgets() {
 
         for (let i in activeWidgets) {
 
-            var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + activeWidgets[i] + ".json";
+            var keyURL = JSONFolderURL + activeWidgets[i] + ".json";
 
             if (activeWidgets[i] == "widget0001") {
                 // Grab the api key from the JSON file
@@ -62,7 +62,7 @@ function createWidgetLibBtns() {
     }
 
     for (let i in widgetBuildIDs) {
-        var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + widgetBuildIDs[i] + ".json";
+        var url = JSONFolderURL + widgetBuildIDs[i] + ".json";
         //Build Library buttons for Desktop and Mobile
         getData(url, function(data) {
             return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
@@ -74,7 +74,7 @@ function createWidgetLibBtns() {
 function turnWidgetOn(widgetIdOn) {
 
     let elementID = widgetIdOn;
-    var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+    var url = JSONFolderURL + elementID + ".json";
 
     getData(url, function(data) {
 
@@ -123,7 +123,7 @@ function turnWidgetOff(widgetIdOff) {
         // remove active widgetID from localStorage
         removeWidgetID("localWidgets", elementID);
 
-    var url = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+    var url = JSONFolderURL + elementID + ".json";
     //Build Library buttons for Desktop and Mobile
     getData(url, function(data) {
         return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
@@ -279,7 +279,7 @@ function saveOpenWeatherLocation() {
 
     let elementID = "widget0001";
     let key = "location";
-    var keyURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/" + elementID + ".json";
+    var keyURL = JSONFolderURL + elementID + ".json";
     // grab form data
     let enteredZip = document.getElementById("openWeatherFormModal").elements.namedItem("weatherZipModal").value;
     let enteredLocation = document.getElementById("openWeatherFormModal").elements.namedItem("weatherLocationModal").value;
