@@ -6,7 +6,7 @@ $(document).ready(function() {
 })
 
 /* CONSTANTS */
-const JSONFolderURL = "../data/";
+const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
