@@ -6,25 +6,19 @@ $(document).ready(function() {
 })
 
 /* CONSTANTS */
-const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/data/";
+const JSONFolderURL = "../data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
     /* Get data from JSON file  */
     /* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
-    function getData(url, gd) {
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                gd(JSON.parse(this.responseText));
-            } else {
-                // capture error and give alert to user
-            }
-        };
-        xhr.open("GET", url);
-        xhr.send();
+function getData(url) {
+    let retrievedData;
+    fetch(url)
+        .then(response => response.json())
+        .then(retrievedData => JSON.parse(retrievedData));
+        console.log("this is the retrieved data from fetch" + retrievedData);
+        return retrievedData;
     }
     /* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
 
