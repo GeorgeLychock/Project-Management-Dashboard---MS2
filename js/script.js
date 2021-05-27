@@ -6,42 +6,31 @@ $(document).ready(function() {
 })
 
 /* CONSTANTS */
-const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/data/";
+const JSONFolderURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
     /* Get data from JSON file  */
-    /* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
-    function getData(url) {
-        let data = {};
+    /* CODE REUSE -  */
+    async function getData(url) {
+
         let fetchConfig = {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
             headers: {
-              'Content-Type': 'application/json'
-              // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            //body: JSON.stringify(data) // body data type must match "Content-Type" header
+                'Content-Type': 'application/json'
+              },
         };
-
-        console.log("This is the url passed into getData: " + url);
-        // Default options are marked with *
-        fetch(url, fetchConfig)
-        .then(dataResponse => dataResponse.json())
-        .then(data => console.log("This is the fetch data: " + data))
-        .catch(function(error) {
-            console.log("this is my error: " + error);
-        });
-
-            console.log("This is the AFTER fetch data: " + data);
-
-        return data; // parses JSON response into native JavaScript objects
+        const fetchResponse = await fetch(url, fetchConfig);
+        return fetchResponse.json();
       }
-    /* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
+
+      async function getOWData(url) {
+        const fetchResponse = await fetch(url);
+        return fetchResponse.json();
+      }
+
+    
+    /* /CODE REUSE -   */
 
     /* Checks to make sure localStorage is usuable in the browser */
     /* CODE REUSE - localStorage Check MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */

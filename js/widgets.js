@@ -27,8 +27,9 @@ function createActiveWidgets() {
                     var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
     
                     // Grab the Open Weather data from the api
-                    getData(APIurl, function (owdata) {
-                        return $("#active-widgets-data").append(buildWeatherPanelMU(owdata, keydata.widgetID));
+                    getOWData(APIurl)
+                    .then(data => {
+                        return $("#active-widgets-data").append(buildWeatherPanelMU(data, keydata.widgetID));
                     });
                 });
             } else if (activeWidgets[i] == "widget0002") {
@@ -63,8 +64,9 @@ function createWidgetLibBtns() {
 
     for (let i in widgetBuildIDs) {
         var url = JSONFolderURL + widgetBuildIDs[i] + ".json";
-        //Build Library buttons for Desktop and Mobile
-        getData(url, function(data) {
+        //Build Library buttons for Library Panel and User Menu Dropdown
+        getData(url)
+        .then(data => {
             return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
         });
     }
@@ -76,9 +78,10 @@ function turnWidgetOn(widgetIdOn) {
     let elementID = widgetIdOn;
     var url = JSONFolderURL + elementID + ".json";
 
-    getData(url, function(data) {
+    getData(url)
+    .then(data => {
 
-        var keydata = data;
+        // var keydata = data;
 
         // Check if localStorage is enabled
         if (storageAvailable('localStorage')) {
@@ -101,15 +104,16 @@ function turnWidgetOn(widgetIdOn) {
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The widget Management Dashboard in a new browser window.");
         }
 
-        if (keydata.widgetID == "widget0001") {
+        if (data.widgetID == "widget0001") {
 
             // Grab the Open Weather data from the api
-            var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
-            getData(APIurl, function(data) {
+            var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${data.zipcode}&units=imperial&appid=${data.key}`;
+            getOWData(APIurl)
+            .then(data => {
                 //if wid0001 build weather button
                 return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
             });
-        } else if (keydata.widgetID == "widget0002") {
+        } else if (data.widgetID == "widget0002") {
             //Build GitHub pavel since widget0002 is assigned to GitHub widget
             return $("#active-widgets-data").append(buildGitHubPanelMU(elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
 
@@ -125,7 +129,8 @@ function turnWidgetOff(widgetIdOff) {
 
     var url = JSONFolderURL + elementID + ".json";
     //Build Library buttons for Desktop and Mobile
-    getData(url, function(data) {
+    getData(url)
+    .then(data => {
         return $("#widgets-library").append(buildWidgetLibBtnMU(data)), $("#usermenu-widgets-library").append(buildWidgetLibBtnMUUsermenu(data));
     });
 
@@ -334,13 +339,15 @@ function saveOpenWeatherLocation() {
 
         //update the weather panel
         // Grab the api key from the JSON file
-        getData(keyURL, function (keydata) {
+        getData(keyURL)
+        .then(keyData => {
             
-            var APIurl = `https://api.openweathermap.org/data/2.5/weather?${storedLocation}&units=imperial&appid=${keydata.key}`;
+            var APIurl = `https://api.openweathermap.org/data/2.5/weather?${storedLocation}&units=imperial&appid=${keyData.key}`;
 
             // Grab the Open Weather data from the api
-            getData(APIurl, function (owdata) {
-                return $("#" + elementID).remove(), $("#active-widgets-data").append(buildWeatherPanelMU(owdata, keydata.widgetID));
+            getOWData(APIurl)
+            .then(data => {
+                return $("#" + elementID).remove(), $("#active-widgets-data").append(buildWeatherPanelMU(data, data.widgetID));
             });
         });
         return $(".valAlert01").html(""), $("#saveLocalConfirmModal").html("Your location has been updated!");
