@@ -80,7 +80,7 @@ function createProjectLibBtns() {
             var url = JSONFolderURL + elementID + ".json";
             getData(url)
             .then(data => {
-                return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data));
+                return $("#projects-library").append(buildProjectLibBtnMU(data.json())), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data.json()));
             });
         }
     }

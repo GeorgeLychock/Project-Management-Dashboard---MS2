@@ -23,7 +23,7 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
               },
         };
         const fetchResponse = await fetch(url, fetchConfig);
-        return fetchResponse.json();
+        return fetchResponse;
       }
 
       async function getOWData(url) {
