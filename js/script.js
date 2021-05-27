@@ -14,11 +14,28 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
     /* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
     function getData(url) {
         let data = {};
+        let fetchConfig = {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+              'Content-Type': 'application/json'
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            //body: JSON.stringify(data) // body data type must match "Content-Type" header
+        };
+
         console.log("This is the url passed into getData: " + url);
         // Default options are marked with *
-        fetch(url)
-        .then(response => response.json())
-        .then(data => console.log("This is the fetch data: " + data));
+        fetch(url, fetchConfig)
+        .then(dataResponse => dataResponse.json())
+        .then(data => console.log("This is the fetch data: " + data))
+        .catch(function(error) {
+            console.log("this is my error: " + error);
+        });
 
             console.log("This is the AFTER fetch data: " + data);
 
