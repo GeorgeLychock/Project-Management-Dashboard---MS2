@@ -27,9 +27,8 @@ function createActiveProjects() {
             } else {
                 //NO: then the data is default JSON data, retrieve and build panel
                 var url = JSONFolderURL + elementID + ".json";
-                getData(url, function (data) {
-                    return $("#active-projects-data").append(buildProjectPanelMU(data));
-                });
+                let data = getData(url);
+                return $("#active-projects-data").append(buildProjectPanelMU(data));
             }
         }
         loadUserSettings();

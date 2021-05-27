@@ -12,16 +12,17 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
 
     /* Get data from JSON file  */
     /* CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
-    async function getData(url) {
+    function getData(url) {
+        let data = {};
+        console.log("This is the url passed into getData: " + url);
         // Default options are marked with *
-        const response = await fetch(url, {
-          method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          mode: 'no-cors', // no-cors, *cors, same-origin
-        });
+        fetch(url)
+        .then(response => response.json())
+        .then(data => console.log("This is the fetch data: " + data));
 
-            console.log("This is the fetched data: " + response.json());
+            console.log("This is the AFTER fetch data: " + data);
 
-        return response.json(); // parses JSON response into native JavaScript objects
+        return data; // parses JSON response into native JavaScript objects
       }
     /* /CODE REUSE - XMLHttpRequest Callback, Code Institute, jQuery/API Module  */
 
