@@ -14,6 +14,8 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
     /* CODE REUSE -  */
     async function getData(url) {
 
+        console.log("This is the passed URL: " + url);
+
         let fetchConfig = {
             mode: 'no-cors', // no-cors, *cors, same-origin
             headers: {
