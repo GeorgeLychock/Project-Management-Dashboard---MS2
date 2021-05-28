@@ -26,7 +26,6 @@ const JSONFolderURL = "data/";
         console.log("This is the url given to fetch: " + url);
 
         var fetchResponse = await fetch(url, fetchConfig)
-        .then(showResponse => console.log(showResponse))
         .catch(function(error) {
             console.log("this is my error: " + error);
         });
