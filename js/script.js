@@ -30,7 +30,7 @@ const JSONFolderURL = "data/";
         .catch(function(error) {
             console.log("this is my error: " + error);
         });
-        return fetchResponse;
+        return fetchResponse.json();
       }
 
       async function getOWData(url) {
