@@ -30,6 +30,7 @@ const JSONFolderURL = "data/";
         .catch(function(error) {
             console.log("this is my error: " + error);
         });
+        console.log("This is the readable stream: " + fetchResponse);
         return fetchResponse.json();
       }
 
