@@ -6,16 +6,16 @@ $(document).ready(function() {
 })
 
 /* CONSTANTS */
-const JSONFolderURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/";
+const JSONFolderURL = "https://www.georgelychock-career.com/pages/_sandbox/ms2/data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
     /* Get data from JSON file  */
-    /* CODE REUSE -  */
+    /* CODE REUSE -  Based on https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, but customized */
     async function getData(url) {
 
         let fetchConfig = {
-            mode: 'no-cors', // no-cors, *cors, same-origin
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json'
               },
@@ -28,14 +28,12 @@ const JSONFolderURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/da
       }
 
       async function getOWData(url) {
-          console.log("What's my url?: " + url);
         let fetchResponse = await fetch(url);
-        console.log("Am I getting to the fetch?");
         return fetchResponse.json();
       }
 
     
-    /* /CODE REUSE -   */
+    /* /CODE REUSE - MDN Using Fetch  */
 
     /* Checks to make sure localStorage is usuable in the browser */
     /* CODE REUSE - localStorage Check MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
