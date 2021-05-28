@@ -21,6 +21,9 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
                 'Content-Type': 'application/json'
               },
         };
+
+        console.log("This is the url given to fetch: " + url);
+
         let fetchResponse = await fetch(url, fetchConfig)
         .then(showResponse => console.log(showResponse))
         .catch(function(error) {
