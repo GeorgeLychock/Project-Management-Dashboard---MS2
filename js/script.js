@@ -6,7 +6,7 @@ $(document).ready(function() {
 })
 
 /* CONSTANTS */
-const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/data/";
+const JSONFolderURL = "http://www.georgelychock-career.com/pages/_sandbox/ms2/data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
@@ -14,20 +14,23 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
     /* CODE REUSE -  */
     async function getData(url) {
 
-        console.log("This is the passed URL: " + url);
-
         let fetchConfig = {
             mode: 'no-cors', // no-cors, *cors, same-origin
             headers: {
                 'Content-Type': 'application/json'
               },
         };
-        const fetchResponse = await fetch(url, fetchConfig);
-        return fetchResponse;
+        let fetchResponse = await fetch(url, fetchConfig)
+        .catch(function(error) {
+            console.log("this is my error: " + error);
+        });
+        return fetchResponse.json();
       }
 
       async function getOWData(url) {
-        const fetchResponse = await fetch(url);
+          console.log("What's my url?: " + url);
+        let fetchResponse = await fetch(url);
+        console.log("Am I getting to the fetch?");
         return fetchResponse.json();
       }
 

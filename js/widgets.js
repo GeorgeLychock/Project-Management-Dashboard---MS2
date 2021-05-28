@@ -16,20 +16,34 @@ function createActiveWidgets() {
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
         let activeWidgets = activeWidgetsSaved.split(',');
 
+        console.log("This is the current active widgets array: " + activeWidgets);
+
         for (let i in activeWidgets) {
+
+            console.log("This is the current active widgets item: " + activeWidgets[i]);
 
             var keyURL = JSONFolderURL + activeWidgets[i] + ".json";
 
             if (activeWidgets[i] == "widget0001") {
+
+                console.log("Am I getting in?");
+                console.log("URL b4 sending to fetch: " + keyURL);
+
                 // Grab the api key from the JSON file
-                getData(keyURL, function (keydata) {
+                getData(keyURL)
+                .then(data => {
                     
-                    var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${keydata.zipcode}&units=imperial&appid=${keydata.key}`;
+                    var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${data.zipcode}&units=imperial&appid=${data.key}`;
+
+                    console.log("This is the url going to fetch: " + APIurl);
     
                     // Grab the Open Weather data from the api
                     getOWData(APIurl)
                     .then(data => {
-                        return $("#active-widgets-data").append(buildWeatherPanelMU(data, keydata.widgetID));
+
+                        console.log("This is the Active widget data from fetch: " + JSON.stringify(data));
+
+                        return $("#active-widgets-data").append(buildWeatherPanelMU(data, "widget0001"));
                     });
                 });
             } else if (activeWidgets[i] == "widget0002") {
@@ -81,6 +95,8 @@ function turnWidgetOn(widgetIdOn) {
     getData(url)
     .then(data => {
 
+        console.log("This is the data being passed back to widget js: " + data);
+
         // var keydata = data;
 
         // Check if localStorage is enabled
@@ -111,6 +127,7 @@ function turnWidgetOn(widgetIdOn) {
             getOWData(APIurl)
             .then(data => {
                 //if wid0001 build weather button
+                console.log("This is the OW widget data from fetch: " + JSON.stringify(data));
                 return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
             });
         } else if (data.widgetID == "widget0002") {
@@ -183,7 +200,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
 
-        console.log("This is the weather object returned from API (main): " + apiData.weather.main);
+        console.log("This is the weather object returned from API (main): " + JSON.stringify(apiData));
 
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
