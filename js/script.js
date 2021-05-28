@@ -22,6 +22,7 @@ const JSONFolderURL = "https://github.com/GeorgeLychock/Project-Management-Dashb
               },
         };
         let fetchResponse = await fetch(url, fetchConfig)
+        .then(showReesponse => console.log(showReesponse))
         .catch(function(error) {
             console.log("this is my error: " + error);
         });
