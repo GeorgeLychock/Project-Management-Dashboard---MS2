@@ -1,7 +1,7 @@
 # George Lychock - MS2 Project: Project Management Dashboard
 ### Salem State University Fullstack Software Developer Certificate
 #### JavaScript/jQuery/API/DOM Module
--   [View Live Dev Site](http://www.georgelychock-career.com/pages/_sandbox/ms2/index.html)
+-   [View Live Dev Site](https://georgelychock.github.io/Project-Management-Dashboard---MS2/)
 
 <hr>
 
@@ -50,12 +50,12 @@ A limited number of dashboard settings will be available from a settings cog tha
 >-   The project consists of one page, a dashboard.
 >-   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
 >-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile view ports are minimized while keeping main functionality and components/content intact.
->-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects and saving dashboard configurations for styling and panel/button visibility.
+>-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects, user login, and saving dashboard configurations for styling and panel/button visibility.
 >-   The user stories below indicate a "logged-in user". Since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 <a name="US"></a>
 ## User Stories
-### Story 1 done
+### Story 1
 As a logged-in project manager, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is an indication that I'm the user logged in
@@ -63,8 +63,8 @@ As a logged-in project manager, I want to view the projects and tools available 
     -   I can see further detail of a given project in a larger, more prominent Dashboard.
     -   It is clear what elements on the dashboard are projects, and which are tools.
     
-### Story 2 done
-As a logged in project manager, I want to Add or Remove project detail panels from the Dashboard
+### Story 2
+As a logged in project manager, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
     -   The buttons clearly indicate what they are for
@@ -73,7 +73,7 @@ As a logged in project manager, I want to Add or Remove project detail panels fr
     -   I can Add a tool panel from the dashboard
     -   I can Remove a tool panel from the dashboard
 
-### Story 3 done
+### Story 3
 As a logged in project manager, I want to see project details of the projects after making the project panel active on the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   I can view project Title/Name
@@ -85,14 +85,14 @@ As a logged in project manager, I want to see project details of the projects af
     -   I can view the project Schedule Variance (SV) to date
     -   I can view a link to the live development site, if one exists
 
-### Story 4 done
-As a logged in project manager, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard
+### Story 4
+As a logged in project manager, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   Active widgets are present when I return to the site
     -   Buttons for any available widgets not already activated to the dashboard are present in the Library
 
 ### Story 5
-As a logged in project manager, I want the ability to change certain dashboard visual settings, to make the app have a more customized experience
+As a logged in project manager, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   The color scheme is light when I first log in, view Dashboard
     -   I can change the color Scheme using a button to a dark scheme
@@ -101,9 +101,27 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   I can position the Library Panel on the right or the left of desktop or tablet view ports
 
 ### Story 6
-As a user, I want instruction or an indication of how and where to change dashboard visual settings
+As a user, I want instruction or an indication of how and where to change dashboard visual settings.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   A visual message or banner informs me how to change settings
+
+### Story 7
+As a user, I want to be able to change the location of the active weather Tool.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A method to change the location for the weather tool is available from the Tool panel
+
+### Story 8
+As a vistor, I want a method to save my username so my user menu is displayed offering certain user options.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A login button is present when a user first enters the app
+    -   My username can be saved
+    -   My username appears along with a user menu once the username is saved
+
+### Story 9
+As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A login but
+
 
 <a name="UXUI"></a>
 # UX/UI
@@ -156,6 +174,7 @@ As a user, I want instruction or an indication of how and where to change dashbo
 -   Use JSHint to check Javascript syntax
 -   Use arrow functions, if possible/needed
 -   Apply semantic markup
+-   Change all XMLHttpRequests to fetch routines
 
 ### Future Technical Requirements:
 -   Apply ARIA principles across the app; currently I have some structures properly configured with aria attributes but much of that was picked up from Bootstrap component code. Using https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics as a reference to learn ARIA.
@@ -236,7 +255,6 @@ As a user, I want instruction or an indication of how and where to change dashbo
 		["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
 	]
     }
-
 -   There are 3 JS files: script.js contains most reused and custom scripts called by custom functions in projects.js and widget.js. Both project.js and widget.js are very similar and control how panels are added to the main dashboard sections. These are separated because 1) each dashboard section stores active widget data locally in different localStorage variables; 2) the markup and data retrieval for the API data is different enough to warrant separate functions from the functions that add the project panels to the dashboard. Otherwise every effort was taken to keep duplication of code to a minimum.
 
 
@@ -266,6 +284,25 @@ As a user, I want instruction or an indication of how and where to change dashbo
     - Git was used for version control by utilizing Visual Studio on my Linux laptop to commit to Git and Push to GitHub.
 6. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
+7. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used for a few of the icons where I did not like the Bootstrap versions or BS did not have a suitable icon.
+8. [Toastr:](https://github.com/CodeSeven)
+    - A notifications library recommended by my mentor Maranatha Ilesanmi.
+
+### Resources Used
+-   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
+-   [MDN Web Docs: ](https://developer.mozilla.org/) For Semantic Structure reference.
+
+### APIs Used
+-   [OpenWeather: ](https://openweathermap.org/api/one-call-api) Used the One-Call API to request weather information displayed in the weather Tool.
+    -   Obtaining an API Key:
+        -   Create an account at [OpenWeather.](https://openweathermap.org/)
+        -   Choose API Keys from the user menu
+        -   Give your key a nem.
+        -   Copy the key into the value for 'key' in the widget0001.json file located in teh data/ folder
+
+-   [GitHub API: ]()
+
 
 <a name="PROJ"></a>
 # Project Management
@@ -615,37 +652,30 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 <a name="CREDS"></a>
 ## Credits
 
-### Resources Used
--   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
--   [MDN Web Docs](https://developer.mozilla.org/) : For Semantic Structure reference.
-
 ### Code Credits
 -   All Reused styles are in reused-styles.css
 -   Scrollbar CSS Styling: from Digital Ocean: https://www.digitalocean.com/community/tutorials/css-scrollbars, in reused-styles.css
--   The XMLHttpRequest callback code in script.js came from Code Institute, Interactive Frontend Development Module, Full Stack Software Deveveloper Program:
-    Find code use indicated by "CODE REUSE - XMLHttpRequest Callback"
-        `gd(JSON.parse(this.responseText));`
 
--   The localStorage check code in script.js is from MDN: [CODE REUSE - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on.
+-   GitHub Widget Code from [Code Institute](https://codeinstitute.net/)
+    -   This code originated from Code Institute's Interactive Frontend Development module for the Full Stack Software Developer course. Modifcations were mostly applied for struture and style.
+    -   All JS code is in the github-information.js file.
+
+-   The localStorage check code in script.js is from [MDN - Using_the_Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on.
     Find code use indicated by "CODE REUSE - localStorage Check "
 
--   The skills progress bar code on the Skill Page came from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/:
+-   Progress bars in the Project Panels came from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/:
     Find code use indicated by "CODE REUSE - Progress Bar"
-        `<div class="row progress-section">`
-           `<div class="col">`
-                `<div class="progress">`
-                   ` <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">`
-                       ` <span class="sr-only">90% complete</span>.......`
-                   
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-  //Clear form
-        /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
+-   Clear form
+        Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements 
+        
         var x = document.getElementById("projectFormModal");
         var i;
         for (i = 0; i < x.length ;i++) {
-          x.elements[i].value = "";
+          x.elements[i].value = "";`
         }
+-   Tooltips
+    -   Used the CSS based tooltips code from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
 
 -   [Digital Ocean : How To Style Scrollbars with CSS](https://www.digitalocean.com/community/tutorials/css-scrollbars)
 
