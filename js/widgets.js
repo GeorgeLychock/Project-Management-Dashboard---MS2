@@ -16,33 +16,21 @@ function createActiveWidgets() {
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
         let activeWidgets = activeWidgetsSaved.split(',');
 
-        console.log("This is the current active widgets array: " + activeWidgets);
-
         for (let i in activeWidgets) {
-
-            console.log("This is the current active widgets item: " + activeWidgets[i]);
 
             var keyURL = JSONFolderURL + activeWidgets[i] + ".json";
 
             if (activeWidgets[i] == "widget0001") {
-
-                console.log("Am I getting in?");
-                console.log("URL b4 sending to fetch: " + keyURL);
 
                 // Grab the api key from the JSON file
                 getData(keyURL)
                 .then(data => {
                     
                     var APIurl = `https://api.openweathermap.org/data/2.5/weather?zip=${data.zipcode}&units=imperial&appid=${data.key}`;
-
-                    console.log("This is the url going to fetch: " + APIurl);
     
                     // Grab the Open Weather data from the api
                     getOWData(APIurl)
                     .then(data => {
-
-                        console.log("This is the Active widget data from fetch: " + JSON.stringify(data));
-
                         return $("#active-widgets-data").append(buildWeatherPanelMU(data, "widget0001"));
                     });
                 });
@@ -95,8 +83,6 @@ function turnWidgetOn(widgetIdOn) {
     getData(url)
     .then(data => {
 
-        console.log("This is the data being passed back to widget js: " + data);
-
         // var keydata = data;
 
         // Check if localStorage is enabled
@@ -127,7 +113,6 @@ function turnWidgetOn(widgetIdOn) {
             getOWData(APIurl)
             .then(data => {
                 //if wid0001 build weather button
-                console.log("This is the OW widget data from fetch: " + JSON.stringify(data));
                 return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
             });
         } else if (data.widgetID == "widget0002") {
@@ -199,9 +184,6 @@ function buildWidgetLibBtnMUUsermenu(data) {
 function buildWeatherPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
-
-        console.log("This is the weather object returned from API (main): " + JSON.stringify(apiData));
-
     let bigTemp = apiData.main["temp"];
     bigTemp = bigTemp.toFixed(0);
     var weatherBGClass = "";
@@ -306,26 +288,16 @@ function saveOpenWeatherLocation() {
     let enteredZip = document.getElementById("openWeatherFormModal").elements.namedItem("weatherZipModal").value;
     let enteredLocation = document.getElementById("openWeatherFormModal").elements.namedItem("weatherLocationModal").value;
 
-        console.log(enteredZip, enteredLocation);
-
     //validate entered zip and location
     let valItemsList = {
         zipcode: enteredZip,
         location: enteredLocation
     };
 
-    console.log("This is the passed object from Open Weather: " + JSON.stringify(valItemsList));
-
     let validateInputReply = validateInput(valItemsList);
-
-        console.log("This is the array returned to Open Weather: " + validateInputReply);
-        console.log("This is the length of the array: " + validateInputReply.length);
 
     if(validateInputReply.length) {
         for(let i in validateInputReply) {
-
-            console.log("This is looping thru returned array for OPEN WEATHER" + validateInputReply[i]);
-
             switch(validateInputReply[i]) {
                 case 'zipcode':
                     // Set alerts on all required fields

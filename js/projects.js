@@ -278,18 +278,11 @@ function saveProjectDataModal() {
             url: passFormData.livesite
         };
 
-            console.log("This is the collected object: " + valItemsList);
-
        // Validate data, and if OK, assign widgetID and save data, build button
        let validateInputReply = validateInput(valItemsList);
 
-            console.log("This is the returned result: " + validateInputReply);   
-
         if(validateInputReply.length) {
             for(let i in validateInputReply) {
-
-                console.log("This is looping thru returned array" + validateInputReply[i]);
-
                 switch(validateInputReply[i]) {
                     case 'name':
                         // Set alerts on all required fields
@@ -365,8 +358,6 @@ function delProject(wID, pName) {
 
         //delete project data
         localStorage.removeItem(elementID);
-
-        console.log($("#" + elementID).length);
 
         // remove active widgetID from localStorage, if its active
         if ($("#" + elementID).length) {

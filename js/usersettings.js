@@ -133,8 +133,6 @@ function saveUserNameModal() {
 
     let validateInputReply = validateInput(valItemsList);
 
-    console.log("This is the returned result for username validation: " + validateInputReply);
-
     if (validateInputReply == "username") {
         return $("#valUserNameAlert01").html("* Required Field");
 
