@@ -23,13 +23,9 @@ const JSONFolderURL = "data/";
               },
         };
 
-        console.log("This is the url given to fetch: " + url);
-
         var fetchResponse = await fetch(url, fetchConfig)
         .catch(function(error) {
-            console.log("this is my error: " + error);
         });
-        console.log("This is the readable stream: " + fetchResponse);
         return fetchResponse.json();
       }
 
@@ -77,7 +73,6 @@ const JSONFolderURL = "data/";
         var dt = new Date(t * 1000);
         var hr = dt.getHours();
         if (hr < 12) { //custom js added by developer
-            console.log("This is the current hr" + hr);
             timeMer = "AM";
             if (hr == 0) {
                 dhr = 12;
@@ -159,11 +154,7 @@ const JSONFolderURL = "data/";
     function getLocalData(eID, cb) {
         var elementID = eID;
 
-            console.log("passed ID or localStorage name: " + elementID);
-
         let dataStrSaved = localStorage.getItem(elementID);
-
-        console.log("Retrieved data: " + dataStrSaved);
 
         cb(JSON.parse(dataStrSaved));
     }
@@ -223,17 +214,8 @@ const JSONFolderURL = "data/";
         // ****** EFFICIENCY MARKER ******* Need to research turning this into an arrow function(s)
         if (localStorage.getItem(localStorageName)) {
             let savedWidgetIDs = localStorage.getItem(localStorageName).split(',');
-
-                console.log("IDs saved to " + localStorageName + ": " + savedWidgetIDs);
-
             let delWidgetIndex = savedWidgetIDs.indexOf(elementID);
-
-                console.log("Index of widget to be removed: " + delWidgetIndex);
-
             var removedWidgetIDs = savedWidgetIDs.splice(delWidgetIndex, 1);
-
-                console.log("Widget ID for removal: " + removedWidgetIDs);
-                console.log("Updated Array for upload: " + savedWidgetIDs);
 
             localStorage.setItem(localStorageName, savedWidgetIDs);
 
@@ -268,21 +250,12 @@ const JSONFolderURL = "data/";
         // clear prior alerts
         $(".valAlert01").html("");
 
-            console.log("This is the passed object: " + JSON.stringify(valItemsList));
-
-        for(let i in valItemsList) {
-
-            console.log("This is i: " + i);
-            console.log("This is i.Val: " + valItemsList[i]);      
-
+        for(let i in valItemsList) { 
             switch (i) {
                 case 'name':
                     // Validation Rule #1
                     if (valItemsList[i] == "") {
                         valItemsFailed.push("name");
-
-                        console.log("This is name added to return array: " + valItemsFailed[0]);
-
                     // Validation Rule #2, check against a list of bad words and/or a reg exp to further sanitize data (this validation has not been finished yet but logic has been added to expand in future)
                     } else if (valItemsList[i] == "badword") {
                         alert(i + " should be nicer.");
@@ -299,9 +272,6 @@ const JSONFolderURL = "data/";
                     // Validation Rule #1
                     if (valItemsList[i] == "") {
                         valItemsFailed.push("username");
-
-                        console.log("This is flag added to return array: " + valItemsFailed[0]);
-
                     // Validation Rule #2
                     } else if (valItemsList[i] == "badword") {
                         alert(i + " should be nicer.");
@@ -314,18 +284,12 @@ const JSONFolderURL = "data/";
                     
                     if (valItemsList["zipcode"] == "" && valItemsList["location"] == "") {
                         valItemsFailed.push("zipcode");
-
-                        console.log("This is ZIPCODE added to return array: " + valItemsFailed[0]);
-
                     }
                     break;
                 case 'location':
                     // Validation Rule #1
                     if (valItemsList["location"] == "" && valItemsList["zipcode"] == "") {
                         valItemsFailed.push("location");
-
-                        console.log("This is LOCATION added to return array: " + valItemsFailed[0]);
-
                     }
                     break;
             }
