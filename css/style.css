@@ -600,7 +600,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-nav-item {
         border: none;
-        border-radius: none;
+        border-radius:0rem;
         background: transparent;
         padding-top: 4px;
         margin: 0 4px 0 8px;
