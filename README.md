@@ -533,12 +533,12 @@ Used test writing guidelines from the following resources:
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
 
 -   [W3C Markup Validator (Nu)](https://validator.w3.org/nu/)
-    - [index.html](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/main/_documentation/testing/nu-html-validate-index-html.png), NO ERRORS
+    - [index.html](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/nu-html-validate-index-html.png), NO ERRORS
 -   [W3C CSS Validator (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
-    - [reused-style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/main/_documentation/testing/css-validate-reused-style-css.png), ERRORS: the errors all pertain to the scrollbar stying incorporated. scrollbar-width and scrollbar-color are only supported by FF, throwing the error in the validator. Vendor prefixes are used to style the scrollbars similarly for all other browsers
-    - [github-styles.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/main/_documentation/testing/css-validate-github-styles-css.png), NO ERRORS
-    - [widget.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/main/_documentation/testing/css-validate-widget-css.png), NO ERRORS
-    - [style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/main/_documentation/testing/css-validate-style-css.png), NO ERRORS
+    - [reused-style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-reused-style-css.png), ERRORS: the errors all pertain to the scrollbar stying incorporated. scrollbar-width and scrollbar-color are only supported by FF, throwing the error in the validator. Vendor prefixes are used to style the scrollbars similarly for all other browsers
+    - [github-styles.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-github-styles-css.png), NO ERRORS
+    - [widget.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-widget-css.png), NO ERRORS
+    - [style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-style-css.png), NO ERRORS
 -   [Lighthouse](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
     - [Results: Desktop Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-desktop-index.jpg)
     - [Results: Mobile Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-mobile-index.jpg)
