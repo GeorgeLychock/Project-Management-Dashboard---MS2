@@ -5,6 +5,7 @@
 
 /* ######## CSS TOC - In Order of Appearance: */
 /* @imports */
+/* Bootstrap Overides */
 /* Base Elements */
 /* Common Text Colors */
 /* Common Background Colors*/
@@ -36,6 +37,12 @@
 /* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+
+/* Bootstrap Overides */
+button:focus {
+    outline: none;
+}
+
 
 /* Base Elements */
 body {
@@ -165,7 +172,6 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     display: inline;
     background-color: transparent;
-    -webkit-appearance: none;
 }
 
 .pmd-icon-03 i:hover {
@@ -192,7 +198,6 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background-color: transparent;
     width: 30px;
-    -webkit-appearance: none;
 }
 
 .pmd-icon-05 i:hover {
@@ -276,7 +281,6 @@ h1, h2, h3, h4, h5, h6 {
     display: inline;
     background-color: #fff;
     border: none;
-    -webkit-appearance: none;
 }
 
 .pmd-welcome-msg-block {
@@ -388,7 +392,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
     background-color: transparent;
     color: #333;
-    -webkit-appearance: none;
 }
 
 /* Project Form */
@@ -597,6 +600,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .pmd-nav-item {
         border: none;
+        border-radius: none;
         background: transparent;
         padding-top: 4px;
         margin: 0 4px 0 8px;

@@ -81,7 +81,11 @@ const JSONFolderURL = "data/";
             }
         } else {
             timeMer = "PM";
-            dhr = hr - 12;
+            if (hr == 12) {
+                dhr = 12;
+            } else {
+                dhr = hr - 12;
+            }
         }
 
         var m = "0" + dt.getMinutes();
