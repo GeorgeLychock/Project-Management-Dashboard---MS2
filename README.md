@@ -120,7 +120,8 @@ As a vistor, I want a method to save my username so my user menu is displayed of
 ### Story 9
 As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
 -   Acceptance Criteria -- Duplicated in Testing section below
-    -   A login but
+    -   'About this site' information is available in a link to the user
+    -   The information is a simple list of purpose and features of pmDashboard
 
 
 <a name="UXUI"></a>
@@ -539,6 +540,9 @@ Below are placeholders:
 - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
     -   Tested all script.js functions in JSHint 4/7/21
     -   Tested all usersettings.js functions in JSHint 4/7/21
+
+
+    
 
 ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widget view port
