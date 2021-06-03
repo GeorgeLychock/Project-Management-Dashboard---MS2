@@ -22,29 +22,30 @@
 
 <body>
     <main>
-        <!-- Nav -->
+        <!-- Menu and Nav -->
         <div class="container-fluid pmd-nav-cntnr">
             <div class="row no-gutters pmd-bcolor-nav">
                 <div class="col">
                     <nav class="navbar navbar-expand-lg navbar-light pmd-nar-bar">
                         <a class="navbar-brand pmd-corp-title" href="#">pmDashboard</a>
                         <button class="navbar-toggler pmd-nav-tog" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon pmd-nav-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#addProject" onclick="setDefaultOwner()">
-                                        <div>Add Project</div>
-                                    </div>
+                                    <button type="button" class="pmd-nav-item" data-toggle="modal" data-target="#addProject"
+                                        onclick="setDefaultOwner()">
+                                        Add Project
+                                    </button>
                                 </li>
                                 <li class="nav-item">
-                                    <div type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject"
+                                    <button type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject"
                                         onclick="createDeleteProjectList()">
-                                        <div>Delete Project</div>
-                                    </div>
+                                        Delete Project
+                                    </button>
                                 </li>
                                 <li class="nav-item">
                                     <!-- Display Mobile version of the cog hint-->
@@ -61,16 +62,16 @@
                 </div>
             </div>
         </div>
-        <!-- /Nav -->
+        <!-- /Menu and Nav -->
         <!-- Banner -->
-        <aside role="banner">
+        <aside>
             <div class="container-fluid">
                 <div class="row no-gutters">
                     <div class="col">
                         <div class="pmd-banner-msg-block pmd-acolor-4">
-                            <div class="pmd-banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
+                            <button class="pmd-banner-msg-01" type="button" data-toggle="modal" data-target="#whatIsPMdashboard">
                                 What is pmDashboard?
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -82,9 +83,9 @@
             <div class="container-fluid pmd-header-cntnr">
                 <div class="row pmd-header">
                     <div class="col-12 col-md-9 pmd-hcolor-1">
-                        <div type="button" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
+                        <button type="button" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
                             <i class="bi bi-gear pmd-bi-gear pmd-acolor-1" aria-hidden="true"></i>
-                        </div>
+                        </button>
                         <h1 class="pmd-title">My PM Dashboard</h1>
                         <div class="pmd-tagline pmd-hcolor-3">project status and management tools portal</div>
                     </div>
@@ -98,87 +99,104 @@
                                     <ul class="list-group list-group-horizontal">
                                         <li>
                                             <div class="dropdown">
-                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownMenuButton"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn"
+                                                    role="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
                                                     <div class="pmd-tooltip">
                                                         <i class="fas fa-university" aria-hidden="true"></i>
                                                         <span class="pmd-tooltiptext">My Library</span>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownMenuButton">
+                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6"
+                                                    aria-labelledby="dropdownMenuButton">
                                                     <div class="pmd-usermenu-lib-box">
-                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Projects Library</h4>
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Projects
+                                                            Library</h4>
                                                     </div>
                                                     <div id="usermenu-projects-library"></div>
                                                     <div class="pmd-usermenu-lib-box2">
-                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Tools Library</h4>
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Tools
+                                                            Library</h4>
                                                     </div>
                                                     <div id="usermenu-widgets-library"></div>
-                                                    <p class="pmd-usermenu-lib-box pmd-pcolor-1">Click the + plus sign to add a widget to the
+                                                    <p class="pmd-usermenu-lib-box pmd-pcolor-1">Click the + plus sign to
+                                                        add a widget to the
                                                         Dashboard</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="dropdown">
-                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="dropdownProfileBtn"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn"
+                                                    role="button" id="dropdownProfileBtn" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
                                                     <div class="pmd-tooltip">
                                                         <i class="bi bi-person" aria-hidden="true"></i>
                                                         <span class="pmd-tooltiptext">My Profile</span>
                                                     </div>
                                                 </div>
-                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownProfileBtn">
+                                                <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6"
+                                                    aria-labelledby="dropdownProfileBtn">
                                                     <div class="pmd-usermenu-lib-box">
-                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Profile</h4>
-                                                        <p class="pmd-pcolor-1">Future User Profile functionality coming soon!</p>
+                                                        <h4 class="pmd-dinline pmd-usermenu-header pmd-hcolor-4">My Profile
+                                                        </h4>
+                                                        <p class="pmd-pcolor-1">Future User Profile functionality coming
+                                                            soon!</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" type="button" id="userMenuSettings"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn" role="button"
+                                                id="dropdownSettingsBtn" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
                                                 <div class="pmd-tooltip">
                                                     <i class="bi bi-gear" aria-hidden="true"></i>
                                                     <span class="pmd-tooltiptext">My Settings</span>
                                                 </div>
                                             </div>
-                                            <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6" aria-labelledby="dropdownSettingsBtn">
+                                            <div class="dropdown-menu pmd-usermenu-lib-drop pmd-bcolor-6"
+                                                aria-labelledby="dropdownSettingsBtn">
                                                 <div class="pmd-usermenu-lib-box">
                                                     <h4 class="pmd-dinline pmd-usermenu-h4 pmd-hcolor-4">My Settings</h4>
                                                     <div>
                                                         <div>
-                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Dashboard Color Scheme</h5>
+                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Dashboard Color Scheme
+                                                            </h5>
                                                             <div>
-                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6" onclick="makeDark()" data-dismiss="modal">
+                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6"
+                                                                    onclick="makeDark()" data-dismiss="modal">
                                                                     <i class="bi bi-dice-5-fill" aria-hidden="true"></i>
                                                                     Dark Dashboard
                                                                 </button>
-                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6" onclick="makeLight()" data-dismiss="modal">
+                                                                <button class="pmd-icon-03 pmd-settings-btn pmd-acolor-6"
+                                                                    onclick="makeLight()" data-dismiss="modal">
                                                                     <i class="bi bi-dice-5" aria-hidden="true"></i>
                                                                     Light Dashboard
                                                                 </button>
                                                             </div>
                                                         </div>
                                                         <div class="d-none d-md-block">
-                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Library Panel Position</h5>
+                                                            <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Library Panel Position
+                                                            </h5>
                                                             <div>
-                                                               <button class="pmd-icon-03 pmd-acolor-6" onclick="posLibRight()">
-                                                                   <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                                                                   Library Right
-                                                               </button>
-                                                           </div>
-                                                           <div>
-                                                               <button class="pmd-icon-03 pmd-acolor-6" onclick="posLibLeft()">
-                                                                   <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                                                                   Library Left
-                                                               </button>
-                                                           </div>
+                                                                <button class="pmd-icon-03 pmd-acolor-6"
+                                                                    onclick="posLibRight()">
+                                                                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                                                                    Library Right
+                                                                </button>
+                                                            </div>
+                                                            <div>
+                                                                <button class="pmd-icon-03 pmd-acolor-6" onclick="posLibLeft()">
+                                                                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                                                                    Library Left
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                         <div>
                                                             <h5 class="pmd-usermenu-h5 pmd-hcolor-5">Tools Settings</h5>
-                                                            <div type="button" class="pmd-icon-03 pmd-acolor-6" data-toggle="modal" data-target="#openWeatherSettings">
+                                                            <div role="button" class="pmd-icon-03 pmd-acolor-6"
+                                                                data-toggle="modal" data-target="#openWeatherSettings">
                                                                 <i class="bi bi-gear pmd-bi-gear-ow" aria-hidden="true"></i>
                                                                 Open Weather Settings
                                                             </div>
@@ -188,8 +206,11 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary pmd-usermenu-lib-btn pmd-icon-04" type="button" data-toggle="modal" onclick="createDeleteUsernameList()" data-target="#logOutPanel">
-                                                <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log Out</i>
+                                            <div class="btn btn-secondary pmd-usermenu-lib-btn pmd-icon-04" role="button"
+                                                data-toggle="modal" onclick="createDeleteUsernameList()"
+                                                data-target="#logOutPanel">
+                                                <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log
+                                                    Out</i>
                                             </div>
                                         </li>
                                     </ul>
@@ -202,7 +223,6 @@
         </header>
         <!-- /Header -->
         <!-- Dashboard -->
-        <article>
             <div class="container-fluid pmd-dashboard">
                 <div class="row pmd-row-main">
                     <!-- Display Libraries Panel for desktop and tablet-->
@@ -210,7 +230,7 @@
                         <section>
                             <div class="pmd-project-lib">
                                 <div>
-                                    <div type="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
+                                    <div role="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
                                         <i class="bi bi-gear pmd-bi-gear pmd-acolor-1" aria-hidden="true"></i>
                                     </div>
                                     <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
@@ -230,13 +250,15 @@
                         <section>
                             <div class="row no-gutters">
                                 <div class="col">
-                                    <div class="pmd-active-projects-head pmd-bcolor-4 pmd-pcolor-1">My Projects</div>
+                                    <h2 class="pmd-active-projects-head pmd-bcolor-4 pmd-pcolor-1">My Projects</h2>
                                 </div>
                             </div>
+                        </section>
+                        <section>
                             <div class="row no-gutters pmd-active-projects pmd-min-height-295" id="active-projects-data"></div>
                             <div class="row no-gutters">
                                 <div class="col">
-                                    <div class="pmd-active-widgets-head pmd-bcolor-4 pmd-pcolor-1">My Tools</div>
+                                    <h2 class="pmd-active-widgets-head pmd-bcolor-4 pmd-pcolor-1">My Tools</h2>
                                 </div>
                             </div>
                             <div class="row no-gutters pmd-active-widgets pmd-min-height-295" id="active-widgets-data"></div>
@@ -244,16 +266,14 @@
                     </div>
                 </div>
             </div>
-        </article>
         <!-- /Dashboard -->
         <!-- Footer -->
         <footer>
             <div class="container-fluid">
                 <div class="row no-gutters pmd-footer pmd-bcolor-foot">
                     <div class="col">
-                        <h6>PM Dashboard Footer Stuff</h6>
-                        <div class="test-pos-parent">Help the Understand, Parent</div>
-                        <div class="test-pos-child">I'm the child</div>
+                        <h6>pmDashboard, Inc., 2021</h6>
+                        <div>&#169; 2021 by George Lychock. All Rights Reserved.</div>
                     </div>
                 </div>
             </div>
@@ -275,12 +295,12 @@
                     <div class="modal-body">
                         <div class="pmd-welcome-msg-block">
                             <ul>
-                                <li>pmDashboard is a concept for a configurable project management dashboard.</li><br>
-                                <li>There are 5 pre-populated projects available in the Library.</li><br>
-                                <li>You can Add or Delete your own projects, they will be saved locally in your browser.</li><br>
-                                <li>Use the Library menu to Add/Remove project panels on the dashboard.</li><br>
-                                <li>There are two available Tools widgets: OpenWeather (you can configure the location), and GitHub (you can search for a valid GitHub user).</li><br>
-                                <li>If you log in (this is simulated, there is no backend), you will be presented the user panel.</li><br>
+                                <li>pmDashboard is a concept for a configurable project management dashboard.</li>
+                                <li>There are 5 pre-populated projects available in the Library.</li>
+                                <li>You can Add or Delete your own projects, they will be saved locally in your browser.</li>
+                                <li>Use the Library menu to Add/Remove project panels on the dashboard.</li>
+                                <li>There are two available Tools widgets: OpenWeather (you can configure the location), and GitHub (you can search for a valid GitHub user).</li>
+                                <li>If you log in (this is simulated, there is no backend), you will be presented the user panel.</li>
                                 <li>You can configure a few user settings by clicking the cogs.</li>
                             </ul>
                             <div class="pmd-welcome-msg-footer">Have fun exploring my front end project!</div>
@@ -419,9 +439,7 @@
                                         <input type="text" id="projectNameModal" name="projectNameModal" class="form-control"><div class="valAlert01" id="valPNameAlert01"></div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="projectOwnerModal">Project Owner</label>
                                         <div id="projectOwner"></div>
-
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -443,7 +461,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4 pmd-form-input-1">
                                         <label for="percentCompleteModal">Percent Complete</label>
-                                        <input type="number" id="percentCompleteModal" name="percentCompleteModal" class="form-control" placeholder="(0-100)" pattern="[0-9][.]">
+                                        <input type="number" id="percentCompleteModal" name="percentCompleteModal" class="form-control" placeholder="(0-100)">
                                     </div>
                                     <div class="form-group col-md-4 pmd-form-input-1">
                                         <label for="CPIModal">Cost Performance Index</label>
@@ -463,7 +481,7 @@
                             </form>
                             <button type="button" class="btn btn-primary" onclick="saveProjectDataModal()">Save Project Data</button>
                         </div>
-                        <div id="saveConfirmationModal" name="saveConfirmationModal">You can add projects to your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</div>
+                        <div id="saveConfirmationModal">You can add projects to your libraries here. You activate and deactivate projects on the dashboard by clicking on projects and widgets in your Library</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
@@ -487,7 +505,7 @@
                     <div class="modal-body">
                         <div>My Saved Projects :</div>
                         <div class="pmddelmodal" id="delProjectListModal"></div>
-                        <div id="delConfirmationModal" name="delConfirmationModal">Click on a project to delete it from local storage.</div>
+                        <div id="delConfirmationModal">Click on a project to delete it from local storage.</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearProjectFormAlerts()">
@@ -515,7 +533,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="valIndicator01">*</div><label for="weatherZipModal">Enter Zipcode</label>
-                                        <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169" maxlength="5"><div class="valAlert01" id="valOpenWeatherAlert01"></div>
+                                        <input type="number" id="weatherZipModal" name="weatherZipModal" class="form-control" placeholder="02169"><div class="valAlert01" id="valOpenWeatherAlert01"></div>
                                         <div class="valIndicator01">*</div><label for="weatherLocationModal">or Enter Location</label>
                                         <input type="text" id="weatherLocationModal" name="weatherLocationModal" class="form-control"><div class="valAlert01" id="valOpenWeatherAlert02"></div>
                                     </div>
@@ -556,7 +574,7 @@
                             </form>
                             <button type="button" class="btn btn-primary" onclick="saveUserNameModal()">Save Username</button>
                         </div>
-                        <div id="saveUserConfirmModal" name="saveUserConfirmModal" class="pmd-login-modal-hint">Simulate your login by adding your username
+                        <div id="saveUserConfirmModal" class="pmd-login-modal-hint">Simulate your login by adding your username
                             here.</div>
                     </div>
                     <div class="modal-footer">
@@ -583,7 +601,7 @@
                         <div>Logged In User:</div>
                         <div class="pmddelmodal" id="logOutPanelListModal">
                         </div>
-                        <p id="delUserConfirmModal" name="delUserConfirmModal">Click on the user to log out.</p>
+                        <p id="delUserConfirmModal">Click on the user to log out.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLogOutPanelAlerts()">
@@ -606,19 +624,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Load Toastr JS file -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 
 
     <!-- Load custom JS files -->
-        <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="js/usersettings.js"></script>
-        <script type="text/javascript" src="js/projects.js"></script>
-        <script type="text/javascript" src="js/widgets.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/usersettings.js"></script>
+        <script src="js/projects.js"></script>
+        <script src="js/widgets.js"></script>
     <!-- /Load custom JS files -->
     
     <!-- Load github jquery version; need to look into why the jquery load above (taken from BS) does not work -->
 
-        <script type="text/javascript" src="js/github-information.js"></script>
+        <script src="js/github-information.js"></script>
 
 
 

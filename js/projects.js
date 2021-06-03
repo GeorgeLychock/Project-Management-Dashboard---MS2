@@ -237,13 +237,13 @@ function setDefaultOwner() {
     if (localStorage.getItem(localStoreName)) {
         getLocalData(localStoreName, function (localData) {
             if (localData.username) {
-                return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control" value="${localData.username}"></input>`);
+                return $('#projectOwner').html(`<label for="projectOwnerModal">Project Owner</label><input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control" value="${localData.username}"></input>`);
             } else {
-                return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
+                return $('#projectOwner').html(`<label for="projectOwnerModal">Project Owner</label><input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
             }
         });
     } else {
-        return $('#projectOwner').html(`<input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
+        return $('#projectOwner').html(`<label for="projectOwnerModal">Project Owner</label><input type="text" id="projectOwnerModal" name="projectOwnerModal" class="form-control"></input>`);
     }
 }
 

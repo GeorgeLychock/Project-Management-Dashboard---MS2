@@ -314,7 +314,7 @@ const JSONFolderURL = "data/";
         $(".pmd-username").addClass('make-dark-01');
         $(".pmd-dashboard").addClass('make-dark-05');
         $(".pmd-usermenu-lib-btn").addClass('make-dark-01');
-        $(".pmd-banner-msg-block").addClass('make-dark-01');
+        $(".pmd-banner-msg-01").addClass('make-dark-07');
         $(".pmd-tooltiptext").addClass('make-dark-06');
         $(".pmd-login").addClass('make-dark-01');
         
@@ -332,7 +332,7 @@ const JSONFolderURL = "data/";
         $(".pmd-username").removeClass('make-dark-01');
         $(".pmd-dashboard").removeClass('make-dark-05');
         $(".pmd-usermenu-lib-btn").removeClass('make-dark-01');
-        $(".pmd-banner-msg-block").removeClass('make-dark-01');
+        $(".pmd-banner-msg-01").removeClass('make-dark-07');
         $(".pmd-tooltiptext").removeClass('make-dark-06');
         $(".pmd-login").removeClass('make-dark-01');
         

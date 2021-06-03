@@ -74,9 +74,8 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-acolor-2-hover a:hover {color:#b2c8cf; text-decoration: none;}
 .pmd-acolor-3 {color:#4dd2ff;}
 .pmd-acolor-3:hover {color:tomato; text-decoration: none;}
-.pmd-acolor-4 {color:#000;}
-.pmd-acolor-4 i:hover {color:orange; text-decoration: none;}
-.pmd-acolor-4 .banner-msg-01:hover {color:orange; text-decoration: none;}
+.pmd-acolor-4 button {color:#ea8361;}
+.pmd-acolor-4 button:hover {color:#83b0ef; text-decoration: none;}
 .pmd-acolor-5 {color:#fff;}
 .pmd-acolor-5:hover {color:black; text-decoration: none;}
 .pmd-acolor-6 {color:whitesmoke;}
@@ -275,6 +274,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-banner-msg-01 {
     display: inline;
+    background-color: #fff;
+    border: none;
     -webkit-appearance: none;
 }
 
@@ -475,9 +476,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Active Projects Dashboard */
 .pmd-active-projects-head {
-    margin: 10px 0;
-    padding: 2px 0 0 15px;
+    margin: 20px 0 10px 0;
+    padding: 5px 0 5px 15px;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .pmd-active-projects {
@@ -498,8 +500,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Active Widgets Dashboard */
 .pmd-active-widgets-head {
     margin: 20px 0 10px 0;
-    padding: 2px 0 0 15px;
+    padding: 5px 0 5px 15px;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .pmd-active-widgets {
@@ -669,15 +672,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-active-projects-head {
-        margin: 0 0 10px 0;
-        padding: 2px 0 0 15px;
+        margin: 20px 0 10px 0;
+        padding: 5px 0 5px 15px;
         border: none;
         border-radius: 0;
     }
 
     .pmd-active-widgets-head {
-        margin: 0 0 10px 0;
-        padding: 2px 0 0 15px;
+        margin: 20px 0 10px 0;
+        padding: 5px 0 5px 15px;
         border: none;
         border-radius: 0;
     }
@@ -738,6 +741,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .make-dark-06 {
     border: solid 1px whitesmoke;
+}
+
+.make-dark-07 {
+    background-color: #000;
 }
 
 .make-weather-dark-01 {

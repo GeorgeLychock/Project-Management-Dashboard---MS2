@@ -1,3 +1,8 @@
+/* George Lychock - MS2 Main Javascript File */
+/* The following doce was adapted from Code Institute's Interactive Frontend Development module for the Full Stack Software Developer course
+See README.md for more information */
+
+
 function userInformationHTML(user) {
     return `
         <h6>GitHub Profile:</h6>
