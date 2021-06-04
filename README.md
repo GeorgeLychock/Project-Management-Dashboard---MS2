@@ -20,8 +20,6 @@
 
 - [Technical Background](#TECH)
 
-- [Project Management](#PROJ)
-
 - [Testing](#TEST)
     -   [Usability](#TESTUSABILITY)
     -   [Functionality](#TESTFUNCTIONALITY)
@@ -35,6 +33,7 @@
 
 - [Credits](#CREDS)
 
+- [Project Management](#PROJ)
 
 
 <a name="UC"></a>
@@ -56,7 +55,7 @@ A limited number of dashboard settings will be available from a settings cog tha
 <a name="US"></a>
 ## User Stories
 ### Story 1
-As a logged-in project manager, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
+As a visitor, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
@@ -64,7 +63,7 @@ As a logged-in project manager, I want to view the projects and tools available 
     -   It is clear what elements on the dashboard are projects, and which are tools.
     
 ### Story 2
-As a logged in project manager, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
+As a visitor, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
     -   The buttons clearly indicate what they are for
@@ -74,7 +73,7 @@ As a logged in project manager, I want to Add or Remove project detail panels fr
     -   I can Remove a tool panel from the dashboard
 
 ### Story 3
-As a logged in project manager, I want to see project details of the projects after making the project panel active on the Dashboard
+As a visitor, I want to see project details of the projects after making the project panel active on the Dashboard
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   I can view project Title/Name
     -   I can view project Due Date
@@ -86,13 +85,13 @@ As a logged in project manager, I want to see project details of the projects af
     -   I can view a link to the live development site, if one exists
 
 ### Story 4
-As a logged in project manager, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
+As a visitor, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   Active widgets are present when I return to the site
     -   Buttons for any available widgets not already activated to the dashboard are present in the Library
 
 ### Story 5
-As a logged in project manager, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
+As a visitor, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   The color scheme is light when I first log in, view Dashboard
     -   I can change the color Scheme using a button to a dark scheme
@@ -101,27 +100,55 @@ As a logged in project manager, I want the ability to change certain dashboard v
     -   I can position the Library Panel on the right or the left of desktop or tablet view ports
 
 ### Story 6
-As a user, I want instruction or an indication of how and where to change dashboard visual settings.
+As a visitor, I want instruction or an indication of how and where to change dashboard visual settings.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   A visual message or banner informs me how to change settings
 
 ### Story 7
-As a user, I want to be able to change the location of the active weather Tool.
+As a visitor, I want to be able to change the location of the active weather Tool.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   A method to change the location for the weather tool is available from the Tool panel
 
 ### Story 8
+As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   'About this site' information is available in a link to the user
+    -   The information is a simple list of purpose and features of pmDashboard
+
+### Story 9
 As a vistor, I want a method to save my username so my user menu is displayed offering certain user options.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   A login button is present when a user first enters the app
     -   My username can be saved
     -   My username appears along with a user menu once the username is saved
+    -   My username and menu appears when I return to the site
+    -   My username can be removed
 
-### Story 9
-As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
+### Story 10
+As a logged in user, I want the ability to access my Projects and Tools Library from a dropdown in the user menu so I can add and remove widgets.
 -   Acceptance Criteria -- Duplicated in Testing section below
-    -   'About this site' information is available in a link to the user
-    -   The information is a simple list of purpose and features of pmDashboard
+    -   A Library dropdown appears from the user menu
+    -   I can add a panel to the dashboard from the dropdown
+    -   When I remove a panel from the dashboard, a button reappears in the dropdown for that widget
+    -   I can close the Library dropdown
+
+### Story 11
+As a logged in user, I want the ability to access all user settings from a dropdown in the user menu so I can access all options from a single location.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A settings dropdown appears in the user menu
+    -   In desktop vp, I can access and control Color Scheme, Library Panel position, and weather Tool location
+    -   In a mobile vp, I CAN NOT access the Library Panel position settings
+    -   I can close the settings dropdown
+
+### Story 12
+As a visitor, I want the ability to view a valid GitHub User's repo list and basic information.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A GitHub Tool is accessible from the Libraries
+    -   I can input a GitHub username into a field
+    -   The Tool returns a user repo list and basic user information and a user avatar once I enter a valid username
+    -   The basic user information includes: Avatar, username, user profile link, # of followers, # of users the user is following, total # of repos
+    -   I can close the GitHub Tool panel
+    -   GitHub username input does not persist when I return to the app
 
 
 <a name="UXUI"></a>
@@ -132,11 +159,11 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
         -   Change Library right/left position
     -   The cog should activate a modal window
 -   Widget Library Buttons
-    -   Each button panel needs to display the project name and an Add button
+    -   Each button panel needs to display the project name on an Add button
     -   Determine a method for making sure that only one instance of each widget is added or removed when clicking the Add/Close buttons
 -   Dashboard View Port
     -   A settings cog should be present to give users access to the following changeable settings:
-        -   Change background color
+        -   Change overall app color scheme, offering a Light and a Dark scheme to choose from
     -   The cog should activate a modal window
 -   Persistent Settings
     -   Activated widgets should be persistent when a user returns to the app.
@@ -145,11 +172,13 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
 -   OpenWeather Widget
     -   The background styling should be an indicator it is daytime(light blue) or nighttime (dark blue)
     -   Ability for user to input zip code or location to access weather data (currently default setting is Quincy, MA, USA locale); should activate a modal
+    -   The location should be persistent when a user returns to the app
 -   Adding/Removing User Projects
-    -   App should demonstrate what adding a project to the dashboard and library is like.
-    -   The projects should be persistent when the user relaunches the browser
-    -   The user should be able to delete a project
+    -   App should provide a method for adding a new user project to the app.
+    -   The projects should be persistent when the user returns to the app
+    -   The user should be able to delete a user project from the app
 -   Instructional text and tips should not take up much dashboard space but be effective in message and visual queues.
+    -   Provide a means for a user to gain brief, but concise information on what the app's function is and it's features are
     -   Describe what a user can do with the settings cogs
     -   Instruct user on how to add and remove panels from the dashboard
 -   User Login Simulation
@@ -170,7 +199,7 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
 -   Access and parse JSON data
 -   Store data in localStorage
 -   Connect app to an open source api
--   Limit duplication of code, use functions effectively
+-   Limit duplication of code, use functions efficiently
 -   Write Jasmine tests when possible, time permitted
 -   Use JSHint to check Javascript syntax
 -   Use arrow functions, if possible/needed
@@ -222,9 +251,10 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
 ## Dashboard Structure
 -   Nav, Header, and Banner sections span the top of the desktop view port (vp)
 -   Main Dashboard, split between a Projects section and a Tools/Widgets section, taking up approximately 2/3 the width of the desktop view port;  these will be stacked in mobile vp.
--   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop view port
+-   Projects and Tools/Widgets Libraries are connected and in a column that spans 1/3 the desktop viewport
+-   Projects and Tools/Widgets Libraries are NOT presented in mobile vp's
 -   A footer section spans the bottom of all view ports
--   A significant amount of structure and js is needed to move the Library Panel from a column in desktop/mobile view to a Bootstrap Dropdown in mobile view, please see comments for more information
+-   A user menu displays on the right of the header in all viewports when a vistor logs in
 
 <a name="TECH"></a>
 # Technical Background
@@ -234,7 +264,6 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
 
 ## Data Structure and Flow
 -   The widgetID (for projects and widgets/tools) drives everything; it is the unique ID for any content added to the Dashboard and allows the app to target and track what data is being displayed.
--   The Library buttons are duplicated for both desktop and mobile view ports since each displays the Libraries in completely different ways. There is an extra function and markup to support having the Library as a 3col panel in desktop, but featured as a dropdown in mobile.
 -   I used a visual to help figure out how to create and retain the widgetID information so that the app can build the library buttons, turn widget panels ON and OFF, and retain the widgetIDs so that the Dashboard can be built again upon the app being relaunched.
 [widgetID Data Flow](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/data-structure/MS-2-data-flow-01.png)
 -   For Projects data, I created a simple JSON structure for the project/widget data. I want to show that the app can parse data from JSON since many APIs will supply data in that way:
@@ -256,11 +285,11 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
 		["2021-02-09T13:50:51.644000Z", "Staging Release 1"]
 	]
     }
--   There are 3 JS files: script.js contains most reused and custom scripts called by custom functions in projects.js and widget.js. Both project.js and widget.js are very similar and control how panels are added to the main dashboard sections. These are separated because 1) each dashboard section stores active widget data locally in different localStorage variables; 2) the markup and data retrieval for the API data is different enough to warrant separate functions from the functions that add the project panels to the dashboard. Otherwise every effort was taken to keep duplication of code to a minimum.
+-   There are 5 JS files: script.js contains most reused and custom scripts called by custom functions in projects.js and widget.js. Both project.js and widget.js are very similar and control how panels are added to the main dashboard sections. These are separated because 1) each dashboard section stores active widget data locally in different localStorage variables; 2) the markup and data retrieval for the API data is different enough to warrant separate functions from the functions that add the project panels to the dashboard. Otherwise every effort was taken to keep duplication of code to a minimum.
 
 
 ## Technical and Scope Constraints
--   The site will not have access to a database. All project data will come from JSON files to simulate widget data streams.
+-   The site will not have access to a database. All default project data will come from JSON files to simulate widget data streams.
 -   The project will consist of just a landing page/dashboard; no secondary pages will be active. The focus of the project's first release is to address how the user can configure their primary view port: a summary of all their projects, displayed in a dashboard.
 -   *Foot Note 1: The widgetID variable contains the unique IDs for the data stream avaiable for each widget available to the dashboard; its possible these values would be created with a Create Project module or Third Party app and stored in a database. They are hard coded here since db calls are out of scope. Search " //*1 " to see code in script.js file:
 `        var widgetIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"];`
@@ -304,108 +333,7 @@ As a vistor, I want a method to gain more information on what pmDashboard is and
         -   Give your key a nem.
         -   Copy the key into the value for 'key' in the widget0001.json file located in teh data/ folder
 
--   [GitHub API: ]()
-
-
-<a name="PROJ"></a>
-# Project Management
-## Sprints and Release Strategy
--   Sprint 1 2/21 - 2/27
-    -   Make the ON/OFF buttons only open or close once
-    -   Create multiple library buttons
-    -   Create code to remove a button after the panel is activated to the dashboard
-    -   Create code to add a button to the library after the panel is removed from the dashboard
-    -   Figure out how to do local storage
-    -   Code the Rebuild Library Buttons function from the localStorage
-    -   Add Progress Bar to project panels
-    -   Wireframe active project panels
-
--   ** First Mentor Session
-
--   Sprint 2 2/28 - 3/6
-    -   Create Look and Feel
-    -   Create a light and dark shade color scheme for overall appearance
-    -   Add dashboard settings button
-    -   Add clear dashboard button (in dashboard settings?)
-    -   wireframe mobile home page
-
--   Sprint 3 3/7 - 3/13
-    -   Add a third-party widget to the library
-    -   Style widget panels
-    -   Style Progress Bar to project panels
-    -   Make a function for .append to pass the widget panel MU
-
--   Sprint 4 3/14 - 3/20
-    -   Update Dark view styles
-    -   Style dashboard settings modal
-    -   Add clear dashboard button (in dashboard settings?)
-    -   Wireframe mobile home page
-    -   Create a Library settings modal to change R/L position of Library
-
--   ** Second Mentor Session
-
--   Sprint 5 3/21 - 3/28
-    -   Research Firebase
-    -   Setup Firebase account and key
-    -   Create Firebase API html/JS files
-    -   Test Firebase API
-    -   FIX: When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly
-    -   FIX: When reentering the site or refreshing the browser the scenario doesn't persist in the project panel heads on the dashboard in dark mode. 
-
--   Sprint 6 3/29 - 4/4
-    -   Add Project Add Modal to Nav
-    -   Create LocalStorage schema for user setting saving
-    -   Add Project Delete Modal
-    -   Style Project Add/Del Modals
-    -   Add validation to Add Nodal
-    -   Create Project Delete messaging/responses
-
--   Sprint 7 4/5 - 4/11
-    -   Add cog tip to nav
-    -   Create cog tip JS to highlight cogs
-    -   Restyle Open Weather widget
-    -   Add location input for Open Weather widget
-    -   Save location to user settings localStorage
-
--   Sprint 8 4/12 - 4/18
-    -   Restyle dark color scheme
-    -   Create Mobile wireframe
-    -   Apply mobile styling
-    -   Apply desktop css media styles
-
--   Sprint 9 4/19 - 4/25
-    -   Create Tablet wireframe
-    -   Apply Tablet styling
-    -   Apply Tablet Landscape css media styles
-
--   Sprint 10 4/26 - 5/2
-    -   Add GitHub API widget to Library
-    -   Add GitHub API widget to Dashboard
-
--   ** Third Mentor Session
--   5/4 - 5/5 - Sprint Planning
-
--   Sprint 11 5/3 - 5/9
-    -   Sprint Planning
-    -   Add TOC to RM
-    -   Make Library sections overflow to scroll
-    -   Add dev site web link to Add Project modal
-    -   FIX: Delete Project modal bug
-    -   FIX: Cog tip bug
-    -   Add information link to Nav
-
--   Sprint 12 5/10 - 5/16
-    -   Create a modal to have a user log in
-    -   Save user login data to LS
-    -   When creating new project, default Owner to logged in user, but give ability to change owner
-    -   Apply Toastr notifications
-
--   Sprint 13 5/17 - 5/23
-    -   Submit for Peer Review
-    -   Breakout Testing sections in RM
-    -   Test
-    -   Add device and browser compatibility section in RM
-    -   Submit to Maranatha
+-   [GitHub API: ](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) The GitHub API code came from Code Institute, see Code Credits, but information was used from the link provided here.
 
 <a name="TEST"></a>
 # Testing
@@ -555,17 +483,117 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing
--   Testing User Stories from User Experience (UX) Section
-    -   **Story 1** As a Site Visitor, I want to have a persistent navigation element/method allowing me to jump to any site content quickly.
-        -  ##### Acceptance Criteria -- Duplicated in Testing below
-            1.  The most detailed Content is never more than **two clicks** away from home.
-            2.  Home is always **one click** away from anywhere on the site.
-            3.  Nav dropdown (collapse) is *prohibited*
-            4.  Either links to sub pages and/or Home should be visible on any page at any scroll point on any view port.
-        -   ##### Results
-            -   (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.
-            -   (3) PASS No nav icon nor dropdown exists'
-            -   (4) PASS Every sub page has at least the Home icon visible at all times, all ports. [Screenshot](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/testing/screenshots/userst-1_4-screenshotfrom2020-11-23.png)
+Testing User Stories from User Experience (UX) Section
+
+
+
+### Story 1
+As a visitor, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   There is an indication that I'm the user logged in
+    -   My available projects are indicated in a side panel or other persistent section; called a Library.
+    -   I can see further detail of a given project in a larger, more prominent Dashboard.
+    -   It is clear what elements on the dashboard are projects, and which are tools.
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+    
+### Story 2
+As a visitor, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
+    -   The buttons clearly indicate what they are for
+    -   I can Add a project detail panel from the dashboard
+    -   I can Remove a project detail panel
+    -   I can Add a tool panel from the dashboard
+    -   I can Remove a tool panel from the dashboard
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 3
+As a visitor, I want to see project details of the projects after making the project panel active on the Dashboard
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   I can view project Title/Name
+    -   I can view project Due Date
+    -   I can view the project Owner
+    -   I can view the project Description
+    -   I can view project percent complete to date
+    -   I can view project Cost Performance Index (CPI) to date
+    -   I can view the project Schedule Variance (SV) to date
+    -   I can view a link to the live development site, if one exists
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 4
+As a visitor, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   Active widgets are present when I return to the site
+    -   Buttons for any available widgets not already activated to the dashboard are present in the Library
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 5
+As a visitor, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   The color scheme is light when I first log in, view Dashboard
+    -   I can change the color Scheme using a button to a dark scheme
+    -   I can change the scheme back to light
+    -   The color scheme I used last will be present when I come back to the site
+    -   I can position the Library Panel on the right or the left of desktop or tablet view ports
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 6
+As a visitor, I want instruction or an indication of how and where to change dashboard visual settings.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A visual message or banner informs me how to change settings
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 7
+As a visitor, I want to be able to change the location of the active weather Tool.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A method to change the location for the weather tool is available from the Tool panel
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 8
+As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   'About this site' information is available in a link to the user
+    -   The information is a simple list of purpose and features of pmDashboard
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 9
+As a vistor, I want a method to save my username so my user menu is displayed offering certain user options.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A login button is present when a user first enters the app
+    -   My username can be saved
+    -   My username appears along with a user menu once the username is saved
+    -   My username and menu appears when I return to the site
+    -   My username can be removed
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 10
+As a logged in user, I want the ability to access my Projects and Tools Library from a dropdown in the user menu so I can add and remove widgets.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A Library dropdown appears from the user menu
+    -   I can add a panel to the dashboard from the dropdown
+    -   When I remove a panel from the dashboard, a button reappears in the dropdown for that widget
+    -   I can close the Library dropdown
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+
+### Story 11
+As a logged in user, I want the ability to access all user settings from a dropdown in the user menu so I can access all options from a single location.
+-   Acceptance Criteria -- Duplicated in Testing section below
+    -   A settings dropdown appears in the user menu
+    -   In desktop vp, I can access and control Color Scheme, Library Panel position, and weather Tool location
+    -   In a mobile vp, I CAN NOT access the Library Panel position settings
+    -   I can close the settings dropdown
+-   Results (TK)
+    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
 
 <a name="TESTCOMP"></a>
 ### Compatibility Testing
@@ -696,3 +724,104 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 -   All Images were created by the developer.
 
 ## Acknowledgements
+-   N/A
+
+<a name="PROJ"></a>
+# Project Management
+## Sprints and Release Strategy
+-   Sprint 1 2/21 - 2/27
+    -   Make the ON/OFF buttons only open or close once
+    -   Create multiple library buttons
+    -   Create code to remove a button after the panel is activated to the dashboard
+    -   Create code to add a button to the library after the panel is removed from the dashboard
+    -   Figure out how to do local storage
+    -   Code the Rebuild Library Buttons function from the localStorage
+    -   Add Progress Bar to project panels
+    -   Wireframe active project panels
+
+-   ** First Mentor Session
+
+-   Sprint 2 2/28 - 3/6
+    -   Create Look and Feel
+    -   Create a light and dark shade color scheme for overall appearance
+    -   Add dashboard settings button
+    -   Add clear dashboard button (in dashboard settings?)
+    -   wireframe mobile home page
+
+-   Sprint 3 3/7 - 3/13
+    -   Add a third-party widget to the library
+    -   Style widget panels
+    -   Style Progress Bar to project panels
+    -   Make a function for .append to pass the widget panel MU
+
+-   Sprint 4 3/14 - 3/20
+    -   Update Dark view styles
+    -   Style dashboard settings modal
+    -   Add clear dashboard button (in dashboard settings?)
+    -   Wireframe mobile home page
+    -   Create a Library settings modal to change R/L position of Library
+
+-   ** Second Mentor Session
+
+-   Sprint 5 3/21 - 3/28
+    -   Research Firebase
+    -   Setup Firebase account and key
+    -   Create Firebase API html/JS files
+    -   Test Firebase API
+    -   FIX: When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly
+    -   FIX: When reentering the site or refreshing the browser the scenario doesn't persist in the project panel heads on the dashboard in dark mode. 
+
+-   Sprint 6 3/29 - 4/4
+    -   Add Project Add Modal to Nav
+    -   Create LocalStorage schema for user setting saving
+    -   Add Project Delete Modal
+    -   Style Project Add/Del Modals
+    -   Add validation to Add Nodal
+    -   Create Project Delete messaging/responses
+
+-   Sprint 7 4/5 - 4/11
+    -   Add cog tip to nav
+    -   Create cog tip JS to highlight cogs
+    -   Restyle Open Weather widget
+    -   Add location input for Open Weather widget
+    -   Save location to user settings localStorage
+
+-   Sprint 8 4/12 - 4/18
+    -   Restyle dark color scheme
+    -   Create Mobile wireframe
+    -   Apply mobile styling
+    -   Apply desktop css media styles
+
+-   Sprint 9 4/19 - 4/25
+    -   Create Tablet wireframe
+    -   Apply Tablet styling
+    -   Apply Tablet Landscape css media styles
+
+-   Sprint 10 4/26 - 5/2
+    -   Add GitHub API widget to Library
+    -   Add GitHub API widget to Dashboard
+
+-   ** Third Mentor Session
+-   5/4 - 5/5 - Sprint Planning
+
+-   Sprint 11 5/3 - 5/9
+    -   Sprint Planning
+    -   Add TOC to RM
+    -   Make Library sections overflow to scroll
+    -   Add dev site web link to Add Project modal
+    -   FIX: Delete Project modal bug
+    -   FIX: Cog tip bug
+    -   Add information link to Nav
+
+-   Sprint 12 5/10 - 5/16
+    -   Create a modal to have a user log in
+    -   Save user login data to LS
+    -   When creating new project, default Owner to logged in user, but give ability to change owner
+    -   Apply Toastr notifications
+
+-   Sprint 13 5/17 - 5/23
+    -   Submit for Peer Review
+    -   Breakout Testing sections in RM
+    -   Test
+    -   Add device and browser compatibility section in RM
+    -   Submit to Maranatha
