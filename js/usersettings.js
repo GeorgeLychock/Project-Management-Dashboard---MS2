@@ -97,11 +97,11 @@ function createUserLoginPanel() {
 
         // if logged in, then show log out btn and username block
         if (checkSetJSON.username) {
-            return $('#pmd-username').text(checkSetJSON.username), $('#pmd-userpanel').removeClass("pmd-hide").addClass(colorSchemeFinal01), $('#pmd-login').html("<div></div>");
+            return $('#pmd-username').text(checkSetJSON.username), $('#pmd-userpanel').removeClass("pmd-hide").addClass(colorSchemeFinal01), $('#pmd-login').html("<div></div>"), $('#pmd-login-msg').addClass("pmd-hide");
         // else, show user login btn
         } else {
             return $('#pmd-login').html(`
-                <div type="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
+                <div role="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
                     <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
                 </div>
             `);
@@ -109,7 +109,7 @@ function createUserLoginPanel() {
     // else, show user login btn
     } else {
     return $('#pmd-login').html(`
-        <div type="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
+        <div role="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
             <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
         </div>
     `);
@@ -190,7 +190,7 @@ function logOut(un) {
     updateUserSettings("username", "");
     createUserLoginPanel();
     toastr.success(pmdUsername + ' has been logged out!', 'User Logged Out');
-    return $("#logOutPanelListModal").html(""), $('#pmd-userpanel').addClass("pmd-hide");
+    return $("#logOutPanelListModal").html(""), $('#pmd-userpanel').addClass("pmd-hide"), $('#pmd-login-msg').removeClass("pmd-hide");
 }
 
 

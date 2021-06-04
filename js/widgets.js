@@ -213,7 +213,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     return `<div id="${widgetID}" class="col-12 col-md-6 col-lg-6 col-xl-3 pmd-max-width-250">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}">
-            <div type="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
+            <div role="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
                 <i class="bi bi-gear pmd-bi-gear-ow pmd-acolor-1" aria-hidden="true"></i>
             </div>
         </div>
