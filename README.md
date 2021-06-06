@@ -110,13 +110,13 @@ As a visitor, I want to be able to change the location of the active weather Too
     -   A method to change the location for the weather tool is available from the Tool panel
 
 ### Story 8
-As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
+As a visitor, I want a method to gain more information on what pmDashboard is and what its features are.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   'About this site' information is available in a link to the user
     -   The information is a simple list of purpose and features of pmDashboard
 
 ### Story 9
-As a vistor, I want a method to save my username so my user menu is displayed offering certain user options.
+As a visitor, I want a method to save my username so my user menu is displayed offering certain user options.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   A login button is present when a user first enters the app
     -   My username can be saved
@@ -342,20 +342,21 @@ Used test writing guidelines from the following resources:
 
 <a name="TESTUSABILITY"></a>
 ## Usability Testing
+Unless otherwise noted, all the following was tested and passed:
 -   Web page content should be correct without any spelling or grammatical errors
--   Tool tip text should be present on the User Menu dropdown icons.
+-   Tool tip text should be present upon hovering the User Menu dropdown icons.
 -   Enough space should be provided between field labels, columns, rows, and error messages.
 -   All the buttons should be in a standard format and size.
 -   Check for broken links and images.
 -   Confirmation message should be displayed for any kind of update and delete operation.
--   Check the site on different resolutions (640 x 480, 600x800 etc.?)
 -   Perform Peer Review
 -   Scroll bar should appear only if required.
--   If there is an error message on submit, the information filled by the user should be there.
+-   If there is an error message on submit, the information filled by the user should remain.
 -   All fields (Textbox, dropdown, radio button, etc) and buttons should be accessible by keyboard shortcuts and the user should be able to perform all operations by using keyboard.
 
 <a name="TESTFUNCTIONALITY"></a>
 ## Functionality Testing
+Unless otherwise noted, all the following was tested and passed:
 ### General
 -   All images and icons render correctly
 -   All buttons show pointer on hover
@@ -433,8 +434,8 @@ Used test writing guidelines from the following resources:
     -   Settings cog should be present close to the top Library title
     -   Clicking on the cog should display a modal
     -   Modal should offer user ability to set the position of the desktop Library Panel
-    -   When the user click the right position button, the Library Panel moves flush right;
-    -   When the user click the left position button, the Library Panel moves flush left (default); 
+    -   When the user clicks the right position button, the Library Panel moves flush right;
+    -   When the user clicks the left position button, the Library Panel moves flush left (default); 
     -   Modal should hide when Close is clicked
 
 -   ### Project Panels
@@ -458,7 +459,7 @@ Used test writing guidelines from the following resources:
 
 <a name="TESTVALID"></a>
 ## Validation
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. I also used the W3C Link Checker but do not include the results here to save space.
+The W3C Markup Validator and W3C CSS Validator Services were used to validate all html and css files in the project to ensure there were no syntax errors in the project.
 
 -   [W3C Markup Validator (Nu)](https://validator.w3.org/nu/)
     - [index.html](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/nu-html-validate-index-html.png), NO ERRORS
@@ -475,7 +476,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     -   Tested all usersettings.js functions in JSHint 4/7/21
 -   [Autoprefixer: v9.7.6](https://autoprefixer.github.io), PostCSS: v7.0.29, Browsers: last 4 version
 
-
 ### (Jasmine) Test Sequences:
 -   Create a library button that turns a div ON in the active widget view port
 -   Create a library button that turns a div OFF in the active widget view port
@@ -484,8 +484,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 <a name="TESTSTORIES"></a>
 ## User Story Testing
 Testing User Stories from User Experience (UX) Section
-
-
 
 ### Story 1
 As a visitor, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
