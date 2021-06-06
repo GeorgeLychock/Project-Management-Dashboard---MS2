@@ -26,22 +26,22 @@
         <div class="container-fluid pmd-nav-cntnr">
             <div class="row no-gutters pmd-bcolor-nav">
                 <div class="col">
-                    <nav class="navbar navbar-expand-lg navbar-light pmd-nar-bar">
-                        <a class="navbar-brand pmd-corp-title" href="#">pmDashboard</a>
+                    <nav class="navbar navbar-expand-lg navbar-dark pmd-nav-bar">
+                        <a class="navbar-brand pmd-corp-title pmd-ncolor-4" href="#">pmDashboard</a>
                         <button class="navbar-toggler pmd-nav-tog" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon pmd-nav-icon"></span>
+                            <span class="navbar-toggler-icon pmd-nav-icon pmd-ncolor-5"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
+                                <li class="nav-item pmd-ncolor-4">
                                     <button type="button" class="pmd-nav-item" data-toggle="modal" data-target="#addProject"
                                         onclick="setDefaultOwner()">
                                         Add Project
                                     </button>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item pmd-ncolor-4">
                                     <button type="button" class="pmd-nav-item" data-toggle="modal" data-target="#delProject"
                                         onclick="createDeleteProjectList()">
                                         Delete Project
@@ -49,15 +49,15 @@
                                 </li>
                                 <li class="nav-item">
                                     <!-- Display Mobile version of the cog hint-->
-                                    <div class="d-lg-none pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i
-                                            class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your
+                                    <div class="d-lg-none pmd-cog-instructions pmd-ncolor-5">Use the settings cogs <i
+                                            class="bi bi-gear pmd-ncolor-5" aria-hidden="true"></i> to customize your
                                         dashboard!</div>
                                 </li>
                             </ul>
                         </div>
                         <!-- Display Desktop version of the cog hint-->
-                        <div class="d-none d-lg-inline pmd-cog-instructions pmd-ncolor-4">Use the settings cogs <i
-                                class="bi bi-gear pmd-ncolor-4" aria-hidden="true"></i> to customize your dashboard!</div>
+                        <div class="d-none d-lg-inline pmd-cog-instructions pmd-ncolor-5">Use the settings cogs <i
+                                class="bi bi-gear pmd-ncolor-5" aria-hidden="true"></i> to customize your dashboard!</div>
                     </nav>
                 </div>
             </div>
@@ -83,7 +83,7 @@
             <div class="container-fluid pmd-header-cntnr">
                 <div class="row pmd-header">
                     <div class="col-12 col-md-9 pmd-hcolor-1">
-                        <button type="button" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
+                        <button type="button" aria-label="Dashboard settings" class="pmd-icon-05" data-toggle="modal" data-target="#dashboardSettings">
                             <i class="bi bi-gear pmd-bi-gear pmd-acolor-1" aria-hidden="true"></i>
                         </button>
                         <h1 class="pmd-title">My PM Dashboard</h1>
@@ -102,7 +102,7 @@
                                             <div class="dropdown">
                                                 <div class="btn btn-secondary dropdown-toggle pmd-usermenu-lib-btn"
                                                     role="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
+                                                    aria-label="My Library dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <div class="pmd-tooltip">
                                                         <i class="fas fa-university" aria-hidden="true"></i>
                                                         <span class="pmd-tooltiptext">My Library</span>
@@ -207,7 +207,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="btn btn-secondary pmd-usermenu-lib-btn pmd-icon-04" role="button"
+                                            <div class="btn btn-secondary pmd-usermenu-lib-btn pmd-icon-04" role="button" aria-label="Log Out"
                                                 data-toggle="modal" onclick="createDeleteUsernameList()"
                                                 data-target="#logOutPanel">
                                                 <i class="bi bi-box-arrow-in-left pmd-acolor-1" aria-hidden="true">Log
@@ -231,7 +231,7 @@
                         <section>
                             <div class="pmd-project-lib">
                                 <div>
-                                    <div role="button" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
+                                    <div role="button" aria-label="Library Panel settings" class="pmd-icon-02" data-toggle="modal" data-target="#librarySettings">
                                         <i class="bi bi-gear pmd-bi-gear pmd-acolor-1" aria-hidden="true"></i>
                                     </div>
                                     <h2 class="pmd-dinline pmd-hcolor-1">My Projects Library</h2>
@@ -273,7 +273,7 @@
             <div class="container-fluid">
                 <div class="row no-gutters pmd-footer pmd-bcolor-foot">
                     <div class="col">
-                        <h6>pmDashboard, Inc., 2021</h6>
+                        <div>pmDashboard, Inc., 2021</div>
                         <div>&#169; 2021 by George Lychock. All Rights Reserved.</div>
                     </div>
                 </div>

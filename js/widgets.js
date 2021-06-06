@@ -262,7 +262,7 @@ function buildGitHubPanelMU(widgetID) {
                     <div class="d-inline pmd-gh-icon"><i class="bi bi-github"></i></div>
                     <div class="d-inline float-right"><h5 class="text-center">Search GitHub Projects</h5></div>
                     <div class="pmd-gh-inputarea">
-                        <div class="pmd-gh-inputtext"><input type="text" id="gh-username" value="GeorgeLychock" oninput="fetchGitHubInformation()" /></div>
+                        <div class="pmd-gh-inputtext"><input type="text" id="gh-username" oninput="fetchGitHubInformation()" /></div>
                         <div class="pmd-gh-inputlabel">Enter a valid GitHub username: </div>
                     </div>
                     <div class="pmd-gh-user-data">

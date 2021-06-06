@@ -101,7 +101,7 @@ function createUserLoginPanel() {
         // else, show user login btn
         } else {
             return $('#pmd-login').html(`
-                <div role="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
+                <div role="button" aria-label="Log In" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
                     <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
                 </div>
             `);
@@ -109,7 +109,7 @@ function createUserLoginPanel() {
     // else, show user login btn
     } else {
     return $('#pmd-login').html(`
-        <div role="button" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
+        <div role="button" aria-label="Log In" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
             <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
         </div>
     `);

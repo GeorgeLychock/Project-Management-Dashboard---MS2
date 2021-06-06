@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Common Text Colors: Allows me to change colors globally for all main heads, sections, and links.pmd- NOTE! Some :hover colors are defined at the specific selector style further below */
 /*header colors*/
-.pmd-hcolor-1 {color:#619aea;}
+.pmd-hcolor-1 {color:#1759b5;}
 .pmd-hcolor-2 {color:#000;}
 .pmd-hcolor-3 {color:#999;}
 .pmd-hcolor-4 {color:whitesmoke;}
@@ -68,7 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-ncolor-1 {color:#4dd2ff;}
 .pmd-ncolor-2 {color:#fff;}
 .pmd-ncolor-3 {color:#fa0;}
-.pmd-ncolor-4 {color: #000;}
+.pmd-ncolor-4 {color: whitesmoke;}
+.pmd-ncolor-4 button {color: whitesmoke;}
+.pmd-ncolor-4:hover {color:#fa0;}
+.pmd-ncolor-4 button:hover {color:#fa0;}
+.pmd-ncolor-5 {color: whitesmoke;}
+
 
 /* main text colors */
 .pmd-pcolor-1 {color:whitesmoke;}
@@ -97,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-bcolor-4 {background-color:#5a6268;}
 .pmd-bcolor-5 {background-color:#000;}
 .pmd-bcolor-6 {background-color:rgba(0, 0, 0, .85);}
-.pmd-bcolor-nav {background-color:#83b0ef;}
+.pmd-bcolor-nav {background-color:#1759b5;}
 .pmd-bcolor-foot {background-color:#fda;}
 
 /*Common Button Colors*/
@@ -233,11 +238,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmd-nav-item {
-    border: 2px solid #add8e6;
-    border-radius: 10px;
-    background: #fff;
-    padding: 0 0 0 10px;
-    margin: 0 15px 4px 8px; 
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: .90rem;
+    padding: 10px;
+    margin: 0 15px 4px 8px;
 }
 
 .pmd-nav-item:hover {
@@ -593,8 +599,6 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
     }
 
-    .pmd-ncolor-4 {color: whitesmoke;}
-
     .pmd-corp-title {
         font-size: 1.0rem;
     }
@@ -605,6 +609,7 @@ h1, h2, h3, h4, h5, h6 {
         background: transparent;
         padding-top: 4px;
         margin: 0 4px 0 8px;
+        min-width: 0;
     }
 
     .pmd-header {
