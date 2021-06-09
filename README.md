@@ -500,18 +500,15 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
     - [github-styles.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-github-styles-css.png), NO ERRORS
     - [widget.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-widget-css.png), NO ERRORS
     - [style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-style-css.png), NO ERRORS
--   [Lighthouse](https://jigsaw.w3.org/css-validator/#validate_by_uri+with_options)
-    - [Results: Desktop Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-desktop-index.jpg)
-    - [Results: Mobile Report - Home (index)](https://github.com/GeorgeLychock/georgelychock-career/blob/main/_documentation/validation/gl-career-lighthouse-mobile-index.jpg)
+-   [Lighthouse]()
+    - [Results: Desktop Report - index.html]()
+    - [Results: Mobile Report - index.html]()
+    - [Results: Desktop Report - index.html - Logged In User, panels activated]()
+    - [Results: Mobile Report - index.html - Logged in User, panels activated]()
 - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
     -   Tested all script.js functions in JSHint 4/7/21
     -   Tested all usersettings.js functions in JSHint 4/7/21
 -   [Autoprefixer: v9.7.6](https://autoprefixer.github.io), PostCSS: v7.0.29, Browsers: last 4 version
-
-### (Jasmine) Test Sequences:
--   Create a library button that turns a div ON in the active widget view port
--   Create a library button that turns a div OFF in the active widget view port
--   Correctly render data from an external JSON files
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing
@@ -635,10 +632,6 @@ As a logged in user, I want the ability to access all user settings from a dropd
 
 <a name="BUGS"></a>
 ## Bugs / Fixes
-### Fixed Bugs after Testing
--   Issue: On tablet view ports 
-    -   Fix: Adjusted the row divs style to be completely responsive across all view ports, portrait and landscape.
-
 ### Known Bugs
 #### OPEN 
 -   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libraries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
@@ -750,8 +743,6 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
         }
 -   Tooltips
     -   Used the CSS based tooltips code from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
-
--   [Digital Ocean : How To Style Scrollbars with CSS](https://www.digitalocean.com/community/tutorials/css-scrollbars)
 
 ## Content
 
