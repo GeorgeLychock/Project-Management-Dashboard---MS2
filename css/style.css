@@ -246,8 +246,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     text-align: left;
     font-size: .90rem;
-    padding: 10px;
-    margin: 0 15px 4px 8px;
+    padding: 5px 0px;
 }
 
 .pmd-nav-item:hover {
@@ -261,6 +260,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .pmd-nar-bar {
     padding: 0 0 0 5px;
+}
+
+.pmd-nav-ul {
+    margin-top: 15px;
 }
 
 .pmd-nav-icon {
@@ -310,7 +313,6 @@ h1, h2, h3, h4, h5, h6 {
 .pmd-header-cntnr {
     padding: 0;
     max-width: 1400px;
-    margin-bottom: 10px;
 }
 
 .pmd-header {
@@ -333,8 +335,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 
+#pmd-login-msg {
+    font-size: .75rem;
+}
+
 .pmd-up-col {
-    padding: 10px 10px 5px 10px;
+margin-top: 20px;
 }
 
 .pmd-userpanel {
@@ -626,6 +632,10 @@ h1, h2, h3, h4, h5, h6 {
         background-color: transparent;
     }
 
+    .pmd-icon-04 {
+        font-size: 1rem;
+    }
+
     .pmd-icon-05 { /* dashboardSettings */
         font-size: 1.0rem;
     }
@@ -656,7 +666,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-up-col {
-        padding-top: 5px;
+        margin-top: 5px;
+
+    }
+
+    .pmd-header-cntnr {
+        margin-bottom: 10px;
     }
 
     .pmd-username {

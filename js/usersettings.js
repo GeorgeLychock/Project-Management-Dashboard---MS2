@@ -104,6 +104,7 @@ function createUserLoginPanel() {
                 <div role="button" aria-label="Log In" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
                     <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
                 </div>
+                <div id="pmd-login-msg" class="d-md-none pmd-pcolor-4">Please login to access the user menu.</div>
             `);
             }
     // else, show user login btn
@@ -112,6 +113,7 @@ function createUserLoginPanel() {
         <div role="button" aria-label="Log In" class="pmd-icon-04" data-toggle="modal" data-target="#loginPanel">
             <i class="bi bi-box-arrow-in-right pmd-acolor-1${colorSchemeFinal01}" aria-hidden="true"> Login</i>
         </div>
+        <div id="pmd-login-msg" class="d-md-none pmd-pcolor-4">Please login to access the user menu.</div>
     `);
     }
 }
