@@ -50,6 +50,7 @@ A limited number of dashboard settings will be available from a settings cog tha
 >-   Navbar, banner, and footer sections exist, but only as placeholders, little or no content will be added to them for project submission.
 >-   The project is looked at as a "desktop-first" scenario. Styling and structure efforts for tablet and mobile view ports are minimized while keeping main functionality and components/content intact.
 >-   The site is not tied into any databases, it only uses localStorage to simulate saving user input for adding projects, user login, and saving dashboard configurations for styling and panel/button visibility.
+>-  Minimal user input validation is performed as this would be mostly controlled on the server-side, if there was one.
 >-   The user stories below indicate a "logged-in user". Since this is a front-end website (as suggested by Project Idea 3 in the Assessment Handbook) the website cannot register users nor sanitize, store, and recall any user data to a database.
 
 <a name="US"></a>
@@ -236,7 +237,7 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
 <a name="WF"></a>
 ## Wireframes
 -   Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dashboard-desktop-01.png)
--   Mobile Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-mobile-desktop-01.png)
+-   Mobile Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/pm-dasboard-mobile-01.png)
 -   Active Widget Panel Desktop Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/active-panel-desktop-01.png)
 -   User Access Panel Wireframe - [View](https://github.com/GeorgeLychock/ssu-interactive-ms2/blob/master/_documentation/wireframes/user-access-panel-01.png)
 
@@ -320,10 +321,12 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
     - A notifications library recommended by my mentor Maranatha Ilesanmi.
 
 ### Resources Used
--   jQuery: How do I test whether an element exists? - [View](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
--   [MDN General Web Docs: ](https://developer.mozilla.org/) For semantic structure reference, arrays, localStorage.
+-   [jQuery: How do I test whether an element exists?](https://learn.jquery.com/using-jquery-core/faq/how-do-i-test-whether-an-element-exists/). Used this method to check if the project panel was already added to the dashboard.
+-   [MDN General Web Docs: ](https://developer.mozilla.org/) For semantic structure reference, arrays, localStorage, fetch.
+-   [W3Schools.com](https://www.w3schools.com/), For Color Picker, html/css/js general refernece, semantic structure reference, arrays, localStorage.
 -   [MDN - CSS Scrollbars](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars)
 -   [How To Create a Custom Scrollbar (w3schools.com)](https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp)
+-   [Numeric Inputs – A Comparison of Browser Defaults](https://css-tricks.com/numeric-inputs-a-comparison-of-browser-defaults/), to adjust presence of spinner controls in FF
 
 ### APIs Used
 -   [OpenWeather: ](https://openweathermap.org/api/one-call-api) Used the One-Call API to request weather information displayed in the weather Tool.
@@ -333,7 +336,7 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
         -   Give your key a nem.
         -   Copy the key into the value for 'key' in the widget0001.json file located in teh data/ folder
 
--   [GitHub API: ](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) The GitHub API code came from Code Institute, see Code Credits, but information was used from the link provided here.
+-   [GitHub API: ](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) The GitHub API code came from Code Institute, see Code Credits, but information was used from the GitHub link provided here.
 
 <a name="TEST"></a>
 # Testing
@@ -353,6 +356,7 @@ Unless otherwise noted, all the following was tested and passed:
 -   Scroll bar should appear only if required.
 -   If there is an error message on submit, the information filled by the user should remain.
 -   All fields (Textbox, dropdown, radio button, etc) and buttons should be accessible by keyboard shortcuts and the user should be able to perform all operations by using keyboard.
+    -   FAIL: Tab sequence and :focus styles need to be applied across the app
 
 <a name="TESTFUNCTIONALITY"></a>
 ## Functionality Testing
@@ -362,13 +366,13 @@ Unless otherwise noted, all the following was tested and passed:
 -   All buttons show pointer on hover
 -   Mandatory fields validate correctly, display message
 -   User Menu dropdown icons fire a menu or message
--   All Library buttons fire a panel add to the dashboard
+-   All Library buttons add a panel to the dashboard
 
 ### Navigation Bar
 -   #### Project Add
     -   Click on the Add Project nav item: Project Add modal should appear
     -   Fields for the following should appear on modal:
-        -   Project Name
+        -   Project Name (required)
         -   Project Owner
         -   Project Description
         -   Start Date (date format)
@@ -376,11 +380,12 @@ Unless otherwise noted, all the following was tested and passed:
         -   Percent Complete (number format, valid from 0-100)
         -   Cost Performance Index (number format, valid from 0.0 - 2.0)
         -   Schedule Variance (number format, valid from 0.0 - 2.0)
+        -   Project Site URL, currently needs to include full domain
     -   Project Name is mandatory; indicated by asterisk, color red
     -   No other fields should be mandatory
     -   Clicking Save Project Data should produce an error text, color red, under all mandatory fields
     -   Clicking Save Project Data should produce a confirmation message that the project has been saved
-    -   Modal should hide when Close is clicked
+    -   Modal should hide when Close or Save Project Data is clicked
 
 -   #### Project Delete
     -   Click on the Delete Project nav item: Project Delete modal should appear
@@ -406,12 +411,12 @@ Unless otherwise noted, all the following was tested and passed:
     -   Settings cog should be present close to the App title
     -   Clicking on the cog should display a modal
     -   Modal should offer user to set the color scheme to light or dark
-    -   When the user click the dark setting, the app changes appearance to a darker color scheme for background and main sections
-    -   When the user click the light setting, the app changes appearance to a lighter (default) color scheme for background and main sections
+    -   When the user clicks the dark setting, the app changes appearance to a darker color scheme for background and main sections
+    -   When the user clicks the light setting, the app changes appearance to a lighter (default) color scheme for background and main sections
     -   Modal should hide when an option is chosen
 
 -   ### User Login/Menu
-    -   When a user first enters the app, a login button should be present on the right side of the header in desktop view
+    -   When a user first enters the app, a login button should be present on the right side of the header in desktop/tablet views, immediately below the title in mobile views
     -   Clicking the login button should display a modal
     -   The modal should offer the user the ability to enter and save a user name
     -   Modal should hide when Close is clicked
@@ -429,33 +434,60 @@ Unless otherwise noted, all the following was tested and passed:
     -   When a user logs out the user panel should hide and the Log In button should return
 
 -   ### Library
-    -   Click on a library button in the Library Panel of the desktop view: the widget panel should be added to the dashboard; the library button is removed from the Library; library button is also removed from the Library Dropdown in the user menu
+    -   Click on a library button in the Library Panel of the desktop view: the widget panel should be added to the dashboard; the library button is removed from the Library; library button is also removed from the Library Dropdown in the user menu, if present
     -   When the number of Library buttons exceeds max height of the Library panel, a scroll bar should appear
     -   Settings cog should be present close to the top Library title
     -   Clicking on the cog should display a modal
     -   Modal should offer user ability to set the position of the desktop Library Panel
     -   When the user clicks the right position button, the Library Panel moves flush right;
     -   When the user clicks the left position button, the Library Panel moves flush left (default); 
-    -   Modal should hide when Close is clicked
+    -   Modal should hide when and position choice is made or the Close button is clicked
 
 -   ### Project Panels
     -   When a user clicks the Close Panel button:
         -   The project panel should be removed from the dashboard
-        -   The project library button should be added back to the Library Panel and Library dropdown
-
+        -   The project library button should be added back to the Library Panel and Library dropdown in the user menu
+        -   The project panel should remain unseen when the user returns to the app in a new browser session
 
 -   ### Widget Panels
     -   GitHub Panel
+        -   A GitHub Tool button should be present in the Tools Libraries when a user first enters the app
+        -   When the user clicks the GitHub library button, the GitHub Tool panel is added to the Dashboard, the button is removed from the Libraries
+        -   When a user clicks Close Panel on the GitHub dashboard panel is removed from the Dashboard and the GitHub library buttons are added to the Libraries
+        -   When a user enters a valid GitHub username the following are displayed:
+            -   GitHub UserName
+            -   User Avatar
+            -   Link to GitHub user profile
+            -   Data on # of user repos, # of followers, # following
+            -   A list of the user's GitHub Repos
+            -   The Repo list should be scrollable if there are more repos than can be displayed in the panel
     -   Open Weather Panel
+        -   An Open Weather button should be present in the Tools Libraries when a user first enters the app
+        -   When the user clicks the Open Weather library button, the Open Weather panel is added to the Dashboard, the button is removed from the Libraries
+        -   When a user clicks Close Panel on the Open Weather dashboard panel is removed from the Dashboard and the Open Weather library buttons are added to the Libraries
+        -   The Open Weather dashboard panel should display the following:
+            -   Weather location (default city is Quincy, MA, USA)
+            -   The time the weather tool was last refreshed, in the user's local time
+            -   An AM/PM indicator next to the time
+            -   Temperature with a degrees symbol
+            -   The weather description
+            -   The panel should display a dark setting if local time is after 7PM; display a light (sunny) setting if local time is after 7AM
+            -   A setting cog should be accessible from the panel header
+        -   A settings modal should be presented when the user clicks the settings cog
+        -   The modal should give the user the ability to change the weather location, either by ZIP Code or by city name
 
 -   ### User Settings
-    -   Persistence
-    -   Color Scheme
-    -   Library Position
+    -   Persistence, the following user settings should be recalled by the app when a user returns and cache has not been cleared:
+        -   Color Scheme
+        -   Library Position
+        -   Username
+        -   Open Weather location
 
 -   ### Mobile
-    -   Nav Dropdown
-    -   Library Dropdown
+    -   A Nav Dropdown should offer the user access to Add Project and Delete Project
+    -   The User Menu should be presented if a username has been logged in
+    -   The Library Panel found on the desktop/tablet viewports should not be present on mobile
+    -   The settings dropdown in the user menu should not contain option to position the Library Panel
 
 <a name="TESTVALID"></a>
 ## Validation
@@ -596,6 +628,8 @@ As a logged in user, I want the ability to access all user settings from a dropd
 <a name="TESTCOMP"></a>
 ### Compatibility Testing
 -   The Website was tested on Google Chrome, Firefox and Safari browsers.
+-   Test Edge
+-   Site will not load in IE11
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone6, iPad8.
 -   Used Lighthouse to identify areas on improvement which are documented below in Fixed Bugs after Testing.
 
@@ -607,22 +641,28 @@ As a logged in user, I want the ability to access all user settings from a dropd
 
 ### Known Bugs
 #### OPEN 
--   Open Weather - Current time displays a negative value before 12pm
--   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
 -   User needs to be logged in to view the Library menu on mobile devices. This isn't necessarily a bug as it is a design issue with the concept version of this app. In a production version a user wouldn't be able to view any Libraries unless they are logged in. For conceptual purposes, we show the Libraries even though a user may not have "logged in".
 -   EFFICIENCY MARKER: [script.js:removeWidgetID] The code for deleting a project or removing a dashboard panel from the local storage array should be made into arrow function(s) if possible
--   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project 2) When a user creates another project without closing the Add Project modal
 -   The arrow pointer on the weather widget doesn't line up correctly when the user hovers the cog instruction line in the top nav.
--   Percent Complete, CPI, and SV fields on Project Add modal should be validate for acceptable value range; increment (increase/decrease) buttons are very small
+-   Percent Complete, CPI, and SV fields on Project Add modal should be validated for acceptable value range; increment (increase/decrease) buttons are very small
 -   Increment buttons should not display on Zipcode input field on Open Weather widget settings modal
 -   Library Buttons:
     -   The button icon and button text do not :hover simultaneously
-    -   A black box appears when a user clicks a library button (also occures in Delete Project modal). Need to adjust Bootstrap styles for buttons.
--   Delete Project modal does not close when user confirms to delete a project
+-   Log Out modal does not close when user confirms to delete the username
     -   Tried $("#logOutPanel").modal("hide") and researching on internet, but keep getting "...not a function" errors
--   Toastr notifcations shift when the user closes the modal that triggered the Toastr
+-   Toastr notifcations shift when the user closes the modal that triggered the Toastr; issue with modal, the scrollbar pushes the Toastr div when modal is dismissed
+-   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) When a user creates another project without closing the Add Project modal
 
-#### FIXED 
+#### FIXED
+-   Library Buttons:
+    -   A black box appears when a user clicks a library button (also occures in Delete Project modal). Need to adjust Bootstrap styles for buttons.
+        -   FIX: Adjusted Bootstrap style for button:focus
+-   The instructions/confirmation messages on the Add Project modal do not work correctly: 1) After the first custom project is saved via Add Project
+    -   FIX: Changed function clearProjectFormAlerts() and saveProjectDataModal to clear and display messages in the correct sequence
+-   Delete Project modal still opens after the initial user warning if there are no custom projects to delete
+    -   FIX: Changed the if statement in function createDeleteProjectList()
+-   Open Weather - Current time displays a negative value before 12pm
+    -   FIX: Fixed code in Unix_timestamp function
 -   BLOCKER: When deleting a project or removing a dashboard panel the local storage array isn't being updated correctly resulting in erroneous library, dashboard, and delete projects functionality when refreshing the browser.
     -   FIX: Recorded the routine that removes widget IDs from local storage; created a common function in script.js to handle removing IDs
 -   When adding a project or widget to the dashboard while in the Dark Dashboard Scheme, the added panel is not styled correctly.
