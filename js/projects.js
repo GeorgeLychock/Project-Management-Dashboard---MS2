@@ -6,6 +6,7 @@ $(document).ready(function() {
     createProjectLibBtns();
     createActiveProjects();
     loadUserSettings();
+    setDefaultOwner();
 })
 
 function createActiveProjects() {
@@ -137,7 +138,7 @@ function turnProjectOff(widgetIdOff) {
         var url = JSONFolderURL + elementID + ".json";
         getData(url)
         .then(data => {
-            toastr.success(data.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
+            toastr.info(data.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
             return $("#projects-library").append(buildProjectLibBtnMU(data)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(data)), $("#" + elementID).remove();
         });
     }

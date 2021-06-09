@@ -116,7 +116,7 @@ function createUserLoginPanel() {
     }
 }
 
-function saveUserNameModal() {
+function userLogin() {
 
     var passFormData = {
         username: ""
@@ -178,7 +178,7 @@ function createDeleteUsernameList() {
 function buildUserDelBtnMU(un) {
 
     return `<div class="pmd-btn-library pmd-btncolor-1">
-    <button class="pmd-icon-03" onclick="logOut('${un}')">
+    <button type="button" class="pmd-icon-03" onclick="logOut('${un}')" data-dismiss="modal">
     <div class="pmd-dinline pmd-acolor-5">${un}</div>
     </button>
     </div>`;

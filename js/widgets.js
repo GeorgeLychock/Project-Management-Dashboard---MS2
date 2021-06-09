@@ -342,4 +342,10 @@ function saveOpenWeatherLocation() {
         return $(".valAlert01").html(""), $("#saveLocalConfirmModal").html("Your location has been updated!");
     }
 }
+
+
+function clearLocalConfirmMsg() {
+    $("#saveLocalConfirmModal").html("");
+}
+
 /* END Open Weather Custom Functions */

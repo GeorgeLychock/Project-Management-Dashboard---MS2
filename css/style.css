@@ -43,6 +43,10 @@ button:focus {
     outline: none;
 }
 
+/* General Browser Overides */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 /* Base Elements */
 body {
@@ -600,14 +604,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-corp-title {
-        font-size: 1.0rem;
+        font-size: 1.25rem;
     }
 
     .pmd-nav-item {
         border: none;
         border-radius:0rem;
         background: transparent;
-        padding-top: 4px;
         margin: 0 4px 0 8px;
         min-width: 0;
     }
@@ -621,6 +624,10 @@ h1, h2, h3, h4, h5, h6 {
         display: inline;
         float: right;
         background-color: transparent;
+    }
+
+    .pmd-icon-05 { /* dashboardSettings */
+        font-size: 1.0rem;
     }
     
     .pmd-title {
@@ -682,7 +689,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .pmd-active-projects-head {
-        margin: 20px 0 10px 0;
+        margin: 0px 0 10px 0;
         padding: 5px 0 5px 15px;
         border: none;
         border-radius: 0;
