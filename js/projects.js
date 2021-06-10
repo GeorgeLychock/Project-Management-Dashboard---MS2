@@ -130,7 +130,7 @@ function turnProjectOff(widgetIdOff) {
         // YES: Retrieve data and rebuild the library button, and emove project panel from dashboard
         getLocalData(elementID, function(localData) {
             // Add project to the dashboard and remove the library button from both Desktop and Mobile views
-            toastr.success(localData.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
+            toastr.info(localData.name + ' has been removed from the Dashboard.', 'Project Panel Removed');
             return $("#projects-library").append(buildProjectLibBtnMU(localData)), $("#usermenu-projects-library").append(buildProjectLibBtnMUUsermenu(localData)), $("#" + elementID).remove();
         });
     } else {
