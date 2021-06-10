@@ -200,14 +200,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
 - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
     -   Tested all script.js functions in JSHint 4/7/21
     -   Tested all usersettings.js functions in JSHint 4/7/21
--   [Autoprefixer: v9.7.6](https://autoprefixer.github.io), PostCSS: v7.0.29, Browsers: last 4 version
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing
 Testing User Stories from User Experience (UX) Section
 
 ### Story 1
-As a visitor, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
+As a visitor, I want to view the projects and tools available to add to a main dashboard so I can have a clear, one-stop view of all my projects' status and tools I'm currently using.
 -   Acceptance Criteria -- Duplicated in Testing section below
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
@@ -320,7 +319,7 @@ As a logged in user, I want the ability to access all user settings from a dropd
     -   <img src="_documentation/testing/compatibility-chart.jpg" />
 -   When testing in IE11, scripts would not run
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone6, iPad8.
--   Used Lighthouse to identify areas on improving Accessibility, SEO, and general good practices
+-   Used Lighthouse to identify areas on improving Accessibility, SEO, and good general practices
 
 <a name="BUGS"></a>
 ## Bugs / Fixes

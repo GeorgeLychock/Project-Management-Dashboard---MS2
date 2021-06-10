@@ -50,9 +50,10 @@ A limited number of dashboard settings will be available from a settings cog tha
 
 <a name="US"></a>
 ## User Stories
+NOTE: For Acceptance Criteria test results please see TESTRM.md
 ### Story 1
-As a visitor, I want to view the projects and tools available to add to a main dashboard. The dashboard is a clear, one-stop view of all my projects' status and tools I'm currently using.
--   Acceptance Criteria -- Duplicated in Testing section below
+As a visitor, I want to view the projects and tools available to add to a main dashboard so I can have a clear, one-stop view of all my projects' status and tools I'm currently using.
+-   Acceptance Criteria
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
     -   I can see further detail of a given project in a larger, more prominent Dashboard.
@@ -60,7 +61,7 @@ As a visitor, I want to view the projects and tools available to add to a main d
     
 ### Story 2
 As a visitor, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
     -   The buttons clearly indicate what they are for
     -   I can Add a project detail panel from the dashboard
@@ -70,7 +71,7 @@ As a visitor, I want to Add or Remove project detail panels from the Dashboard s
 
 ### Story 3
 As a visitor, I want to see project details of the projects after making the project panel active on the Dashboard
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   I can view project Title/Name
     -   I can view project Due Date
     -   I can view the project Owner
@@ -82,13 +83,13 @@ As a visitor, I want to see project details of the projects after making the pro
 
 ### Story 4
 As a visitor, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   Active widgets are present when I return to the site
     -   Buttons for any available widgets not already activated to the dashboard are present in the Library
 
 ### Story 5
 As a visitor, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   The color scheme is light when I first log in, view Dashboard
     -   I can change the color Scheme using a button to a dark scheme
     -   I can change the scheme back to light
@@ -97,23 +98,23 @@ As a visitor, I want the ability to change certain dashboard visual settings to 
 
 ### Story 6
 As a visitor, I want instruction or an indication of how and where to change dashboard visual settings.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A visual message or banner informs me how to change settings
 
 ### Story 7
 As a visitor, I want to be able to change the location of the active weather Tool.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A method to change the location for the weather tool is available from the Tool panel
 
 ### Story 8
 As a visitor, I want a method to gain more information on what pmDashboard is and what its features are.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   'About this site' information is available in a link to the user
     -   The information is a simple list of purpose and features of pmDashboard
 
 ### Story 9
 As a visitor, I want a method to save my username so my user menu is displayed offering certain user options.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A login button is present when a user first enters the app
     -   My username can be saved
     -   My username appears along with a user menu once the username is saved
@@ -122,7 +123,7 @@ As a visitor, I want a method to save my username so my user menu is displayed o
 
 ### Story 10
 As a logged in user, I want the ability to access my Projects and Tools Library from a dropdown in the user menu so I can add and remove widgets.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A Library dropdown appears from the user menu
     -   I can add a panel to the dashboard from the dropdown
     -   When I remove a panel from the dashboard, a button reappears in the dropdown for that widget
@@ -130,7 +131,7 @@ As a logged in user, I want the ability to access my Projects and Tools Library 
 
 ### Story 11
 As a logged in user, I want the ability to access all user settings from a dropdown in the user menu so I can access all options from a single location.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A settings dropdown appears in the user menu
     -   In desktop vp, I can access and control Color Scheme, Library Panel position, and weather Tool location
     -   In a mobile vp, I CAN NOT access the Library Panel position settings
@@ -138,7 +139,7 @@ As a logged in user, I want the ability to access all user settings from a dropd
 
 ### Story 12
 As a visitor, I want the ability to view a valid GitHub User's repo list and basic information.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A GitHub Tool is accessible from the Libraries
     -   I can input a GitHub username into a field
     -   The Tool returns a user repo list and basic user information and a user avatar once I enter a valid username
