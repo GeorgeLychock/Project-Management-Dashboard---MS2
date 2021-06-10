@@ -212,6 +212,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
             -   <img src="_documentation/testing//jshint/JSHint-projects-js-f002.png" />
         -   f003 - delProject
             -   <img src="_documentation/testing//jshint/JSHint-projects-js-f003.png" />
+    -   widgets.js functions
+        -   f001 - buildWeatherPanelMU
+            -   <img src="_documentation/testing//jshint/JSHint-widgets-js-f001.png" />
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing

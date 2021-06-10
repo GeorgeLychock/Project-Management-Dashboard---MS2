@@ -44,6 +44,7 @@ function createActiveWidgets() {
 
 function createWidgetLibBtns() {
 
+    var widgetBuildIDs = [];
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
 
     if (localStorage.localWidgets) {
@@ -52,7 +53,6 @@ function createWidgetLibBtns() {
         var widgetIDs = ["widget0001", "widget0002"];
         let activeWidgetsSaved = localStorage.getItem('localWidgets');
         var widgetIDsSaved = activeWidgetsSaved.split(',');
-        var widgetBuildIDs = [];
 
         //Search the locally stored active widget IDs and make an array of available widgets that are not already active
         for (let i in widgetIDs) {
@@ -61,7 +61,7 @@ function createWidgetLibBtns() {
             }
         }
     } else {
-        var widgetBuildIDs = ["widget0001", "widget0002"]; // else all widgets are available in the library
+        widgetBuildIDs = ["widget0001", "widget0002"]; // else all widgets are available in the library
     }
 
     for (let i in widgetBuildIDs) {
@@ -74,7 +74,6 @@ function createWidgetLibBtns() {
     }
 }
 
-/* Widget Library Add/Remove Buttons */
 function turnWidgetOn(widgetIdOn) {
 
     let elementID = widgetIdOn;
@@ -87,9 +86,9 @@ function turnWidgetOn(widgetIdOn) {
 
         // Check if localStorage is enabled
         if (storageAvailable('localStorage')) {
-            // YES: We can use localStorage, check if localStorage var has been initiated
+            // We can use localStorage, check if localStorage var has been initiated
             if (localStorage.localWidgets) {
-                // YES: Add widget ID to the localStorage string and store
+                // Add widget ID to the localStorage string and store
                 let activeWidgetsSaved = localStorage.getItem('localWidgets'); //returns a string, comma delimited
                 let activeWidgets = activeWidgetsSaved.split(',');
                 activeWidgets.push(elementID);
@@ -102,7 +101,7 @@ function turnWidgetOn(widgetIdOn) {
                 localStorage.setItem('localWidgets', activeWidgets);
             }
         } else {
-            // NO: no localStorage
+            // no localStorage
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The widget Management Dashboard in a new browser window.");
         }
 
@@ -116,7 +115,7 @@ function turnWidgetOn(widgetIdOn) {
                 return $("#active-widgets-data").append(buildWeatherPanelMU(data, elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
             });
         } else if (data.widgetID == "widget0002") {
-            //Build GitHub pavel since widget0002 is assigned to GitHub widget
+            //if wid0002 build GitHub button
             return $("#active-widgets-data").append(buildGitHubPanelMU(elementID)), $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
 
         }
@@ -178,13 +177,12 @@ function buildWidgetLibBtnMUUsermenu(data) {
     </button>
     </div>`;
 }
-/* END Widget Library Add/Remove Buttons */
 
-/* Dashboard Panels */
+// f001
 function buildWeatherPanelMU(owdata, widgetID) {
 
     var apiData = owdata;
-    let bigTemp = apiData.main["temp"];
+    let bigTemp = apiData.main.temp;
     bigTemp = bigTemp.toFixed(0);
     var weatherBGClass = "";
     var weatherDesClass = "";
@@ -201,7 +199,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     } else {
         weatherBGClass = " pmd-weather-icon-bg-night";
         weatherDesClass = " pmd-weather-des-bg-night";
-    };
+    }
 
     // Create app color scheme selector variables
     var colorSchemeFinal01 = "";
@@ -276,9 +274,7 @@ function buildGitHubPanelMU(widgetID) {
         </div>
     </div>`;
 }
-/* END Dashboard Panels */
 
-/* Open Weather Custom Functions */
 function saveOpenWeatherLocation() {
 
     let elementID = "widget0001";
@@ -313,14 +309,15 @@ function saveOpenWeatherLocation() {
         //Clear form
         /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
         var x = document.getElementById("openWeatherFormModal");
+        var storedLocation;
         for (let i = 0; i < x.length ;i++) {
             x.elements[i].value = "";
         }
         // determine which parameter to pass, zipcode takes precendence
         if(enteredLocation && !enteredZip) {
-            var storedLocation = "q=" + enteredLocation;
+            storedLocation = "q=" + enteredLocation;
         } else {
-            var storedLocation = "zip=" + enteredZip;
+            storedLocation = "zip=" + enteredZip;
         }
 
         //update user settings local storage

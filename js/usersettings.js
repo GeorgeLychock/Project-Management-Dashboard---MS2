@@ -1,8 +1,10 @@
+/* George Lychock - MS2 Projects Javascript File */
+/* ******* USER SETTINGS and LOGIN FUNCTIONS JAVASCRIPT ********** */
+/* All reused and custom scripts are located in script.js. */
+
 $(document).ready(function() {
     createUserLoginPanel();
 })
-
-/* ******* USER SETTINGS and LOGIN FUNCTIONS JAVASCRIPT ********** */
 
 function updateUserSettings(key, value) {
 
@@ -15,7 +17,7 @@ function updateUserSettings(key, value) {
 
     // Check if localStorage is enabled
     if (storageAvailable('localStorage')) {
-        // YES: We can use localStorage, check if localStorage var has been initiated
+        // We can use localStorage, check if localStorage var has been initiated
         if (!localStorage.getItem(localStoreName)) {
             userSettingsOBJ = {
                 scenario: "",
@@ -83,14 +85,14 @@ function createUserLoginPanel() {
     // check if user is logged in
     //see if there is a user setting local obj saved
     var localStoreName = "userSettings";
+    var colorSchemeFinal01 = "";
 
     if (localStorage.getItem(localStoreName)) {
         // yes, grab data
         let checkSet = localStorage.getItem(localStoreName).split(',');
         var checkSetJSON = JSON.parse(checkSet);
-
-        var colorSchemeFinal01 = "";
         var colorScheme = whatColorScheme();
+        
         if (colorScheme != "") {
             colorSchemeFinal01 = " " + colorScheme + "-01";
         }
@@ -143,7 +145,7 @@ function userLogin() {
         updateUserSettings("username", passFormData.username);
 
         //Clear form
-        /* CODE REUSE - Clearing loop reused from W3Schools.com: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements */
+        /* CODE REUSE - Clearing loop reused from W3Schools.com, see README.md */
         var x = document.getElementById("loginFormModal");
         for (var i = 0; i < x.length; i++) {
             x.elements[i].value = "";
@@ -195,5 +197,3 @@ function logOut(un) {
     return $("#logOutPanelListModal").html(""), $('#pmd-userpanel').addClass("pmd-hide"), $('#pmd-login-msg').removeClass("pmd-hide");
 }
 
-
-/* ******* END USER SETTINGS and LOGIN FUNCTIONS JAVASCRIPT ********** */
