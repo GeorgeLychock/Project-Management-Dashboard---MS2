@@ -20,7 +20,7 @@
 
 - [Technical Background](#TECH)
 
-- [Testing](testrm.MD)
+- [Testing](TESTRM.MD)
 
 - [Bugs and Fixes](#BUGS)
 
