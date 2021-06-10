@@ -64,7 +64,7 @@ As a visitor, I want to Add or Remove project detail panels from the Dashboard s
 -   Acceptance Criteria
     -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
     -   The buttons clearly indicate what they are for
-    -   I can Add a project detail panel from the dashboard
+    -   I can Add a project detail panel to the dashboard
     -   I can Remove a project detail panel
     -   I can Add a tool panel from the dashboard
     -   I can Remove a tool panel from the dashboard

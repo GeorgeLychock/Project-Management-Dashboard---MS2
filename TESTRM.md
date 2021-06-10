@@ -197,7 +197,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
     -   <img src="_documentation/testing/desktop-lighthouse-index-html-logged-in.png" />
     -   Mobile Report - index.html - Logged in User, project and tools panels panels activated
     -   <img src="_documentation/testing/mobile-lighthouse-index-html-logged-in.png" />
-- [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
+- [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax. The following were errors captured during testing that have not been addressed:
+
     -   script.js functions
         -   f001 - getData
             -   <img src="_documentation/testing//jshint/JSHint-script-js-f001.png" />
@@ -222,29 +223,31 @@ Testing User Stories from User Experience (UX) Section
 
 ### Story 1
 As a visitor, I want to view the projects and tools available to add to a main dashboard so I can have a clear, one-stop view of all my projects' status and tools I'm currently using.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   There is an indication that I'm the user logged in
     -   My available projects are indicated in a side panel or other persistent section; called a Library.
     -   I can see further detail of a given project in a larger, more prominent Dashboard.
     -   It is clear what elements on the dashboard are projects, and which are tools.
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshot:
+            -   <img src="_documentation/testing/user-stories/user-story-01.png" />
     
 ### Story 2
 As a visitor, I want to Add or Remove project detail panels from the Dashboard so I can view and interact with project data and tools.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   There is a library of project and tool buttons I can use to add/remove panels to the dashbaord
     -   The buttons clearly indicate what they are for
-    -   I can Add a project detail panel from the dashboard
+    -   I can Add a project detail panel to the dashboard
     -   I can Remove a project detail panel
     -   I can Add a tool panel from the dashboard
     -   I can Remove a tool panel from the dashboard
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
 
 ### Story 3
 As a visitor, I want to see project details of the projects after making the project panel active on the Dashboard
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   I can view project Title/Name
     -   I can view project Due Date
     -   I can view the project Owner
@@ -253,80 +256,116 @@ As a visitor, I want to see project details of the projects after making the pro
     -   I can view project Cost Performance Index (CPI) to date
     -   I can view the project Schedule Variance (SV) to date
     -   I can view a link to the live development site, if one exists
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshot:
+            -   <img src="_documentation/testing/user-stories/user-story-03.png" />
 
 ### Story 4
 As a visitor, when I return to the site, all widgets (projects and tools) I made active are still active on the Dashboard.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   Active widgets are present when I return to the site
     -   Buttons for any available widgets not already activated to the dashboard are present in the Library
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
 
 ### Story 5
 As a visitor, I want the ability to change certain dashboard visual settings to make the app have a more customized experience.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   The color scheme is light when I first log in, view Dashboard
     -   I can change the color Scheme using a button to a dark scheme
     -   I can change the scheme back to light
     -   The color scheme I used last will be present when I come back to the site
     -   I can position the Library Panel on the right or the left of desktop or tablet view ports
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-05a.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-05b.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-05c.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-05d.png" />
 
 ### Story 6
 As a visitor, I want instruction or an indication of how and where to change dashboard visual settings.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A visual message or banner informs me how to change settings
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-06.png" />
 
 ### Story 7
 As a visitor, I want to be able to change the location of the active weather Tool.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A method to change the location for the weather tool is available from the Tool panel
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-07.png" />
 
 ### Story 8
 As a vistor, I want a method to gain more information on what pmDashboard is and what its features are.
--   Acceptance Criteria -- Duplicated in Testing section below
-    -   'About this site' information is available in a link to the user
+-   Acceptance Criteria
+    -   About this site information is available in a link to the user
     -   The information is a simple list of purpose and features of pmDashboard
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-08a.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-08b.png" />
 
 ### Story 9
 As a vistor, I want a method to save my username so my user menu is displayed offering certain user options.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A login button is present when a user first enters the app
     -   My username can be saved
     -   My username appears along with a user menu once the username is saved
     -   My username and menu appears when I return to the site
     -   My username can be removed
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-09a.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-09b.png" />
 
 ### Story 10
 As a logged in user, I want the ability to access my Projects and Tools Library from a dropdown in the user menu so I can add and remove widgets.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A Library dropdown appears from the user menu
     -   I can add a panel to the dashboard from the dropdown
     -   When I remove a panel from the dashboard, a button reappears in the dropdown for that widget
     -   I can close the Library dropdown
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-10.png" />
 
 ### Story 11
 As a logged in user, I want the ability to access all user settings from a dropdown in the user menu so I can access all options from a single location.
--   Acceptance Criteria -- Duplicated in Testing section below
+-   Acceptance Criteria
     -   A settings dropdown appears in the user menu
     -   In desktop vp, I can access and control Color Scheme, Library Panel position, and weather Tool location
     -   In a mobile vp, I CAN NOT access the Library Panel position settings
     -   I can close the settings dropdown
--   Results (TK)
-    -   Placeholder Text: (1 and 2) PASS Since there is only only sub level of pages, user is never more than 1 click from home or one click from most detailed information available.[Screenshot]()
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-11.png" />
+
+### Story 12
+As a visitor, I want the ability to view a valid GitHub User's repo list and basic information.
+-   Acceptance Criteria
+    -   A GitHub Tool is accessible from the Libraries
+    -   I can input a GitHub username into a field
+    -   The Tool returns a user repo list and basic user information and a user avatar once I enter a valid username
+    -   The basic user information includes: Avatar, username, user profile link, # of followers, # of users the user is following, total # of repos
+    -   I can close the GitHub Tool panel
+    -   GitHub username input does not persist when I return to the app
+-   Results
+    -   PASS: All criteria met
+        -   Screeshots:
+            -   <img src="_documentation/testing/user-stories/user-story-12a.png" />
+            -   <img src="_documentation/testing/user-stories/user-story-12b.png" />
 
 <a name="TESTCOMP"></a>
 ### Compatibility Testing
