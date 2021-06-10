@@ -184,7 +184,7 @@ function buildProjectPanelMU(data) {
                 <div class="pmd-prg-bar-title">SV: </div>
                 <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" aria-label="Schedule Variance" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
-            <div class="pmd-project-data2"><a href="${projectData.livesite}" target="_blank">Go To Project Site</a></div>
+            <div class="pmd-project-data2"><a href="${projectData.livesite}" target="_blank" rel="noreferrer">Go To Project Site</a></div>
         </div>
     </div>`;
 }

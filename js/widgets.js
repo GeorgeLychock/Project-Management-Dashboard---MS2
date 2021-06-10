@@ -226,7 +226,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
             <h3>${apiData.name}</h3>
             <div>Current Time: ${currentTime}</div>
             <div class="pmd-weather-bg${weatherBGClass}">
-                <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
+                <div class="d-inline"><img src="https://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png" alt="${weatherDesClass} icon"></div>
                 <div class="pmd-weather-temp">${bigTemp} &#176;</div>
                 <div class="pmd-weather-desc${weatherDesClass}">
                 <div class="pmd-bg-water"><img src="images/waves-bg-01.png" width="50px" alt="Waves in the background"></div>
@@ -263,7 +263,7 @@ function buildGitHubPanelMU(widgetID) {
                     <div class="d-inline float-right"><h3 class="text-center pmd-gh-panel-h3">Search GitHub Projects</h3></div>
                     <div class="pmd-gh-inputarea">
                         <div class="pmd-gh-inputtext"><input type="text" id="gh-username" oninput="fetchGitHubInformation()" /></div>
-                        <div class="pmd-gh-inputlabel">Enter a valid GitHub username: </div>
+                        <div class="pmd-gh-inputlabel" for="gh-username">Enter a valid GitHub username: </div>
                     </div>
                     <div class="pmd-gh-user-data">
                         <div id="gh-user-data"></div>
