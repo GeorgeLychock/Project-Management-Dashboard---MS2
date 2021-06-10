@@ -213,7 +213,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     return `<div id="${widgetID}" class="col-12 col-md-6 col-lg-6 col-xl-3 pmd-max-width-250">
     <div class="pmd-panel-head">
         <div class="pmd-panel-headtext${colorSchemeFinal01}">
-            <div role="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings">
+            <div role="button" class="pmd-icon-03" data-toggle="modal" data-target="#openWeatherSettings" aria-label="Open Weather Settings">
                 <i class="bi bi-gear pmd-bi-gear-ow pmd-acolor-1" aria-hidden="true"></i>
             </div>
         </div>
@@ -223,7 +223,7 @@ function buildWeatherPanelMU(owdata, widgetID) {
     </div>
         <div class="pmd-active-ow-widget pmd-bcolor-2">
             <div class="float-right">My Weather</div>
-            <h5>${apiData.name}</h5>
+            <h3>${apiData.name}</h3>
             <div>Current Time: ${currentTime}</div>
             <div class="pmd-weather-bg${weatherBGClass}">
                 <div class="d-inline"><img src="http://openweathermap.org/img/wn/${apiData.weather[0]["icon"]}@2x.png"></div>
@@ -260,7 +260,7 @@ function buildGitHubPanelMU(widgetID) {
             <div class="row">
                 <div class="col">
                     <div class="d-inline pmd-gh-icon"><i class="bi bi-github"></i></div>
-                    <div class="d-inline float-right"><h5 class="text-center">Search GitHub Projects</h5></div>
+                    <div class="d-inline float-right"><h3 class="text-center pmd-gh-panel-h3">Search GitHub Projects</h3></div>
                     <div class="pmd-gh-inputarea">
                         <div class="pmd-gh-inputtext"><input type="text" id="gh-username" oninput="fetchGitHubInformation()" /></div>
                         <div class="pmd-gh-inputlabel">Enter a valid GitHub username: </div>

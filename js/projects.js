@@ -168,21 +168,21 @@ function buildProjectPanelMU(data) {
         </div>
     </div>
         <div class="pmd-active-widget pmd-bcolor-2">
-            <h5>${projectData.name}</h5>
+            <h3 class="pmd-project-panel-heading">${projectData.name}</h3>
             <div class="pmd-project-data1">Due Date: ${projectData.duedate}</div>
             <div class="pmd-project-data2">Owner: ${projectData.owner}</div>
             <div class="pmd-project-data2">${projectData.description}</div>
             <div class="progress pmd-prg-row">
                 <div class="pmd-prg-bar-title">% Complete: </div>
-                <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success pmd-prg-bar" role="progressbar" aria-label="Percent Complete" style="width: ${projectData.percentcomplete}%" aria-valuenow="${projectData.percentcomplete}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="progress pmd-prg-row">
                 <div class="pmd-prg-bar-title">CPI: </div>
-                <div class="progress-bar bg-info pmd-prg-bar" role="progressbar" style="width: ${cpi}%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
+                <div class="progress-bar bg-info pmd-prg-bar" role="progressbar" aria-label="Cost Performance Index" style="width: ${cpi}%" aria-valuenow="${projectData.cpi}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div class="progress pmd-prg-row">
                 <div class="pmd-prg-bar-title">SV: </div>
-                <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
+                <div class="progress-bar bg-warning pmd-prg-bar" role="progressbar" aria-label="Schedule Variance" style="width: ${sv}%" aria-valuenow="${projectData.sv}" aria-valuemin="0" aria-valuemax="2"></div>
             </div>
             <div class="pmd-project-data2"><a href="${projectData.livesite}" target="_blank">Go To Project Site</a></div>
         </div>

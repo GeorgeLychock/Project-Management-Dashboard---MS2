@@ -421,7 +421,6 @@ margin-top: 20px;
     font-weight: 700;
 }
 
-/* Project Form */
 .pmd-form-input-1 {
     font-size: .75rem;
 }
@@ -497,6 +496,9 @@ margin-top: 20px;
     margin: 0px 10px 5px 0px;
 }
 
+.pmd-project-panel-heading {
+    font-size: 1.0rem;
+}
 
 /* Active Projects Dashboard */
 .pmd-active-projects-head {
