@@ -188,6 +188,7 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
 -   User Settings dropdown for the User Menu
     -   Consolidate all user settings available into one dropdown
 -   Add Project modal should display the logged in user as the default Project Owner, if a user is logged in
+-   Design and add a fav icon
 
 ## Technical Requirements for this project:
 -   Use template literals, if possible/needed
@@ -202,11 +203,7 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
 -   Apply semantic markup
 -   Change all XMLHttpRequests to fetch routines
 
-### Future Technical Requirements:
--   Apply ARIA principles across the app; currently I have some structures properly configured with aria attributes but much of that was picked up from Bootstrap component code. Using https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics as a reference to learn ARIA.
-
 ## Future Features / Updates
--   Design and add a fav icon
 -   A Calendar widget
 -   A To-Do List widget (looked at ToDoist, it required Python or curl to make api calls)
 -   Ability to shuffle (re-position) the dashboard panels
@@ -339,14 +336,13 @@ As a visitor, I want the ability to view a valid GitHub User's repo list and bas
 
 The project was deployed to GitHub Pages hosting service:
 
-[URL to GitHub Pages Site](https://georgelychock.github.io/georgelychock-career/)
+[URL to GitHub Pages Site](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2)
 
-### *CLOANING INFORMATION from CODE INSTITUTE README.md template from User Centric Module*
+### *CLOANING INFORMATION from CODE INSTITUTE README.md template from User Centric Module, edits have been made for changes in GH UI*
 GitHub Pages
 The project was deployed to GitHub Pages using the following steps...
-   1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
+   1. Log in to GitHub and locate the [Project-Management-Dashboard---MS2 GitHub Repository](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2)
    2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-       ◦ Alternatively Click Here for a GIF demonstrating the process starting from Step 2.
    3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
    4. Under "Source", click the dropdown called "None" and select "Master Branch".
    5. The page will automatically refresh.
@@ -354,14 +350,14 @@ The project was deployed to GitHub Pages using the following steps...
 
 ### Forking the GitHub Repository
 
-1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+1. Log in to GitHub and locate the [Project-Management-Dashboard---MS2 GitHub Repository](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2)
+2. At the top of the Repository (not top of page) on the far right, locate the "Fork" Button. Sign in if needed.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### Making a Local Clone
 
-1. Log in to GitHub and locate the [georgelychock-career GitHub Repository](https://github.com/GeorgeLychock/georgelychock-career)
-2. Under the repository name, click "Clone or download".
+1. Log in to GitHub and locate the [Project-Management-Dashboard---MS2 GitHub Repository](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2)
+2. On the right of the file listings box, click the "Code" button.
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned directory to be made.

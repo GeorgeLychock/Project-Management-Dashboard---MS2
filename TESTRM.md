@@ -21,6 +21,8 @@
 # Testing
 Used test writing guidelines from the following resources:
     [Guru99](https://www.guru99.com/complete-web-application-testing-checklist.html), [softwaretestinghelp.com](https://www.softwaretestinghelp.com/web-application-testing/)
+-   NOTE: Usability and Functionality test criteria were written based on development version but then verified once deployed to GitHub Pages.
+-   NOTE: All Validation results reported below are based on the deployed app via GitHub Pages.
 
 <a name="TESTUSABILITY"></a>
 ## Usability Testing
@@ -170,6 +172,7 @@ Unless otherwise noted, all the following was tested and passed:
 
 <a name="TESTVALID"></a>
 ## Validation
+NOTE: All Validation results reported below are based on the deployed app via GitHub Pages.
 The W3C Markup Validator and W3C CSS Validator Services were used to validate all html and css files in the project to ensure there were no syntax errors in the project.
 
 -   [W3C Markup Validator (Nu)](https://validator.w3.org/nu/)
@@ -313,11 +316,11 @@ As a logged in user, I want the ability to access all user settings from a dropd
 
 <a name="TESTCOMP"></a>
 ### Compatibility Testing
--   The Website was tested on Google Chrome, Firefox and Safari browsers.
--   Test Edge
--   Site will not load in IE11
+-   The Website was tested on Google Chrome, Firefox, Microsoft Edge, Internet Explorer, and Safari browsers on a limited number of devices. Browser simulators were used to test most major viewports, testing on actual devices is a follows:
+    -   <img src="_documentation/testing/compatibility-chart.jpg" />
+-   When testing in IE11, scripts would not run
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone6, iPad8.
--   Used Lighthouse to identify areas on improvement which are documented below in Fixed Bugs after Testing.
+-   Used Lighthouse to identify areas on improving Accessibility, SEO, and general good practices
 
 <a name="BUGS"></a>
 ## Bugs / Fixes
