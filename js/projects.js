@@ -38,7 +38,10 @@ function createActiveProjects() {
     }
 }
 
+// f002
 function createProjectLibBtns() {
+
+    var projectBuildIDs = [];
 
     // Retrieve widget IDs that have already been activated to the dashboard, if available. Display only buttons for widgets that have not been activated to the dashbaord
     if (localStorage.activeProjects) {
@@ -48,7 +51,6 @@ function createProjectLibBtns() {
 
         //Retrieve all activated project IDs
         var projectIDsSaved = localStorage.getItem('activeProjects').split(',');
-        var projectBuildIDs = [];
 
         //Search the locally stored active widget IDs and make an array of available widgets that are NOT already active
         for (let i in widgetIDs) {
@@ -58,10 +60,10 @@ function createProjectLibBtns() {
         }
     } else if (localStorage.allProjectIDs) {
         //No panels have been activated yet so retrieve all available project IDs
-        var projectBuildIDs = localStorage.getItem('allProjectIDs').split(',');
+        projectBuildIDs = localStorage.getItem('allProjectIDs').split(',');
     } else {
         //Default projects. Search " *Foot Note 1 " in Technical Constraints section of README.md for more info on widgetIDs
-        var projectBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all default widgets are available in the library, no custom ones have been added yet
+        projectBuildIDs = ["proj0001", "proj0002", "proj0003", "proj0004", "proj0005"]; // else all default widgets are available in the library, no custom ones have been added yet
         localStorage.setItem('allProjectIDs', projectBuildIDs);
     }
 
@@ -311,7 +313,7 @@ function saveProjectDataModal() {
         setProjectIDs(localStorageName, passFormData.widgetID);
 
         // Save widgetID to localStorage to capture all user input IDs
-        var localStorageName = "userProjectIDs";
+        localStorageName = "userProjectIDs";
         setProjectIDs(localStorageName, passFormData.widgetID);
 
         // Save project data to localStorage
@@ -334,7 +336,7 @@ function createDeleteProjectList() {
     var localStorageName = "userProjectIDs";
     if (localStorage.getItem(localStorageName)) {
         let delWidgetIDList = localStorage.getItem(localStorageName).split(',');
-        for (i in delWidgetIDList) {
+        for (let i in delWidgetIDList) {
             if (!$("#widget-btn-del-" + delWidgetIDList[i]).length) {
                 var elementID = delWidgetIDList[i];
                 getLocalData(elementID, function(localData) {
@@ -348,6 +350,7 @@ function createDeleteProjectList() {
     }
 }
 
+// f003
 function delProject(wID, pName) {
 
     var elementID = wID;
@@ -374,7 +377,7 @@ function delProject(wID, pName) {
         //remove panel
         $("#" + elementID).remove();
         //remove library button
-        $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove()
+        $("#widget-btn-" + elementID).remove(), $("#widget-btn-usermenu-" + elementID).remove();
         //remove del button
         $("#widget-btn-del-" + elementID).remove();
 

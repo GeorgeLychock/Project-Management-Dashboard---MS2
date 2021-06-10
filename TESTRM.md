@@ -205,6 +205,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
             -   <img src="_documentation/testing//jshint/JSHint-script-js-f003.png" />
         -   f004 - validateInput
             -   <img src="_documentation/testing//jshint/JSHint-script-js-f004.png" />
+    -   projects.js functions
+        -   f001 - createActiveProjects
+            -   <img src="_documentation/testing//jshint/JSHint-projects-js-f001.png" />
+        -   f002 - createProjectLibBtns
+            -   <img src="_documentation/testing//jshint/JSHint-projects-js-f002.png" />
+        -   f003 - delProject
+            -   <img src="_documentation/testing//jshint/JSHint-projects-js-f003.png" />
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing
