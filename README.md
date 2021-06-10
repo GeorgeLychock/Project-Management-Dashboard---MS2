@@ -501,10 +501,10 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
     - [widget.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-widget-css.png), NO ERRORS
     - [style.css](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/css-validate-style-css.png), NO ERRORS
 -   [Lighthouse]()
-    - [Results: Desktop Report - index.html]()
-    - [Results: Mobile Report - index.html]()
-    - [Results: Desktop Report - index.html - Logged In User, panels activated]()
-    - [Results: Mobile Report - index.html - Logged in User, panels activated]()
+    - [Results: Desktop Report - index.html](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/desktop-lighthouse-index-html.png)
+    - [Results: Mobile Report - index.html](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/mobile-lighthouse-index-html.png)
+    - [Results: Desktop Report - index.html - Logged In User, project and tools panels activated](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/desktop-lighthouse-index-html-logged-in.png)
+    - [Results: Mobile Report - index.html - Logged in User, project and tools panels panels activated](https://github.com/GeorgeLychock/Project-Management-Dashboard---MS2/blob/master/_documentation/testing/mobile-lighthouse-index-html-logged-in.png)
 - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
     -   Tested all script.js functions in JSHint 4/7/21
     -   Tested all usersettings.js functions in JSHint 4/7/21
