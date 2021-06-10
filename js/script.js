@@ -11,8 +11,8 @@ const JSONFolderURL = "data/";
 
 /* ******* REUSED JAVASCRIPT ********** */
 
-    /* Get data from JSON file  */
-    /* CODE REUSE -  Based on https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, but customized */
+    /* f0001 Get data from JSON file  */
+    /* CODE REUSE - customized, see README.md */
     async function getData(url) {
 
         let fetchConfig = {
@@ -33,8 +33,8 @@ const JSONFolderURL = "data/";
         return fetchResponse.json();
       }
 
-    /* Checks to make sure localStorage is usuable in the browser */
-    /* CODE REUSE - localStorage Check MDN https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  */
+    /* Check to make sure localStorage is usuable in the browser */
+    /* CODE REUSE - localStorage Check MDN, see README.md  */
     function storageAvailable(type) {
         var storage;
         try {
@@ -60,8 +60,8 @@ const JSONFolderURL = "data/";
         }
     }
 
-    /* Converts timestamp for display; captures AM/PM to control weather background
-    /* CODE REUSE - Convert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php */
+    /* f002 Converts timestamp for display; captures AM/PM to control weather background
+    /* CODE REUSE - Convert UNIX Timestamp */
     function Unix_timestamp(t) {
         var timeMer = "";
         var dhr = "";
@@ -124,12 +124,12 @@ const JSONFolderURL = "data/";
             $(".bi-gear").addClass("pmd-cog-show");
             $(".pmd-bi-gear").html('<span class="pmd-cog-msgbox"><i class="bi bi-arrow-left-short"></i></span>');
             $(".pmd-bi-gear-ow").html('<span class="pmd-cog-msgbox-2"><i class="bi bi-arrow-left-short"></i></span>');
-        })
+        });
         $(".pmd-cog-instructions").mouseleave(function() {
             $(".bi-gear").removeClass("pmd-cog-show");
             $(".pmd-bi-gear").html("<span></span>");
             $(".pmd-bi-gear-ow").html("<span></span>");
-        })
+        });
 
 
 /* ******* END CUSTOM LISTENING EVENTS JAVASCRIPT ********** */
@@ -141,10 +141,10 @@ const JSONFolderURL = "data/";
     function convertViewportWidth() {
         var bodyWidth = $("body").width();
         if (bodyWidth < 768) {
-            var viewportID = "sm";
+            let viewportID = "sm";
             return viewportID;
         } else {
-            viewportID = "";
+            let viewportID = "";
             return viewportID;
         }
     }
@@ -161,25 +161,25 @@ const JSONFolderURL = "data/";
         var localStoreName = localName;
         var widgetID = wID;
 
-            // Check if localStorage is enabled
-            if (storageAvailable('localStorage')) {
-                // YES: We can use localStorage, check if localStorage var has been initiated
-                if (localStorage.getItem(localStoreName)) {
-                    // YES: Add widget ID to the localStorage string and store
-                    let projectIDsToSave = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
-                    projectIDsToSave.push(widgetID);
-                    localStorage.setItem(localStoreName, projectIDsToSave); //stored as a string, comma delimited
-                } else {
-                    // Initiate localStorage and add project ID
-                    let projectIDsToSave = [];
-                    projectIDsToSave.push(widgetID);
-                    localStorage.setItem(localStoreName, projectIDsToSave);
-                }
+        // Check if localStorage is enabled
+        if (storageAvailable('localStorage')) {
+            // We can use localStorage, check if localStorage var has been initiated
+            if (localStorage.getItem(localStoreName)) {
+                // Add widget ID to the localStorage string and store
+                let projectIDsToSave = localStorage.getItem(localStoreName).split(','); //returns a string, comma delimited, convert to array
+                projectIDsToSave.push(widgetID);
+                localStorage.setItem(localStoreName, projectIDsToSave); //stored as a string, comma delimited
             } else {
-                // NO: no localStorage
-                return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
+                // Initiate localStorage and add project ID
+                let projectIDsToSave = [];
+                projectIDsToSave.push(widgetID);
+                localStorage.setItem(localStoreName, projectIDsToSave);
             }
+        } else {
+            // no localStorage
+            return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
         }
+    }
 
     function setLocalStorageData(wID, pFD) {
 
@@ -188,9 +188,9 @@ const JSONFolderURL = "data/";
 
         // Check if localStorage is enabled
         if (storageAvailable('localStorage')) {
-            // YES: We can use localStorage, check if localStorage var has been initiated
+            // We can use localStorage, check if localStorage var has been initiated
             if(localStorage.getItem(localStoreDataID)) {
-                // YES: Update project data
+                // Update project data
                 let projectDataStr = JSON.stringify(passFormData);
                 localStorage.setItem(localStoreDataID, projectDataStr);
                 alert("This only gets fired if the project data needs to be updated; functionality TK");
@@ -200,7 +200,7 @@ const JSONFolderURL = "data/";
                 localStorage.setItem(localStoreDataID, projectDataStr);
             }
         } else {
-            // NO: no localStorage
+            // no localStorage
             return alert("Your browser does not support localStorage use for this domain at this time. This will effect how your dashboard looks when you reopen The Project Management Dashboard in a new browser window.");
         }
     }
@@ -240,7 +240,8 @@ const JSONFolderURL = "data/";
               return "";
           }
       }
-
+      
+    /* f004 */
     function validateInput(vi) {
         // Validate any input from the user. Intention is to centralize validation processing of any user input.
         var valItemsList = vi;
@@ -280,13 +281,13 @@ const JSONFolderURL = "data/";
                 case 'zipcode':
                     // Validation Rule #1
                     
-                    if (valItemsList["zipcode"] == "" && valItemsList["location"] == "") {
+                    if (valItemsList.zipcode == "" && valItemsList.location == "") {
                         valItemsFailed.push("zipcode");
                     }
                     break;
                 case 'location':
                     // Validation Rule #1
-                    if (valItemsList["location"] == "" && valItemsList["zipcode"] == "") {
+                    if (valItemsList.location == "" && valItemsList.zipcode == "") {
                         valItemsFailed.push("location");
                     }
                     break;

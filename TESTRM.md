@@ -198,8 +198,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate al
     -   Mobile Report - index.html - Logged in User, project and tools panels panels activated
     -   <img src="_documentation/testing/mobile-lighthouse-index-html-logged-in.png" />
 - [JSHint](https://jshint.com/) was used to check Javascript function logic and syntax
-    -   Tested all script.js functions in JSHint 4/7/21
-    -   Tested all usersettings.js functions in JSHint 4/7/21
+    -   script.js functions
+        -   f001 - getData
+            -   <img src="_documentation/testing//jshint/JSHint-script-js-f001.png" />
+        -   f003 - whatColorScheme
+            -   <img src="_documentation/testing//jshint/JSHint-script-js-f003.png" />
+        -   f004 - validateInput
+            -   <img src="_documentation/testing//jshint/JSHint-script-js-f004.png" />
 
 <a name="TESTSTORIES"></a>
 ## User Story Testing

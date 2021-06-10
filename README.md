@@ -392,8 +392,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
     -   This code originated from Code Institute's Interactive Frontend Development module for the Full Stack Software Developer course. Modifcations were mostly applied for struture and style.
     -   All JS code is in the github-information.js file.
 
--   The localStorage check code in script.js is from [MDN - Using_the_Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on.
-    Find code use indicated by "CODE REUSE - localStorage Check "
+-   The localStorage check code in script.js is from [MDN - Using_the_Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). This code checks to make sure that the browser can support localStorage and has it turned on. Find code use indicated by "CODE REUSE - localStorage Check "
 
 -   Progress bars in the Project Panels came from Bootstrap Documentation: https://getbootstrap.com/docs/4.6/components/progress/:
     Find code use indicated by "CODE REUSE - Progress Bar"
@@ -408,6 +407,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
         }
 -   Tooltips
     -   Used the CSS based tooltips code from W3Schools: https://www.w3schools.com/css/css_tooltip.asp
+-   fetch
+    -   Based on https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, but customized 
+-   timestamp conversion, customized to capture AM/PM to control weather background; from Convert UNIX Timestamp https://www.w3resource.com/javascript-exercises/javascript-date-exercise-17.php
 
 ## Content
 
